@@ -1,0 +1,61 @@
+test "condition must be boolean" 
+    form X {
+        if($error(1)) {
+        }
+    }
+
+test "undefined question" 
+    form X {
+        "" x: integer = $error(y)
+    }
+
+test "computed question expression must match declared type"
+    form X {
+        "" x: integer = $error(true)
+    }
+
+test "redeclared with different type" 
+    form X {
+        "" x: integer
+        $error("" x: boolean)
+    }
+
+test "duplicate labels" 
+    form X {
+        "same" x: integer
+        $warning("same" y: boolean)
+    }
+
+test "invalid operand to +" 
+    form X {
+        "" x: integer = $error(true) + 1
+    }
+
+test "initial state"  with 
+    form X {
+        "" x: boolean
+        "" y: integer
+        "" z: string
+    }
+    = {x: false, y: 0, z: ""}
+
+test "disabled questions are not changed"
+    with x: 10
+    form X {
+        if (false) "" x: integer
+    }
+    = {x: 0}
+
+test "fixpoint evaluation" 
+    with c: 10
+    form X {
+        "A" a: integer = c+b+1
+        "B" b: integer = c+1
+        "C" c: integer
+    }
+    = {a: 22, b: 11, c: 10}
+
+test "faulty test"
+    form X {
+        "" x : integer = true
+    }

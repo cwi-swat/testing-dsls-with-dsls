@@ -1,0 +1,4 @@
+Project-Name: testing-dsls-with-dsls
+Source: src
+Require-Libraries: |lib://rascal-lsp|
+

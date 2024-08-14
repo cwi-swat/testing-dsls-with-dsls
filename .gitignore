@@ -1,0 +1,6 @@
+/bin/
+/.settings
+/examples/*.html
+/examples/*.js
+
+target

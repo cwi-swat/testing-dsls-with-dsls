@@ -59,3 +59,10 @@ test "faulty test"
     form X {
         "" x : integer = true
     }
+
+test "multiplication has higher precedence than addition"
+    with
+    form X {
+        "" x: integer = 1 + 2 * 3
+    }
+    = {x: 7}

@@ -46,7 +46,8 @@ VEnv initialEnv(Form f) {
     case (Question)`<Str _> <Id x>: <Type t> = <Expr _>`: 
       venv["<x>"] = type2default(t);
   }
-  return venv;
+  // dummy user action to initialize computed questions.
+  return eval(f, user("", vint(0)), venv);
 }
 
 // ASSIGNMENT: complete the evaluation of expressions.
@@ -84,6 +85,10 @@ Value eval((Expr)`<Expr lhs> + <Expr rhs>`, VEnv venv) = vint(i + j)
     vint(int i) := eval(lhs, venv),
     vint(int j) := eval(rhs, venv);
 
+Value eval((Expr)`<Expr lhs> * <Expr rhs>`, VEnv venv) = vint(i * j)
+  when 
+    vint(int i) := eval(lhs, venv),
+    vint(int j) := eval(rhs, venv);
 
 
 // Because of out-of-order use and declaration of questions

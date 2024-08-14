@@ -39,7 +39,8 @@ set[LanguageService] testLanguageContributor() = {
 };
 
 data Command
-  = runTestSuite(start[Tests] tests);
+  = runTestSuite(start[Tests] tests)
+  | runSingleTest(Test theTest);
 
 Summary mySummarizer(loc origin, start[Form] input) {
   return summary(origin, messages = {<m.at, m> | Message m <- check(input) });
@@ -51,9 +52,10 @@ data Command
 rel[loc,Command] myLenses(start[Form] input) = {<input@\loc, runQuestionnaire(input, title="Run...")>};
 
 
-rel[loc,Command] testLenses(start[Tests] input) = {<input@\loc, runTestSuite(input, title="Run tests (<countTests(input.top)>)")>};
+rel[loc,Command] testLenses(start[Tests] input) = {<input@\loc, runTestSuite(input, title="Run tests (<countTests(input.top)>)")>}
+    + {< t.src, runSingleTest(t, title="Run this test")> | Test t <- input.top.tests };
 
-int countTests(Tests tests) = ( 0 | it + 1 | Test t <- tests.tests );
+int countTests(Tests tests) = ( 0 | it + 1 | Test _ <- tests.tests );
 
 void myCommands(runQuestionnaire(start[Form] form)) {
     showInteractiveContent(runQL(form));
@@ -61,9 +63,12 @@ void myCommands(runQuestionnaire(start[Form] form)) {
 
 void testCommands(runTestSuite(start[Tests] tests)) {
     set[Message] msgs = runTests(tests);
-    //unregisterDiagnostics(LOCS);
     registerDiagnostics([ m | Message m <- msgs]);
-    //LOCS = [ m.at | Message m <- msgs ];
+}
+
+void testCommands(runSingleTest(Test t)) {
+    set[Message] msgs = runTest(t);
+    registerDiagnostics([ m | Message m <- msgs]);
 }
 
 

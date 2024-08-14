@@ -98,36 +98,30 @@ str ppVenv(VEnv venv) = "{<intercalate(", ", lst)>}"
     when lst := [ "<x>: <ppValue(venv[x])>" | str x <- venv ];
 
 
-
-set[Message] runTests(start[Tests] tests) {
-    set[Message] result = {};
-
-    for (Test t <- tests.top.tests) {
-        Spec spec = extractSpec(t);
-        
-        set[Message] msgs = check(spec.form);
-        delta = {};
-        delta += {error("unexpected error: <s>", l) | error(str s, loc l) <- msgs, l notin spec.errors };
-        delta += {error("unexpected warning: <s>", l) | warning(str s, loc l) <- msgs, l notin spec.warnings};
-        delta += {error("expected an error", l) | loc l <- spec.errors, !(error(_, l) <- msgs)};
-        delta += {error("expected a warning", l) | loc l <- spec.warnings, !(warning(_, l) <- msgs)};
-        
-        if (t has inputs) {
-            venv = initialEnv(t.form);
-            for (Input inp <- spec.inputs) {
-                venv = eval(t.form, inp, venv);
-            }
-            if (venv != spec.output) {
-                delta += {error("got: <ppVenv(venv)>", t.output.src)};
-            }
+set[Message] runTest(Test t) {
+    Spec spec = extractSpec(t);
+    
+    set[Message] msgs = check(spec.form);
+    delta = {};
+    delta += {error("unexpected error: <s>", l) | error(str s, loc l) <- msgs, l notin spec.errors };
+    delta += {error("unexpected warning: <s>", l) | warning(str s, loc l) <- msgs, l notin spec.warnings};
+    delta += {error("expected an error", l) | loc l <- spec.errors, !(error(_, l) <- msgs)};
+    delta += {error("expected a warning", l) | loc l <- spec.warnings, !(warning(_, l) <- msgs)};
+    
+    if (t has inputs) {
+        venv = initialEnv(t.form);
+        for (Input inp <- spec.inputs) {
+            venv = eval(t.form, inp, venv);
         }
-
-        if (delta != {}) {
-            result += {info("test failed", t.name.src)};
+        if (venv != spec.output) {
+            delta += {error("got: <ppVenv(venv)>", t.output.src)};
         }
-        result += delta;
-
     }
-
-    return result;
+    if (delta != {}) {
+        delta += {info("test failed", t.name.src)};
+    }
+    return delta;
 }
+
+set[Message] runTests(start[Tests] tests) 
+    = { *runTest(t) | Test t <- tests.top.tests };

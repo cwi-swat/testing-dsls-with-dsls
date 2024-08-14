@@ -17,19 +17,22 @@ test "empty label"
 
 test "useless conditional"
     form X {
-        if ($warning(true)) {
+        if ($warning(true))
             "" x: integer
-        }
     }
 
 test "empty then branch" 
     form X {
-        if (2 > 1) $warning({})
+        if (2 > 1) 
+            $warning({})
     }
 
 test "empty else branch" 
     form X {
-        if (2 > 1) "" x: integer else $warning({})
+        if (2 > 1) 
+            "" x: integer 
+        else 
+            $warning({})
     }
 
 test "dead else branch"
@@ -77,6 +80,11 @@ test "invalid operand to +"
         "" x: integer = $error(true) + 1
     }
 
+test "invalid operands to +" 
+    form X {
+        "" x: integer = $error(true) + $error("hello")
+    }
+
 test "initial state"  
     with 
     form X {
@@ -98,7 +106,7 @@ test "computed questions are initialized"
 test "disabled questions are not changed"
     with x: 10
     form X {
-        if (false) "" x: integer
+        if (1 > 2) "" x: integer
     }
     = {x: 0}
 
@@ -130,3 +138,17 @@ test "multiplication has higher precedence than addition"
         "" x: integer = 1 + 2 * 3
     }
     = {x: 7}
+
+test "subtraction associates to the left"
+    with
+    form X {
+        "" x: integer = 1 - 2 - 3
+    }
+    = {x: -4}
+
+test "parentheses override associativity"
+    with
+    form X {
+        "" x: integer = 1 - (2 - 3)
+    }
+    = {x: 2}

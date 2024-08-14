@@ -30,6 +30,8 @@ default Type typeOf(Expr _, TEnv env) = (Type)`*unknown*`;
 Type typeOf((Expr)`<Id x>`, TEnv env) = t
     when <"<x>", Type t> <- env;
 
+Type typeOf((Expr)`(<Expr e>)`, TEnv env) = typeOf(e, env);
+
 Type typeOf((Expr)`<Int _>`, TEnv env) = (Type)`integer`;
 
 Type typeOf((Expr)`<Bool _>`, TEnv env) = (Type)`boolean`;

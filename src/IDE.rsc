@@ -51,7 +51,9 @@ data Command
 rel[loc,Command] myLenses(start[Form] input) = {<input@\loc, runQuestionnaire(input, title="Run...")>};
 
 
-rel[loc,Command] testLenses(start[Tests] input) = {<input@\loc, runTestSuite(input, title="Run tests")>};
+rel[loc,Command] testLenses(start[Tests] input) = {<input@\loc, runTestSuite(input, title="Run tests (<countTests(input.top)>)")>};
+
+int countTests(Tests tests) = ( 0 | it + 1 | Test t <- tests.tests );
 
 void myCommands(runQuestionnaire(start[Form] form)) {
     showInteractiveContent(runQL(form));

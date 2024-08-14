@@ -9,6 +9,52 @@ test "undefined question"
         "" x: integer = $error(y)
     }
 
+
+test "empty label"
+    form X {
+        $warning("" x: integer)
+    }
+
+test "useless conditional"
+    form X {
+        if ($warning(true)) {
+            "" x: integer
+        }
+    }
+
+test "empty then branch" 
+    form X {
+        if (2 > 1) $warning({})
+    }
+
+test "empty else branch" 
+    form X {
+        if (2 > 1) "" x: integer else $warning({})
+    }
+
+test "dead else branch"
+    form X {
+        if (true) 
+            "" x: integer
+        else 
+            $warning("" y: integer)
+
+    }
+
+test "dead then branch with else"
+    form X {
+        if (false) 
+            $warning("" x: integer)
+        else 
+            "" y: integer
+    }
+
+test "dead then branch"
+    form X {
+        if (false) 
+            $warning("" x: integer)
+    }
+
 test "computed question expression must match declared type"
     form X {
         "" x: integer = $error(true)
@@ -31,7 +77,8 @@ test "invalid operand to +"
         "" x: integer = $error(true) + 1
     }
 
-test "initial state"  with 
+test "initial state"  
+    with 
     form X {
         "" x: boolean
         "" y: integer
@@ -39,12 +86,29 @@ test "initial state"  with
     }
     = {x: false, y: 0, z: ""}
 
+test "computed questions are initialized" 
+    with 
+    form X {
+        "" x: boolean = true
+        "" y: integer = 42
+        "" z: string = "hello world!"
+    }
+    = {x: true, y: 42, z: "hello world!"}
+
 test "disabled questions are not changed"
     with x: 10
     form X {
         if (false) "" x: integer
     }
     = {x: 0}
+
+test "referencing works out of order"
+    with x: 10
+    form X {
+        "" y: integer = x
+        "" x: integer
+    }
+    = {x: 10, y: 10}
 
 test "fixpoint evaluation" 
     with c: 10

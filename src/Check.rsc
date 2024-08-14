@@ -34,6 +34,8 @@ Type typeOf((Expr)`<Int _>`, TEnv env) = (Type)`integer`;
 
 Type typeOf((Expr)`<Bool _>`, TEnv env) = (Type)`boolean`;
 
+Type typeOf((Expr)`<Str _>`, TEnv env) = (Type)`string`;
+
 Type typeOf((Expr)`<Expr _> + <Expr _>`, TEnv env) = (Type)`integer`;
 
 //ASSIGNMENT add a few more (or all) cases for typeOf.

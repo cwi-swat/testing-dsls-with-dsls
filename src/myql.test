@@ -11,9 +11,39 @@ test "condition must be boolean"
         }
     }
 
-test "undefined question" 
+test "condition must be boolean (complex)" 
+    form X {
+        "A" a: integer
+        "B" b: integer
+        if($error(a + b)) {
+            "X" x: integer
+        }
+    }
+
+test "conditions are type checked" 
+    form X {
+        if($error(true) < 3) {
+            "X" x: integer
+        }
+    }
+
+test "undefined reference in computed question" 
     form X {
         "bug" x: integer = $error(y)
+    }
+
+test "undefined reference in condition" 
+    form X {
+        if ($error(x)) {
+            "Y" y: integer
+        }
+    }
+
+test "nested undefined reference" 
+    form X {
+        if (1 > $error(x)) {
+            "Y" y: integer
+        }
     }
 
 
@@ -126,8 +156,8 @@ test "disabled questions are not changed"
     }
     = {x: 0}
 
-test "questions retain values over visibility changes"
-    with x: true, y: 1, x: false, z: 2, x: true
+test "questions retain values across visibility changes"
+    with x: true, y: 42, x: false, z: 2, x: true
     form X {
         "X" x: boolean
         if (x) 
@@ -135,7 +165,7 @@ test "questions retain values over visibility changes"
         "Z" z: integer
         "Sum" sum: integer = z + y
     }
-    = {x: true, y: 1, z: 2, sum: 3}
+    = {x: true, y: 42, z: 2, sum: 44}
 
 test "referencing works out of order"
     with x: 10

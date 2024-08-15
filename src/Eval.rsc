@@ -136,6 +136,39 @@ VEnv eval(Question q, Input inp, VEnv venv) {
   return venv;
 }
 
+list[Question] render(start[Form] form, VEnv venv) = render(form.top, venv);
+
+list[Question] render(Form form, VEnv venv)
+  = [ *render(q, venv) | Question q <- form.questions ];
+
+list[Question] render((Question)`{<Question* qs>}`, VEnv venv)
+  = [ *render(q, venv) | Question q <- qs ]; 
+
+list[Question] render((Question)`if (<Expr cond>) <Question then>`, VEnv venv)
+  = [ *render(then, venv) | eval(cond, venv) == vbool(true) ];
+
+list[Question] render((Question)`if (<Expr cond>) <Question then> else <Question els>`, VEnv venv)
+  = [ *render(then, venv) | eval(cond, venv) == vbool(true) ]
+  + [ *render(els, venv) | eval(cond, venv) == vbool(false) ];
+
+list[Question] render(q:(Question)`<Str _> <Id _>: <Type _>`, VEnv venv)
+  = [q];
+
+list[Question] render((Question)`<Str l> <Id x>: <Type t> = <Expr e>`, VEnv venv)
+  = [(Question)`<Str l> <Id x>: <Type t> = <Expr val>`]
+  when 
+    Expr val := value2expr(eval(e, venv));
+
+Expr value2expr(vbool(bool b)) = [Expr]"<b>";
+Expr value2expr(vstr(str s)) = [Expr]"\"<s>\"";
+Expr value2expr(vint(int i)) = [Expr]"<i>";
+
+void printUI(list[Question] ui) {
+  for (Question q <- ui) {
+    println(q);
+  }
+}
+
 
 void evalSnippets() {
   start[Form] pt = parse(#start[Form], |project://rascal-dsl-crashcourse/examples/tax.myql|);

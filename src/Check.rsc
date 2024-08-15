@@ -103,11 +103,11 @@ set[Message] check((Question)`<Str p> <Id x>: <Type t> = <Expr e>`, TEnv env)
 // for if-then, if-then-else, and block.
 
 set[Message] ifThenIssues(Expr cond, Question then, TEnv env)
-  = { error("expected boolean", cond.src) | (Type)`boolean` !:= typeOf(cond, env) }
-  + { warning("empty then-branch", then.src) | (Question)`{}` := then }
-  + { warning("useless condition", cond.src) | (Expr)`true` := cond }
-  + { warning("dead then-branch", then.src) | (Expr)`false` := cond }
-  + check(cond, env) + check(then, env);
+    = { error("expected boolean", cond.src) | (Type)`boolean` !:= typeOf(cond, env) }
+    + { warning("empty then-branch", then.src) | (Question)`{}` := then }
+    + { warning("useless condition", cond.src) | (Expr)`true` := cond }
+    + { warning("dead then-branch", then.src) | (Expr)`false` := cond }
+    + check(cond, env) + check(then, env);
 
 
 set[Message] check((Question)`if (<Expr cond>) <Question then>`, TEnv env)

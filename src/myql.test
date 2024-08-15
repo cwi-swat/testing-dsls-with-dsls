@@ -13,7 +13,7 @@ test "undefined question"
     }
 
 
-test "empty label"
+test "empty prompt"
     form X {
         $warning("" x: integer)
     }

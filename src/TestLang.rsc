@@ -58,6 +58,10 @@ Spec extractSpec(Test t) {
                 errors += {e.src};
                 insert e;
             }
+            case (Expr)`$warning(<Expr e>)`: {
+                warnings += {e.src};
+                insert e;
+            }
             case (Question)`$error(<Question q>)`: {
                 errors += {q.src};
                 insert q;
@@ -71,6 +75,8 @@ Spec extractSpec(Test t) {
                 // println("Q = <q>");
                 // println(q.src);
             }
+
+            case Expr: ;
         };
     }
 

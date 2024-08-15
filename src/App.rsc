@@ -68,7 +68,7 @@ void viewQuestion(Question q, Model model) {
         case (Question)`<Str s> <Id x>: <Type t>`: {
             tr(() {
                 td(() {
-                    label("<s>");
+                    label("<s>"[1..-1]);
                 });
 
                 td(() {
@@ -87,7 +87,7 @@ void viewQuestion(Question q, Model model) {
         case (Question)`<Str s> <Id x>: <Type t> = <Expr _>`: {
             tr(() {
                 td(() {
-                    label("<s>");
+                    label("<s>"[1..-1]);
                 });
 
                 td(() {
@@ -101,12 +101,30 @@ void viewQuestion(Question q, Model model) {
             });
         }
 
+        case (Question)`if (<Expr cond>) <Question then>`:
+            if (eval(cond, model.env) == vbool(true)) {
+                viewQuestion(then, model);
+            }
+
+        case (Question)`if (<Expr cond>) <Question then> else <Question els>`:
+            if (eval(cond, model.env) == vbool(true)) {
+                viewQuestion(then, model);
+            }
+            else {
+                viewQuestion(els, model);
+            }
+
+        case (Question)`{<Question* qs>}`:
+            for (Question q <- qs) {
+                viewQuestion(q, model);
+            }
+
         default: throw "unknown question type";
 
     }
 }
 
 void appSnippets() {
-    start[Form] pt = parse(#start[Form], |project://rascal-dsl-crashcourse/examples/tax.myql|);
+    start[Form] pt = parse(#start[Form], |project://testing-dsls-with-dsls/examples/tax.myql|);
     runQL(pt);
 }

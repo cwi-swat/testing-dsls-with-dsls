@@ -1,8 +1,8 @@
 
-test "faulty test"
-    form X {
-        "X" x : integer = true
-    }
+// test "faulty test"
+//     form X {
+//         "X" x : integer = true
+//     }
 
 test "condition must be boolean" 
     form X {

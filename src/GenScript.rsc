@@ -26,7 +26,7 @@ lrel[Input, VEnv] genScript(start[Form] form, int length=10) {
         list[Question] candidates = [ q | Question q <- render(form, venv), !(q has expr) ];
         list[Question] unseenCandidates = [ q | Question q <- candidates, "<q.name>" notin seen ];
         if (unseenCandidates == []) {
-            // restart
+            // start over
             unseenCandidates = candidates;
             seen = {};
         }
@@ -40,6 +40,6 @@ lrel[Input, VEnv] genScript(start[Form] form, int length=10) {
     }
 }
 
-Value arbValue((Type)`integer`) = vint(arbInt());
+Value arbValue((Type)`integer`) = vint(arbInt(5000));
 Value arbValue((Type)`boolean`) = vbool(arbInt(2) == 1);
 Value arbValue((Type)`string`) = vstr(arbString(arbInt(100)));

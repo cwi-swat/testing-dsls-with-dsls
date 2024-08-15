@@ -1,4 +1,8 @@
 
+test "faulty test"
+    form X {
+        "X" x : integer = true
+    }
 
 test "condition must be boolean" 
     form X {
@@ -122,6 +126,17 @@ test "disabled questions are not changed"
     }
     = {x: 0}
 
+test "questions retain values over visibility changes"
+    with x: true, y: 1, x: false, z: 2, x: true
+    form X {
+        "X" x: boolean
+        if (x) 
+            "Y" y: integer
+        "Z" z: integer
+        "Sum" sum: integer = z + y
+    }
+    = {x: true, y: 1, z: 2, sum: 3}
+
 test "referencing works out of order"
     with x: 10
     form X {
@@ -139,10 +154,6 @@ test "fixpoint evaluation"
     }
     = {a: 22, b: 11, c: 10}
 
-test "faulty test"
-    form X {
-        "X" x : integer = true
-    }
 
 test "multiplication has higher precedence than addition"
     with

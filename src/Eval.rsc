@@ -118,21 +118,22 @@ VEnv evalOnce(Form f, Input inp, VEnv venv)
 // by adding cases for computed questions, if-then, if-then-else, and block.
 VEnv eval(Question q, Input inp, VEnv venv) {
   switch (q) {
-    case (Question)`<Str _> <Id x>: <Type _>`: {
-      if ("<x>" == inp.question) {
-        //println("Updating with <inp.\value>");
-        return venv + ("<x>": inp.\value);
-      }
-    }
-    case (Question)`<Str _> <Id x>: <Type _> = <Expr e>`: {      
-        return venv + ("<x>": eval(e, venv));
-    }
-    case (Question)`if (<Expr c>) <Question then>`: {
-      if (eval(c, venv) == vbool(true)) {
-        return eval(then, inp, venv);
-      }
-    }
+    case (Question)`<Str _> <Id x>: <Type _>`: 
+      return venv + ("<x>": inp.\value | "<x>" == inp.question );
+    
+    case (Question)`<Str _> <Id x>: <Type _> = <Expr e>`:       
+      return venv + ("<x>": eval(e, venv));
+
+    case (Question)`{<Question* qs>}`:
+      return ( venv | eval(q, inp, it) | Question q <- qs );
+
+    case (Question)`if (<Expr c>) <Question then>`: 
+      return eval(c, venv) == vbool(true) ? eval(then, inp, venv) : venv;
+
+    case (Question)`if (<Expr c>) <Question then> else <Question els>`: 
+      return eval(c, venv) == vbool(true) ? eval(then, inp, venv) : eval(els, inp, venv);
   }
+
   return venv;
 }
 

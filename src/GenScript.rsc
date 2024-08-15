@@ -19,21 +19,25 @@ repeat
 
 */
 
-list[Input] genScript(start[Form] form, int length=10) {
-    list[Input] script = [];
-
+lrel[Input, VEnv] genScript(start[Form] form, int length=10) {
     VEnv venv = initialEnv(form);
-    for (int i <- [0..length]) {
-        list[Question] ui = render(form, venv);
-        list[Question] candidates = [ q | Question q <- ui, !(q has expr) ];
-        int i = arbInt(size(candidates));
-        Question focus = candidates[i];
-        Input inp = user("<focus.name>", arbValue(focus.\type));
-        script += [inp];
-        venv = eval(form, inp, venv);
-    }
+    set[str] seen = {};
+    return for (int _ <- [0..length]) {
+        list[Question] candidates = [ q | Question q <- render(form, venv), !(q has expr) ];
+        list[Question] unseenCandidates = [ q | Question q <- candidates, "<q.name>" notin seen ];
+        if (unseenCandidates == []) {
+            // restart
+            unseenCandidates = candidates;
+            seen = {};
+        }
 
-    return script;
+        int i = arbInt(size(unseenCandidates));
+        Question focus = unseenCandidates[i];
+        seen += {"<focus.name>"};
+        Input inp = user("<focus.name>", arbValue(focus.\type));
+        venv = eval(form, inp, venv);
+        append <inp, venv>;
+    }
 }
 
 Value arbValue((Type)`integer`) = vint(arbInt());

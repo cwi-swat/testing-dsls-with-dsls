@@ -1,12 +1,15 @@
+
+
 test "condition must be boolean" 
     form X {
         if($error(1)) {
+            "X" x: integer
         }
     }
 
 test "undefined question" 
     form X {
-        "" x: integer = $error(y)
+        "bug" x: integer = $error(y)
     }
 
 
@@ -18,7 +21,7 @@ test "empty label"
 test "useless conditional"
     form X {
         if ($warning(true))
-            "" x: integer
+            "X" x: integer
     }
 
 test "empty then branch" 
@@ -30,26 +33,26 @@ test "empty then branch"
 test "empty else branch" 
     form X {
         if (2 > 1) 
-            "" x: integer 
+            "X" x: integer 
         else 
             $warning({})
     }
 
 test "dead else branch"
     form X {
-        if (true) 
-            "" x: integer
+        if ($warning(true)) 
+            "X" x: integer
         else 
-            $warning("" y: integer)
+            "Y" y: integer
 
     }
 
 test "dead then branch with else"
     form X {
         if (false) 
-            $warning("" x: integer)
+            $warning("X" x: integer)
         else 
-            "" y: integer
+            "Y" y: integer
     }
 
 test "dead then branch"
@@ -60,14 +63,23 @@ test "dead then branch"
 
 test "computed question expression must match declared type"
     form X {
-        "" x: integer = $error(true)
+        "X" x: integer = $error(true)
     }
 
 test "redeclared with different type" 
     form X {
-        "" x: integer
-        $error("" x: boolean)
+        "X" x: integer
+        $error("X" x: boolean)
     }
+
+
+test "redeclared with different prompt" 
+    form X {
+        "foo" x: integer
+        $warning("bar" x: integer)
+    }
+
+
 
 test "duplicate labels" 
     form X {
@@ -77,44 +89,44 @@ test "duplicate labels"
 
 test "invalid operand to +" 
     form X {
-        "" x: integer = $error(true) + 1
+        "X" x: integer = $error(true) + 1
     }
 
 test "invalid operands to +" 
     form X {
-        "" x: integer = $error(true) + $error("hello")
+        "X" x: integer = $error(true) + $error("hello")
     }
 
 test "initial state"  
     with 
     form X {
-        "" x: boolean
-        "" y: integer
-        "" z: string
+        "x" x: boolean
+        "y" y: integer
+        "z" z: string
     }
     = {x: false, y: 0, z: ""}
 
 test "computed questions are initialized" 
     with 
     form X {
-        "" x: boolean = true
-        "" y: integer = 42
-        "" z: string = "hello world!"
+        "x" x: boolean = true
+        "y" y: integer = 42
+        "z" z: string = "hello world!"
     }
     = {x: true, y: 42, z: "hello world!"}
 
 test "disabled questions are not changed"
     with x: 10
     form X {
-        if (1 > 2) "" x: integer
+        if (1 > 2) "x" x: integer
     }
     = {x: 0}
 
 test "referencing works out of order"
     with x: 10
     form X {
-        "" y: integer = x
-        "" x: integer
+        "y" y: integer = x
+        "x" x: integer
     }
     = {x: 10, y: 10}
 
@@ -129,26 +141,26 @@ test "fixpoint evaluation"
 
 test "faulty test"
     form X {
-        "" x : integer = true
+        "X" x : integer = true
     }
 
 test "multiplication has higher precedence than addition"
     with
     form X {
-        "" x: integer = 1 + 2 * 3
+        "X" x: integer = 1 + 2 * 3
     }
     = {x: 7}
 
 test "subtraction associates to the left"
     with
     form X {
-        "" x: integer = 1 - 2 - 3
+        "X" x: integer = 1 - 2 - 3
     }
     = {x: -4}
 
 test "parentheses override associativity"
     with
     form X {
-        "" x: integer = 1 - (2 - 3)
+        "X" x: integer = 1 - (2 - 3)
     }
     = {x: 2}

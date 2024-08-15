@@ -25,11 +25,6 @@ syntax Question
     = non-assoc CheckMarker "(" Question ")"
     ;
 
-syntax Name 
-    = non-assoc "$use" "(" Name ")"
-    | non-assoc "$def" "(" Name ")"
-    ;
-
 syntax Test
     = "test" Str name Form form
     | "test" Str name "with" {KeyVal ","}* inputs Form form "=" State output;
@@ -71,13 +66,10 @@ Spec extractSpec(Test t) {
                 warnings += {q.src};
                 insert q; 
             }
-            case (Name)`$use(<Name n>)`: {
-                uses += {n.src};
-                insert n;
-            }
-            case (Name)`$def(<Name n>)`: {
-                defs += {n.src};
-                insert n;
+            case Question q: {
+                ;
+                // println("Q = <q>");
+                // println(q.src);
             }
         };
     }

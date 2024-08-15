@@ -15,7 +15,7 @@ import ParseTree;
 // containing the questionnaire and its current run-time state (env).
 alias Model = tuple[start[Form] form, VEnv env];
 
-App[Model] runQL(start[Form] ql) = webApp(qlApp(ql), |project://rascal-dsl-crashcourse/src/main/rascal|);
+App[Model] runQL(start[Form] ql) = webApp(qlApp(ql), |project://testing-dsls-with-dsls/src|);
 
 SalixApp[Model] qlApp(start[Form] ql, str id="root") 
   = makeApp(id, 

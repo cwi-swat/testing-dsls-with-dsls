@@ -172,7 +172,7 @@ void printUI(list[Question] ui) {
 
 
 void evalSnippets() {
-  start[Form] pt = parse(#start[Form], |project://rascal-dsl-crashcourse/examples/tax.myql|);
+  start[Form] pt = parse(#start[Form], |project://testing-dsls-with-dsls/examples/tax.myql|);
 
   env = initialEnv(pt);
   env2 = eval(pt, user("hasSoldHouse", vbool(true)), env);

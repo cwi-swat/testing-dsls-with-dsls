@@ -174,7 +174,7 @@ void printTEnv(TEnv tenv) {
 }
 
 void checkSnippets() {
-    start[Form] pt = parse(#start[Form], |project://rascal-dsl-crashcourse/examples/tax.myql|);
+    start[Form] pt = parse(#start[Form], |project://testing-dsls-with-dsls/examples/tax.myql|);
     check(pt);
 }
  

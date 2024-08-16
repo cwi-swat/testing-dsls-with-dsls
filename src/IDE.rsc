@@ -34,6 +34,8 @@ set[LanguageService] testLanguageContributor() = {
     parser(Tree (str input, loc src) {
         return parse(#start[Tests], input, src);
     }),
+    outliner(testOutliner),
+
     lenses(testLenses),
     executor(testCommands)
 };
@@ -71,6 +73,8 @@ void testCommands(runSingleTest(Test t)) {
     registerDiagnostics([ m | Message m <- msgs]);
 }
 
+list[DocumentSymbol] testOutliner(start[Tests] input) 
+  = [ symbol("<t.name>"[1..-1], \class(), t.src) | Test t <- input.top.tests ];
 
 void main() {
     registerLanguage(

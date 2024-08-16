@@ -36,11 +36,11 @@ syntax Type = "integer" | "boolean" | "string";
 // look at the examples directory for how such questions should look. 
 // Docs: https://www.rascal-mpl.org/docs/Rascal/Declarations/SyntaxDefinition/
 syntax Question 
-  = "if" "(" Expr cond ")" Question then () !>> "else" 
-  | "if" "(" Expr cond ")" Question then "else" Question else
-  | "{" Question* questions "}"
-  | Str prompt Name name ":" Type type
-  | Str prompt Name name ":" Type type "=" Expr expr
+  = ifThen: "if" "(" Expr cond ")" Question then () !>> "else" 
+  | ifThenElse: "if" "(" Expr cond ")" Question then "else" Question else
+  | block: "{" Question* questions "}"
+  | answerable: Str prompt Name name ":" Type type
+  | computed: Str prompt Name name ":" Type type "=" Expr expr
   ;
 
 

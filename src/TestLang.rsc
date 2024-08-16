@@ -4,6 +4,7 @@ import Message;
 import util::IDEServices;
 import IO;
 import List;
+import util::Math;
 
 import Check;
 import Eval;
@@ -27,7 +28,12 @@ syntax Question
 
 syntax Test
     = "test" Str name Form form
-    | "test" Str name "with" {KeyVal ","}* inputs Form form "=" State output;
+    | "test" Str name "with" {KeyVal ","}* inputs Form form "=" State output
+    | "test" Str name "with" {KeyVal ","}* inputs Form form "renders" "as" UI ui;
+    
+syntax UI
+  = "[" Question!ifThen!ifThenElse!block* widgets "]";
+
 
 syntax State = "{" {KeyVal ","}* keyVals "}";
 
@@ -41,7 +47,8 @@ alias Spec = tuple[
     set[loc] errors,
     set[loc] warnings,
     list[Input] inputs,
-    VEnv output
+    VEnv output,
+    list[Question] ui
 ];
 
 Spec extractSpec(Test t) {
@@ -51,6 +58,7 @@ Spec extractSpec(Test t) {
     warnings = {};
     inputs = [];
     output = ();
+    ui = [];
 
     Form strip(Test t) {
         return visit (t.form) {
@@ -76,16 +84,21 @@ Spec extractSpec(Test t) {
                 // println(q.src);
             }
 
-            case Expr: ;
+            case Expr _: ;
         };
     }
 
-    if (t has inputs) {
+    if (t has inputs, t has output) {
         inputs = [user("<x>", eval(v, ())) | (KeyVal)`<Id x>: <Expr v>` <- t.inputs ];
         output = ("<x>": eval(v, ()) | (KeyVal)`<Id x>: <Expr v>` <- t.output.keyVals );
     }
+
+    if (t has ui) {
+        inputs = [user("<x>", eval(v, ())) | (KeyVal)`<Id x>: <Expr v>` <- t.inputs ];
+        ui = [ w | Question w <- t.ui.widgets ];
+    }
     
-    return <"<t.name>"[1..-1], strip(t), uses, defs, errors, warnings, inputs, output>;
+    return <"<t.name>"[1..-1], strip(t), uses, defs, errors, warnings, inputs, output, ui>;
 }
 
 str ppValue(vint(int n)) = "<n>";
@@ -106,7 +119,7 @@ set[Message] runTest(Test t) {
     delta += {error("expected an error", l) | loc l <- spec.errors, !(error(_, l) <- msgs)};
     delta += {error("expected a warning", l) | loc l <- spec.warnings, !(warning(_, l) <- msgs)};
     
-    if (t has inputs) {
+    if (t has inputs, t has output) {
         venv = initialEnv(t.form);
         for (Input inp <- spec.inputs) {
             venv = eval(t.form, inp, venv);
@@ -115,6 +128,33 @@ set[Message] runTest(Test t) {
             delta += {error("got: <ppVenv(venv)>", t.output.src)};
         }
     }
+
+    if (t has ui) {
+        venv = initialEnv(t.form);
+        for (Input inp <- spec.inputs) {
+            venv = eval(t.form, inp, venv);
+        }
+        list[Question] ui = render(t.form, venv);
+        println(t.name);
+        println(venv);
+        printUI(ui);
+        int expLen = size(spec.ui);
+        int gotLen = size(ui);
+        for (int i <- [0..min(expLen, gotLen)]) {
+            Question exp = spec.ui[i];
+            Question got = ui[i];
+            if (exp !:= got) {
+                delta += {error("incorrect widget, got: <got>", exp.src)};
+            }
+        }
+        for (expLen > gotLen, int i <- [gotLen..expLen]) {
+            delta += {error("expected widget, did not get it", spec.ui[i].src)};
+        }
+        for (gotLen > expLen, int i <- [expLen..gotLen]) {
+            delta += {error("unexpected widgets: <intercalate("\n", [ "<q>" | q <- ui[expLen..gotLen]])>", t.name.src)};
+        }
+    }
+
     if (delta != {}) {
         delta += {info("test failed", t.name.src)};
     }

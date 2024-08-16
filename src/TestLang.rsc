@@ -42,8 +42,6 @@ syntax KeyVal = Id ":" Expr;
 alias Spec = tuple[
     str name,
     Form form,
-    set[loc] uses,
-    set[loc] defs,
     set[loc] errors,
     set[loc] warnings,
     list[Input] inputs,
@@ -52,8 +50,6 @@ alias Spec = tuple[
 ];
 
 Spec extractSpec(Test t) {
-    uses = {};
-    defs = {};
     errors = {};
     warnings = {};
     inputs = [];
@@ -78,27 +74,25 @@ Spec extractSpec(Test t) {
                 warnings += {q.src};
                 insert q; 
             }
-            case Question q: {
-                ;
-                // println("Q = <q>");
-                // println(q.src);
-            }
+            case Question _: ;
 
             case Expr _: ;
         };
     }
 
-    if (t has inputs, t has output) {
+    if (t has inputs) {
         inputs = [user("<x>", eval(v, ())) | (KeyVal)`<Id x>: <Expr v>` <- t.inputs ];
+    }
+
+    if (t has output) {
         output = ("<x>": eval(v, ()) | (KeyVal)`<Id x>: <Expr v>` <- t.output.keyVals );
     }
 
     if (t has ui) {
-        inputs = [user("<x>", eval(v, ())) | (KeyVal)`<Id x>: <Expr v>` <- t.inputs ];
         ui = [ w | Question w <- t.ui.widgets ];
     }
     
-    return <"<t.name>"[1..-1], strip(t), uses, defs, errors, warnings, inputs, output, ui>;
+    return <"<t.name>"[1..-1], strip(t), errors, warnings, inputs, output, ui>;
 }
 
 str ppValue(vint(int n)) = "<n>";
@@ -119,25 +113,22 @@ set[Message] runTest(Test t) {
     delta += {error("expected an error", l) | loc l <- spec.errors, !(error(_, l) <- msgs)};
     delta += {error("expected a warning", l) | loc l <- spec.warnings, !(warning(_, l) <- msgs)};
     
-    if (t has inputs, t has output) {
+    VEnv venv = ();
+    if (t has inputs) {
         venv = initialEnv(t.form);
         for (Input inp <- spec.inputs) {
             venv = eval(t.form, inp, venv);
         }
+    }
+
+    if (t has output) {
         if (venv != spec.output) {
             delta += {error("got: <ppVenv(venv)>", t.output.src)};
         }
     }
 
     if (t has ui) {
-        venv = initialEnv(t.form);
-        for (Input inp <- spec.inputs) {
-            venv = eval(t.form, inp, venv);
-        }
         list[Question] ui = render(t.form, venv);
-        println(t.name);
-        println(venv);
-        printUI(ui);
         int expLen = size(spec.ui);
         int gotLen = size(ui);
         for (int i <- [0..min(expLen, gotLen)]) {

@@ -96,6 +96,8 @@ void viewQuestion(Question q, Model model) {
                             input(\type("number"), \value("<i>"), disabled(true));
                         case <(Type)`boolean`, vbool(bool b)>:
                             input(\type("checkbox"),checked(b), disabled(true));
+                        case <(Type)`string`, vstr(str s)>:
+                            input(\type("text"), \value("<s>"), disabled(true));
                     }    
                 });   
             });

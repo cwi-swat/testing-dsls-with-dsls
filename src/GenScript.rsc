@@ -19,7 +19,9 @@ repeat
 
 */
 
-lrel[Input, VEnv] genScript(start[Form] form, int length=10) {
+alias Script = lrel[Input action, VEnv state, set[str] visible];
+
+Script genScript(start[Form] form, int length=10) {
     VEnv venv = initialEnv(form);
     set[str] seen = {};
     return for (int _ <- [0..length]) {
@@ -37,7 +39,10 @@ lrel[Input, VEnv] genScript(start[Form] form, int length=10) {
             seen += {"<focus.name>"};
             Input inp = user("<focus.name>", arbValue(focus.\type));
             venv = eval(form, inp, venv);
-            append <inp, venv>;
+            // we need to render again, because venv has changed
+            // and we need to include computed questions 
+            set[str] visible = { "<q.name>" | Question q <- render(form, venv) };
+            append <inp, venv, visible>;
         }
     }
 }

@@ -206,6 +206,13 @@ test "parentheses override associativity"
     }
     = {x: 2}
 
+test "empty form renders empty" 
+    with
+    form X {
+    }
+    renders as [
+    ]
+
 test "disabled questions don't render"
     with
     form X {

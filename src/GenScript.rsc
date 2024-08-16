@@ -31,12 +31,14 @@ lrel[Input, VEnv] genScript(start[Form] form, int length=10) {
             seen = {};
         }
 
-        int i = arbInt(size(unseenCandidates));
-        Question focus = unseenCandidates[i];
-        seen += {"<focus.name>"};
-        Input inp = user("<focus.name>", arbValue(focus.\type));
-        venv = eval(form, inp, venv);
-        append <inp, venv>;
+        if (unseenCandidates != []) {
+            int i = arbInt(size(unseenCandidates));
+            Question focus = unseenCandidates[i];
+            seen += {"<focus.name>"};
+            Input inp = user("<focus.name>", arbValue(focus.\type));
+            venv = eval(form, inp, venv);
+            append <inp, venv>;
+        }
     }
 }
 

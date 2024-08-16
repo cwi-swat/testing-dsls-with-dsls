@@ -1,4 +1,4 @@
-title "Typechecker tests"
+title "Static checking tests"
 
 test "condition must be boolean" 
     form X {

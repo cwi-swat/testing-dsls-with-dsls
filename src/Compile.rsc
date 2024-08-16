@@ -1,18 +1,146 @@
 module Compile
+
 import Syntax;
+import Eval;
+import IO;
+import ParseTree;
+
 // if you want to make a compiler to html, use:
 import lang::html::AST; // modeling HTML docs
 import lang::html::IO; // reading/writing HTML
 
-// and use string templates to generate JS:
-str stringTemplates() {
-    // e.g.
-    return "function bla() {
-           '  <for (Question q <- form.top.questions) {>
-           '     <q2js(q)>
-           '  <}>
-           '}";
+
+void compile(start[Form] form) {
+  loc h = form.src[extension="html"];
+  loc j = form.src[extension="js"].top;
+  list[Question] qs = flatten(form);
+  writeFile(j, "<init2js(form)>
+               '<update2js(qs)>
+               '");
+  writeHTMLFile(h, questions2html("<form.top.name>", qs, j.file),escapeMode=extendedMode());
 }
+
+str init2js(start[Form] form) {
+  VEnv env = initialEnv(form);
+
+  return "var $state = {};
+         'function $init() {
+         '  <for (str x <- env) {>
+         '  $state.<x> = <value2js(env[x])>;
+         '  <}>
+         '}";
+
+}
+
+str value2js(vint(int n)) = "<n>";
+str value2js(vstr(str s)) = "\"<s>\"";
+str value2js(vbool(bool b)) = "<b>";
+
+
+
+HTMLElement questions2html(str name, list[Question] qs, str jsFile) 
+  = html([
+      lang::html::AST::head([
+        link(\rel="stylesheet", href="https://cdn.simplecss.org/simple.min.css"),
+        script([], src=jsFile),
+        script([text("document.addEventListener(\"DOMContentLoaded\", function() {
+                     '  $init(); $update();
+                     '});")]), 
+        title([text(name)])
+      ]),
+      body([
+        h2([text(name)]),
+        *[ question2html(q) | (Question)`if (<Expr _>) <Question q>` <- qs ]
+      ])
+  ]);
+
+HTMLElement question2html(q:(Question)`<Str l> <Id x>: <Type t>`)
+  = div([
+      label([text("<l>"[1..-1])]),
+      type2widget(q, t, false)
+    ],id=divId(q));
+
+HTMLElement question2html(q:(Question)`<Str l> <Id x>: <Type t> = <Expr _>`)
+  = div([
+      label([text("<l>"[1..-1])]),
+      type2widget(q, t, true)
+    ],id=divId(q));
+
+
+str widgetId(Question q) = "<q.name>_widget_<q.src.offset>";
+
+str divId(Question q) = "<q.name>_div_<q.src.offset>";
+
+HTMLElement type2widget(Question q, (Type)`boolean`, bool disabled)
+  = disabled ? w[disabled="true"] : w
+  when HTMLElement w := input(\type="checkbox", id=widgetId(q), onclick="$update(\'<q.name>\', event.target.checked);");
+
+HTMLElement type2widget(Question q, (Type)`integer`, bool disabled)
+  = disabled ? w[disabled="true"] : w
+  when HTMLElement w := input(\type="number", id=widgetId(q), onchange="$update(\'<q.name>\', event.target.value);");
+
+HTMLElement type2widget(Question q, (Type)`string`, bool disabled)
+  = disabled ? w[disabled="true"] : w
+  when HTMLElement w := input(\type="text", id=widgetId(q), onchange="$update(\'<q.name>\', event.target.value);");
+
+
+// presumes normalization
+str update2js(list[Question] form) {
+  return "function $update(name, value) {
+         '   let change = false;
+         '   let newVal = undefined;
+         '   let div = undefined;
+         '   if (name !== undefined) {
+         '      $state[name] = value;
+         '   }
+         '   do {
+         '     change = false;
+         '     <for ((Question)`if (<Expr c>) <Question q>` <- form) {>
+         '     div = document.getElementById(\'<divId(q)>\');
+         '     div.style.visibility = <expr2js(c)> ? \'visible\' : \'hidden\'; 
+         '     <if (q has expr) {>
+         '     newVal = <expr2js(q.expr)>;
+         '     if (newVal !== $state.<q.name>) {
+         '       let elt = document.getElementById(\'<widgetId(q)>\');
+         '       $state.<q.name> = newVal;
+         '       <if ((Type)`boolean` := q.\type) {>
+         '       elt.checked = newVal;
+         '       <} else {>
+         '       elt.value = newVal;
+         '       <}>
+         '       change = true;
+         '     }
+         '     <}>
+         '     <}>
+         '   } while (change);
+         '}";
+
+}
+
+str expr2js((Expr)`<Id x>`) = "$state.<x>"; 
+str expr2js((Expr)`<Int x>`) = "<x>";
+str expr2js((Expr)`<Bool x>`) = "<x>";
+str expr2js((Expr)`<Str x>`) = "<x>";
+str expr2js((Expr)`(<Expr x>)`) = "(<expr2js(x)>)";
+str expr2js((Expr)`!<Expr x>`) = "!(<expr2js(x)>)";
+str expr2js((Expr)`<Expr x> + <Expr y>`) = "(<expr2js(x)> + <expr2js(y)>)";
+str expr2js((Expr)`<Expr x> - <Expr y>`) = "(<expr2js(x)> - <expr2js(y)>)";
+str expr2js((Expr)`<Expr x> * <Expr y>`) = "(<expr2js(x)> * <expr2js(y)>)";
+str expr2js((Expr)`<Expr x> / <Expr y>`) = "(<expr2js(x)> / <expr2js(y)>)";
+str expr2js((Expr)`<Expr x> == <Expr y>`) = "(<expr2js(x)> === <expr2js(y)>)";
+str expr2js((Expr)`<Expr x> != <Expr y>`) = "(<expr2js(x)> !== <expr2js(y)>)";
+str expr2js((Expr)`<Expr x> \> <Expr y>`) = "(<expr2js(x)> \> <expr2js(y)>)";
+str expr2js((Expr)`<Expr x> \>= <Expr y>`) = "(<expr2js(x)> \>= <expr2js(y)>)";
+str expr2js((Expr)`<Expr x> \< <Expr y>`) = "(<expr2js(x)> \< <expr2js(y)>)";
+str expr2js((Expr)`<Expr x> \<= <Expr y>`) = "(<expr2js(x)> \<= <expr2js(y)>)";
+str expr2js((Expr)`<Expr x> && <Expr y>`) = "(<expr2js(x)> && <expr2js(y)>)";
+str expr2js((Expr)`<Expr x> || <Expr y>`) = "(<expr2js(x)> || <expr2js(y)>)";
+
+
+
+
+
+
 
 // use source locations to provide unique ids to HTML elements.
 // use JS code to CSS visible:false/true the elements if conditions are false.
@@ -27,7 +155,10 @@ list[Question] flatten((Question)`{<Question* qs>}`, Expr cond)
 list[Question] flatten((Question)`if (<Expr e>) <Question q>`, Expr cond)
   = flatten(q, (Expr)`<Expr cond> && <Expr e>`);
 
+list[Question] flatten((Question)`if (<Expr e>) <Question q> else <Question els>`, Expr cond)
+  = flatten(q, (Expr)`<Expr cond> && <Expr e>`)
+  + flatten(els, (Expr)`<Expr cond> && !(<Expr e>)`);
+
 default list[Question] flatten(Question q, Expr cond)
-  = [(Question)`if (<Expr cond>)
-               '  <Question q>`];
+  = [(Question)`if (<Expr cond>) <Question q>`];
 

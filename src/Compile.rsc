@@ -14,9 +14,7 @@ void compile(start[Form] form) {
   loc h = form.src[extension="html"];
   loc j = form.src[extension="js"].top;
   list[Question] qs = flatten(form);
-  writeFile(j, "<init2js(form)>
-               '<update2js(qs)>
-               '");
+  writeFile(j, "<init2js(form)>\n<update2js(qs)>\n");
   writeHTMLFile(h, questions2html("<form.top.name>", qs, j.file),escapeMode=extendedMode());
 }
 
@@ -97,7 +95,7 @@ str update2js(list[Question] form) {
          '     change = false;
          '     <for ((Question)`if (<Expr c>) <Question q>` <- form) {>
          '     div = document.getElementById(\'<divId(q)>\');
-         '     div.style.visibility = <expr2js(c)> ? \'visible\' : \'hidden\'; 
+         '     div.style.display = <expr2js(c)> ? \'block\' : \'none\'; 
          '     <if (q has expr) {>
          '     newVal = <expr2js(q.expr)>;
          '     if (newVal !== $state.<q.name>) {

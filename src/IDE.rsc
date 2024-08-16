@@ -10,6 +10,7 @@ import util::Reflective;
 import util::IDEServices;
 
 import Syntax;
+import Compile;
 import Check;
 import App;
 import Message;
@@ -49,9 +50,12 @@ Summary mySummarizer(loc origin, start[Form] input) {
 }
 
 data Command
-  = runQuestionnaire(start[Form] form);
+  = runQuestionnaire(start[Form] form)
+  | compileQuestionnaire(start[Form] form);
 
-rel[loc,Command] myLenses(start[Form] input) = {<input@\loc, runQuestionnaire(input, title="Run...")>};
+rel[loc,Command] myLenses(start[Form] input) 
+  = {<input@\loc, runQuestionnaire(input, title="Run...")>,
+     <input.src, compileQuestionnaire(input, title="Compile")>};
 
 
 rel[loc,Command] testLenses(start[Tests] input) = {<input@\loc, runTestSuite(input, title="Run tests (<countTests(input.top)>)")>}
@@ -61,6 +65,10 @@ int countTests(Tests tests) = ( 0 | it + 1 | Test _ <- tests.tests );
 
 void myCommands(runQuestionnaire(start[Form] form)) {
     showInteractiveContent(runQL(form));
+}
+
+void myCommands(compileQuestionnaire(start[Form] form)) {
+    compile(form);
 }
 
 void testCommands(runTestSuite(start[Tests] tests)) {

@@ -21,13 +21,11 @@ void compile(start[Form] form) {
 str init2js(start[Form] form) {
   VEnv env = initialEnv(form);
 
-  return "var $state = {};
-         'function $init() {
+  return "var $state = {
          '  <for (str x <- env) {>
-         '  $state.<x> = <value2js(env[x])>;
+         '  <x>: <value2js(env[x])>,
          '  <}>
          '}";
-
 }
 
 str value2js(vint(int n)) = "<n>";
@@ -42,7 +40,7 @@ HTMLElement questions2html(str name, list[Question] qs, str jsFile)
         link(\rel="stylesheet", href="https://cdn.simplecss.org/simple.min.css"),
         script([], src=jsFile),
         script([text("document.addEventListener(\"DOMContentLoaded\", function() {
-                     '  $init(); $update();
+                     '  $update();
                      '});")]), 
         title([text(name)])
       ]),
@@ -82,7 +80,6 @@ HTMLElement type2widget(Question q, (Type)`string`, bool disabled)
   when HTMLElement w := input(\type="text", id=widgetId(q), onchange="$update(\'<q.name>\', event.target.value);");
 
 
-// presumes normalization
 str update2js(list[Question] form) {
   return "function $update(name, value) {
          '   let change = false;
@@ -135,15 +132,6 @@ str expr2js((Expr)`<Expr x> && <Expr y>`) = "(<expr2js(x)> && <expr2js(y)>)";
 str expr2js((Expr)`<Expr x> || <Expr y>`) = "(<expr2js(x)> || <expr2js(y)>)";
 
 
-
-
-
-
-
-// use source locations to provide unique ids to HTML elements.
-// use JS code to CSS visible:false/true the elements if conditions are false.
-
-// Another tip: normalize QL first:
 list[Question] flatten(start[Form] form) 
   = [ *flatten(q, (Expr)`true`) | Question q <- form.top.questions ];
 

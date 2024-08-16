@@ -74,7 +74,8 @@ void testCommands(runSingleTest(Test t)) {
 }
 
 list[DocumentSymbol] testOutliner(start[Tests] input) 
-  = [ symbol("<t.name>"[1..-1], \class(), t.src) | Test t <- input.top.tests ];
+  = [symbol("<input.top.title>"[1..-1], \module(), input.src,
+        children=[ symbol("<t.name>"[1..-1], \class(), t.src) | Test t <- input.top.tests ])];
 
 void main() {
     registerLanguage(

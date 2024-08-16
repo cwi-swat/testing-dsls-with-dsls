@@ -13,7 +13,7 @@ extend Syntax;
 
 // !A * B -> (!A) * B
 
-start syntax Tests = Test* tests;
+start syntax Tests = "title" Str title Test* tests;
 
 syntax Expr = non-assoc CheckMarker "(" Expr ")";
 

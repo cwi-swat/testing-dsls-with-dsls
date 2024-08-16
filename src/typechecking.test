@@ -1,0 +1,129 @@
+title "Typechecker tests"
+
+test "condition must be boolean" 
+    form X {
+        if($error(1)) {
+            "X" x: integer
+        }
+    }
+
+test "condition must be boolean (complex)" 
+    form X {
+        "A" a: integer
+        "B" b: integer
+        if($error(a + b)) {
+            "X" x: integer
+        }
+    }
+
+test "conditions are type checked" 
+    form X {
+        if($error(true) < 3) {
+            "X" x: integer
+        }
+    }
+
+test "undefined reference in computed question" 
+    form X {
+        "bug" x: integer = $error(y)
+    }
+
+test "undefined reference in condition" 
+    form X {
+        if ($error(x)) {
+            "Y" y: integer
+        }
+    }
+
+test "nested undefined reference" 
+    form X {
+        if (1 > $error(x)) {
+            "Y" y: integer
+        }
+    }
+
+
+test "empty prompt"
+    form X {
+        $warning("" x: integer)
+    }
+
+test "useless conditional"
+    form X {
+        if ($warning(true))
+            "X" x: integer
+    }
+
+test "empty then branch" 
+    form X {
+        if (2 > 1) 
+            $warning({})
+    }
+
+test "empty else branch" 
+    form X {
+        if (2 > 1) 
+            "X" x: integer 
+        else 
+            $warning({})
+    }
+
+test "dead else branch"
+    form X {
+        if ($warning(true)) 
+            "X" x: integer
+        else 
+            "Y" y: integer
+
+    }
+
+test "dead then branch with else"
+    form X {
+        if (false) 
+            $warning("X" x: integer)
+        else 
+            "Y" y: integer
+    }
+
+test "dead then branch"
+    form X {
+        if (false) 
+            $warning("" x: integer)
+    }
+
+test "computed question expression must match declared type"
+    form X {
+        "X" x: integer = $error(true)
+    }
+
+test "redeclared with different type" 
+    form X {
+        "X" x: integer
+        $error("X" x: boolean)
+    }
+
+
+test "redeclared with different prompt" 
+    form X {
+        "foo" x: integer
+        $warning("bar" x: integer)
+    }
+
+
+
+test "duplicate labels" 
+    form X {
+        "same" x: integer
+        $warning("same" y: boolean)
+    }
+
+test "invalid operand to +" 
+    form X {
+        "X" x: integer = $error(true) + 1
+    }
+
+test "invalid operands to +" 
+    form X {
+        "X" x: integer = $error(true) + $error("hello")
+    }
+

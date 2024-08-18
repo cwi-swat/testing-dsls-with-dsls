@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+from more_itertools import collapse
 import random   
 import string
 import os
@@ -39,7 +40,7 @@ def start_SUT_and_get_driver(website_url,preparations):
     return driver
 
 
-def derive_actions(driver):
+def derive_actions(driver, filter_elements):
     """
     Derives a list of actionable elements (widgets) from the current state of the web application.
     
@@ -61,10 +62,13 @@ def derive_actions(driver):
     # Find all actionable elements
     actionable_elements = driver.find_elements(By.CSS_SELECTOR, all_selectors)
     
-    # Derive only those that are displayed and enabled
+    # Compute the list of elements that should be filtered
+    filtered_elements = list(collapse([f(driver) for f in filter_elements]))
+    
+    # Derive only those that are displayed and enabled and should not be filtered
     visible_actionable_elements = [
     element for element in actionable_elements
-    if element.is_displayed() and element.is_enabled()
+    if element.is_displayed() and element.is_enabled() and not (element in filtered_elements)
     ]
 
     return visible_actionable_elements
@@ -117,7 +121,7 @@ def execute_action(action):
     else:
         action.click()
     
-def testar(url, num_runs, length_sequence, preparations, oracles):
+def testar(url, num_runs, length_sequence, filter_elements, preparations, oracles):
     """
     Automated scriptless testing of a web application by executing sequences of actions on the System Under Test (SUT).
 
@@ -125,6 +129,7 @@ def testar(url, num_runs, length_sequence, preparations, oracles):
     - url (str): The URL of the web application to be tested.
     - num_runs (int): The number of test runs to be executed. Each run is independent and represents a complete test session.
     - length_sequence (int): The length of the test sequence in each test run. This defines how many actions will be executed in a single run.
+    - filter_elements (list of functions): A list of functions that take the driver as input and return an element that should not be considered when deriving act
     - preparations (list of functions): A list of preparation steps to be performed before starting each test run. These could include steps like logging in or setting up the initial state.
     - oracles (list of functions): A list of oracle functions used to check the correctness or expected outcomes after actions are performed. These functions should take the driver as input and perform assertions or checks.
 
@@ -143,7 +148,7 @@ def testar(url, num_runs, length_sequence, preparations, oracles):
         # Inner loop that executes the test sequence with the specified number of actions (length_sequence)
         for j in range(0, length_sequence):
             #derive the actionable widgets in the current state
-            possible_actions = derive_actions(driver)
+            possible_actions = derive_actions(driver, filter_elements)
             
             #select actionable widgets
             selected_action = select_action(possible_actions)

@@ -149,6 +149,9 @@ set[Message] runTest(Test t) {
     if (delta != {}) {
         delta += {info("test failed", t.name.src)};
     }
+    else {
+        delta += {info("success", t.name.src)};
+    }
     return delta;
 }
 

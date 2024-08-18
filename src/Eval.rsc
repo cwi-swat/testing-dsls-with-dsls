@@ -66,9 +66,6 @@ Value eval((Expr)`<Str s>`, VEnv venv) = vstr("<s>"[1..-1]);
 Value eval((Expr)`(<Expr e>)`, VEnv venv) = eval(e, venv);
 
 
-Value eval((Expr)`<Expr lhs> == <Expr rhs>`, VEnv venv) 
-  = vbool(eval(lhs, venv) == eval(rhs, venv));
-
 // note the escaping of < as \<
 // note further how the results of the recursive calls are unpacked using pattern matching.
 Value eval((Expr)`<Expr lhs> \< <Expr rhs>`, VEnv venv) = vbool(i < j)
@@ -81,7 +78,32 @@ Value eval((Expr)`<Expr lhs> \> <Expr rhs>`, VEnv venv) = vbool(i > j)
     vint(int i) := eval(lhs, venv),
     vint(int j) := eval(rhs, venv);
 
+Value eval((Expr)`<Expr lhs> \<= <Expr rhs>`, VEnv venv) = vbool(i <= j)
+  when 
+    vint(int i) := eval(lhs, venv),
+    vint(int j) := eval(rhs, venv);
 
+Value eval((Expr)`<Expr lhs> \>= <Expr rhs>`, VEnv venv) = vbool(i >= j)
+  when 
+    vint(int i) := eval(lhs, venv),
+    vint(int j) := eval(rhs, venv);
+
+Value eval((Expr)`<Expr lhs> && <Expr rhs>`, VEnv venv) = vbool(a && b)
+  when 
+    vbool(bool a) := eval(lhs, venv),
+    vbool(bool b) := eval(rhs, venv);
+
+Value eval((Expr)`<Expr lhs> || <Expr rhs>`, VEnv venv) = vbool(a || b)
+  when 
+    vbool(bool a) := eval(lhs, venv),
+    vbool(bool b) := eval(rhs, venv);
+
+
+Value eval((Expr)`<Expr lhs> == <Expr rhs>`, VEnv venv) 
+  = vbool(eval(lhs, venv) == eval(rhs, venv));
+  
+Value eval((Expr)`<Expr lhs> != <Expr rhs>`, VEnv venv) 
+  = vbool(eval(lhs, venv) != eval(rhs, venv));
 
 Value eval((Expr)`<Expr lhs> + <Expr rhs>`, VEnv venv) = vint(i + j)
   when 

@@ -1,0 +1,36 @@
+form demo { 
+  "What is your age? The conditional is set at >= 18"
+     theAge: integer
+  "Age again, but this time with a slider when styling is used"
+     theAge2: integer
+  "Are you 18 or older? This is the second part of the conditional (ofAge == true)"
+     ofAge: boolean
+  "And another of age, but with a radio button if styling is used."
+    ofAge2: boolean 
+  if( theAge >= 18 && 
+      ofAge == true && 
+      ofAge == ofAge2 && 
+      theAge == theAge2) {
+    // Apparantly, users of the form have to be 18 or older
+    "Now, since you are 18 or older, the form can be started. What's your hourly rate on your job?"
+      hourlyRate: integer
+
+    if(hourlyRate <= 5) {
+      "Bad: Your income is very low. Any remarks?"
+        lowRemark: string 
+    } else if (hourlyRate <= 15) {
+      "OK: Your income is average. Any remarks?"
+        averageRemark: string
+    } else {
+      "Great: Your income is very high. Any remarks?"
+        highRemark: string 
+    }
+    "How many hours do you work in a week?"
+      hoursAWeek: integer 
+    "Fields can also be automatically calculated. This result is your weekly amount"
+      weeklyIncome: integer = hourlyRate * hoursAWeek
+  } else {
+    "The conditional evaluated to false. You could be to young."
+      theAgeToYoung: boolean 
+  }
+}

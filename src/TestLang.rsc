@@ -141,7 +141,7 @@ set[Message] runTest(Test t) {
         for (expLen > gotLen, int i <- [gotLen..expLen]) {
             delta += {error("expected widget, did not get it", spec.ui[i].src)};
         }
-        for (gotLen > expLen, int i <- [expLen..gotLen]) {
+        for (gotLen > expLen, int _ <- [expLen..gotLen]) {
             delta += {error("unexpected widgets: <intercalate("\n", [ "<q>" | q <- ui[expLen..gotLen]])>", t.name.src)};
         }
     }
@@ -152,6 +152,7 @@ set[Message] runTest(Test t) {
     else {
         delta += {info("success", t.name.src)};
     }
+    
     return delta;
 }
 

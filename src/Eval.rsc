@@ -126,10 +126,10 @@ Value eval((Expr)`<Expr lhs> / <Expr rhs>`, VEnv venv) = vint(j != 0 ? i / j : 0
     vint(int j) := eval(rhs, venv);
 
 
-// Because of out-of-order use and declaration of questions
-// we use the solve primitive in Rascal to find the fixpoint of venv.
 VEnv eval(start[Form] f, Input inp, VEnv venv) = eval(f.top, inp, venv);
 
+// Because of out-of-order use and declaration of questions
+// we use the solve primitive in Rascal to find the fixpoint of venv.
 VEnv eval(Form f, Input inp, VEnv venv) {
   return solve (venv) {
     venv = evalOnce(f, inp, venv);

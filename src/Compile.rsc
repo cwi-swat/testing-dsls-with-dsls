@@ -4,18 +4,36 @@ import Syntax;
 import Eval;
 import IO;
 import ParseTree;
+import GenSen;
+
 
 // if you want to make a compiler to html, use:
 import lang::html::AST; // modeling HTML docs
 import lang::html::IO; // reading/writing HTML
 
+void randomizedCompile() {
+   for (int i <- [0..20]) {
+      if (start[Form] f := genSen(#start[Form], 10)) {
+        println("Iteration <i>");
+        println(f);
+        compile2jsHtml(f, |file:///dummy|);
+      }
+   }
+}
 
 void compile(start[Form] form) {
   loc h = form.src[extension="html"];
   loc j = form.src[extension="js"].top;
+  <js, ht> = compile2jsHtml(form, j);
+  writeFile(j, js);
+  writeHTMLFile(h, ht, escapeMode=extendedMode());
+}
+
+tuple[str, HTMLElement] compile2jsHtml(start[Form] form, loc j) {
   list[Question] qs = flatten(form);
-  writeFile(j, "<init2js(form)>\n<update2js(qs)>\n");
-  writeHTMLFile(h, questions2html("<form.top.title>"[1..-1], qs, j.file),escapeMode=extendedMode());
+  str js = "<init2js(form)>\n<update2js(qs)>\n";
+  HTMLElement ht = questions2html("<form.top.title>"[1..-1], qs, j.file);
+  return <js, ht>;
 }
 
 str init2js(start[Form] form) {

@@ -4,7 +4,7 @@ import os
 
 def test_lambda():
     
-    testar('https://lambdatest.github.io/sample-todo-app/', 3, 100, [], [])
+    testar('https://lambdatest.github.io/sample-todo-app/', 3, 100, [], [], [])
 
 
 def test_tax():
@@ -31,7 +31,11 @@ def test_demo():
     
     testar('file://' + os.getcwd() + '/../../examples/demo.html', 3, 100, [], [], [])
     
+def test_loan_approval():
     
+    testar('file://' + os.getcwd() + '/../../examples/loan_approval.html', 3, 100, [], [], [])
+
+  
 def test_saucer():
   
     def test_Sauce_login(driver):

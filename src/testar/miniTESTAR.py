@@ -1,10 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.keys import Keys
 from more_itertools import collapse
 import random   
 import string
-import os
 
 def start_SUT_and_get_driver(website_url,preparations):
     """
@@ -40,7 +40,7 @@ def start_SUT_and_get_driver(website_url,preparations):
     return driver
 
 
-def derive_actions(driver, filter_elements):
+def derive_actionable_elements(driver, filter_elements):
     """
     Derives a list of actionable elements (widgets) from the current state of the web application.
     
@@ -73,6 +73,40 @@ def derive_actions(driver, filter_elements):
 
     return visible_actionable_elements
 
+def derive_actions(driver, filter_elements):
+    """
+    Derives all possible actions on a a set of actionable elements
+    """
+    visible_actionable_elements = derive_actionable_elements(driver, filter_elements)
+    
+    actions = []
+    
+    for element in visible_actionable_elements:
+        
+        element_type = element.get_attribute("type").lower()
+                    
+        if element_type == "checkbox" or element_type == "radio":
+            actions.append(lambda el=element: el.click())
+        elif element_type == "text":
+            # For text, email, and password inputs: clear the textbox, send some random text or both
+            random_text = generate_random_text()
+            
+            actions.append(lambda el=element: (el.clear(), el.send_keys(random_text)))
+            actions.append(lambda el=element: el.clear())
+            actions.append(lambda el=element: el.send_keys(random_text)) 
+        elif element_type == "number":
+            # For number inputs, send a random number, clear the box or use the slides with ARROW_UP or ARROW_DOWN
+            random_number = generate_random_number()
+            actions.append(lambda el=element: el.clear())
+            actions.append(lambda el=element: el.send_keys(random_number))
+            actions.append(lambda el=element: el.send_keys(Keys.ARROW_UP))
+            actions.append(lambda el=element: el.send_keys(Keys.ARROW_DOWN))
+            actions.append(lambda el=element: (el.clear(), el.send_keys(Keys.ARROW_UP)))
+        else:
+            actions.append(lambda el=element: el.click())
+    
+    return actions
+        
 
 def generate_random_text(length=10):
     """
@@ -102,24 +136,7 @@ def execute_action(action):
     Executes an action on a given WebElement based on its type (e.g., click, input text, select a checkbox).
 
     """
-    
-    element_type = action.get_attribute("type").lower()
-    
-    if element_type == "checkbox" or element_type == "radio":
-        # For checkbox and radio buttons, simply click them
-        action.click()
-    elif element_type == "text":
-        # For text, email, and password inputs, send some random text
-        random_text = generate_random_text()
-        action.clear()  # Clear existing text (if any)
-        action.send_keys(random_text)
-    elif element_type == "number":
-        # For number inputs, send a random number
-        random_number = generate_random_number()
-        action.clear()  # Clear existing value (if any)
-        action.send_keys(random_number)
-    else:
-        action.click()
+    action()
     
 def testar(url, num_runs, length_sequence, filter_elements, preparations, oracles):
     """

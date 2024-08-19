@@ -152,5 +152,5 @@ test "indirect cylic data dependency"
         if (x > 1)
             $error("Y" y: integer = 10)
         if (y > 1)
-            "X" x: integer = 20
+            $error("X" x: integer = 20)
     }

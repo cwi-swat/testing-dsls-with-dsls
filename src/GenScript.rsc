@@ -6,6 +6,8 @@ import util::Math;
 import String;
 import List;
 
+import Compile;
+import ParseTree;
 
 /*
 state S0
@@ -50,3 +52,49 @@ Script genScript(start[Form] form, int length=10) {
 Value arbValue((Type)`integer`) = vint(arbInt(5000));
 Value arbValue((Type)`boolean`) = vbool(arbInt(2) == 1);
 Value arbValue((Type)`string`) = vstr(arbString(arbInt(100)));
+
+list[str] genAsserts(start[Form] form) {
+    list[Question] qs = flatten(form);
+
+    asserts = for ((Question)`if (<Expr cond>) <Question q>` <- qs) {
+        append "assert not <expr2py(cond)> or driver.find_elements(By.ID, \'<divId(q)>\')[0].is_displayed";
+        //append "assert not <expr2py(cond)> or driver.find_elements(By.ID, \'<divId(q)>\')[0].is_enabled";
+        if (q has expr) {
+            append "assert state[\'<q.name>\'] == <expr2py(q.expr)>";
+        }
+    }
+
+    return asserts;
+}
+
+str genTestarOracle(start[Form] form) {
+    list[str] asserts = genAsserts(form);
+    str name = replaceAll(form.src.file, ".", "_");
+    return "def test_<name>():
+           '    <for (str a <- asserts) {>
+           '    <a>
+           '    <}>
+           '"; 
+}
+
+str expr2py((Expr)`<Id x>`) = "state[\'<x>\']"; 
+str expr2py((Expr)`<Int x>`) = "<x>";
+str expr2py((Expr)`<Bool x>`) = "<x>" == "true" ? "True" : "False";
+str expr2py((Expr)`<Str x>`) = "\'" + "<x>"[1..-1] + "\'";
+str expr2py((Expr)`(<Expr x>)`) = "(<expr2py(x)>)";
+str expr2py((Expr)`!<Expr x>`) = "not (<expr2py(x)>)";
+str expr2py((Expr)`<Expr x> + <Expr y>`) = "(<expr2py(x)> + <expr2py(y)>)";
+str expr2py((Expr)`<Expr x> - <Expr y>`) = "(<expr2py(x)> - <expr2py(y)>)";
+str expr2py((Expr)`<Expr x> * <Expr y>`) = "(<expr2py(x)> * <expr2py(y)>)";
+str expr2py((Expr)`<Expr x> / <Expr y>`) 
+  = "(lambda div: (<expr2py(x)> / div) if div != 0 else 0)(<expr2py(y)>)";
+
+
+str expr2py((Expr)`<Expr x> == <Expr y>`) = "(<expr2py(x)> === <expr2py(y)>)";
+str expr2py((Expr)`<Expr x> != <Expr y>`) = "(<expr2py(x)> !== <expr2py(y)>)";
+str expr2py((Expr)`<Expr x> \> <Expr y>`) = "(<expr2py(x)> \> <expr2py(y)>)";
+str expr2py((Expr)`<Expr x> \>= <Expr y>`) = "(<expr2py(x)> \>= <expr2py(y)>)";
+str expr2py((Expr)`<Expr x> \< <Expr y>`) = "(<expr2py(x)> \< <expr2py(y)>)";
+str expr2py((Expr)`<Expr x> \<= <Expr y>`) = "(<expr2py(x)> \<= <expr2py(y)>)";
+str expr2py((Expr)`<Expr x> && <Expr y>`) = "(<expr2py(x)> and <expr2py(y)>)";
+str expr2py((Expr)`<Expr x> || <Expr y>`) = "(<expr2py(x)> or <expr2py(y)>)";

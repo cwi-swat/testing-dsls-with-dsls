@@ -120,6 +120,11 @@ Value eval((Expr)`<Expr lhs> * <Expr rhs>`, VEnv venv) = vint(i * j)
     vint(int i) := eval(lhs, venv),
     vint(int j) := eval(rhs, venv);
 
+Value eval((Expr)`<Expr lhs> / <Expr rhs>`, VEnv venv) = vint(i / j)
+  when 
+    vint(int i) := eval(lhs, venv),
+    vint(int j) := eval(rhs, venv);
+
 
 // Because of out-of-order use and declaration of questions
 // we use the solve primitive in Rascal to find the fixpoint of venv.

@@ -8,6 +8,7 @@ form "Tax Office example with errors" {
   "Did you sell a house in 2010?"
     hasSoldHouse: boolean
   
+
   if (hasSodHouse) {
     "What was the selling price?"
       sellingPrice: boolean

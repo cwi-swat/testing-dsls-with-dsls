@@ -60,8 +60,33 @@ set[Message] check(start[Form] form) = check(form.top);
 set[Message] check(Form form) 
   = { *check(q, env) | Question q <- form.questions }
   + checkDuplicates(form)
+  + checkCycles(form)
   when TEnv env := collect(form);
 
+set[Message] checkCycles(Form form) {
+    rel[str, str, loc] dataDeps = { <"<x>", "<y>", q.src> 
+        | /q:(Question)`<Str _> <Id x>: <Type _> = <Expr e>` := form, /Id y := e };
+
+    iprintln(dataDeps);
+
+    rel[str, str, loc] controlDeps 
+        = { <"<q2.name>", "<x>", q2.src> | /(Question)`if (<Expr cond>) <Question q>` := form,
+            /Id x := cond, /Question q2 := q, q2 has name }
+        + { <"<q2.name>", "<x>", q2.src> | /(Question)`if (<Expr cond>) <Question q> else <Question q1>` := form,
+            /Id x := cond, /Question q2 := (Question)`{<Question q> <Question q1>}` , q2 has name };
+
+    set[Message] msgs = {};
+    
+    for (<str x, x> <- dataDeps<0,1>+, <_, x, loc a> <- dataDeps) {
+        msgs += {error("cyclic data dependency", a)};
+    }
+
+    for (<str x, x> <- controlDeps<0,1>+, <_, x, loc a> <- controlDeps) {
+        msgs += {error("cyclic control dependency", a)};
+    }
+
+    return msgs;
+}
 
 set[Message] checkDuplicates(Form form) {
     set[Message] msgs = {};

@@ -62,6 +62,20 @@ list[str] genAsserts(start[Form] form) {
         if (q has expr) {
             append "assert state[\'<q.name>\'] == <expr2py(q.expr)>";
         }
+
+        list[Question] others = [ q2 | (Question)`if (<Expr cond>) <Question q2>` <- qs, 
+                Name x := q.name, x := q2.name, q2.src != q.src ];
+
+        if (others != []) {
+            append "if driver.find_elements(By.ID, \'<divId(q)>\')[0].is_displayed:
+                   '    <for (Question q2 <- others) {>
+                   '    assert not driver.find_elements(By.ID, \'<divId(q2)>\')[0].is_displayed
+                   '    <}>
+                   '";
+        }
+        // (not <expr2py(cond))
+        // // (a and !(b or c or d)) or (b and !(a or c or d)) or ... 
+
     }
 
     return asserts;

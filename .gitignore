@@ -1,6 +1,7 @@
-/bin/
-/.settings
-/examples/*.html
-/examples/*.js
+bin/
+.settings
 
 target
+
+src/**/__pycache__/*
+examples/**/__pycache__/*

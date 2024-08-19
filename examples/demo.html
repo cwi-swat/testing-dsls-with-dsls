@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <link href="https://cdn.simplecss.org/simple.min.css" rel="stylesheet">
+        <script src="demo.js"></script>
+        <script>document.addEventListener("DOMContentLoaded", function() { $update(); });</script>
+        <title>demo</title>
+    </head>
+    <body>
+        <h2>demo</h2>
+        <div id="theAge_div_15">
+            <label>What is your age? The conditional is set at &gt;= 18</label><input onchange="$update('theAge', event.target.value);" type="number" id="theAge_widget_15">
+        </div>
+        <div id="theAge2_div_90">
+            <label>Age again, but this time with a slider when styling is used</label><input onchange="$update('theAge2', event.target.value);" type="number" id="theAge2_widget_90">
+        </div>
+        <div id="ofAge_div_176">
+            <label>Are you 18 or older? This is the second part of the conditional (ofAge == true)</label><input onclick="$update('ofAge', event.target.checked);" type="checkbox" id="ofAge_widget_176">
+        </div>
+        <div id="ofAge2_div_280">
+            <label>And another of age, but with a radio button if styling is used.</label><input onclick="$update('ofAge2', event.target.checked);" type="checkbox" id="ofAge2_widget_280">
+        </div>
+        <div id="hourlyRate_div_531">
+            <label>Now, since you are 18 or older, the form can be started. What's your hourly rate on your job?</label><input onchange="$update('hourlyRate', event.target.value);" type="number" id="hourlyRate_widget_531">
+        </div>
+        <div id="lowRemark_div_686">
+            <label>Bad: Your income is very low. Any remarks?</label><input onchange="$update('lowRemark', event.target.value);" type="text" id="lowRemark_widget_686">
+        </div>
+        <div id="averageRemark_div_799">
+            <label>OK: Your income is average. Any remarks?</label><input onchange="$update('averageRemark', event.target.value);" type="text" id="averageRemark_widget_799">
+        </div>
+        <div id="highRemark_div_891">
+            <label>Great: Your income is very high. Any remarks?</label><input onchange="$update('highRemark', event.target.value);" type="text" id="highRemark_widget_891">
+        </div>
+        <div id="hoursAWeek_div_977">
+            <label>How many hours do you work in a week?</label><input onchange="$update('hoursAWeek', event.target.value);" type="number" id="hoursAWeek_widget_977">
+        </div>
+        <div id="weeklyIncome_div_1048">
+            <label>Fields can also be automatically calculated. This result is your weekly amount</label><input onchange="$update('weeklyIncome', event.target.value);" type="number" id="weeklyIncome_widget_1048" disabled="true">
+        </div>
+        <div id="theAgeToYoung_div_1198">
+            <label>The conditional evaluated to false. You could be to young.</label><input onclick="$update('theAgeToYoung', event.target.checked);" type="checkbox" id="theAgeToYoung_widget_1198">
+        </div>
+    </body>
+</html>

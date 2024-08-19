@@ -25,10 +25,7 @@ def test_QL_program(name):
     testar(path, 2, 50, [], [], get_oracles(name))
 
     
-def main():
-    name = input("Which QL program: ")
-    test_QL_program(name)
 
 
 if __name__ == "__main__":
-    main()
+    test_QL_program(sys.argv[1])

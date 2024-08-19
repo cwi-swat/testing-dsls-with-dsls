@@ -127,3 +127,30 @@ test "invalid operands to +"
         "X" x: integer = $error(true) + $error("hello")
     }
 
+test "direct cylic data dependency"
+    form "" {
+        $error("X" x: integer = x)
+    }
+
+
+test "indirect cylic data dependency"
+    form "" {
+        $error("X" x: integer = y)
+        $error("Y" y: integer = z)
+        $error("Z" z: integer = x)
+    }
+
+
+test "direct cylic control dependency"
+    form "" {
+        if (x > 1)
+            $error("X" x: integer = 20)
+    }
+
+test "indirect cylic data dependency"
+    form "" {
+        if (x > 1)
+            $error("Y" y: integer = 10)
+        if (y > 1)
+            $error("X" x: integer = 20)
+    }

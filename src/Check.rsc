@@ -67,8 +67,6 @@ set[Message] checkCycles(Form form) {
     rel[str, str, loc] dataDeps = { <"<x>", "<y>", q.src> 
         | /q:(Question)`<Str _> <Id x>: <Type _> = <Expr e>` := form, /Id y := e };
 
-    iprintln(dataDeps);
-
     rel[str, str, loc] controlDeps 
         = { <"<q2.name>", "<x>", q2.src> | /(Question)`if (<Expr cond>) <Question q>` := form,
             /Id x := cond, /Question q2 := q, q2 has name }

@@ -180,10 +180,8 @@ set[Message] runTest(Test t) {
 HTMLElement testResult2HTML(Test t, set[Message] msgs) {
     HTMLElement elt = div([]);
     
-    HTMLElement title = span([text(capitalize("<t.name>"[1..-1]))]);
-    if (msgs != {}) {
-        title.style = "color: red;";
-    }
+   HTMLElement title = span([text(capitalize("<t.name>"[1..-1]) + (msgs == {} ? " ✅" : " ❌"))]);
+    // HTMLElement title = span([text(capitalize("<t.name>"[1..-1]) + (msgs == {} ? " 	&#x2705;" : " &#x274C;"))]);
 
     elt.elems += [h3([title])];
 
@@ -264,7 +262,7 @@ set[Message] runTests(start[Tests] tests) {
       ])
     ]);
 
-    writeHTMLFile(tests.src[extension="html"], report);
+    writeHTMLFile(tests.src[extension="html"], report, charset="UTF-16", escapeMode=extendedMode());
 
     return msgs;
 }

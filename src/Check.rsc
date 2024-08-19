@@ -11,8 +11,6 @@ extend Syntax;
 
 syntax Type = "*unknown*";
 
-//data Tree(loc src = |unknown:///|);
-
 alias TEnv = lrel[str, Type];
 
 // build a Type Environment (TEnv) for a questionnaire.
@@ -39,8 +37,6 @@ Type typeOf((Expr)`<Bool _>`, TEnv env) = (Type)`boolean`;
 Type typeOf((Expr)`<Str _>`, TEnv env) = (Type)`string`;
 
 Type typeOf((Expr)`<Expr _> + <Expr _>`, TEnv env) = (Type)`integer`;
-
-//ASSIGNMENT add a few more (or all) cases for typeOf.
 
 Type typeOf((Expr)`<Expr _> * <Expr _>`, TEnv env) = (Type)`integer`;
 Type typeOf((Expr)`<Expr _> / <Expr _>`, TEnv env) = (Type)`integer`;
@@ -140,36 +136,43 @@ set[Message] check(e:(Expr)`<Id x>`, TEnv env) = {error("undefined question", x.
 
 set[Message] check((Expr)`(<Expr e>)`, TEnv env) = check(e, env);
 
-// ASSIGNMENT, add a couple of more cases to define type checking 
-// think about the different type signature of arithmetic
-// comparisons (<, >, ==, etc.), and booleans (&&, etc.)
 
-// BUG using the e: pattern binder, we cannot access .src 
-set[Message] check((Expr)`<Expr x> + <Expr y>`, TEnv env)
+set[Message] checkArith(Expr x, Expr y, TEnv env)
     = { error("invalid operand", x.src) | (Type)`integer` !:= typeOf(x, env) }
     + { error("invalid operand", y.src) | (Type)`integer` !:= typeOf(y, env) }
     + check(x, env) + check(y, env);
 
+set[Message] check((Expr)`<Expr x> + <Expr y>`, TEnv env) = checkArith(x, y, env);
 
-set[Message] check(e:(Expr)`<Expr x> * <Expr y>`, TEnv env)
-    = { error("invalid types for multiplication", e.src) | 
-        (Type)`integer` !:= typeOf(x, env) || (Type)`integer` !:= typeOf(y, env) }
+set[Message] check(e:(Expr)`<Expr x> * <Expr y>`, TEnv env) = checkArith(x, y, env);
+
+set[Message] check(e:(Expr)`<Expr x> - <Expr y>`, TEnv env) = checkArith(x, y, env);
+
+set[Message] check((Expr)`<Expr x> \< <Expr y>`, TEnv env) = checkArith(x, y, env);
+
+set[Message] check((Expr)`<Expr x> \> <Expr y>`, TEnv env) = checkArith(x, y, env);
+
+set[Message] check((Expr)`<Expr x> \<= <Expr y>`, TEnv env) = checkArith(x, y, env);
+
+set[Message] check((Expr)`<Expr x> \>= <Expr y>`, TEnv env) = checkArith(x, y, env);
+
+set[Message] checkEqNeq(Expr e, Expr x, Expr y, TEnv env)
+    = { error("incompatible operand types", e.src) | Type t := typeOf(x, env), t !:= typeOf(y, env) }
     + check(x, env) + check(y, env);
 
-set[Message] check(e:(Expr)`<Expr x> - <Expr y>`, TEnv env)
-    = { error("invalid types for subtraction", e.src) | 
-        (Type)`integer` !:= typeOf(x, env) || (Type)`integer` !:= typeOf(y, env) }
+set[Message] check(e:(Expr)`<Expr x> == <Expr y>`, TEnv env) = checkEqNeq(e, x, y, env);
+
+set[Message] check(e:(Expr)`<Expr x> != <Expr y>`, TEnv env) = checkEqNeq(e, x, y, env);
+
+set[Message] checkLogic(Expr x, Expr y, TEnv env) 
+    = { error("invalid operand", x.src) | (Type)`boolean` !:= typeOf(x, env) }
+    + { error("invalid operand", y.src) | (Type)`boolean` !:= typeOf(y, env) }
     + check(x, env) + check(y, env);
 
-set[Message] check((Expr)`<Expr x> \< <Expr y>`, TEnv env)
-    = { error("invalid operand", x.src) | (Type)`integer` !:= typeOf(x, env) }
-    + { error("invalid operand", y.src) | (Type)`integer` !:= typeOf(y, env) }
-    + check(x, env) + check(y, env);
+set[Message] check(e:(Expr)`<Expr x> && <Expr y>`, TEnv env) = checkLogic(x, y, env);
 
-set[Message] check((Expr)`<Expr x> \> <Expr y>`, TEnv env)
-    = { error("invalid operand", x.src) | (Type)`integer` !:= typeOf(x, env) }
-    + { error("invalid operand", y.src) | (Type)`integer` !:= typeOf(y, env) }
-    + check(x, env) + check(y, env);
+set[Message] check(e:(Expr)`<Expr x> || <Expr y>`, TEnv env) = checkLogic(x, y, env);
+
 
 void printTEnv(TEnv tenv) {
     for (<str x, Type t> <- tenv) {

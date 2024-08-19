@@ -1,14 +1,14 @@
 title "Static checking tests"
 
 test "condition must be boolean" 
-    form X {
+    form "" {
         if($error(1)) {
             "X" x: integer
         }
     }
 
 test "condition must be boolean (complex)" 
-    form X {
+    form "" {
         "A" a: integer
         "B" b: integer
         if($error(a + b)) {
@@ -17,26 +17,26 @@ test "condition must be boolean (complex)"
     }
 
 test "conditions are type checked" 
-    form X {
+    form "" {
         if($error(true) < 3) {
             "X" x: integer
         }
     }
 
 test "undefined reference in computed question" 
-    form X {
+    form "" {
         "bug" x: integer = $error(y)
     }
 
 test "undefined reference in condition" 
-    form X {
+    form "" {
         if ($error(x)) {
             "Y" y: integer
         }
     }
 
 test "nested undefined reference" 
-    form X {
+    form "" {
         if (1 > $error(x)) {
             "Y" y: integer
         }
@@ -44,24 +44,24 @@ test "nested undefined reference"
 
 
 test "empty prompt"
-    form X {
+    form "" {
         $warning("" x: integer)
     }
 
 test "useless conditional"
-    form X {
+    form "" {
         if ($warning(true))
             "X" x: integer
     }
 
 test "empty then branch" 
-    form X {
+    form "" {
         if (2 > 1) 
             $warning({})
     }
 
 test "empty else branch" 
-    form X {
+    form "" {
         if (2 > 1) 
             "X" x: integer 
         else 
@@ -69,7 +69,7 @@ test "empty else branch"
     }
 
 test "dead else branch"
-    form X {
+    form "" {
         if ($warning(true)) 
             "X" x: integer
         else 
@@ -78,7 +78,7 @@ test "dead else branch"
     }
 
 test "dead then branch with else"
-    form X {
+    form "" {
         if (false) 
             $warning("X" x: integer)
         else 
@@ -86,25 +86,25 @@ test "dead then branch with else"
     }
 
 test "dead then branch"
-    form X {
+    form "" {
         if (false) 
             $warning("" x: integer)
     }
 
 test "computed question expression must match declared type"
-    form X {
+    form "" {
         "X" x: integer = $error(true)
     }
 
 test "redeclared with different type" 
-    form X {
+    form "" {
         "X" x: integer
         $error("X" x: boolean)
     }
 
 
 test "redeclared with different prompt" 
-    form X {
+    form "" {
         "foo" x: integer
         $warning("bar" x: integer)
     }
@@ -112,18 +112,18 @@ test "redeclared with different prompt"
 
 
 test "duplicate labels" 
-    form X {
+    form "" {
         "same" x: integer
         $warning("same" y: boolean)
     }
 
 test "invalid operand to +" 
-    form X {
+    form "" {
         "X" x: integer = $error(true) + 1
     }
 
 test "invalid operands to +" 
-    form X {
+    form "" {
         "X" x: integer = $error(true) + $error("hello")
     }
 

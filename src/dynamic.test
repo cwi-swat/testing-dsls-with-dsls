@@ -2,7 +2,7 @@ title "Dynamic semantics tests"
 
 test "initial state"  
     with 
-    form X {
+    form "" {
         "x" x: boolean
         "y" y: integer
         "z" z: string
@@ -11,7 +11,7 @@ test "initial state"
 
 test "computed questions are initialized" 
     with 
-    form X {
+    form "" {
         "x" x: boolean = true
         "y" y: integer = 42
         "z" z: string = "hello world!"
@@ -20,14 +20,14 @@ test "computed questions are initialized"
 
 test "disabled questions are not changed"
     with x: 10
-    form X {
+    form "" {
         if (1 > 2) "x" x: integer
     }
     = {x: 0}
 
 test "questions retain values across visibility changes"
     with x: true, y: 42, x: false, z: 2, x: true
-    form X {
+    form "" {
         "X" x: boolean
         if (x) 
             "Y" y: integer
@@ -38,7 +38,7 @@ test "questions retain values across visibility changes"
 
 test "referencing works out of order"
     with x: 10
-    form X {
+    form "" {
         "y" y: integer = x
         "x" x: integer
     }
@@ -46,7 +46,7 @@ test "referencing works out of order"
 
 test "fixpoint evaluation" 
     with c: 10
-    form X {
+    form "" {
         "A" a: integer = c+b+1
         "B" b: integer = c+1
         "C" c: integer
@@ -56,21 +56,21 @@ test "fixpoint evaluation"
 
 test "multiplication has higher precedence than addition"
     with
-    form X {
+    form "" {
         "X" x: integer = 1 + 2 * 3
     }
     = {x: 7}
 
 test "subtraction associates to the left"
     with
-    form X {
+    form "" {
         "X" x: integer = 1 - 2 - 3
     }
     = {x: -4}
 
 test "parentheses override associativity"
     with
-    form X {
+    form "" {
         "X" x: integer = 1 - (2 - 3)
     }
     = {x: 2}

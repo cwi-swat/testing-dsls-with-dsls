@@ -1,4 +1,4 @@
-form demo { 
+form "Demo" { 
   "What is your age? The conditional is set at >= 18"
      theAge: integer
   "Age again, but this time with a slider when styling is used"

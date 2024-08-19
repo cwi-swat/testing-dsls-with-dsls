@@ -15,7 +15,7 @@ void compile(start[Form] form) {
   loc j = form.src[extension="js"].top;
   list[Question] qs = flatten(form);
   writeFile(j, "<init2js(form)>\n<update2js(qs)>\n");
-  writeHTMLFile(h, questions2html("<form.top.name>", qs, j.file),escapeMode=extendedMode());
+  writeHTMLFile(h, questions2html("<form.top.title>"[1..-1], qs, j.file),escapeMode=extendedMode());
 }
 
 str init2js(start[Form] form) {

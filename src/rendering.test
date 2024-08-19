@@ -2,14 +2,14 @@ title "Rendering tests"
 
 test "empty form renders empty" 
     with
-    form X {
+    form "" {
     }
     renders as [
     ]
 
 test "disabled questions don't render"
     with
-    form X {
+    form "" {
         if (1 > 2) {
             "X" x: integer
         }
@@ -20,7 +20,7 @@ test "disabled questions don't render"
 
 test "enabled questions render"
     with cond: true
-    form X {
+    form "" {
         "C" cond: boolean
         if (cond) {
             "X" x: integer
@@ -34,7 +34,7 @@ test "enabled questions render"
 
 test "unconditional questions render"
     with
-    form X {
+    form "" {
         "X" x: integer
         "Y" y: integer
     }
@@ -45,7 +45,7 @@ test "unconditional questions render"
 
 test "computed questions render with value"
     with x: 10
-    form X {
+    form "" {
         "X" x: integer
         "Y" y: integer = x + x
     }

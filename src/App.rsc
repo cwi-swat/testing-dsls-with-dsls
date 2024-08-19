@@ -20,7 +20,7 @@ App[Model] runQL(start[Form] ql) = webApp(qlApp(ql), |project://testing-dsls-wit
 SalixApp[Model] qlApp(start[Form] ql, str id="root") 
   = makeApp(id, 
         Model() { return <ql, initialEnv(ql)>; }, 
-        withIndex("<ql.top.name>", id, view, css=["https://cdn.simplecss.org/simple.min.css"]), 
+        withIndex("<ql.top.title>"[1..-1], id, view, css=["https://cdn.simplecss.org/simple.min.css"]), 
         update);
 
 
@@ -45,7 +45,7 @@ Model update(Msg msg, Model model) = model[env=eval(model.form, msg2input(msg), 
 // Note how html elements are drawn, and how element nesting is achieved with
 // nesting of void-closures.
 void view(Model model) {
-    h3(model.form.top.name);
+    h3("<model.form.top.title>"[1..-1]);
     form(() {
         table(() {
             tbody(() {

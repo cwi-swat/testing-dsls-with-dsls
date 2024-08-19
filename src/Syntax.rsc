@@ -14,7 +14,7 @@ syntax Name = Id; // because redef/extend of Id from standard lib does not work.
 
 // syntax of a questionnaire
 start syntax Form 
-  = "form" Name name "{" Question* questions "}"; 
+  = "form" Str title "{" Question* questions "}"; 
 
 // Here's a simple syntax of String literals
 lexical Str = [\"]![\"]* [\"];

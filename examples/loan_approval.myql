@@ -1,4 +1,4 @@
-form completeSurvey {
+form "Loan Approval" {
   "What is your full name?" fullName: string
   "How old are you?" age: integer
   "Do you have a driver's license?" hasLicense: boolean

@@ -70,7 +70,8 @@ list[str] genAsserts(start[Form] form) {
 str genTestarOracle(start[Form] form) {
     list[str] asserts = genAsserts(form);
     str name = replaceAll(form.src.file, ".", "_");
-    return "def <name>_oracle(driver):
+    return "from selenium.webdriver.common.by import By
+           'def <name>_oracle(driver):
            '    state = driver.execute_script(\'return $state;\');
            '    <for (str a <- asserts) {>
            '    <a><}>

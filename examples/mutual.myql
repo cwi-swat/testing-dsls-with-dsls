@@ -1,0 +1,12 @@
+form "Mutual exclusion" {
+
+    "A number" num: integer
+
+    if (num >= 0) {
+        "X" x: boolean
+    }
+
+    if (num <= 0) {
+        "X" x : boolean = true
+    }
+}

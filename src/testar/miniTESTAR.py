@@ -86,27 +86,43 @@ def derive_actions(driver, filter_elements):
         element_type = element.get_attribute("type").lower()
                     
         if element_type == "checkbox" or element_type == "radio":
-            actions.append(lambda el=element: el.click())
+            actions.append(lambda el=element: (log("click", el), el.click()))
         elif element_type == "text":
-            # For text, email, and password inputs: clear the textbox, send some random text or both
+            # For text, email, and password inputs: clear the textbox, send some random text, or both
             random_text = generate_random_text()
-            
-            actions.append(lambda el=element: (el.clear(), el.send_keys(random_text)))
-            actions.append(lambda el=element: el.clear())
-            actions.append(lambda el=element: el.send_keys(random_text)) 
-        elif element_type == "number":
-            # For number inputs, send a random number, clear the box or use the slides with ARROW_UP or ARROW_DOWN
             random_number = generate_random_number()
-            actions.append(lambda el=element: el.clear())
-            actions.append(lambda el=element: el.send_keys(random_number))
-            actions.append(lambda el=element: el.send_keys(Keys.ARROW_UP))
-            actions.append(lambda el=element: el.send_keys(Keys.ARROW_DOWN))
-            actions.append(lambda el=element: (el.clear(), el.send_keys(Keys.ARROW_UP)))
+
+            actions.append(lambda el=element: (log("clear+keys", el, random_text), el.clear(), el.send_keys(random_text)))
+            actions.append(lambda el=element: (log("clear", el), el.clear()))
+            actions.append(lambda el=element: (log("keys", el, random_text), el.send_keys(random_text)))
+            actions.append(lambda el=element: (log("keys", el, random_number), el.send_keys(random_number)))
+        elif element_type == "number":
+            # For number inputs, send a random number, clear the box, or use the spinners with ARROW_UP or ARROW_DOWN
+            random_text = generate_random_text()
+            random_number = generate_random_number()
+            
+            actions.append(lambda el=element: (log("clear", el), el.clear()))
+            actions.append(lambda el=element: (log("keys", el, random_number), el.send_keys(random_number)))
+            actions.append(lambda el=element: (log("keys", el, random_text), el.send_keys(random_text)))
+            actions.append(lambda el=element: (log("keys", el, "arrow UP"), el.send_keys(Keys.ARROW_UP)))
+            actions.append(lambda el=element: (log("keys", el, "arrow DOWN"), el.send_keys(Keys.ARROW_DOWN)))
+            actions.append(lambda el=element: (log("clear+keys", el, "arrow UP"), el.clear(), el.send_keys(Keys.ARROW_UP)))
         else:
-            actions.append(lambda el=element: el.click())
-    
+            actions.append(lambda el=element: (log("click", el), el.click()))
+
     return actions
-        
+
+def log(action, element, *args):
+    tag_name = element.tag_name
+    element_id = element.get_attribute("id")
+    element_class = element.get_attribute("class")
+    element_type = element.get_attribute("type")
+    info = f"Tag: {tag_name}, ID: {element_id}, Class: {element_class}, Type: {element_type}'"
+   
+    if (len(args)>0):
+        print(action, " on ", info, " with", args)
+    else:
+        print(action, " on ", info)
 
 def generate_random_text(length=10):
     """

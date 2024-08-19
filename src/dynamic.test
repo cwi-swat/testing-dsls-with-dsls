@@ -13,7 +13,7 @@ test "computed questions are initialized"
     with 
     form X {
         "x" x: boolean = true
-        "y" y: integer = 42
+        "y" y: integer = 4233
         "z" z: string = "hello world!"
     }
     = {x: true, y: 42, z: "hello world!"}

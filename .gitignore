@@ -2,10 +2,7 @@ bin/
 .settings
 
 target
-<<<<<<< HEAD
 
 src/**/__pycache__/*
 examples/**/__pycache__/*
-=======
-src/testar/__pycache__
->>>>>>> 34b588f... ignore
+

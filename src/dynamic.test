@@ -9,6 +9,14 @@ test "initial state"
     }
     = {x: false, y: 0, z: ""}
 
+test "division by zero"
+    with
+    
+    form X {
+        "x" x: integer = 1/0
+    }
+    = {}
+
 test "computed questions are initialized" 
     with 
     form X {

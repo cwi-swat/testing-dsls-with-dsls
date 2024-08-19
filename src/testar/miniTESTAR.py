@@ -192,6 +192,7 @@ def testar(url, num_runs, length_sequence, filter_elements, preparations, oracle
             #check oracles
             for oracle in oracles:
                 oracle(driver)
+                print("checked: " + oracle.__name__)
                 
         # Close the SUT and browser
         driver.quit()

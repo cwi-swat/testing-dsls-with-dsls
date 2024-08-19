@@ -23,3 +23,12 @@ def test_QL_program(name):
     path = 'file://' + os.path.abspath(os.getcwd() + '/../../examples/' + name + ".html")
     
     testar(path, 2, 50, [], [], get_oracles(name))
+
+    
+def main():
+    name = input("Which QL program: ")
+    test_QL_program(name)
+
+
+if __name__ == "__main__":
+    main()

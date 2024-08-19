@@ -1,3 +1,4 @@
+from selenium.webdriver.common.by import By
 def tax_myql_oracle(driver):
     state = driver.execute_script('return $state;');
     

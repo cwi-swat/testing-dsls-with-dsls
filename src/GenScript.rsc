@@ -73,8 +73,6 @@ list[str] genAsserts(start[Form] form) {
                    '    <}>
                    '";
         }
-        // (not <expr2py(cond))
-        // // (a and !(b or c or d)) or (b and !(a or c or d)) or ... 
 
     }
 

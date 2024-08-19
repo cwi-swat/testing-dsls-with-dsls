@@ -17,13 +17,13 @@
             <label>Did you sell a house in 2010?</label><input onclick="$update('hasSoldHouse', event.target.checked);" type="checkbox" id="hasSoldHouse_widget_154">
         </div>
         <div id="sellingPrice_div_246">
-            <label>What was the selling price?</label><input onchange="$update('sellingPrice', event.target.value);" type="number" id="sellingPrice_widget_246">
+            <label>What was the selling price?</label><input onchange="$update('sellingPrice', Number(event.target.value));" type="number" id="sellingPrice_widget_246">
         </div>
         <div id="privateDebt_div_308">
-            <label>Private debts for the sold house:</label><input onchange="$update('privateDebt', event.target.value);" type="number" id="privateDebt_widget_308">
+            <label>Private debts for the sold house:</label><input onchange="$update('privateDebt', Number(event.target.value));" type="number" id="privateDebt_widget_308">
         </div>
         <div id="valueResidue_div_375">
-            <label>Value residue:</label><input onchange="$update('valueResidue', event.target.value);" type="number" id="valueResidue_widget_375" disabled="true">
+            <label>Value residue:</label><input onchange="$update('valueResidue', Number(event.target.value));" type="number" id="valueResidue_widget_375" disabled="true">
         </div>
     </body>
 </html>

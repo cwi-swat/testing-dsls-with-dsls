@@ -70,10 +70,10 @@ list[str] genAsserts(start[Form] form) {
 str genTestarOracle(start[Form] form) {
     list[str] asserts = genAsserts(form);
     str name = replaceAll(form.src.file, ".", "_");
-    return "def test_<name>():
+    return "def <name>_oracle(driver):
+           '    state = driver.execute_script(\'return $state;\');
            '    <for (str a <- asserts) {>
-           '    <a>
-           '    <}>
+           '    <a><}>
            '"; 
 }
 

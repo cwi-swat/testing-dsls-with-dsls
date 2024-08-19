@@ -8,10 +8,12 @@ module IDE
 import util::LanguageServer;
 import util::Reflective;
 import util::IDEServices;
+import IO;
 
 import Syntax;
 import Compile;
 import Check;
+import GenScript;
 import App;
 import Message;
 import ParseTree;
@@ -51,11 +53,15 @@ Summary mySummarizer(loc origin, start[Form] input) {
 
 data Command
   = runQuestionnaire(start[Form] form)
-  | compileQuestionnaire(start[Form] form);
+  | compileQuestionnaire(start[Form] form)
+  | saveOracle(start[Form] form)
+  ;
+
 
 rel[loc,Command] myLenses(start[Form] input) 
   = {<input@\loc, runQuestionnaire(input, title="Run...")>,
-     <input.src, compileQuestionnaire(input, title="Compile")>};
+     <input.src, compileQuestionnaire(input, title="Compile")>,
+     <input.src, saveOracle(input, title="Save oracle")>};
 
 
 rel[loc,Command] testLenses(start[Tests] input) = {<input@\loc, runTestSuite(input, title="Run tests (<countTests(input.top)>)")>}
@@ -69,6 +75,11 @@ void myCommands(runQuestionnaire(start[Form] form)) {
 
 void myCommands(compileQuestionnaire(start[Form] form)) {
     compile(form);
+}
+
+void myCommands(saveOracle(start[Form] form)) {
+    loc l = form.src.top[extension="py"];
+    writeFile(l, genTestarOracle(form));
 }
 
 void testCommands(runTestSuite(start[Tests] tests)) {

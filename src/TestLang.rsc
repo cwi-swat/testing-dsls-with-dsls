@@ -185,7 +185,7 @@ HTMLElement testResult2HTML(Test t, set[Message] msgs) {
         title.style = "color: red;";
     }
 
-    elt.elems += [h2([title])];
+    elt.elems += [h3([title])];
 
     if (t has inputs) {
         elt.elems += [h4([text("When given as input:")])];
@@ -200,8 +200,16 @@ HTMLElement testResult2HTML(Test t, set[Message] msgs) {
     }
 
     // source
-    HTMLElement src = readHTMLString(highlight2html(t.form));
-    elt.elems += [src.elems[1].elems[0]]; // parser surrounds with html/body etc.
+    str highlighted = highlight2html(t.form);
+    int indent = t.form.src.begin.column;
+    str spaces = ("" | it + " " | int _ <- [0..indent] );
+
+    //println("`<highlighted>`");
+    HTMLElement src = readHTMLString(highlighted);
+    //iprintln(src);
+    HTMLElement preElt = src.elems[1].elems[0]; // parser surrounds with html/body etc.
+    preElt.elems[0].elems = [text(spaces), *preElt.elems[0].elems]; // fix indentation
+    elt.elems += [preElt]; 
 
     if (t has output) {
         elt.elems += [h4([text("Should evaluate to:")])];
@@ -210,6 +218,11 @@ HTMLElement testResult2HTML(Test t, set[Message] msgs) {
 
     if (t has ui) {
         elt.elems += [h4([text("Should render as:")])];
+        list[HTMLElement] lst = [];
+        for (Question q <- t.ui.widgets) {
+            lst += [li([code([text("<q>")])],style="list-style-type: none;")];
+        }
+        elt.elems += [ul(lst)];
     }
 
     if (msgs != {}) {
@@ -217,7 +230,7 @@ HTMLElement testResult2HTML(Test t, set[Message] msgs) {
         for (error(str txt, loc l) <- msgs) {
             lst += li([text("error: <txt> at line <l.begin.line - t.form.src.begin.line>")]);
         }
-        elt.elems += [ul(lst)];
+        elt.elems += [h4([text("Errors:")]), ul(lst)];
     }
 
     return elt;

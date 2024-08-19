@@ -27,6 +27,27 @@
             <pre>{x: false, y: 0, z: ""}</pre>
         </div>
         <div>
+            <h2><span style="color: red;">Division By Zero</span></h2>
+            <h4>When given as input:</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <pre class="rascal"><code><span class="Keyword">form</span> X {
+        "x" x: <span class="Keyword">integer</span> = 1/0
+    }</code></pre>
+            <h4>Should evaluate to:</h4>
+            <pre>{}</pre>
+            <ul>
+                <li>error: exception during eval: ArithmeticException("/ by zero") at line 0</li>
+            </ul>
+        </div>
+        <div>
             <h2><span style="color: red;">Computed Questions Are Initialized</span></h2>
             <h4>When given as input:</h4>
             <table>

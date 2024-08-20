@@ -153,8 +153,46 @@ def execute_action(action):
 
     """
     action()
+
     
-def testar(url, num_runs, length_sequence, filter_elements, preparations, oracles):
+def check_oracles(driver, oracles, wait_time, errors, seq, acc):
+    
+    # Set an implicit wait time to give time to fetch the DOM before evaluating the oracles
+    driver.implicitly_wait(wait_time)  #seconds
+    
+    # Iterate through the oracles and call them
+    for oracle in oracles:
+        try:
+            oracle(driver)
+        except AssertionError as e:
+            print(f"The oracle {oracle.__name__} detected an error during testing: {str(e)} in sequence {seq} and action {acc}")
+            errors.append(f"{oracle.__name__} detected that {str(e)} in sequence {seq} and action {acc}")
+        except Exception as e:
+            print(f"An unexpected error occurred: {str(e)}")
+   
+def print_test_summary(url, num_runs, length_sequence, errors):
+    print("="*30)
+    print("TEST SUMMARY REPORT")
+    print("="*30)
+    print(f"Tested URL: {url}")
+    print(f"Number of Runs: {num_runs}")
+    print(f"Sequence Length per Run: {length_sequence}")
+    print("="*30)
+    
+    if not errors:
+        print("RESULT: All tests passed successfully! 🎉")
+    else:
+        print(f"RESULT: {len(errors)} errors were found 🚨")
+        print("-"*30)
+        print("ERROR DETAILS:")
+        print("-"*30)
+        for e in errors:
+            print(f"{e}")
+    
+    print("="*30)
+
+   
+def testar(url, num_runs, length_sequence, filter_elements, preparations, oracles, wait_time):
     """
     Automated scriptless testing of a web application by executing sequences of actions on the System Under Test (SUT).
 
@@ -165,6 +203,7 @@ def testar(url, num_runs, length_sequence, filter_elements, preparations, oracle
     - filter_elements (list of functions): A list of functions that take the driver as input and return an element that should not be considered when deriving act
     - preparations (list of functions): A list of preparation steps to be performed before starting each test run. These could include steps like logging in or setting up the initial state.
     - oracles (list of functions): A list of oracle functions used to check the correctness or expected outcomes after actions are performed. These functions should take the driver as input and perform assertions or checks.
+    - wait_time: time to wait for the driver to fully fetch the updatd DOM before evaluating the oracles
 
     The inner loop of the function automates the TESTAR loop:
     1. Derive all actionable elements in the current state
@@ -172,14 +211,17 @@ def testar(url, num_runs, length_sequence, filter_elements, preparations, oracle
     3. Execute the corresponding action
     4. Check the state with the oracles
     """
+    errors = []
     
     # Outer loop, that iterates through the number of test runs specified
-    for i in range(0, num_runs):
+    for run_cnt in range(1, num_runs+1):
         # Start the SUT and get the driver
         driver = start_SUT_and_get_driver(url, preparations)
         
+        print(f"Starting test sequence number {run_cnt} of {num_runs}")
+        
         # Inner loop that executes the test sequence with the specified number of actions (length_sequence)
-        for j in range(0, length_sequence):
+        for acc_cnt in range(1, length_sequence+1):
             #derive the actionable widgets in the current state
             possible_actions = derive_actions(driver, filter_elements)
             
@@ -187,13 +229,15 @@ def testar(url, num_runs, length_sequence, filter_elements, preparations, oracle
             selected_action = select_action(possible_actions)
             
             #execute action
+            print(f"Action {acc_cnt} of {length_sequence}")
             execute_action(selected_action)
             
             #check oracles
-            for oracle in oracles:
-                oracle(driver)
-                print("checked: " + oracle.__name__)
+            check_oracles(driver, oracles, wait_time, errors, run_cnt, acc_cnt)
                 
         # Close the SUT and browser
         driver.quit()
+        
+    # Print the results
+    print_test_summary(url, num_runs, length_sequence, errors)
     

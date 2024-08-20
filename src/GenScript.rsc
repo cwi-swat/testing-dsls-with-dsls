@@ -57,8 +57,8 @@ list[str] genAsserts(start[Form] form) {
     list[Question] qs = flatten(form);
 
     asserts = for ((Question)`if (<Expr cond>) <Question q>` <- qs) {
-        append "assert not <expr2py(cond)> or driver.find_elements(By.ID, \'<divId(q)>\')[0].is_displayed";
-        //append "assert not <expr2py(cond)> or driver.find_elements(By.ID, \'<divId(q)>\')[0].is_enabled";
+        append "assert not <expr2py(cond)> or driver.find_elements(By.ID, \'<divId(q)>\')[0].is_displayed()";
+        //append "assert not <expr2py(cond)> or driver.find_elements(By.ID, \'<divId(q)>\')[0].is_enabled()";
         if (q has expr) {
             append "assert state[\'<q.name>\'] == <expr2py(q.expr)>";
         }
@@ -67,9 +67,9 @@ list[str] genAsserts(start[Form] form) {
                 Name x := q.name, x := q2.name, q2.src != q.src ];
 
         if (others != []) {
-            append "if driver.find_elements(By.ID, \'<divId(q)>\')[0].is_displayed:
+            append "if driver.find_elements(By.ID, \'<divId(q)>\')[0].is_displayed():
                    '    <for (Question q2 <- others) {>
-                   '    assert not driver.find_elements(By.ID, \'<divId(q2)>\')[0].is_displayed
+                   '    assert not driver.find_elements(By.ID, \'<divId(q2)>\')[0].is_displayed()
                    '    <}>
                    '";
         }

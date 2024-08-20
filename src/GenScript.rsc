@@ -57,10 +57,12 @@ list[str] genAsserts(start[Form] form) {
     list[Question] qs = flatten(form);
 
     asserts = for ((Question)`if (<Expr cond>) <Question q>` <- qs) {
-        append "assert not <expr2py(cond)> or driver.find_elements(By.ID, \'<divId(q)>\')[0].is_displayed()";
+        message = ", \'<cond> evaluated to true, however <divId(q)> was not displayed\'";
+        append "assert not <expr2py(cond)> or driver.find_elements(By.ID, \'<divId(q)>\')[0].is_displayed()"+message;
         //append "assert not <expr2py(cond)> or driver.find_elements(By.ID, \'<divId(q)>\')[0].is_enabled()";
         if (q has expr) {
-            append "assert state[\'<q.name>\'] == <expr2py(q.expr)>";
+            message = ", \' <q.name> was not the same as <q.expr>\'";
+            append "assert state[\'<q.name>\'] == <expr2py(q.expr)>"+message;
         }
 
         list[Question] others = [ q2 | (Question)`if (<Expr cond>) <Question q2>` <- qs, 
@@ -69,7 +71,7 @@ list[str] genAsserts(start[Form] form) {
         if (others != []) {
             append "if driver.find_elements(By.ID, \'<divId(q)>\')[0].is_displayed():
                    '    <for (Question q2 <- others) {>
-                   '    assert not driver.find_elements(By.ID, \'<divId(q2)>\')[0].is_displayed()
+                   '    assert not driver.find_elements(By.ID, \'<divId(q2)>\')[0].is_displayed(), \' <divId(q2)> was displayed at the same time as <divId(q)>\'
                    '    <}>
                    '";
         }

@@ -4,28 +4,28 @@ import importlib.util
 import sys
 import inspect
 
-def get_oracles(name):
-    # Create the full path to the file where the oracles are
-    path = os.path.abspath(os.getcwd() + '/../../examples/' + name + ".py")
+def import_oracle_module(url, name):
+    # The python file where the oracles are is in the same dir as the html
+    path = url.replace("html", "py")
         
     # Load the module from the file path
     spec = importlib.util.spec_from_file_location(name, path)
     oracle_file = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(oracle_file)
     
+    return oracle_file
+    
+def testar_QL_webApp(url):
+    
+    # Get the name of the QL app and import the generated oracle file
+    name = os.path.splitext(os.path.basename(url))[0]
+    oracle_file = import_oracle_module(url, name)
+    
     # Get all functions defined in the oracle file
     oracles = [func for name, func in inspect.getmembers(oracle_file, inspect.isfunction)]
-    
-    return oracles
-
-
-def test_QL_program(name):
-    path = 'file://' + os.path.abspath(os.getcwd() + '/../../examples/' + name + ".html")
-    
-    testar(path, 2, 50, [], [], get_oracles(name))
-
-    
-
+     
+    # Call testar
+    testar('file://' + url, 2, 10, [], [], oracles)
 
 if __name__ == "__main__":
-    test_QL_program(sys.argv[1])
+    testar_QL_webApp(sys.argv[1])

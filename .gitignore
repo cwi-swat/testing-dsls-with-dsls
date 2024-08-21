@@ -6,3 +6,20 @@ target
 src/**/__pycache__/*
 examples/**/__pycache__/*
 
+.DS_Store
+examples/cyclic.html
+examples/cyclic.js
+examples/cyclic.py
+examples/loan_approval.html
+examples/loan_approval.py
+examples/loan_approval.js
+examples/tax.py
+examples/tax.html
+examples/tax.js
+examples/mutual.html
+examples/mutual.js
+examples/mutual.py
+examples/empty.html
+examples/empty.js
+examples/empty.py
+examples/loan_approval.py

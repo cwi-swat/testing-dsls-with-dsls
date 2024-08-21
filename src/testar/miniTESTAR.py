@@ -2,9 +2,12 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
 from more_itertools import collapse
+from input_data_generation import *
+from logging_actions import *
+from reporting import *
 import random   
-import string
 
 def start_SUT_and_get_driver(website_url,preparations):
     """
@@ -91,19 +94,23 @@ def derive_actions(driver, filter_elements):
             # For text, email, and password inputs: clear the textbox, send some random text, or both
             random_text = generate_random_text()
             random_number = generate_random_number()
+            naughty_string = generate_naughty_string()
 
             actions.append(lambda el=element: (log("clear+keys", el, random_text), el.clear(), el.send_keys(random_text)))
             actions.append(lambda el=element: (log("clear", el), el.clear()))
-            actions.append(lambda el=element: (log("keys", el, random_text), el.send_keys(random_text)))
-            actions.append(lambda el=element: (log("keys", el, random_number), el.send_keys(random_number)))
+            actions.append(lambda el=element: (log("random text keys", el, random_text), el.send_keys(random_text)))
+            actions.append(lambda el=element: (log("random numer keys", el, random_number), el.send_keys(random_number)))
+            actions.append(lambda el=element: (log("random naughty keys", el, naughty_string), el.send_keys(naughty_string)))
         elif element_type == "number":
             # For number inputs, send a random number, clear the box, or use the spinners with ARROW_UP or ARROW_DOWN
             random_text = generate_random_text()
             random_number = generate_random_number()
+            naughty_string = generate_naughty_string()
             
             actions.append(lambda el=element: (log("clear", el), el.clear()))
-            actions.append(lambda el=element: (log("keys", el, random_number), el.send_keys(random_number)))
-            actions.append(lambda el=element: (log("keys", el, random_text), el.send_keys(random_text)))
+            actions.append(lambda el=element: (log("random text keys", el, random_number), el.send_keys(random_number)))
+            actions.append(lambda el=element: (log("random numer keys", el, random_text), el.send_keys(random_text)))
+            actions.append(lambda el=element: (log("random naughty keys", el, naughty_string), el.send_keys(naughty_string)))
             actions.append(lambda el=element: (log("keys", el, "arrow UP"), el.send_keys(Keys.ARROW_UP)))
             actions.append(lambda el=element: (log("keys", el, "arrow DOWN"), el.send_keys(Keys.ARROW_DOWN)))
             actions.append(lambda el=element: (log("clear+keys", el, "arrow UP"), el.clear(), el.send_keys(Keys.ARROW_UP)))
@@ -112,32 +119,7 @@ def derive_actions(driver, filter_elements):
 
     return actions
 
-def log(action, element, *args):
-    tag_name = element.tag_name
-    element_id = element.get_attribute("id")
-    element_class = element.get_attribute("class")
-    element_type = element.get_attribute("type")
-    info = f"Tag: {tag_name}, ID: {element_id}, Class: {element_class}, Type: {element_type}'"
-   
-    if (len(args)>0):
-        print(action, " on ", info, " with", args)
-    else:
-        print(action, " on ", info)
-
-def generate_random_text(length=10):
-    """
-    Function to generate random text string
-    """
-    
-    letters = string.ascii_letters
-    return ''.join(random.choice(letters) for _ in range(length))
-
-def generate_random_number(min_value=1, max_value=100):
-    """
-    Function to generate random number
-    """
-    return str(random.randint(min_value, max_value))
-       
+ 
 def select_action(possible_actions):
     """
     Returns a randomly selected element from a list 
@@ -157,8 +139,8 @@ def execute_action(action):
     
 def check_oracles(driver, oracles, wait_time, errors, seq, acc):
     
-    # Set an implicit wait time to give time to fetch the DOM before evaluating the oracles
-    driver.implicitly_wait(wait_time)  #seconds
+    # Wait for the whole DOM to be fully loaded
+    WebDriverWait(driver, wait_time).until(lambda driver: driver.execute_script("return document.readyState") == "complete")
     
     # Iterate through the oracles and call them
     for oracle in oracles:
@@ -170,27 +152,6 @@ def check_oracles(driver, oracles, wait_time, errors, seq, acc):
         except Exception as e:
             print(f"An unexpected error occurred: {str(e)}")
    
-def print_test_summary(url, num_runs, length_sequence, errors):
-    print("="*30)
-    print("TEST SUMMARY REPORT")
-    print("="*30)
-    print(f"Tested URL: {url}")
-    print(f"Number of Runs: {num_runs}")
-    print(f"Sequence Length per Run: {length_sequence}")
-    print("="*30)
-    
-    if not errors:
-        print("RESULT: All tests passed successfully! 🎉")
-    else:
-        print(f"RESULT: {len(errors)} errors were found 🚨")
-        print("-"*30)
-        print("ERROR DETAILS:")
-        print("-"*30)
-        for e in errors:
-            print(f"{e}")
-    
-    print("="*30)
-
    
 def testar(url, num_runs, length_sequence, filter_elements, preparations, oracles, wait_time):
     """

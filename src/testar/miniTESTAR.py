@@ -2,7 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.action_chains import ActionChains
 from more_itertools import collapse
 from input_data_generation import *
 from logging_actions import *
@@ -85,37 +87,53 @@ def derive_actions(driver, filter_elements):
     actions = []
     
     for element in visible_actionable_elements:
+    
+        # Basic click
+        actions.append(lambda el=element: (log("click", el), el.click()))
+
+        # Advanced clicks
+        actions.append(lambda el=element: (log("double-click", el), ActionChains(driver).double_click(el).perform()))
+        #actions.append(lambda el=element: (log("right-click", el), ActionChains(driver).context_click(el).perform()))
+        actions.append(lambda el=element: (log("click and hold", el), ActionChains(driver).click_and_hold(el).perform()))
+
         
+        # Advanced keyboard inputs applicable to any element
+        actions.append(lambda el=element: (log("press TAB", el), el.send_keys(Keys.TAB)))
+        actions.append(lambda el=element: (log("press ENTER", el), el.send_keys(Keys.ENTER)))
+        actions.append(lambda el=element: (log("press ESCAPE", el), el.send_keys(Keys.ESCAPE)))
+        actions.append(lambda el=element: (log("press arrow UP", el), el.send_keys(Keys.ARROW_UP)))
+        actions.append(lambda el=element: (log("press arrow DOWN", el), el.send_keys(Keys.ARROW_DOWN)))
+    
         element_type = element.get_attribute("type").lower()
-                    
-        if element_type == "checkbox" or element_type == "radio":
-            actions.append(lambda el=element: (log("click", el), el.click()))
-        elif element_type == "text":
-            # For text, email, and password inputs: clear the textbox, send some random text, or both
+        element_tag_name = element.tag_name.lower()
+        
+        
+        if element_tag_name == "input" and element_type in ["text", "number", "email", "password"]:
+            # Send some random text, numbers, naughty
             random_text = generate_random_text()
             random_number = generate_random_number()
             naughty_string = generate_naughty_string()
 
-            actions.append(lambda el=element: (log("clear+keys", el, random_text), el.clear(), el.send_keys(random_text)))
-            actions.append(lambda el=element: (log("clear", el), el.clear()))
+            # keys
             actions.append(lambda el=element: (log("random text keys", el, random_text), el.send_keys(random_text)))
-            actions.append(lambda el=element: (log("random numer keys", el, random_number), el.send_keys(random_number)))
+            actions.append(lambda el=element: (log("random number keys", el, random_number), el.send_keys(random_number)))
             actions.append(lambda el=element: (log("random naughty keys", el, naughty_string), el.send_keys(naughty_string)))
-        elif element_type == "number":
-            # For number inputs, send a random number, clear the box, or use the spinners with ARROW_UP or ARROW_DOWN
-            random_text = generate_random_text()
-            random_number = generate_random_number()
-            naughty_string = generate_naughty_string()
-            
+            # clear
             actions.append(lambda el=element: (log("clear", el), el.clear()))
-            actions.append(lambda el=element: (log("random text keys", el, random_number), el.send_keys(random_number)))
-            actions.append(lambda el=element: (log("random numer keys", el, random_text), el.send_keys(random_text)))
-            actions.append(lambda el=element: (log("random naughty keys", el, naughty_string), el.send_keys(naughty_string)))
-            actions.append(lambda el=element: (log("keys", el, "arrow UP"), el.send_keys(Keys.ARROW_UP)))
-            actions.append(lambda el=element: (log("keys", el, "arrow DOWN"), el.send_keys(Keys.ARROW_DOWN)))
-            actions.append(lambda el=element: (log("clear+keys", el, "arrow UP"), el.clear(), el.send_keys(Keys.ARROW_UP)))
-        else:
-            actions.append(lambda el=element: (log("click", el), el.click()))
+            # clear + keys
+            actions.append(lambda el=element: (log("clear+text keys", el, random_text), el.clear(), el.send_keys(random_text)))
+            actions.append(lambda el=element: (log("clear+ number keys", el, random_number), el.clear(), el.send_keys(random_number)))
+            actions.append(lambda el=element: (log("clear+ naughty keys", el, naughty_string), el.clear(), el.send_keys(naughty_string)))
+            
+        elif element_tag_name == "select":
+            # For dropdowns, select different options
+            select = Select(element)
+            for option in select.options:
+                actions.append(lambda el=element, opt=option: (log("select dropdown option", el, opt.text), select.select_by_visible_text(opt.text)))
+
+        elif "[onclick]" in element.get_attribute("outerHTML"):
+            # For elements with `onclick` attributes, simply test clicking
+            actions.append(lambda el=element: (log("click element with onclick", el), el.click()))
 
     return actions
 
@@ -139,8 +157,10 @@ def execute_action(action):
     
 def check_oracles(driver, oracles, wait_time, errors, seq, acc):
     
-    # Wait for the whole DOM to be fully loaded
+    # Wait for the whole DOM to be fully loaded 
     WebDriverWait(driver, wait_time).until(lambda driver: driver.execute_script("return document.readyState") == "complete")
+   
+    
     
     # Iterate through the oracles and call them
     for oracle in oracles:
@@ -164,7 +184,7 @@ def testar(url, num_runs, length_sequence, filter_elements, preparations, oracle
     - filter_elements (list of functions): A list of functions that take the driver as input and return an element that should not be considered when deriving act
     - preparations (list of functions): A list of preparation steps to be performed before starting each test run. These could include steps like logging in or setting up the initial state.
     - oracles (list of functions): A list of oracle functions used to check the correctness or expected outcomes after actions are performed. These functions should take the driver as input and perform assertions or checks.
-    - wait_time: time to wait for the driver to fully fetch the updatd DOM before evaluating the oracles
+    - wait_time: time to wait for the driver to fully fetch the updated DOM before evaluating the oracles
 
     The inner loop of the function automates the TESTAR loop:
     1. Derive all actionable elements in the current state

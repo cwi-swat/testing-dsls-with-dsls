@@ -15,7 +15,9 @@ import Eval;
 import ParseTree;
 extend Syntax;
 
-start syntax Tests = "title" Str title Test* tests;
+start syntax Tests = Section* sections;
+
+syntax Section = @Foldable "section" Str title Test* tests;
 
 syntax Expr = non-assoc CheckMarker "(" Expr ")";
 
@@ -29,9 +31,9 @@ syntax Question
     ;
 
 syntax Test
-    = "test" Str name Form form
-    | "test" Str name "with" {KeyVal ","}* inputs Form form "=" State output
-    | "test" Str name "with" {KeyVal ","}* inputs Form form "renders" "as" UI ui;
+    = @Foldable "test" Str name Form form
+    | @Foldable "test" Str name "with" {KeyVal ","}* inputs Form form "=" State output
+    | @Foldable "test" Str name "with" {KeyVal ","}* inputs Form form "renders" "as" UI ui;
     
 syntax UI
   = "[" Question!ifThen!ifThenElse!block* widgets "]";
@@ -239,14 +241,18 @@ set[Message] runTests(start[Tests] tests) {
     set[Message] msgs = {};
     
     list[HTMLElement] divs = [];
-    for (Test t <- tests.top.tests) {
-        set[Message] tmsgs = runTest(t);
-        divs += [testResult2HTML(t, tmsgs)];
-        if (tmsgs != {}) {
-            msgs += tmsgs;
-        }
-        else {
-            msgs += {info("success", t.name.src)};
+
+    for (Section section <- tests.top.sections) {
+        divs += [h2([text("<section.title>"[1..-1])])];
+        for (Test t <- section.tests) {
+            set[Message] tmsgs = runTest(t);
+            divs += [testResult2HTML(t, tmsgs)];
+            if (tmsgs != {}) {
+                msgs += tmsgs;
+            }
+            else {
+                msgs += {info("success", t.name.src)};
+            }
         }
     }
 
@@ -254,12 +260,9 @@ set[Message] runTests(start[Tests] tests) {
       lang::html::AST::head([
         meta(name="viewport",content="width=device-width, initial-scale=1.0"),
         link(\rel="stylesheet", href="https://cdn.simplecss.org/simple.min.css"),
-        title([text("<tests.top.title>"[1..-1])])
+        title([text(tests.src.file)])
       ]),
-      body([
-        h1([text("<tests.top.title>"[1..-1])]),
-        *divs
-      ])
+      body(divs)
     ]);
 
     writeHTMLFile(tests.src[extension="html"], report, charset="UTF-16", escapeMode=extendedMode());

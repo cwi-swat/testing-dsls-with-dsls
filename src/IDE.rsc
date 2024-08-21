@@ -64,10 +64,10 @@ rel[loc,Command] myLenses(start[Form] input)
      <input.src, saveOracle(input, title="Save oracle")>};
 
 
-rel[loc,Command] testLenses(start[Tests] input) = {<input@\loc, runTestSuite(input, title="Run tests (<countTests(input.top)>)")>}
-    + {< t.src, runSingleTest(t, title="Run this test")> | Test t <- input.top.tests };
+rel[loc,Command] testLenses(start[Tests] input) = {<input@\loc, runTestSuite(input, title="Run tests (<countTests(input)>)")>}
+    + {< t.src, runSingleTest(t, title="Run this test")> | Section s <- input.top.sections, Test t <- s.tests };
 
-int countTests(Tests tests) = ( 0 | it + 1 | Test _ <- tests.tests );
+int countTests(start[Tests] tests) = ( 0 | it + 1 | /Test _ := tests );
 
 void myCommands(runQuestionnaire(start[Form] form)) {
     showInteractiveContent(runQL(form));
@@ -93,8 +93,9 @@ void testCommands(runSingleTest(Test t)) {
 }
 
 list[DocumentSymbol] testOutliner(start[Tests] input) 
-  = [symbol("<input.top.title>"[1..-1], \module(), input.src,
-        children=[ symbol("<t.name>"[1..-1], \class(), t.src) | Test t <- input.top.tests ])];
+  = [symbol("<s.title>"[1..-1], \module(), input.src,
+        children=[ symbol("<t.name>"[1..-1], \class(), t.src) | Test t <- s.tests ])
+        | Section s <- input.top.sections ];
 
 void main() {
     registerLanguage(

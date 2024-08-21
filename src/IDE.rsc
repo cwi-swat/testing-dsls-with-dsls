@@ -91,9 +91,11 @@ void myCommands(runTestar(start[Form] form)) {
     println(form.src[extension="html"].path);
     loc resolved = resolveLocation(form.src);
     println("RESOLVED: <resolved.path>");
-    <output, code> = execWithCode(|PATH:///python3|, 
+    <output, code> = execWithCode(|PATH:///python3|, workingDir=resolveLocation(|project://testing-dsls-with-dsls/|),
         args=["src/testar/testingQLprograms.py", resolved[extension="html"].path]);
     println("EXIT: <code>");
+
+    output += "<resolveLocation(|cwd:///|)>";
     loc out = form.src.top[extension="testar"];
     writeFile(out, output);
     edit(out);

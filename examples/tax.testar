@@ -1,0 +1,52 @@
+Starting test sequence number 1 of 2
+Action 1 of 10
+click on Tag: input, ID: hasBoughtHouse_widget_31, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 392}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 2 of 10
+click on Tag: input, ID: hasMaintLoan_widget_97, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 682}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 3 of 10
+click on Tag: input, ID: hasSoldHouse_widget_154, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 973}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 4 of 10
+random naughty keys on Tag: input, ID: privateDebt_widget_308, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('0,0/0,0',)
+Action 5 of 10
+random naughty keys on Tag: input, ID: privateDebt_widget_308, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '0000'} with ('<?xml version="1.0" encoding="ISO-8859-1"?><!DOCTYPE foo [ <!ELEMENT foo ANY ><!ENTITY xxe SYSTEM "file:///etc/passwd" >]><foo>&xxe;</foo>',)
+Action 6 of 10
+clear on Tag: input, ID: sellingPrice_widget_246, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {}
+Action 7 of 10
+clear on Tag: input, ID: privateDebt_widget_308, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '0000e1088591'}
+Action 8 of 10
+clear on Tag: input, ID: privateDebt_widget_308, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {}
+Action 9 of 10
+random text keys on Tag: input, ID: privateDebt_widget_308, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('87',)
+Action 10 of 10
+keys on Tag: input, ID: sellingPrice_widget_246, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('arrow DOWN',)
+Starting test sequence number 2 of 2
+Action 1 of 10
+click on Tag: input, ID: hasSoldHouse_widget_154, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 973}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 2 of 10
+keys on Tag: input, ID: privateDebt_widget_308, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('arrow DOWN',)
+Action 3 of 10
+random naughty keys on Tag: input, ID: privateDebt_widget_308, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-1'} with ('<a href="\\xE2\\x81\\x9Fjavascript:javascript:alert(1)" id="fuzzelement1">test</a>',)
+Action 4 of 10
+random text keys on Tag: input, ID: privateDebt_widget_308, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('73',)
+Action 5 of 10
+keys on Tag: input, ID: sellingPrice_widget_246, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('arrow UP',)
+Action 6 of 10
+random text keys on Tag: input, ID: sellingPrice_widget_246, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '1'} with ('98',)
+Action 7 of 10
+clear+keys on Tag: input, ID: privateDebt_widget_308, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('arrow UP',)
+Action 8 of 10
+random naughty keys on Tag: input, ID: sellingPrice_widget_246, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '198'} with ('ABC<div style="x:\\xE2\\x80\\x8Aexpression(javascript:alert(1)">DEF',)
+Action 9 of 10
+keys on Tag: input, ID: sellingPrice_widget_246, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('arrow UP',)
+Action 10 of 10
+random numer keys on Tag: input, ID: privateDebt_widget_308, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '1'} with ('zJZqQBwkRg',)
+==============================
+TEST SUMMARY REPORT
+==============================
+Tested URL: file:///Users/tvdstorm/Documents/Drafts/Courses/testing-dsls-with-dsls/examples/tax.html
+Number of Runs: 2
+Sequence Length per Run: 10
+==============================
+RESULT: All tests passed successfully! ����
+==============================
+|file:///Users/tvdstorm/CWI/salix-core/|

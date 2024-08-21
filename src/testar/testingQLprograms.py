@@ -15,17 +15,17 @@ def import_oracle_module(url, name):
     
     return oracle_file
     
-def testar_QL_webApp(url):
+def testar_QL_webApp(full_path):
     
     # Get the name of the QL app and import the generated oracle file
-    name = os.path.splitext(os.path.basename(url))[0]
-    oracle_file = import_oracle_module(url, name)
+    name = os.path.splitext(os.path.basename(full_path))[0]
+    oracle_file = import_oracle_module(full_path, name)
     
     # Get all functions defined in the oracle file
     oracles = [func for name, func in inspect.getmembers(oracle_file, inspect.isfunction)]
      
     # Call testar
-    testar('file://' + url, 2, 10, [], [], oracles, 60)
+    testar('file://' + full_path, 2, 10, [], [], oracles, 60)
 
 if __name__ == "__main__":
     testar_QL_webApp(sys.argv[1])

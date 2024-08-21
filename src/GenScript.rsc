@@ -57,11 +57,13 @@ list[str] genAsserts(start[Form] form) {
     list[Question] qs = flatten(form);
 
     asserts = for ((Question)`if (<Expr cond>) <Question q>` <- qs) {
-        message = ", \'<cond> evaluated to true, however <divId(q)> was not displayed\'";
+        str expr = replaceAll("<cond>", "\n", " ");
+        message = ", \'<expr> evaluated to true, however <divId(q)> was not displayed\'";
         append "assert not <expr2py(cond)> or driver.find_elements(By.ID, \'<divId(q)>\')[0].is_displayed()"+message;
         //append "assert not <expr2py(cond)> or driver.find_elements(By.ID, \'<divId(q)>\')[0].is_enabled()";
         if (q has expr) {
-            message = ", \' <q.name> was not the same as <q.expr>\'";
+            expr = replaceAll("<q.expr>", "\n", " ");
+            message = ", \' <q.name> was not the same as <expr>\'";
             append "assert state[\'<q.name>\'] == <expr2py(q.expr)>"+message;
         }
 

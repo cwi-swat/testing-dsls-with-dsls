@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 from miniTESTAR import testar
 import os
 import importlib.util

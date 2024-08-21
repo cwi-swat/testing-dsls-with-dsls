@@ -8,6 +8,7 @@ module IDE
 import util::LanguageServer;
 import util::Reflective;
 import util::IDEServices;
+import util::ShellExec;
 import IO;
 
 import Syntax;
@@ -55,13 +56,15 @@ data Command
   = runQuestionnaire(start[Form] form)
   | compileQuestionnaire(start[Form] form)
   | saveOracle(start[Form] form)
+  | runTestar(start[Form] form)
   ;
 
 
 rel[loc,Command] myLenses(start[Form] input) 
   = {<input@\loc, runQuestionnaire(input, title="Run...")>,
      <input.src, compileQuestionnaire(input, title="Compile")>,
-     <input.src, saveOracle(input, title="Save oracle")>};
+     <input.src, saveOracle(input, title="Save oracle")>,
+     <input.src, runTestar(input, title="Run Testar")>};
 
 
 rel[loc,Command] testLenses(start[Tests] input) = {<input@\loc, runTestSuite(input, title="Run tests (<countTests(input)>)")>}
@@ -81,6 +84,21 @@ void myCommands(saveOracle(start[Form] form)) {
     loc l = form.src.top[extension="py"];
     writeFile(l, genTestarOracle(form));
 }
+
+void myCommands(runTestar(start[Form] form)) {
+    loc l = form.src.top[extension="py"];
+    writeFile(l, genTestarOracle(form));
+    println(form.src[extension="html"].path);
+    loc resolved = resolveLocation(form.src);
+    println("RESOLVED: <resolved.path>");
+    <output, code> = execWithCode(|PATH:///python3|, 
+        args=["src/testar/testingQLprograms.py", resolved[extension="html"].path]);
+    println("EXIT: <code>");
+    loc out = form.src.top[extension="testar"];
+    writeFile(out, output);
+    edit(out);
+}
+
 
 void testCommands(runTestSuite(start[Tests] tests)) {
     set[Message] msgs = runTests(tests);

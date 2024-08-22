@@ -3,7 +3,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 from more_itertools import collapse
 from input_data_generation import *
@@ -115,15 +114,15 @@ def derive_actions(driver, filter_elements):
             naughty_string = generate_naughty_string()
 
             # keys
-            actions.append(lambda el=element: (log("random text keys", el, random_text), el.send_keys(random_text)))
-            actions.append(lambda el=element: (log("random number keys", el, random_number), el.send_keys(random_number)))
-            actions.append(lambda el=element: (log("random naughty keys", el, naughty_string), el.send_keys(naughty_string)))
+            actions.append(lambda el=element: (log("random text keys", el, random_text), el.send_keys(random_text, Keys.RETURN)))
+            actions.append(lambda el=element: (log("random number keys", el, random_number), el.send_keys(random_number, Keys.RETURN)))
+            actions.append(lambda el=element: (log("random naughty keys", el, naughty_string), el.send_keys(naughty_string, Keys.RETURN)))
             # clear
             actions.append(lambda el=element: (log("clear", el), el.clear()))
             # clear + keys
-            actions.append(lambda el=element: (log("clear+text keys", el, random_text), el.clear(), el.send_keys(random_text)))
-            actions.append(lambda el=element: (log("clear+ number keys", el, random_number), el.clear(), el.send_keys(random_number)))
-            actions.append(lambda el=element: (log("clear+ naughty keys", el, naughty_string), el.clear(), el.send_keys(naughty_string)))
+            actions.append(lambda el=element: (log("clear+text keys", el, random_text), el.clear(), el.send_keys(random_text, Keys.RETURN)))
+            actions.append(lambda el=element: (log("clear+ number keys", el, random_number), el.clear(), el.send_keys(random_number, Keys.RETURN)))
+            actions.append(lambda el=element: (log("clear+ naughty keys", el, naughty_string), el.clear(), el.send_keys(naughty_string, Keys.RETURN)))
             
         elif element_tag_name == "select":
             # For dropdowns, select different options
@@ -155,13 +154,8 @@ def execute_action(action):
     action()
 
     
-def check_oracles(driver, oracles, wait_time, errors, seq, acc):
-    
-    # Wait for the whole DOM to be fully loaded 
-    WebDriverWait(driver, wait_time).until(lambda driver: driver.execute_script("return document.readyState") == "complete")
-   
-    
-    
+def check_oracles(driver, oracles, errors, seq, acc):
+      
     # Iterate through the oracles and call them
     for oracle in oracles:
         try:
@@ -173,7 +167,7 @@ def check_oracles(driver, oracles, wait_time, errors, seq, acc):
             print(f"An unexpected error occurred: {str(e)}")
    
    
-def testar(url, num_runs, length_sequence, filter_elements, preparations, oracles, wait_time):
+def testar(url, num_runs, length_sequence, filter_elements, preparations, oracles):
     """
     Automated scriptless testing of a web application by executing sequences of actions on the System Under Test (SUT).
 
@@ -184,8 +178,7 @@ def testar(url, num_runs, length_sequence, filter_elements, preparations, oracle
     - filter_elements (list of functions): A list of functions that take the driver as input and return an element that should not be considered when deriving act
     - preparations (list of functions): A list of preparation steps to be performed before starting each test run. These could include steps like logging in or setting up the initial state.
     - oracles (list of functions): A list of oracle functions used to check the correctness or expected outcomes after actions are performed. These functions should take the driver as input and perform assertions or checks.
-    - wait_time: time to wait for the driver to fully fetch the updated DOM before evaluating the oracles
-
+    
     The inner loop of the function automates the TESTAR loop:
     1. Derive all actionable elements in the current state
     2. Select one
@@ -214,7 +207,7 @@ def testar(url, num_runs, length_sequence, filter_elements, preparations, oracle
             execute_action(selected_action)
             
             #check oracles
-            check_oracles(driver, oracles, wait_time, errors, run_cnt, acc_cnt)
+            check_oracles(driver, oracles, errors, run_cnt, acc_cnt)
                 
         # Close the SUT and browser
         driver.quit()

@@ -5,7 +5,7 @@ import os
 
 def test_lambda():
     
-    testar('https://lambdatest.github.io/sample-todo-app/', 3, 100, [], [], [], 20)
+    testar('https://lambdatest.github.io/sample-todo-app/', 3, 100, [], [], [])
 
 
 def test_saucer():
@@ -32,7 +32,7 @@ def test_saucer():
         
         return social_links
     
-    testar("https://www.saucedemo.com/", 1, 100, [filter_burger, filter_external_links], [test_Sauce_login], [], 20)
+    testar("https://www.saucedemo.com/", 1, 100, [filter_burger, filter_external_links], [test_Sauce_login], [])
      
     
 def test_parabank():
@@ -68,5 +68,5 @@ def test_parabank():
         driver.find_element(By.XPATH, "//input[@type='submit' and @value='Log In']").click()
 
     
-    testar("https://para.testar.org/", 1, 40, [filter_external_links, filter_zero_sized_elements], [parabank_login], [], 180)
+    testar("https://para.testar.org/", 1, 40, [filter_external_links, filter_zero_sized_elements], [parabank_login], [])
 

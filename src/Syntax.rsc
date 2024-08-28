@@ -14,7 +14,7 @@ syntax Name = Id; // because redef/extend of Id from standard lib does not work.
 
 // syntax of a questionnaire
 start syntax Form 
-  = "form" Str title "{" Question* questions "}"; 
+  = form: "form" Str title "{" Question* questions "}"; 
 
 // Here's a simple syntax of String literals
 lexical Str = [\"]![\"]* [\"];
@@ -27,7 +27,7 @@ lexical Bool = "true" | "false";
 lexical Int = [\-]?[0-9]+;
 
 // ASSIGNMENT: define the syntax of type keywords  
-syntax Type = "integer" | "boolean" | "string";
+syntax Type = integer: "integer" | boolean: "boolean" | string: "string";
 
 
 
@@ -59,23 +59,23 @@ syntax Expr
   | bracket "(" Expr ")"
   | not: "!" Expr
   > left (
-      Expr "*" Expr
-    | Expr "/" Expr
+      mul: Expr "*" Expr
+    | div: Expr "/" Expr
   )
   > left (
-      Expr "+" Expr
-    | Expr "-" Expr
+      add: Expr "+" Expr
+    | sub: Expr "-" Expr
   )
   > non-assoc (
-      Expr "==" Expr
-    | Expr "!=" Expr
-    | Expr "\>" Expr
-    | Expr "\<" Expr
-    | Expr "\<=" Expr
-    | Expr "\>=" Expr
+      eq: Expr "==" Expr
+    | neq: Expr "!=" Expr
+    | gt: Expr "\>" Expr
+    | lt: Expr "\<" Expr
+    | leq: Expr "\<=" Expr
+    | geq: Expr "\>=" Expr
   )
-  > left Expr "&&" Expr
-  > left Expr "||" Expr
+  > left and: Expr "&&" Expr
+  > left or: Expr "||" Expr
   ;
 
 void snippets() {

@@ -27,28 +27,28 @@ function $update(name, value) {
      div.style.display = true ? 'block' : 'none'; 
      
      
-     div = document.getElementById('hasMaintLoan_div_97');
+     div = document.getElementById('hasMaintLoan_div_95');
      div.style.display = true ? 'block' : 'none'; 
      
      
-     div = document.getElementById('hasSoldHouse_div_154');
+     div = document.getElementById('hasSoldHouse_div_152');
      div.style.display = true ? 'block' : 'none'; 
      
      
-     div = document.getElementById('sellingPrice_div_246');
+     div = document.getElementById('sellingPrice_div_244');
      div.style.display = (true && $state.hasSoldHouse) ? 'block' : 'none'; 
      
      
-     div = document.getElementById('privateDebt_div_308');
+     div = document.getElementById('privateDebt_div_306');
      div.style.display = (true && $state.hasSoldHouse) ? 'block' : 'none'; 
      
      
-     div = document.getElementById('valueResidue_div_375');
+     div = document.getElementById('valueResidue_div_373');
      div.style.display = (true && $state.hasSoldHouse) ? 'block' : 'none'; 
      
      newVal = ($state.sellingPrice - $state.privateDebt);
      if (newVal !== $state.valueResidue) {
-       let elt = document.getElementById('valueResidue_widget_375');
+       let elt = document.getElementById('valueResidue_widget_373');
        $state.valueResidue = newVal;
        
        elt.value = newVal;

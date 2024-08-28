@@ -10,6 +10,9 @@ import util::Reflective;
 import util::IDEServices;
 import util::ShellExec;
 import IO;
+import ValueIO;
+import List;
+import vis::Charts;
 
 import Syntax;
 import Compile;
@@ -46,7 +49,8 @@ set[LanguageService] testLanguageContributor() = {
 
 data Command
   = runTestSuite(start[Tests] tests)
-  | runSingleTest(Test theTest);
+  | runSingleTest(Test theTest)
+  | showCoverage(start[Tests] tests);
 
 Summary mySummarizer(loc origin, start[Form] input) {
   return summary(origin, messages = {<m.at, m> | Message m <- check(input) });
@@ -67,7 +71,9 @@ rel[loc,Command] myLenses(start[Form] input)
      <input.src, runTestar(input, title="Run Testar")>};
 
 
-rel[loc,Command] testLenses(start[Tests] input) = {<input@\loc, runTestSuite(input, title="Run tests (<countTests(input)>)")>}
+rel[loc,Command] testLenses(start[Tests] input) 
+    = {<input@\loc, runTestSuite(input, title="Run tests (<countTests(input)>)")>,
+       <input@\loc, showCoverage(input, title="Show coverage")>}
     + {< t.src, runSingleTest(t, title="Run this test")> | Section s <- input.top.sections, Test t <- s.tests };
 
 int countTests(start[Tests] tests) = ( 0 | it + 1 | /Test _ := tests );
@@ -107,8 +113,19 @@ void testCommands(runTestSuite(start[Tests] tests)) {
     registerDiagnostics([ m | Message m <- msgs]);
 }
 
+void testCommands(showCoverage(start[Tests] tests)) {
+    loc covFile = tests.src.top[extension="cov"];
+    if (!exists(covFile)) {
+        runTests(tests);
+    }
+    map[str,int] covdist = readTextValueFile(#map[str,int], covFile);
+    lrel[str,int] lst = [ <k, covdist[k]> | k <- covdist];
+    lst = sort(lst, bool(tuple[str,int] x, tuple[str,int] y) { return x[1] > y[1]; });
+    showInteractiveContent(barChart(lst, title="Syntax Coverage for <tests.src.file>"));
+}
+
 void testCommands(runSingleTest(Test t)) {
-    set[Message] msgs = runTest(t);
+    set[Message] msgs = runTest(t, extractSpec(t));
     registerDiagnostics([ m | Message m <- msgs]);
 }
 

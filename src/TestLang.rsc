@@ -50,7 +50,8 @@ alias Spec = tuple[
     set[loc] warnings,
     list[Input] inputs,
     VEnv output,
-    list[Question] ui
+    list[Question] ui,
+    map[str,int] dist
 ];
 
 Spec extractSpec(Test t) {
@@ -96,7 +97,10 @@ Spec extractSpec(Test t) {
         ui = [ w | Question w <- t.ui.widgets ];
     }
     
-    return <"<t.name>"[1..-1], strip(t), errors, warnings, inputs, output, ui>;
+    Form theForm = strip(t);
+    map[str, int] dist = distribution([ x | /prod(label(str x, _), _, _) := theForm, x != "whitespace" ]);
+
+    return <"<t.name>"[1..-1], theForm , errors, warnings, inputs, output, ui, dist>;
 }
 
 str ppValue(vint(int n)) = "<n>";
@@ -107,9 +111,7 @@ str ppVenv(VEnv venv) = "{<intercalate(", ", lst)>}"
     when lst := [ "<x>: <ppValue(venv[x])>" | str x <- venv ];
 
 
-set[Message] runTest(Test t) {
-    Spec spec = extractSpec(t);
-
+set[Message] runTest(Test t, Spec spec) {
     set[Message] delta = {};
     
     try {
@@ -179,10 +181,13 @@ set[Message] runTest(Test t) {
     return delta;
 }
 
+// t=#start[Form] { x |   /prod(label(str x, _), _, _) := t.definitions });
+// [ x | /prod(label(str x, _), _, _) := pt, x != "whitespace" ]
+
 HTMLElement testResult2HTML(Test t, set[Message] msgs) {
     HTMLElement elt = div([]);
     
-   HTMLElement title = span([text(capitalize("<t.name>"[1..-1]) + (msgs == {} ? " ✅" : " ❌"))]);
+    HTMLElement title = span([text(capitalize("<t.name>"[1..-1]) + (msgs == {} ? " ✅" : " ❌"))]);
     // HTMLElement title = span([text(capitalize("<t.name>"[1..-1]) + (msgs == {} ? " 	&#x2705;" : " &#x274C;"))]);
 
     elt.elems += [h3([title])];
@@ -236,16 +241,26 @@ HTMLElement testResult2HTML(Test t, set[Message] msgs) {
     return elt;
 }
 
+map[str, int] addDists(map[str, int] d1, map[str, int] d2) {
+    for (str k <- d2) {
+        d1[k] = (d1[k]?0) + d2[k];
+    }
+    return d1;
+}
 
 set[Message] runTests(start[Tests] tests) {
     set[Message] msgs = {};
     
     list[HTMLElement] divs = [];
 
+    map[str, int] coverage = ( x: 0 |  /prod(label(str x, _), _, _) := (#Form).definitions );
+
     for (Section section <- tests.top.sections) {
         divs += [h2([text("<section.title>"[1..-1])])];
         for (Test t <- section.tests) {
-            set[Message] tmsgs = runTest(t);
+            Spec spec = extractSpec(t);
+            coverage = addDists(coverage, spec.dist);
+            set[Message] tmsgs = runTest(t, spec);
             divs += [testResult2HTML(t, tmsgs)];
             if (tmsgs != {}) {
                 msgs += tmsgs;
@@ -267,5 +282,6 @@ set[Message] runTests(start[Tests] tests) {
 
     writeHTMLFile(tests.src[extension="html"], report, charset="UTF-16", escapeMode=extendedMode());
 
+    writeFile(tests.src.top[extension="cov"], coverage);
     return msgs;
 }

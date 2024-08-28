@@ -1,4 +1,18 @@
-def print_test_summary(url, num_runs, length_sequence, errors):
+from logging_actions import *
+
+def report_element_coverage(visited, discovered):
+    visited_ids = {x for (x,y,z) in visited}
+    discovered_ids = {x for (x,y) in discovered}
+    print(len(visited_ids), visited_ids)
+    print(len(discovered_ids), discovered_ids)
+    if discovered_ids:
+        coverage = (len(visited_ids) / len(discovered_ids)) * 100
+        print(f"Element Coverage: {coverage:.2f}%")
+    else:
+        print("No actionable elements discovered during testing.")
+
+
+def print_test_summary(url, num_runs, length_sequence, errors, visited, discovered):
     print("="*30)
     print("TEST SUMMARY REPORT")
     print("="*30)
@@ -18,3 +32,5 @@ def print_test_summary(url, num_runs, length_sequence, errors):
             print(f"{e}")
     
     print("="*30)
+    
+    report_element_coverage(visited, discovered)

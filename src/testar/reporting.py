@@ -12,7 +12,7 @@ def report_element_coverage(visited, discovered):
         print("No actionable elements discovered during testing.")
 
 
-def print_test_summary(url, num_runs, length_sequence, errors, visited, discovered):
+def print_test_summary(url, num_runs, length_sequence, errors):
     print("="*30)
     print("TEST SUMMARY REPORT")
     print("="*30)

@@ -106,7 +106,6 @@ def derive_actions(driver, filter_elements):
         element_type = element.get_attribute("type").lower()
         element_tag_name = element.tag_name.lower()
         
-        
         if element_tag_name == "input" and element_type in ["text", "number", "email", "password"]:
             # Send some random text, numbers, naughty
             random_text = generate_random_text()

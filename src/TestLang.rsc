@@ -145,9 +145,6 @@ set[Message] runTest(Test t, Spec spec) {
         }
     }
 
-    // todo: catch exceptions and add as test-level errors.
-    // todo: don't do title, but sections in test files. 
-
     if (t has ui) {
         list[Question] ui = [];
         try {
@@ -181,15 +178,11 @@ set[Message] runTest(Test t, Spec spec) {
     return delta;
 }
 
-// t=#start[Form] { x |   /prod(label(str x, _), _, _) := t.definitions });
-// [ x | /prod(label(str x, _), _, _) := pt, x != "whitespace" ]
-
 HTMLElement testResult2HTML(Test t, set[Message] msgs) {
     HTMLElement elt = div([]);
     
     HTMLElement title = span([text(capitalize("<t.name>"[1..-1]) + (msgs == {} ? " ✅" : " ❌"))]);
-    // HTMLElement title = span([text(capitalize("<t.name>"[1..-1]) + (msgs == {} ? " 	&#x2705;" : " &#x274C;"))]);
-
+    
     elt.elems += [h3([title])];
 
     if (t has inputs) {

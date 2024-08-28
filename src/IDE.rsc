@@ -94,12 +94,9 @@ void myCommands(saveOracle(start[Form] form)) {
 void myCommands(runTestar(start[Form] form)) {
     loc l = form.src.top[extension="py"];
     writeFile(l, genTestarOracle(form));
-    println(form.src[extension="html"].path);
     loc resolved = resolveLocation(form.src);
-    println("RESOLVED: <resolved.path>");
     <output, code> = execWithCode(|PATH:///python3|, workingDir=resolveLocation(|project://testing-dsls-with-dsls/|),
         args=["src/testar/testingQLprograms.py", resolved[extension="html"].path]);
-    println("EXIT: <code>");
 
     output += "<resolveLocation(|cwd:///|)>";
     loc out = form.src.top[extension="testar"];
@@ -126,6 +123,11 @@ void testCommands(showCoverage(start[Tests] tests)) {
 
 void testCommands(runSingleTest(Test t)) {
     set[Message] msgs = runTest(t, extractSpec(t));
+    // this is ugly; it depends on the success message in runTests
+    // so as to avoid making the HTML output red if "success" is the only message.
+    if (msgs == {}) {
+        msgs += {info("success", t.name.src)};
+    }
     registerDiagnostics([ m | Message m <- msgs]);
 }
 

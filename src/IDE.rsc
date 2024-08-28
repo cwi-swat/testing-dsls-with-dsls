@@ -112,7 +112,7 @@ void testCommands(runTestSuite(start[Tests] tests)) {
 
 void testCommands(showCoverage(start[Tests] tests)) {
     loc covFile = tests.src.top[extension="cov"];
-    if (!exists(covFile)) {
+    if (!exists(covFile)) { // todo: check for out-of-date, not just non-existence
         runTests(tests);
     }
     map[str,int] covdist = readTextValueFile(#map[str,int], covFile);

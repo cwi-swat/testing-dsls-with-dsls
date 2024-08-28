@@ -32,5 +32,3 @@ def print_test_summary(url, num_runs, length_sequence, errors, visited, discover
             print(f"{e}")
     
     print("="*30)
-    
-    report_element_coverage(visited, discovered)

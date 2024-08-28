@@ -1,6 +1,3 @@
-
-
-
 def get_info(element):
     # Basic element information
     tag_name = element.tag_name
@@ -28,6 +25,16 @@ def get_info(element):
     
     return info
 
+def log (action, element, *args):
+    # Get all the info
+    info = get_info(element)
+    
+    # Print the executed action with additional arguments (if any)
+    if args:
+        print(f"{action} on {info} with {args}")
+    else:
+        print(f"{action} on {info}")
+
 
 def log_visited (action, element, visited, *args):
     # Get all the info
@@ -35,7 +42,7 @@ def log_visited (action, element, visited, *args):
     element_id = element.get_attribute("id")
     
     # Save visited elements (assume id is unique, this is true for generated QLs)
-    visited.add((element_id, action, info))
+    #visited.add((element_id, action, info))
 
     # Print the executed action with additional arguments (if any)
     if args:
@@ -50,5 +57,5 @@ def log_discovered(element, discovered):
     element_id = element.get_attribute("id")
     
     # Save discovered elements (assume id is unique, this is true for generated QLs)
-    discovered.add((element_id, info))
+    #discovered.add((element_id, info))
     

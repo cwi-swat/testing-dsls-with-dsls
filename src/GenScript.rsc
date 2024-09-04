@@ -104,7 +104,7 @@ str expr2py((Expr)`<Expr x> + <Expr y>`) = "(<expr2py(x)> + <expr2py(y)>)";
 str expr2py((Expr)`<Expr x> - <Expr y>`) = "(<expr2py(x)> - <expr2py(y)>)";
 str expr2py((Expr)`<Expr x> * <Expr y>`) = "(<expr2py(x)> * <expr2py(y)>)";
 str expr2py((Expr)`<Expr x> / <Expr y>`) 
-  = "(lambda div: (<expr2py(x)> / div) if div != 0 else 0)(<expr2py(y)>)";
+  = "(lambda div: (<expr2py(x)> // div) if div != 0 else 0)(<expr2py(y)>)";
 
 
 str expr2py((Expr)`<Expr x> == <Expr y>`) = "(<expr2py(x)> == <expr2py(y)>)";

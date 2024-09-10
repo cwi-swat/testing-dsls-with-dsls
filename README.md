@@ -45,22 +45,22 @@ Different data types in QL map to different (default) GUI widgets. For instance,
 
 Here’s a simple questionnaire in QL from the domain of tax filing:
 ```
-form taxOfficeExample { 
-  "Did you sell a house in 2010?"
-    hasSoldHouse: boolean
+form "Tax office example" { 
+  "Did you sell a house in 2010?" // the prompt of the question
+    hasSoldHouse: boolean         // and its name and type
   "Did you buy a house in 2010?"
     hasBoughtHouse: boolean
   "Did you enter a loan?"
     hasMaintLoan: boolean
     
-  if (hasSoldHouse) {
+  if (hasSoldHouse) { // conditional block
     "What was the selling price?"
       sellingPrice: integer
     "Private debts for the sold house:"
       privateDebt: integer
     "Value residue:"
-      valueResidue: integer = 
-        (sellingPrice - privateDebt)
+      valueResidue: integer =      // a computed question
+        sellingPrice - privateDebt // has an expression 
   }
 }
 ```
@@ -90,6 +90,7 @@ These tests are written using the `test ... <form>` notation, with embedded mark
 - test that the type checker issues a warning when the same prompt occurs with two questions with different names. 
 - test that adding integers and booleans is rejected by the type checker
 - test that the condition of if-then/if-then-else should be boolean
+- test that a question cannot be redeclared with a different type
 
 ### Syntax and dynamic semantics
 

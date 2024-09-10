@@ -1,7 +1,6 @@
 
 # Testing DSLs with DSLs
 
-
 In this workshop we will introduce techniques for testing Domain-Specific Languages (DSLs): little languages dedicated to a particular problem domain.
 We will introduce the aspects of a DSL that you want to test, and strategies to automate tests.
 The workshop demonstrates these topics in the context of the [Rascal Language Workbench](https://www.rascal-mpl.org/).
@@ -13,6 +12,7 @@ Overview of the workshop:
 - 45 minutes: continue with exercises
 - 45 minutes: introduce scriptless testing with TESTAR and how DSL invariants can inform TESTAR.
 
+The exercises (see below) are meant to experience what can look like to test aspects of DSL, including the syntax, the type checker, and the dynamic semantics. The implementation in this project has bugs! So the goal is to find them by writing tests. Optionally, you can have a look at the Rascal source code of the various parts (the syntax definition, the evaluator, or the type checker) to see if you can spot them, and, even more optionally, try to fix them (in that case, please rerun the `main();` command in the terminal described below). 
 
 ### Preliminaries for the practical part
 
@@ -65,11 +65,11 @@ form taxOfficeExample {
 }
 ```
 
-See the folder `examples/` for example QL programs. Opening a QL file will show links at the for compiling, running, and testing QL programs. 
+See the folder `examples/` for example QL programs. Opening a QL file will show links at the top for compiling, running, and testing QL programs. 
 Running a questionnaire immediately opens a browser pane in VS Code. Compiling will result in an HTML file and Javascript file; opening
 them in a browser will again execute the questionnaire (albeit with a slightly different layout).
-If you have Python installed and a recent version of the Chrome Driver (in the PATH) you can randomly test a questionnaire by pressing the link "Run Testar". 
-There's also a link to save the oracle (as Python code) that is used by TESTAR. 
+
+If you have Python installed and a recent version of the Chrome Driver (in the PATH) you can randomly test a questionnaire by pressing the link "Run Testar". There's also a link to save the oracle (as Python code) that is used by TESTAR. 
 
 
 ## TestQL: a DSL for testing DSLs
@@ -77,6 +77,30 @@ There's also a link to save the oracle (as Python code) that is used by TESTAR.
 TestQL is DSL for testing QL. In fact, it's an extension of the QL language (Rascal supports extensible syntax definition), so that tests can be expressed in a
 human readable, declarative format. TestQL files end with the extension `testql`, and have IDE support enabled, just like QL: see the links at the top, and at
 each test case, to respectively execute the whole test suite, or an individual test. There's also a link to show the test coverage of the test suite, showing how much of the syntax of the DSL has been covered by tests. 
+
+
+## Exercises
+
+If you look at `myql.testql`, you will see example test cases for inspiration. 
+
+### Type checking
+
+These tests are written using the `test ... <form>` notation, with embedded markers `$error` or `$warning` around expressions or questions. 
+
+- test that the type checker issues a warning when the same prompt occurs with two questions with different names. 
+- test that adding integers and booleans is rejected by the type checker
+- test that the condition of if-then/if-then-else should be boolean
+
+### Syntax and dynamic semantics
+
+These tests are written using the `test ... with ... <form> = {...}` format. 
+
+- test that minus is left associative
+- test that `||` has weaker precedence than `&&`
+- test that nested if-then-else without `{}` binds the inner `else` to the inner `if` (_tricky_).
+ - test that disabled (invisible) questions are not changed even if given input
+
+### Rendering
 
 
 

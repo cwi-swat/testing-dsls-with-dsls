@@ -21,7 +21,7 @@ import GenScript;
 import App;
 import Message;
 import ParseTree;
-import TestLang;
+import TestQL;
 
 
 set[LanguageService] myLanguageContributor() = {
@@ -149,8 +149,8 @@ void main() {
     registerLanguage(
         language(
             pathConfig(srcs = [|std:///|, |project://testing-dsls-with-dsls/src|]),
-            "TestLang",
-            "test",
+            "TestQL",
+            "testql",
             "IDE",
             "testLanguageContributor"
         )

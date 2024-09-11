@@ -21,7 +21,7 @@ void helloWorld() {
 /*
  * FizzBuzz (https://en.wikipedia.org/wiki/Fizz_buzz)
  * - To practice some basic programming constructs in Rascal, let us implement two versions of Fizz_buzz
- * - an implementation that solves it  imperatively (fizzBuzz)
+ * - an implementation that solves it imperatively and prints them (fizzBuzz)
  * - another implemention as a list-returning function (fizzBuzzList)
  */
  
@@ -60,6 +60,7 @@ int fact3(int n) {
   //switch (n) {
   // complete  
   // }
+  return -1; // <- replace
 }
 
 // Now that we have three implementations, let us write a test let us write a test so they 
@@ -120,10 +121,12 @@ void patternMatching() {
  
 /*
  * Trees
- * - complete the data type ColoredTree with
- *   constructors for binary red and black branches
- * - use the exampleTree() to test in the console
+ * - complete the data type ColoredTree below to represent 
+ *   a colored binary tree where each node is either a leaf, a red node, 
+ *   or a black node
+ * - use the exampleTree() to test your data type in the console
  */
+ 
  
 data ColoredTree
   = leaf(int n);
@@ -149,21 +152,24 @@ int sumLeavesWithFor(ColoredTree t) {
   return -1; // <- replace 
 }
 
-// same, but now with a reducer and deep match
-// Reducer = ( <initial value> | <some expression with `it` | <generators> )
+// Below you can find another implementation that uses a reducer and deep match.
+// The implementation shows a reducer. Reducers in Rascal resemble the fold function found in 
+// most functional languages.
+// https://www.rascal-mpl.org/docs/Rascal/Expressions/Reducer/
+// It has the following syntax: Reducer = ( <initial value> | <some expression with `it` | <generators> )
 int sumLeavesWithReducer(ColoredTree t) = ( 0 | it + i | /leaf(int i) := t );
 
 
-// add 1 to all leaves; use visit + =>
+// Complete the function below that adds 1 to all leaves; use visit + =>
 ColoredTree inc1(ColoredTree t) {
   return leaf(-1); // <- replace 
 }
 
-// write a test for inc1, run from console using :test
+// Write a test for inc1, run from console using :test
 test bool testInc1() = false;
 
-// define a property for inc1, i.e. a boolean
-// function that checks if one tree is inc1 of the other
+// Define a property for inc1 in the function isInc1, that returns a boolean
+// this function should checks if one tree is inc1 of the other
 // (without using inc1).
 // Use switch on the tupling of t1 and t2 (`<t1, t2>`)
 // or pattern based dispatch.
@@ -172,13 +178,6 @@ bool isInc1(ColoredTree t1, ColoredTree t2) {
   return false; // <- replace
 }
  
-// write a randomized test for inc1 using the property
+// Write a randomized test for inc1 using the property
 // again, execute using :test
 test bool testInc1Randomized(ColoredTree t1) = false;
-
-
- 
-
- 
-  
-  

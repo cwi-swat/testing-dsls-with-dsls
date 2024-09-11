@@ -64,13 +64,13 @@ A full type checker of QL detects:
 - duplicate labels (warning)
 - cyclic data and control dependencies
 
-Different data types in QL map to different (default) GUI widgets. For instance, boolean would be represented as checkboxes, integers as numeric sliders, and strings as text fields.
+Different data types in QL map to different (default) GUI widgets. For instance, boolean would be represented as checkboxes, integers as text fields with numeric sliders, and strings as text fields.
 
 See the folder `examples/` for example QL programs. Opening a QL file will show links at the top for compiling, running, and testing QL programs. 
 Running a questionnaire immediately opens a browser pane in VS Code. Compiling will result in an HTML file and Javascript file; opening
 them in a browser will again execute the questionnaire (albeit with a slightly different layout).
 
-If you have Python installed and a recent version of the Chrome Driver (in the PATH) you can randomly test a questionnaire by pressing the link "Run Testar". There's also a link to save the oracle (as Python code) that is used by TESTAR. 
+If you have Python installed and a recent version of the [Chrome Driver](https://googlechromelabs.github.io/chrome-for-testing/) (in the PATH) you can use mini implementation of the Testar tool to randomly test a questionnaire in Chrome by pressing the link "Run Testar". There's also a link to save the oracle (as Python code) that is used by TESTAR. 
 
 
 ## TestQL: a DSL for testing DSLs

@@ -12,7 +12,7 @@ Overview of the workshop:
 - 45 minutes: continue with exercises
 - 45 minutes: introduce scriptless testing with TESTAR and how DSL invariants can inform TESTAR.
 
-The exercises (see below) are meant to experience what can look like to test aspects of DSL, including the syntax, the type checker, and the dynamic semantics. The implementation in this project has bugs! So the goal is to find them by writing tests. Optionally, you can have a look at the Rascal source code of the various parts (the syntax definition, the evaluator, or the type checker) to see if you can spot them, and, even more optionally, try to fix them (in that case, please rerun the `main();` command in the terminal described below). 
+The exercises (see below) are meant to experience what it can look like to test aspects of DSLs, including the syntax, the type checker, and the dynamic semantics. The implementation in this project has bugs! So the goal is to find them by writing tests. Optionally, you can have a look at the Rascal source code of the various parts (the syntax definition, the evaluator, or the type checker) to see if you can spot them, and, even more optionally, try to fix them (in that case, please rerun the `main();` command in the terminal described below). 
 
 ### Preliminaries for the practical part
 
@@ -21,13 +21,17 @@ Please install [VS Code](https://code.visualstudio.com/) and then the [Rascal VS
 Git clone [this](https://github.com/cwi-swat/testing-dsls-with-dsls) repository (_NB: don't rename the folder!_). Finally, go to the File menu of VS Code and select "Add Folder to workspace", navigate to where you've cloned the repo, and select that directory. 
 
 The workshop project comes with pre-wired IDE support for the Questionnaire Language (QL). 
-To enable this: open the file `IDE.rsc`, and press the link at the top of the file "Open in new Rascal Terminal".
+To enable this: open the file `IDE.rsc`, and press the link at the top of the file "Import in new Rascal Terminal".
 Then issue the following command in the terminal: `main();` (followed by enter).
 
 ## QL: a DSL for Questionnaires
 
 The workshop is based on a DSL for questionnaires, called QL. QL allows you to define simple forms with conditions and computed values.
-A QL program consists of a form, containing questions. A question can be a normal question, or a computed question. A computed question has an associated expression which defines its value. Both kinds of questions have a prompt (to show to the user), an identifier (its name), and a type. The conditional construct comes in two variants if and if-else. A block construct using `{}` can be used to group questions.
+A QL program consists of a form, containing questions. A question can be a normal question, that expects an answer (i.e. is answerable), or a computed question. A computed question has an associated expression which defines its value. 
+
+Both kinds of questions have a prompt (to show to the user), an identifier (its name), and a type. 
+
+Questions can be conditional and the conditional construct comes in two variants: **if** and **if-else**. A block construct using `{}` can be used to group questions.
 
 Questions are enabled and disabled when different values are entered, depending on their conditional context.
 

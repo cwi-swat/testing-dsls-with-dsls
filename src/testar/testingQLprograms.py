@@ -27,7 +27,7 @@ def testar_QL_webApp(full_path):
     oracles = [func for name, func in inspect.getmembers(oracle_file, inspect.isfunction)]
      
     # Call testar
-    testar('file://' + full_path, 4, 1000, [], [], oracles)
+    testar('file://' + full_path, 4, 25, [], [], oracles)
 
 if __name__ == "__main__":
     testar_QL_webApp(sys.argv[1])

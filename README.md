@@ -10,7 +10,7 @@ Overview of the workshop:
 - 30 minutes: installation, setup, and start of exercises
 - break
 - 45 minutes: continue with exercises
-- 45 minutes: introduce scriptless testing with TESTAR and how DSL invariants can inform TESTAR.
+- 45 minutes: introduce scriptless testing with TESTAR and how DSL invariants can feed domain-aware oracles into Testar.
 
 The exercises (see below) are meant to experience what it can look like to test aspects of DSLs, including the syntax, the type checker, and the dynamic semantics. The implementation in this project has bugs! So the goal is to find them by writing tests. Optionally, you can have a look at the Rascal source code of the various parts (the syntax definition, the evaluator, or the type checker) to see if you can spot them, and, even more optionally, try to fix them (in that case, please rerun the `main();` command in the terminal described below). 
 
@@ -70,7 +70,7 @@ See the folder `examples/` for example QL programs. Opening a QL file will show 
 Running a questionnaire immediately opens a browser pane in VS Code. Compiling will result in an HTML file and Javascript file; opening
 them in a browser will again execute the questionnaire (albeit with a slightly different layout).
 
-If you have Python installed and a recent version of the [Chrome Driver](https://googlechromelabs.github.io/chrome-for-testing/) (in the PATH) you can use mini implementation of the [Testar](www.tester.org) tool to randomly test a questionnaire in Chrome by pressing the link "Run Testar". There's also a link to save the oracle (as Python code) that is used by Testar to evaluate each state. 
+If you have a recent version of the [Chrome Driver](https://googlechromelabs.github.io/chrome-for-testing/) installed (in the PATH) you can run a mini implementation of the [Testar](www.tester.org) tool to randomly test a questionnaire in Chrome by pressing the link "Run Testar". To save the domain-aware oracles, there is a link "Save oracles" to save the oracles (as Python code) that are used by Testar to evaluate each state. 
 
 
 ## TestQL: a DSL for testing DSLs

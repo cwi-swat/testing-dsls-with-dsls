@@ -16,7 +16,7 @@ The exercises (see below) are meant to experience what it can look like to test 
 
 ### Preliminaries for the practical part
 
-Please install [VS Code](https://code.visualstudio.com/) and then the [Rascal VS Code extension](https://marketplace.visualstudio.com/items?itemName=usethesource.rascalmpl) and the [Python extension for VS] (https://marketplace.visualstudio.com/items?itemName=ms-python.python) (you can also find these in the extension browser).
+Please install [VS Code](https://code.visualstudio.com/) and then the [Rascal VS Code extension](https://marketplace.visualstudio.com/items?itemName=usethesource.rascalmpl) and the [Python extension for VS](https://marketplace.visualstudio.com/items?itemName=ms-python.python) (you can also find these in the extension browser).
 
 Git clone [this](https://github.com/cwi-swat/testing-dsls-with-dsls) repository (_NB: don't rename the folder!_). Finally, go to the File menu of VS Code and select "Add Folder to workspace", navigate to where you've cloned the repo, and select that directory. 
 

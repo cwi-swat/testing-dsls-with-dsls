@@ -2,7 +2,7 @@
 # Testing DSLs with DSLs
 
 In this workshop we will introduce techniques for testing Domain-Specific Languages (DSLs): little languages dedicated to a particular problem domain.
-We will introduce the aspects of a DSL that you want to test, and strategies to automate tests.
+We will introduce the aspects of a DSL that you might want to test, and strategies to automate such tests.
 The workshop demonstrates these topics in the context of the [Rascal Language Workbench](https://www.rascal-mpl.org/).
 
 Overview of the workshop:
@@ -72,7 +72,7 @@ See the folder `examples/` for example QL programs. Opening a QL file will show 
 Running a questionnaire immediately opens a browser pane in VS Code. Compiling will result in an HTML file and Javascript file; opening
 them in a browser will again execute the questionnaire (albeit with a slightly different layout).
 
-If you have a recent version of the [Chrome Driver](https://googlechromelabs.github.io/chrome-for-testing/) installed (in the PATH) you can run a mini implementation of the [Testar](www.tester.org) tool to randomly test a questionnaire in Chrome by pressing the link "Run Testar". To save the domain-aware oracles, there is a link "Save oracles" to save the oracles (as Python code) that are used by Testar to evaluate each state. 
+If you have a recent version of the [Chrome Driver](https://googlechromelabs.github.io/chrome-for-testing/) installed (in the PATH) you can run a mini implementation of the [Testar](www.testar.org) tool to randomly test a questionnaire in Chrome by pressing the link "Run Testar". To save the domain-aware oracles, there is a link "Save oracles" to save the oracles (as Python code) that are used by Testar to evaluate each state. 
 
 
 ## TestQL: a DSL for testing DSLs
@@ -99,12 +99,12 @@ These tests are written using the `test ... <form>` notation, with embedded mark
 
 These tests are written using the `test ... with ... <form> = {...}` format. 
 
-- test that minus is left associative
+- test that subtraction is left associative
 - test that `||` has weaker precedence than `&&`
 - test that nested if-then-else without `{}` binds the inner `else` to the inner `if` (_tricky_).
  - test that disabled (invisible) questions are not changed even if given input
 
-### Rendering
+
 
 
 

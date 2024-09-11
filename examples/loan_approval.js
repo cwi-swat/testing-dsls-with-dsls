@@ -200,7 +200,7 @@ function $update(name, value) {
      div = document.getElementById('totalInterest_div_1709');
      div.style.display = true ? 'block' : 'none'; 
      
-     newVal = (function () { const div = 100; return div !== 0 ? (((($state.loanAmount * $state.interestRate) * $state.loanTerm)) / div) : 0; })();
+     newVal = (function () { const div = 100; return div !== 0 ? Math.ceil(((($state.loanAmount * $state.interestRate) * $state.loanTerm)) / div) : 0; })();
      if (newVal !== $state.totalInterest) {
        let elt = document.getElementById('totalInterest_widget_1709');
        $state.totalInterest = newVal;
@@ -228,7 +228,7 @@ function $update(name, value) {
      div = document.getElementById('monthlyPayment_div_1892');
      div.style.display = true ? 'block' : 'none'; 
      
-     newVal = (function () { const div = (($state.loanTerm * 12)); return div !== 0 ? ($state.totalRepayment / div) : 0; })();
+     newVal = (function () { const div = (($state.loanTerm * 12)); return div !== 0 ? Math.ceil($state.totalRepayment / div) : 0; })();
      if (newVal !== $state.monthlyPayment) {
        let elt = document.getElementById('monthlyPayment_widget_1892');
        $state.monthlyPayment = newVal;

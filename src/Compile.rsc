@@ -140,7 +140,7 @@ str expr2js((Expr)`<Expr x> + <Expr y>`) = "(<expr2js(x)> + <expr2js(y)>)";
 str expr2js((Expr)`<Expr x> - <Expr y>`) = "(<expr2js(x)> - <expr2js(y)>)";
 str expr2js((Expr)`<Expr x> * <Expr y>`) = "(<expr2js(x)> * <expr2js(y)>)";
 str expr2js((Expr)`<Expr x> / <Expr y>`) 
-  = "(function () { const div = <expr2js(y)>; return div !== 0 ? (<expr2js(x)> / div) : 0; })()";
+  = "(function () { const div = <expr2js(y)>; return div !== 0 ? Math.ceil(<expr2js(x)> / div) : 0; })()";
 
 
 str expr2js((Expr)`<Expr x> == <Expr y>`) = "(<expr2js(x)> === <expr2js(y)>)";

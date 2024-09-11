@@ -75,7 +75,7 @@ them in a browser will again execute the questionnaire (albeit with a slightly d
 If you have a recent version of the [Chrome Driver](https://googlechromelabs.github.io/chrome-for-testing/) installed (in the PATH) you can run a mini implementation of the [Testar](www.testar.org) tool to randomly test a questionnaire in Chrome by pressing the link "Run Testar". To save the domain-aware oracles, there is a link "Save oracles" to save the oracles (as Python code) that are used by Testar to evaluate each state. 
 
 
-## TestQL: a DSL for testing DSLs
+## TestQL: a DSL for testing the QL DSL
 
 TestQL is DSL for testing QL. In fact, it's an extension of the QL language (Rascal supports extensible syntax definition), so that tests can be expressed in a
 human readable, declarative format. TestQL files end with the extension `testql`, and have IDE support enabled, just like QL: see the links at the top, and at
@@ -84,7 +84,7 @@ each test case, to respectively execute the whole test suite, or an individual t
 
 ## Exercises
 
-If you look at `myql.testql`, you will see example test cases for inspiration. 
+If you look at `myql.testql`, you will see example test cases for inspiration, write your own tests in `yourtests.testql`. 
 
 ### Type checking
 

@@ -15,57 +15,66 @@ import IO;
  */
  
 void helloWorld() {
-  println("Hello IPA 2024");
+  println("Hello A-TEST 2024");
 } 
-
 
 /*
  * FizzBuzz (https://en.wikipedia.org/wiki/Fizz_buzz)
- * - implement imperatively
- * - implement as list-returning function
+ * - To practice some basic programming constructs in Rascal, let us implement two versions of Fizz_buzz
+ * - an implementation that solves it  imperatively (fizzBuzz)
+ * - another implemention as a list-returning function (fizzBuzzList)
  */
  
 void fizzBuzz() {
+  //complete
 
 }
 
 list[str] fizzBuzzList() {
-  return []; // replace
+  return []; // complete and replace
 }
+
+// We can test for fizzBuzzList as follows. Just run from console using :test
+// (see https://www.rascal-mpl.org/docs/Rascal/Tests/)
+list[str] fbls = ["1","2","Fizz","4","5","Fizz","7","8","Fizz","10","11","Fizz","13","14","Fizz","16","17","Fizz","19","20","Fizz","22","23","Fizz","25","26","Fizz","28","29","Fizz","31","32","Fizz","34","35","Fizz","37","38","Fizz","40","41","Fizz","43","44","Fizz","46","47","Fizz","49","50","Fizz","52","53","Fizz","55","56","Fizz","58","59","Fizz","61","62","Fizz","64","65","Fizz","67","68","Fizz","70","71","Fizz","73","74","Fizz","76","77","Fizz","79","80","Fizz","82","83","Fizz","85","86","Fizz","88","89","Fizz","91","92","Fizz","94","95","Fizz","97","98","Fizz"];
+test bool testfizzBuzzList() = fizzBuzzList() == fbls;
+
 
 /*
  * Factorial
- * - first using ordinary recursion
- * - then using pattern-based dispatch 
- *  (complete the definition with a default case)
+ * - Let us practice some more writing different implementations for the factorial function
+ * - first using ordinary structured programming and recursion (fact1)
+ * - second using pattern-based dispatch (fact2)
+ * - third using switch (fact3) (see https://www.rascal-mpl.org/docs/Rascal/Statements/Switch/)
  */
  
-
-
-int fact(0) = 1;
-int fact(1) = 1;
-default int fact(int n) = 3;
-
-int fact2(int n) {
-  switch (n) {
-    case 0: return 1;
-    case 1: return 1;
-    default: return f;
-  }
-}
-
-
-
-int factorial(int n) {
+int fact1(int n) {
   return -1; // <- replace
 }
 
+int fact2(0) = 1;
+int fact2(1) = 1;
+//default int fact2(int n) = complete
 
+int fact3(int n) {
+  //switch (n) {
+  // complete  
+  // }
+}
+
+// Now that we have three implementations, let us write a test let us write a test so they 
+// can serve as each other's oracle. For example:
+test bool testfactorial0() = fact1(0) == fact2(0);
+test bool testfactorial1() = fact1(1) == fact2(1);
+test bool testfactorial15() = fact1(15) == fact3(15);
+test bool testfactorial1000() = fact2(1000) == fact3(1000);
+test bool testfactorial(int n) = n >= 0 && n < 20 ? fact2(n) == fact3(n) : true;
 
 
 /*
- * Comprehensions
- * - use println to see the result
+ * Rascal also has comprehensions for generating values.
+ * (https://www.rascal-mpl.org/docs/Recipes/BasicProgramming/Comprehensions/)
+ * Let us write some examples in the function beloww, you can use println to test the result
  */
  
 void comprehensions() {
@@ -84,28 +93,26 @@ void comprehensions() {
 
 /*
  * Pattern matching
- * - fill in the blanks with pattern match expressions (using :=)
+ * - fill in the blanks below with pattern match expressions (using :=)
  */
  
 
 void patternMatching() {
   str hello = "Hello World!";
   
-  
- 
   // print all splits of list
+  // look at the examples here: https://www.rascal-mpl.org/docs/Rascal/Patterns/List/
   list[int] aList = [1,2,3,4,5];
   for ([/*TODO*/] := aList) {
     ;
   }
   
   // print all partitions of a set
+  // loo at th eexamples here: https://www.rascal-mpl.org/docs/Rascal/Patterns/Set/
   set[int] aSet = {1,2,3,4,5};
   for ({/*TODO*/} := aSet) {
     ;
   } 
-
-  
 
 }  
  

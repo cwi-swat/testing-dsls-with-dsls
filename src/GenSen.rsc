@@ -24,8 +24,8 @@ loc arbLoc() {
 }
 
 
-Tree genSen(type[&T<:Tree] typ, int depth) 
-  = genSen(typ.symbol, typ.definitions, depth);
+&T<:Tree genSen(type[&T<:Tree] typ, int depth) 
+  = typeCast(typ, genSen(typ.symbol, typ.definitions, depth));
 
 Tree genSen(Symbol s, map[Symbol, Production] defs, int depth) 
   = genSen_(s, defs, depth);

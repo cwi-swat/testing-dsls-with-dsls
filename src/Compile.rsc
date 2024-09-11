@@ -7,7 +7,6 @@ import ParseTree;
 import GenSen;
 
 
-// if you want to make a compiler to html, use:
 import lang::html::AST; // modeling HTML docs
 import lang::html::IO; // reading/writing HTML
 

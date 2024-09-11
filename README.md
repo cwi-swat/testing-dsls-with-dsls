@@ -26,26 +26,13 @@ Then issue the following command in the terminal: `main();` (followed by enter).
 
 ## QL: a DSL for Questionnaires
 
-The workshop is based on a DSL for questionnaires, called QL. QL allows you to define simple forms with conditions and computed values.
-A QL program consists of a form, containing questions. A question can be a normal question, that expects an answer (i.e. is answerable), or a computed question. A computed question has an associated expression which defines its value. 
+The workshop is based on a DSL for questionnaires, called QL. A QL program consists of a form, containing questions. A question can be a normal question, that expects an answer (i.e. is answerable), or a computed question. A computed question has an associated expression which defines its value. 
 
-Both kinds of questions have a prompt (to show to the user), an identifier (its name), and a type. 
+Both kinds of questions have a prompt (to show to the user), an identifier (its name), and a type. The language supports boolean, integer and string types.
 
 Questions can be conditional and the conditional construct comes in two variants: **if** and **if-else**. A block construct using `{}` can be used to group questions.
 
 Questions are enabled and disabled when different values are entered, depending on their conditional context.
-
-A full type checker of QL detects:
-- references to undefined questions
-- duplicate question declarations with different types
-- conditions that are not of the type boolean
-- operands of invalid type to operators
-- duplicate labels (warning)
-- cyclic data and control dependencies
-
-The language supports boolean, integer and string types.
-
-Different data types in QL map to different (default) GUI widgets. For instance, boolean would be represented as checkboxes, integers as numeric sliders, and strings as text fields.
 
 Here’s a simple questionnaire in QL from the domain of tax filing:
 ```
@@ -68,6 +55,16 @@ form "Tax office example" {
   }
 }
 ```
+
+A full type checker of QL detects:
+- references to undefined questions
+- duplicate question declarations with different types
+- conditions that are not of the type boolean
+- operands of invalid type to operators
+- duplicate labels (warning)
+- cyclic data and control dependencies
+
+Different data types in QL map to different (default) GUI widgets. For instance, boolean would be represented as checkboxes, integers as numeric sliders, and strings as text fields.
 
 See the folder `examples/` for example QL programs. Opening a QL file will show links at the top for compiling, running, and testing QL programs. 
 Running a questionnaire immediately opens a browser pane in VS Code. Compiling will result in an HTML file and Javascript file; opening

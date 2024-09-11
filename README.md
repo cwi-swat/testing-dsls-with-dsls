@@ -16,7 +16,7 @@ The exercises (see below) are meant to experience what it can look like to test 
 
 ### Preliminaries for the practical part
 
-Please install [VS Code](https://code.visualstudio.com/) and then the [Rascal VS Code extension](https://marketplace.visualstudio.com/items?itemName=usethesource.rascalmpl) (you can also find Rascal in the extension browser).
+Please install [VS Code](https://code.visualstudio.com/) and then the [Rascal VS Code extension](https://marketplace.visualstudio.com/items?itemName=usethesource.rascalmpl) and the [Python extension for VS] (https://marketplace.visualstudio.com/items?itemName=ms-python.python) (you can also find these in the extension browser).
 
 Git clone [this](https://github.com/cwi-swat/testing-dsls-with-dsls) repository (_NB: don't rename the folder!_). Finally, go to the File menu of VS Code and select "Add Folder to workspace", navigate to where you've cloned the repo, and select that directory. 
 
@@ -70,7 +70,7 @@ See the folder `examples/` for example QL programs. Opening a QL file will show 
 Running a questionnaire immediately opens a browser pane in VS Code. Compiling will result in an HTML file and Javascript file; opening
 them in a browser will again execute the questionnaire (albeit with a slightly different layout).
 
-If you have Python installed and a recent version of the [Chrome Driver](https://googlechromelabs.github.io/chrome-for-testing/) (in the PATH) you can use mini implementation of the Testar tool to randomly test a questionnaire in Chrome by pressing the link "Run Testar". There's also a link to save the oracle (as Python code) that is used by TESTAR. 
+If you have Python installed and a recent version of the [Chrome Driver](https://googlechromelabs.github.io/chrome-for-testing/) (in the PATH) you can use mini implementation of the [Testar](www.tester.org) tool to randomly test a questionnaire in Chrome by pressing the link "Run Testar". There's also a link to save the oracle (as Python code) that is used by Testar to evaluate each state. 
 
 
 ## TestQL: a DSL for testing DSLs

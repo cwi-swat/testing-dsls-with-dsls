@@ -10,7 +10,7 @@ Overview of the workshop:
 - 30 minutes: installation, setup, and start of exercises
 - break
 - 45 minutes: continue with exercises
-- 45 minutes: introduce scriptless testing with TESTAR and how DSL invariants can feed domain-aware oracles into Testar.
+- 45 minutes: introduce scriptless testing with [Testar](www.testar.org) and how DSL invariants can feed domain-aware oracles into Testar.
 
 The exercises (see below) are meant to experience what it can look like to test aspects of DSLs, including the syntax, the type checker, and the dynamic semantics. The implementation in this project has bugs! So the goal is to find them by writing tests. Optionally, you can have a look at the Rascal source code of the various parts (the syntax definition, the evaluator, or the type checker) to see if you can spot them, and, even more optionally, try to fix them (in that case, please rerun the `main();` command in the terminal described below). 
 
@@ -169,6 +169,20 @@ test "disabled questions don't render"
 ## Exercises
 
 Look at all the tests in `myql.testql` for inspiration. The goal of this exercise is to understand the tests and add your own tests in `yourtests.testql`. 
+
+
+
+## Scriptless testing with Testar and domain-aware oracles
+
+Scriptless testing tools like [Testar](www.testar.org) generate test sequences at the GUI level of desktop, web or mobile applications. These test sequences consist of (state, action)-pairs and are generated on-the-fly by starting up the System Under Test (SUT) in its initial state (`start_SUT_and_get_driver`) and continuously selecting an action to bring the SUT into another state that is checked by oracles for failures. The Testar loop consists of:
+
+- Deriving the set of actions that a potential user can execute in that specific state (derive_actions).
+- Selecting one of these actions (select_action).
+- Executing the action (execute_action).
+- Evaluating the new state using the oracles to find failures (check_oracles).
+
+Scriptless testing tools usually rely on generic oracles like crashes, hangs or suspicious titles. SUT-specific oracles can be added manually, however, this takes effort and can be error-prone. By encoding domain knowledge into the oracles, the scriptless tests become more a context-aware and effective way to evaluate the correctness of the generated applications.
+
 
 
 

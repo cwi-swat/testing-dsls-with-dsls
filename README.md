@@ -84,10 +84,7 @@ TestQL files end with the extension `testql`, and have IDE support enabled, just
 - at the top, to execute the whole test suite of show the coverage (i-e- how much of the syntax of the DSL has been covered by tests. )
 - at each test case, to run an individual test.
 
-
-## Exercises
-
-If you look at `myql.testql`, you will see example test cases for inspiration. The goal of this exercise is to understand the tests and add your own tests in `yourtests.testql`. You can find different types of tests in the file that are divided into different sections.
+You can find different types of tests in the file that are divided into different sections.
 
 ### Static checking tests
 
@@ -158,10 +155,9 @@ test "disabled questions are not changed"
 These tests are written using the `test ... with ... <form> renders as` format. 
 
 
+## Exercises
 
-
-
-
+Look at all the tests in `myql.testql` for inspiration. The goal of this exercise is to understand the tests and add your own tests in `yourtests.testql`. 
 
 
 

@@ -66,7 +66,7 @@ A full type checker of QL detects:
 
 Different data types in QL map to different (default) GUI widgets. For instance, boolean would be represented as checkboxes, integers as text fields with numeric sliders, and strings as text fields. The HTML form corresponding to the QP program from above will look as follows in Chrome:
 
-<img src="https://github.com/cwi-swat/testing-dsls-with-dsls/blob/main/examples/tax.png" alt="Screenshot of the tax form" width="280" height="380" />
+<img src="https://github.com/cwi-swat/testing-dsls-with-dsls/blob/main/examples/tax.png" alt="Screenshot of the tax form" width="280" height="400" />
 
 See the folder `examples/` for example QL programs. Opening a QL file will show links at the top for compiling, running, and testing QL programs. 
 Running a questionnaire immediately opens a browser pane in VS Code. Compiling will result in an HTML file and Javascript file; opening
@@ -77,34 +77,85 @@ If you have a recent version of the [Chrome Driver](https://googlechromelabs.git
 
 ## TestQL: a DSL for testing the QL DSL
 
-TestQL is DSL for testing QL. In fact, it's an extension of the QL language (Rascal supports extensible syntax definition), so that tests can be expressed in a
-human readable, declarative format. TestQL files end with the extension `testql`, and have IDE support enabled, just like QL: see the links at the top, and at
-each test case, to respectively execute the whole test suite, or an individual test. There's also a link to show the test coverage of the test suite, showing how much of the syntax of the DSL has been covered by tests. 
+TestQL is DSL for testing QL. In fact, it's an extension of the QL language using Rascal's support for extensible syntax definition. Using TestQL, tests can be expressed in a human readable, declarative format. 
+
+TestQL files end with the extension `testql`, and have IDE support enabled, just like the QL programs written in files with the `myql`extension. For the test files the IDE support is:
+
+- at the top, to execute the whole test suite of show the coverage (i-e- how much of the syntax of the DSL has been covered by tests. )
+- at each test case, to run an individual test.
 
 
 ## Exercises
 
-If you look at `myql.testql`, you will see example test cases for inspiration, write your own tests in `yourtests.testql`. 
+If you look at `myql.testql`, you will see example test cases for inspiration. The goal of this exercise is to understand the tests and add your own tests in `yourtests.testql`. You can find different types of tests in the file that are divided into different sections.
 
-### Type checking
+### Static checking tests
 
-These tests are written using the `test ... <form>` notation, with embedded markers `$error` or `$warning` around expressions or questions. 
+These tests are written using the `test ... <form>` notation, with embedded markers `$error` or `$warning` around expressions or questions. For example in the file you will find:
 
-- test that the type checker issues a warning when the same prompt occurs with two questions with different names. 
+- a test to check that the condition of if-then is boolean:
+```
+test "condition must be boolean" 
+    form "" {
+        if($error(1)) {
+            "X" x: integer
+        }
+    }
+```
+- test that the type checker issues a warning when the same label occurs with two questions with different names:
+```
+test "duplicate labels" 
+    form "" {
+        "same" x: integer
+        $warning("same" y: boolean)
+    }
+```
+
 - test that adding integers and booleans is rejected by the type checker
-- test that the condition of if-then/if-then-else should be boolean
-- test that a question cannot be redeclared with a different type
+```
+test "invalid operand to +" 
+    form "" {
+        "X" x: integer = $error(true) + 1
+    }
+```
 
-### Syntax and dynamic semantics
+### Dynamic semantics tests
 
 These tests are written using the `test ... with ... <form> = {...}` format. 
 
 - test that subtraction is left associative
-- test that `||` has weaker precedence than `&&`
-- test that nested if-then-else without `{}` binds the inner `else` to the inner `if` (_tricky_).
- - test that disabled (invisible) questions are not changed even if given input
+```
+test "subtraction associates to the left"
+    with
+    form "" {
+        "X" x: integer = 1 - 2 - 3
+    }
+    = {x: -4}
+```
 
+- test that `*` has higher precedence than `+`
+```
+test "multiplication has higher precedence than addition"
+    with
+    form "" {
+        "X" x: integer = 1 + 2 * 3
+    }
+    = {x: 7}
+```
 
+- test that disabled (invisible) questions are not changed even if given input
+```
+test "disabled questions are not changed"
+    with x: 10
+    form "" {
+        if (1 > 2) "x" x: integer
+    }
+    = {x: 0}
+```
+
+### Rendering tests
+
+These tests are written using the `test ... with ... <form> renders as` format. 
 
 
 

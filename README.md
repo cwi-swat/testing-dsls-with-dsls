@@ -172,14 +172,16 @@ Look at all the tests in `myql.testql` for inspiration. The goal of this exercis
 
 
 
-## Scriptless testing with Testar and domain-aware oracles
+## Scriptless testing with domain-aware oracles for the generated webApps
 
-Scriptless testing tools like [Testar](www.testar.org) generate test sequences at the GUI level of desktop, web or mobile applications. These test sequences consist of (state, action)-pairs and are generated on-the-fly by starting up the System Under Test (SUT) in its initial state (`start_SUT_and_get_driver`) and continuously selecting an action to bring the SUT into another state that is checked by oracles for failures. The Testar loop consists of:
+Scriptless testing tools like [Testar](www.testar.org) automatically generate test sequences at the GUI level of applications. These test sequences consist of (state, action)-pairs and are generated on-the-fly by starting up the System Under Test (SUT) in its initial state (`start_SUT_and_get_driver`) and continuously selecting an action to bring the SUT into another state that is checked by oracles for failures. The Testar loop consists of:
 
-- Deriving the set of actions that a potential user can execute in that specific state (derive_actions).
-- Selecting one of these actions (select_action).
-- Executing the action (execute_action).
-- Evaluating the new state using the oracles to find failures (check_oracles).
+- Deriving the set of actions that a potential user can execute in that specific state (`derive_actions`).
+- Selecting one of these actions (`select_action`).
+- Executing the action (`execute_action`).
+- Evaluating the new state using the oracles to find failures (`check_oracles`).
+
+You can find an implementation of a miniTestar in the file `src/testar/miniTESTAR.py`. This simplified version of Testar is capable of randomly testing the webApps that are compiled from QL programs.
 
 Scriptless testing tools usually rely on generic oracles like crashes, hangs or suspicious titles. SUT-specific oracles can be added manually, however, this takes effort and can be error-prone. By encoding domain knowledge into the oracles, the scriptless tests become more a context-aware and effective way to evaluate the correctness of the generated applications.
 

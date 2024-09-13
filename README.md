@@ -183,9 +183,19 @@ Scriptless testing tools like [Testar](www.testar.org) automatically generate te
 
 You can find an implementation of a miniTestar in the file `src/testar/miniTESTAR.py`. This simplified version of Testar is capable of randomly testing the webApps that are compiled from QL programs and uses the Chrome WebDriver to get the state of the SUT.
 
-Scriptless testing tools usually rely on generic oracles like crashes, hangs or suspicious titles. SUT-specific oracles can be added manually, however, this takes effort and can be error-prone. By encoding domain knowledge into the oracles, the scriptless tests become more a context-aware and effective way to evaluate the correctness of the generated applications.
+Scriptless testing tools usually rely on generic oracles like crashes, hangs or suspicious titles. SUT-specific oracles can be added manually, however, this takes effort and can be error-prone. Using the DSL, we can generate oracles that encode domain knowledge, making the scriptless tests more context-aware and effective to evaluate the quality of the generated applications.
 
 For a QL program, e.g. `tax.myql` in the folder `examples/`, domain-aware oracles can be saved using the link "Save oracles" at the top of the editor when editing a QL program. This will save the oracles (as Python code) in a file `tax.py`, these oracles are used by miniTestar to evaluate each state in `check_oracles`.
 
+Oracles that are generated are:
+
+- check that if the condition of a question evaluates to true, then the question must be visible. If the element is not displayed when the condition is true, the oracle fails with the error message.
+
+- check that the actual value of a question matches the expected value in the current state. If the state does not match the expected value,  the oracle fails with the error message.
+
+- check that two elements with the same name are not displayed simultaneously. If they are, the oracle fails with the error message.
+
 If you have a recent version of the [Chrome Driver](https://googlechromelabs.github.io/chrome-for-testing/) installed (in the PATH) you can run a mini implementation of the [Testar](www.testar.org) tool to randomly test a questionnaire in Chrome by pressing the link "Run Testar". 
+
+If you want more sequences or actions in a sequence, you can configure that in the call to `testar`in the file `src/testar/testingQLprograms.py`
 

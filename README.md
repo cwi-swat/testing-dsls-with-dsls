@@ -90,7 +90,7 @@ You can find different types of tests in the file that are divided into differen
 
 These tests are written using the `test ... <form>` notation, with embedded markers `$error` or `$warning` around expressions or questions. For example in the file you will find:
 
-- a test to check that the condition of if-then is boolean:
+- a test to check that the type checker issues a error when the condition of if-then is not boolean:
 ```
 test "condition must be boolean" 
     form "" {
@@ -152,7 +152,18 @@ test "disabled questions are not changed"
 
 ### Rendering tests
 
-These tests are written using the `test ... with ... <form> renders as` format. 
+These tests are written using the `test ... with ... <form> renders as` format. For example:
+```
+test "disabled questions don't render"
+    with
+    form "" {
+        if (1 > 2) {
+            "X" x: integer
+        }
+    }
+    renders as [
+    ]
+```
 
 
 ## Exercises

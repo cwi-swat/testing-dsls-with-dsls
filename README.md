@@ -181,10 +181,11 @@ Scriptless testing tools like [Testar](www.testar.org) automatically generate te
 - Executing the action (`execute_action`).
 - Evaluating the new state using the oracles to find failures (`check_oracles`).
 
-You can find an implementation of a miniTestar in the file `src/testar/miniTESTAR.py`. This simplified version of Testar is capable of randomly testing the webApps that are compiled from QL programs.
+You can find an implementation of a miniTestar in the file `src/testar/miniTESTAR.py`. This simplified version of Testar is capable of randomly testing the webApps that are compiled from QL programs and uses the Chrome WebDriver to get the state of the SUT.
 
 Scriptless testing tools usually rely on generic oracles like crashes, hangs or suspicious titles. SUT-specific oracles can be added manually, however, this takes effort and can be error-prone. By encoding domain knowledge into the oracles, the scriptless tests become more a context-aware and effective way to evaluate the correctness of the generated applications.
 
+For a QL program, e.g. `tax.myql` in the folder `examples/`, domain-aware oracles can be saved using the link "Save oracles" at the top of the editor when editing a QL program. This will save the oracles (as Python code) in a file `tax.py`, these oracles are used by miniTestar to evaluate each state in `check_oracles`.
 
-
+If you have a recent version of the [Chrome Driver](https://googlechromelabs.github.io/chrome-for-testing/) installed (in the PATH) you can run a mini implementation of the [Testar](www.testar.org) tool to randomly test a questionnaire in Chrome by pressing the link "Run Testar". 
 

@@ -23,3 +23,4 @@ examples/empty.html
 examples/empty.js
 examples/empty.py
 examples/loan_approval.py
+src/secret.testql

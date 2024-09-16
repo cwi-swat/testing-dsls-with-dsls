@@ -1,5 +1,8 @@
 
-section "Type checking"
+section "Static checking"
 
 
 section "Syntax and dynamic semantics"
+
+
+section "Rendering"

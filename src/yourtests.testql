@@ -1,8 +1,30 @@
 
 section "Static checking"
 
+test "condition must be boolean" 
+    form "" {
+        if($error(1)) {
+            "X" x: integer
+        }
+    }
 
 section "Syntax and dynamic semantics"
 
+test "subtraction associates to the left"
+    with
+    form "" {
+        "X" x: integer = 1 - 2 - 3
+    }
+    = {x: -4}
 
 section "Rendering"
+
+test "disabled questions don't render"
+    with
+    form "" {
+        if (1 > 2) {
+            "X" x: integer
+        }
+    }
+    renders as [
+    ]

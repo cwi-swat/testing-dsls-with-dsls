@@ -87,7 +87,7 @@ TestQL files end with the extension `testql`, and have IDE support enabled, just
 
 - to run an individual test.
 
-You can find different types of tests in the file that are divided into different sections. Below we detail three kinds of tests: static checking, dynamics semantics and syntax, and rendering. The syntax of each kind of test is explained using some examples (try them out by copy-pasting!). A number of concrete assignments is presented for you to enter in `yourtests.testql`. Feel free to come up with your own tests.
+You can find different types of tests in the file that are divided into different sections. Below we detail three kinds of tests: static checking, dynamics semantics and syntax, and rendering. The syntax of each kind of test is explained using some examples (try them out by copy-pasting!). A number of concrete assignments is presented for you to enter in `yourtests.testql` (which includes some examples to immediately test). Feel free to come up with your own tests.
 
 ### Static checking tests
 

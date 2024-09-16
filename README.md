@@ -64,7 +64,7 @@ A full type checker of QL detects:
 - duplicate labels (warning)
 - cyclic data and control dependencies
 
-Different data types in QL map to different (default) GUI widgets. For instance, boolean would be represented as checkboxes, integers as text fields with numeric sliders, and strings as text fields. The HTML form corresponding to the QP program from above will look as follows in Chrome:
+Different data types in QL map to different (default) GUI widgets. For instance, boolean would be represented as checkboxes, integers as text fields with numeric sliders, and strings as text fields. The HTML form corresponding to the QL program from above will look as follows in Chrome:
 
 <img src="https://github.com/cwi-swat/testing-dsls-with-dsls/blob/main/examples/tax.png" alt="Screenshot of the tax form" width="280" height="400" />
 
@@ -79,10 +79,13 @@ If you have a recent version of the [Chrome Driver](https://googlechromelabs.git
 
 TestQL is DSL for testing QL. In fact, it's an extension of the QL language using Rascal's support for extensible syntax definition. Using TestQL, tests can be expressed in a human readable, declarative format. 
 
-TestQL files end with the extension `testql`, and have IDE support enabled, just like the QL programs written in files with the `myql`extension. For the test files the IDE support is:
+TestQL files end with the extension `testql`, and have IDE support enabled, just like the QL programs written in files with the `myql` extension. For the test files the IDE support includes clicable links:
 
-- at the top, to execute the whole test suite of show the coverage (i-e- how much of the syntax of the DSL has been covered by tests. )
-- at each test case, to run an individual test.
+- to execute the whole test suite 
+
+- to show test coverage of the test suite (i.e. how much of the syntax of the DSL has been covered by tests.)
+
+- to run an individual test.
 
 You can find different types of tests in the file that are divided into different sections. Below we detail three kinds of tests: static checking, dynamics semantics and syntax, and rendering. The syntax of each kind of test is explained using some examples (try them out by copy-pasting!). A number of concrete assignments is presented for you to enter in `yourtests.testql`. Feel free to come up with your own tests.
 

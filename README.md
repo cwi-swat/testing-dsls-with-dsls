@@ -134,6 +134,8 @@ test "invalid operand to +"
 
 These tests are written using the `test ... with ... <form> = {...}` format. 
 
+#### Examples
+
 - test that subtraction is left associative
 ```
 test "subtraction associates to the left"
@@ -164,9 +166,28 @@ test "disabled questions are not changed"
     = {x: 0}
 ```
 
+#### Exercises
+
+- test that a computed question using the value of another question in its expression can (syntactically) occur _before_ the question it depends on (IOW: there's no "declare before use" policy in QL)
+
+- test that answerable questions are initialized with default values (i.e. without user input).
+
+- test that computed questions are initialized to the result of their expression (i.e. without user input)
+
+- test that parentheses in expression override default precedence (e.g., for `-`, or combinations like `*` and `+`)
+
+- test that in an if-then-else nested inside an if-then without using `{}` the `else`-branch binds to the innermost if, and not the outermost (_tricky_!)
+
+
+
+
 ### Rendering tests
 
-These tests are written using the `test ... with ... <form> renders as` format. For example:
+These tests are written using the `test ... with ... <form> renders as` format. 
+
+#### Examples
+
+- test that disabled questions are not rendered
 ```
 test "disabled questions don't render"
     with
@@ -179,10 +200,16 @@ test "disabled questions don't render"
     ]
 ```
 
+#### Exercises
 
-## Exercises
+- test that conditional questions with conditions evaluating to true are not rendered if nested inside a conditional evaluating to false.
 
-Look at all the tests in `myql.testql` for inspiration. The goal of this exercise is to understand the tests and add your own tests in `yourtests.testql`. 
+- test that a conditional question gets rendered after receiving user input that makes the condition true. 
+
+
+<!-- ## Exercises
+
+Look at all the tests in `myql.testql` for inspiration. The goal of this exercise is to understand the tests and add your own tests in `yourtests.testql`.  -->
 
 
 

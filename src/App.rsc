@@ -57,11 +57,6 @@ void view(Model model) {
     });
 }
 
-// ASSIGNMENT: complete rendering of questions for
-// if-then, if-then-else, block, and computed questions.
-// to evaluate conditions call eval, and pass in model.env
-// for the latter take inspiration from the normal question rendering
-// and use the attribute disabeld(true) to make them read only. 
 void viewQuestion(Question q, Model model) {
 
     switch (q) {
@@ -124,9 +119,4 @@ void viewQuestion(Question q, Model model) {
         default: throw "unknown question type";
 
     }
-}
-
-void appSnippets() {
-    start[Form] pt = parse(#start[Form], |project://testing-dsls-with-dsls/examples/tax.myql|);
-    runQL(pt);
 }

@@ -122,9 +122,6 @@ set[Message] check((Question)`<Str p> <Id x>: <Type t> = <Expr e>`, TEnv env)
     = { error("incompatible type", e.src) | t !:= typeOf(e, env) }
     + check(e, env);
 
-// ASSIGNMENT complete the check definition by adding cases 
-// for if-then, if-then-else, and block.
-
 set[Message] ifThenIssues(Expr cond, Question then, TEnv env)
     = { error("expected boolean", cond.src) | (Type)`boolean` !:= typeOf(cond, env) }
     + { warning("empty then-branch", then.src) | (Question)`{}` := then }
@@ -201,10 +198,5 @@ void printTEnv(TEnv tenv) {
     for (<str x, Type t> <- tenv) {
         println("<x>: <t>");
     }
-}
-
-void checkSnippets() {
-    start[Form] pt = parse(#start[Form], |project://testing-dsls-with-dsls/examples/tax.myql|);
-    check(pt);
 }
  

@@ -7,11 +7,10 @@ import ParseTree;
 import IO;
 
 /*
- * Implement big-step semantics for QL
+ * Big-step semantics for QL
  */
  
-// NB: Eval may assume the form is type- and name-correct.
-
+// NB: Eval assumes the form is type- and name-correct.
 
 // Semantic domain for expressions (values)
 data Value
@@ -34,7 +33,7 @@ Value type2default((Type)`boolean`) = vbool(false);
 
 // produce an environment which for each question has a default value
 // using the function type2default function defined above.
-// observer how visit traverses the form and match on normal questions and computed questions.
+// observe how visit traverses the form and match on normal questions and computed questions.
 VEnv initialEnv(start[Form] f) = initialEnv(f.top);
 
 VEnv initialEnv(Form f) {
@@ -50,11 +49,6 @@ VEnv initialEnv(Form f) {
   return eval(f, user("", vint(0)), venv);
 }
 
-// ASSIGNMENT: complete the evaluation of expressions.
-// look at the grammar which cases need to be (still) implemented.
-// have a look at the examples to understand how
-// concrete pattern matching works.
-
 Value eval((Expr)`<Id x>`, VEnv venv) = venv["<x>"];
 
 Value eval((Expr)`<Bool b>`, VEnv venv) = vbool("<b>" == "true");
@@ -66,8 +60,7 @@ Value eval((Expr)`<Str s>`, VEnv venv) = vstr("<s>"[1..-1]);
 Value eval((Expr)`(<Expr e>)`, VEnv venv) = eval(e, venv);
 
 
-// note the escaping of < as \<
-// note further how the results of the recursive calls are unpacked using pattern matching.
+// note how the results of the recursive calls are unpacked using pattern matching.
 Value eval((Expr)`<Expr lhs> \< <Expr rhs>`, VEnv venv) = vbool(i < j)
   when 
     vint(int i) := eval(lhs, venv),
@@ -141,8 +134,6 @@ VEnv evalOnce(Form f, Input inp, VEnv venv)
   = ( venv | eval(q, inp, it) | Question q <- f.questions );
 
 
-// ASSIGNMENT complete the question interpreter
-// by adding cases for computed questions, if-then, if-then-else, and block.
 VEnv eval(Question q, Input inp, VEnv venv) {
   switch (q) {
     case (Question)`<Str _> <Id x>: <Type _>`: 

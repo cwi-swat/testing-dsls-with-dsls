@@ -79,7 +79,7 @@ If you have a recent version of the [Chrome Driver](https://googlechromelabs.git
 
 TestQL is DSL for testing QL. In fact, it's an extension of the QL language using Rascal's support for extensible syntax definition. Using TestQL, tests can be expressed in a human readable, declarative format. 
 
-TestQL files end with the extension `testql`, and have IDE support enabled, just like the QL programs written in files with the `myql` extension. For the test files the IDE support includes clicable links:
+TestQL files end with the extension `testql`, and have IDE support enabled, just like the QL programs written in files with the `myql` extension. For the test files the IDE support includes clickable links:
 
 - to execute the whole test suite 
 

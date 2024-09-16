@@ -135,7 +135,7 @@ test "invalid operand to +"
 
 ### Dynamic semantics tests
 
-These tests are written using the `test ... with ... <form> = {...}` format, where the `with`-clause contains a sequence of user inputs (e.g., `x : true` etc.), separated by comma's, and the last clause `{...}` is a JSON-like structure indicating the resulting (expected) state of the Questionnaire. 
+These tests are written using the `test ... with ... <form> = {...}` format, where the `with`-clause contains a sequence of user inputs (e.g., `x : true` etc.), separated by commas, and the last clause `{...}` is a JSON-like structure indicating the resulting (expected) state of the Questionnaire. 
 
 #### Examples
 

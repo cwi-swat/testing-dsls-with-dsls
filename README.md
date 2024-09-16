@@ -1,7 +1,7 @@
 
 # Testing DSLs with DSLs
 
-In this workshop we will introduce techniques for testing Domain-Specific Languages (DSLs): little languages dedicated to a particular problem domain.
+In this workshop we will introduce techniques for testing Domain-Specific Languages (DSLs), little languages dedicated to a particular problem domain.
 We will introduce the aspects of a DSL that you might want to test, and strategies to automate such tests.
 The workshop demonstrates these topics in the context of the [Rascal Language Workbench](https://www.rascal-mpl.org/).
 
@@ -88,9 +88,11 @@ You can find different types of tests in the file that are divided into differen
 
 ### Static checking tests
 
-These tests are written using the `test ... <form>` notation, with embedded markers `$error` or `$warning` around expressions or questions. For example in the file you will find:
+These tests are written using the `test ... <form>` notation, with embedded markers `$error` or `$warning` around expressions or questions. 
 
-- a test to check that the type checker issues a error when the condition of if-then is not boolean:
+#### Examples
+
+- a test to check that the type checker issues an error when the condition of if-then is not boolean:
 ```
 test "condition must be boolean" 
     form "" {
@@ -115,6 +117,18 @@ test "invalid operand to +"
         "X" x: integer = $error(true) + 1
     }
 ```
+
+#### Exercises
+
+- test that two questions with the same identity (name) should not coexist if their respective types are different.
+
+- test that two questions with the same name but different prompts issues a warning on the second question.
+
+- test that an if-then-else question with an empty else-clause issues a warning.
+
+- test that equality (`==`) produces an error when comparing expressions of different types.
+
+
 
 ### Dynamic semantics tests
 

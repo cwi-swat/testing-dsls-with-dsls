@@ -1,125 +1,214 @@
 Starting test sequence number 1 of 4
-Action 1 of 1000
-random naughty keys on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 553}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('��������',)
-Action 2 of 1000
-press arrow DOWN on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 3 of 1000
-clear on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 4 of 1000
-clear on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 5 of 1000
-random naughty keys on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 553}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('"><script>alert(123)</script>',)
-Action 6 of 1000
-random number keys on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 553}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('84',)
-Action 7 of 1000
-clear on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-1'}
-Action 8 of 1000
-random text keys on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 685}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('SHVPsWhzlC',)
-Action 9 of 1000
-random number keys on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 553}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('24',)
-Action 10 of 1000
+Action 1 of 25
+clear on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {}
+Action 2 of 25
+random text keys on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('rdxDWytzuc',)
+Action 3 of 25
+random text keys on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('ibSnpUSPwl',)
+Action 4 of 25
+random naughty keys on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('-1',)
+Action 5 of 25
+press arrow DOWN on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {}
+Action 6 of 25
+click on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-1'}
+Action 7 of 25
+press arrow DOWN on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {}
+Action 8 of 25
+clear on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-1'}
+Action 9 of 25
+random number keys on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-1'} with ('34',)
+Action 10 of 25
+random text keys on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('KmLriUOEqM',)
+Action 11 of 25
+random number keys on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 553}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('90',)
+Action 12 of 25
 press arrow UP on Tag: input, ID: hasLicense_widget_104, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 310}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 11 of 1000
-press arrow UP on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 685}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 12 of 1000
-clear on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 13 of 1000
+Action 13 of 25
+click on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 685}, Size: {'height': 40, 'width': 226}, Attributes: {}
+Action 14 of 25
+random text keys on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-1'} with ('SqdmAPJGDc',)
+Action 15 of 25
+random naughty keys on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-1'} with ('1,000.00',)
+Action 16 of 25
+random number keys on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('43',)
+Action 17 of 25
+random text keys on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {'value': 'KmLriUOEqM'} with ('CVSYArKMoU',)
+Action 18 of 25
+press arrow UP on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 534}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-134'}
+Action 19 of 25
+random number keys on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 609}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '90'} with ('25',)
+Action 20 of 25
+random text keys on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {'value': 'KmLriUOEqMCVSYArKMoU'} with ('PSevwNzYoE',)
+Action 21 of 25
+click on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 534}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-133'}
+Action 22 of 25
+random naughty keys on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 741}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('"\'"\'"\'\'\'\'"',)
+Action 23 of 25
+random text keys on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '43'} with ('oQEyPVccwK',)
+Action 24 of 25
+random number keys on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-133'} with ('27',)
+Action 25 of 25
+click on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {'value': 'KmLriUOEqMCVSYArKMoUPSevwNzYoE'}
+Starting test sequence number 2 of 4
+Action 1 of 25
+clear on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {}
+Action 2 of 25
+random naughty keys on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('1 000 000,00',)
+Action 3 of 25
+click on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {}
+Action 4 of 25
+press arrow UP on Tag: input, ID: hasLicense_widget_104, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 310}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 5 of 25
+random number keys on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('80',)
+Action 6 of 25
+clear on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '80'}
+Action 7 of 25
+click on Tag: input, ID: retired_widget_910, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 367}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 8 of 25
+random naughty keys on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 779}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('1 000 000,00',)
+Action 9 of 25
+random text keys on Tag: input, ID: healthcareExpenses_widget_1101, Class: , Type: number, Text: , Location: {'x': 240, 'y': 572}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('BOrlpTiMQl',)
+Action 10 of 25
+random naughty keys on Tag: input, ID: healthcareExpenses_widget_1101, Class: , Type: number, Text: , Location: {'x': 240, 'y': 572}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('<SCRIPT SRC=http://ha.ckers.org/xss.js?< B >',)
+Action 11 of 25
+clear on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {}
+Action 12 of 25
+press arrow DOWN on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 1063}, Size: {'height': 40, 'width': 226}, Attributes: {}
+Action 13 of 25
+press arrow UP on Tag: input, ID: hasCoSigner_widget_1501, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 934}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 14 of 25
+press arrow DOWN on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 855}, Size: {'height': 40, 'width': 226}, Attributes: {}
+Action 15 of 25
+press arrow DOWN on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 779}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '100000000'}
+Action 16 of 25
+click on Tag: input, ID: hasCoSigner_widget_1501, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 934}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 17 of 25
+click on Tag: input, ID: hasCoSigner_widget_1501, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 934}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 18 of 25
+random naughty keys on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 1063}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-1'} with ('<img src\\x11=x onerror="javascript:alert(1)">',)
+Action 19 of 25
+press arrow UP on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 1138}, Size: {'height': 40, 'width': 226}, Attributes: {}
+Action 20 of 25
+press arrow DOWN on Tag: input, ID: annualPension_widget_1039, Class: , Type: number, Text: , Location: {'x': 240, 'y': 496}, Size: {'height': 40, 'width': 226}, Attributes: {}
+Action 21 of 25
+random number keys on Tag: input, ID: yearsRetired_widget_975, Class: , Type: number, Text: , Location: {'x': 240, 'y': 420}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('84',)
+Action 22 of 25
+random text keys on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 1138}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '1'} with ('IUFIABbRnl',)
+Action 23 of 25
+click on Tag: input, ID: yearsRetired_widget_975, Class: , Type: number, Text: , Location: {'x': 240, 'y': 420}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '84'}
+Action 24 of 25
 press arrow DOWN on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 14 of 1000
-random number keys on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 685}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '1'} with ('2',)
-Action 15 of 1000
-random number keys on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('8',)
-Action 16 of 1000
-press arrow UP on Tag: input, ID: hasCoSigner_widget_1501, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 631}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 17 of 1000
-press arrow DOWN on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 836}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 18 of 1000
-random naughty keys on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('"`\'><script>\\xE2\\x80\\x82javascript:alert(1)</script>',)
-Action 19 of 1000
-clear on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 553}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 20 of 1000
-click on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 685}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '12'}
-Action 21 of 1000
-random number keys on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 685}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '12'} with ('25',)
-The oracle loan_approval_myql_oracle detected an error during testing:  monthlyPayment was not the same as totalRepayment / (loanTerm * 12) in sequence 1 and action 21
-Action 22 of 1000
-press arrow UP on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 553}, Size: {'height': 40, 'width': 226}, Attributes: {}
-The oracle loan_approval_myql_oracle detected an error during testing:  monthlyPayment was not the same as totalRepayment / (loanTerm * 12) in sequence 1 and action 22
-Action 23 of 1000
-random number keys on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('34',)
-The oracle loan_approval_myql_oracle detected an error during testing:  monthlyPayment was not the same as totalRepayment / (loanTerm * 12) in sequence 1 and action 23
-Action 24 of 1000
-clear on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '8'}
-The oracle loan_approval_myql_oracle detected an error during testing:  monthlyPayment was not the same as totalRepayment / (loanTerm * 12) in sequence 1 and action 24
-Action 25 of 1000
-random text keys on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('MwNlBaPSdg',)
-The oracle loan_approval_myql_oracle detected an error during testing:  monthlyPayment was not the same as totalRepayment / (loanTerm * 12) in sequence 1 and action 25
-Action 26 of 1000
-clear on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {}
-The oracle loan_approval_myql_oracle detected an error during testing:  monthlyPayment was not the same as totalRepayment / (loanTerm * 12) in sequence 1 and action 26
-Action 27 of 1000
-random number keys on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('19',)
-The oracle loan_approval_myql_oracle detected an error during testing:  monthlyPayment was not the same as totalRepayment / (loanTerm * 12) in sequence 1 and action 27
-Action 28 of 1000
-press arrow UP on Tag: input, ID: employed_widget_360, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 367}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-The oracle loan_approval_myql_oracle detected an error during testing:  monthlyPayment was not the same as totalRepayment / (loanTerm * 12) in sequence 1 and action 28
-Action 29 of 1000
-press arrow DOWN on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 741}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '1225'}
-Action 30 of 1000
-click on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '34'}
-Action 31 of 1000
-clear on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 609}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '1'}
-Action 32 of 1000
-clear on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 609}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 33 of 1000
-press arrow UP on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '34'}
-Action 34 of 1000
-clear on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '34'}
-Action 35 of 1000
-press arrow DOWN on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 534}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 36 of 1000
-press arrow UP on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 893}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-1'}
-Action 37 of 1000
-click on Tag: input, ID: hasLicense_widget_104, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 310}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 38 of 1000
-press arrow UP on Tag: input, ID: lookingForJob_widget_822, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 423}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 39 of 1000
-random number keys on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 609}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('41',)
-Action 40 of 1000
-press arrow DOWN on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '19'}
-Action 41 of 1000
-clear on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 534}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-1'}
-Action 42 of 1000
-click on Tag: input, ID: employed_widget_360, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 367}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 43 of 1000
-press arrow UP on Tag: input, ID: employed_widget_360, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 367}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 44 of 1000
-click on Tag: input, ID: hasLicense_widget_104, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 310}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 45 of 1000
-clear on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 1214}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '0'}
-Action 46 of 1000
-clear on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '18'}
-Action 47 of 1000
-press arrow DOWN on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 685}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '1224'}
-Action 48 of 1000
+Action 25 of 25
+random number keys on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 1063}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-111e1'} with ('70',)
+Starting test sequence number 3 of 4
+Action 1 of 25
 press arrow UP on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 49 of 1000
-press arrow DOWN on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 50 of 1000
-press arrow DOWN on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '1'}
-Action 51 of 1000
-clear on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-1'}
-Action 52 of 1000
-clear on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '0'}
-Action 53 of 1000
-random text keys on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('obWtPgAvzp',)
-Action 54 of 1000
-press arrow UP on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 836}, Size: {'height': 40, 'width': 226}, Attributes: {}
-The oracle loan_approval_myql_oracle detected an error during testing:  monthlyPayment was not the same as totalRepayment / (loanTerm * 12) in sequence 1 and action 54
-Action 55 of 1000
-clear on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {}
-The oracle loan_approval_myql_oracle detected an error during testing:  monthlyPayment was not the same as totalRepayment / (loanTerm * 12) in sequence 1 and action 55
-Action 56 of 1000
-press arrow UP on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 553}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '41'}
-The oracle loan_approval_myql_oracle detected an error during testing:  monthlyPayment was not the same as totalRepayment / (loanTerm * 12) in sequence 1 and action 56
+Action 2 of 25
+random number keys on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 553}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('79',)
+Action 3 of 25
+click on Tag: input, ID: hasLicense_widget_104, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 310}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 4 of 25
+click on Tag: input, ID: hasCoSigner_widget_1501, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 631}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 5 of 25
+random number keys on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('30',)
+Action 6 of 25
+press arrow DOWN on Tag: input, ID: employed_widget_360, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 367}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 7 of 25
+press arrow DOWN on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '30'}
+Action 8 of 25
+clear on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 534}, Size: {'height': 40, 'width': 226}, Attributes: {}
+Action 9 of 25
+press arrow UP on Tag: input, ID: lookingForJob_widget_822, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 423}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 10 of 25
+click on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '29'}
+Action 11 of 25
+click on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 609}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '79'}
+Action 12 of 25
+click on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {}
+Action 13 of 25
+random number keys on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 534}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('29',)
+Action 14 of 25
+click on Tag: input, ID: employed_widget_360, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 367}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 15 of 25
+random naughty keys on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 1214}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('"`\'><script>\\x20javascript:alert(1)</script>',)
+Action 16 of 25
+press arrow UP on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {}
+Action 17 of 25
+press arrow DOWN on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 931}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '79'}
+Action 18 of 25
+random text keys on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 1138}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '1'} with ('sueJxmRykS',)
+Action 19 of 25
+press arrow DOWN on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {}
+Action 20 of 25
+press arrow UP on Tag: input, ID: yearsInJob_widget_496, Class: , Type: number, Text: , Location: {'x': 240, 'y': 496}, Size: {'height': 40, 'width': 226}, Attributes: {}
+Action 21 of 25
+random naughty keys on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 1063}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('<a href=http://foo.bar/#x=`y></a><img alt="`><img src=x:x onerror=javascript:alert(1)></a>">',)
+Action 22 of 25
+press arrow DOWN on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '29'}
+Action 23 of 25
+click on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 1063}, Size: {'height': 40, 'width': 226}, Attributes: {}
+Action 24 of 25
+clear on Tag: input, ID: yearsInJob_widget_496, Class: , Type: number, Text: , Location: {'x': 240, 'y': 496}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '1'}
+Action 25 of 25
+click on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 931}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '78'}
+Starting test sequence number 4 of 4
+Action 1 of 25
+press arrow UP on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {}
+Action 2 of 25
+random text keys on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('hRAPseiVqb',)
+Action 3 of 25
+press arrow UP on Tag: input, ID: hasLicense_widget_104, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 310}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 4 of 25
+click on Tag: input, ID: hasCoSigner_widget_1501, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 631}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 5 of 25
+click on Tag: input, ID: hasCoSigner_widget_1501, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 631}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 6 of 25
+random naughty keys on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 836}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('<img src=x onerror=\\x10"javascript:alert(1)">',)
+Action 7 of 25
+click on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {}
+Action 8 of 25
+random text keys on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 685}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('rDjpAXLxYv',)
+Action 9 of 25
+random naughty keys on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('���������������������\u1680���������������������\u202a\u202a\u202a',)
+Action 10 of 25
+random naughty keys on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('�����������������������������',)
+Action 11 of 25
+random number keys on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('82',)
+Action 12 of 25
+random text keys on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('aPruwxzLeZ',)
+Action 13 of 25
+random naughty keys on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 553}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('"`\'><script>\\x2Bjavascript:alert(1)</script>',)
+Action 14 of 25
+random number keys on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('17',)
+Action 15 of 25
+press arrow DOWN on Tag: input, ID: hasCoSigner_widget_1501, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 631}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 16 of 25
+press arrow UP on Tag: input, ID: hasCoSigner_widget_1501, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 631}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 17 of 25
+clear on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '82'}
+Action 18 of 25
+press arrow UP on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '17'}
+Action 19 of 25
+press arrow DOWN on Tag: input, ID: inSchool_widget_183, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 367}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 20 of 25
+click on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {}
+Action 21 of 25
+random text keys on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('qEHMVOzxMZ',)
+Action 22 of 25
+press arrow DOWN on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {}
+Action 23 of 25
+press arrow UP on Tag: input, ID: inSchool_widget_183, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 367}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 24 of 25
+random naughty keys on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 553}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '2e1'} with ('</textarea><script>alert(123)</script>',)
+Action 25 of 25
+press arrow UP on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {'value': 'aPruwxzLeZ'}
+==============================
+TEST SUMMARY REPORT
+==============================
+Tested URL: file:///Users/tvdstorm/Documents/Drafts/Courses/testing-dsls-with-dsls/examples/loan_approval.html
+Number of Runs: 4
+Sequence Length per Run: 25
+==============================
+RESULT: All tests passed successfully! ����
+==============================
 |file:///Users/tvdstorm/CWI/salix-core/|

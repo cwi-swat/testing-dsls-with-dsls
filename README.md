@@ -84,7 +84,7 @@ TestQL files end with the extension `testql`, and have IDE support enabled, just
 - at the top, to execute the whole test suite of show the coverage (i-e- how much of the syntax of the DSL has been covered by tests. )
 - at each test case, to run an individual test.
 
-You can find different types of tests in the file that are divided into different sections.
+You can find different types of tests in the file that are divided into different sections. Below we detail three kinds of tests: static checking, dynamics semantics and syntax, and rendering. The syntax of each kind of test is explained using some examples (try them out by copy-pasting!). A number of concrete assignments is presented for you to enter in `yourtests.testql`. Feel free to come up with your own tests.
 
 ### Static checking tests
 
@@ -132,7 +132,7 @@ test "invalid operand to +"
 
 ### Dynamic semantics tests
 
-These tests are written using the `test ... with ... <form> = {...}` format. 
+These tests are written using the `test ... with ... <form> = {...}` format, where the `with`-clause contains a sequence of user inputs (e.g., `x : true` etc.), separated by comma's, and the last clause `{...}` is a JSON-like structure indicating the resulting (expected) state of the Questionnaire. 
 
 #### Examples
 
@@ -183,7 +183,8 @@ test "disabled questions are not changed"
 
 ### Rendering tests
 
-These tests are written using the `test ... with ... <form> renders as` format. 
+These tests are written using the `test ... with ... <form> renders as [...]` format. 
+In this case, the part between `[...]` represents a textual version of the resulting UI, reusing the actual syntax of answerable and computed questions to represented widgets. 
 
 #### Examples
 
@@ -200,11 +201,29 @@ test "disabled questions don't render"
     ]
 ```
 
+- test that unconditional questions are rendered
+```
+test "disabled questions don't render"
+    with
+    form "" {
+        "X" x: integer
+        "Y" y: boolean = true
+    }
+    renders as [
+        "X" x: integer // absence of the value indicates editable.
+        "Y" y: boolean = true
+    ]
+```
+
+
+
 #### Exercises
 
 - test that conditional questions with conditions evaluating to true are not rendered if nested inside a conditional evaluating to false.
 
 - test that a conditional question gets rendered after receiving user input that makes the condition true. 
+
+- test that a conditional question gets _unrendered_ after receiving user input that makes the condition true, and then receiving input that makes the condition false. 
 
 
 <!-- ## Exercises

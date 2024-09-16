@@ -3,13 +3,6 @@ module Syntax
 extend lang::std::Layout;
 extend lang::std::Id;
 
-import ParseTree;
-import vis::Text;
-import IO;
-
-// TIP: see bottom of this file for snippets to be pasted into the terminal.
-
-
 syntax Name = Id; // because redef/extend of Id from standard lib does not work. 
 
 // syntax of a questionnaire

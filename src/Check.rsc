@@ -4,7 +4,6 @@ import Message;
 import IO;
 import ParseTree;
 import List;
-import Node;
 
 extend Syntax;
 

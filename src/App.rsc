@@ -9,7 +9,6 @@ import Eval;
 import Syntax;
 
 import String;
-import ParseTree;
 
 // The salix application model is a tuple
 // containing the questionnaire and its current run-time state (env).

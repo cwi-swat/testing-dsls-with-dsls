@@ -19,6 +19,26 @@ test "subtraction associates to the left"
     }
     = {x: -4}
 
+
+test "no dangling else"
+    with
+    form "" {
+        if (0 > 0) 
+            if (0 > 0)
+              "a" a: integer = 1
+            else 
+              "a" a: integer = 2
+    }
+    = {a: 0} // otherwise, it would be {a: 2}
+
+test "parens override precedence on + and *"
+    with 
+    form "" {
+        "X" x: integer = (1 + 2) * 3
+    }
+    = {x: 9}
+
+
 section "Rendering"
 
 test "disabled questions don't render"

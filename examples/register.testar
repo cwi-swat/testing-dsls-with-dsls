@@ -1,1 +1,416 @@
 Starting test sequence number 1 of 4
+Action 1 of 25
+random text keys on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'} with ('nTmecusXmZ',)
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 1 and action 1
+Action 2 of 25
+click on Tag: input, ID: isAcm_widget_61, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 1 and action 2
+Action 3 of 25
+press arrow DOWN on Tag: input, ID: isAcm_widget_61, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 1 and action 3
+Action 4 of 25
+random number keys on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('8',)
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 1 and action 4
+Action 5 of 25
+press arrow UP on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 1 and action 5
+Action 6 of 25
+press arrow DOWN on Tag: input, ID: isAcm_widget_61, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 1 and action 6
+Action 7 of 25
+press arrow DOWN on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 1 and action 7
+Action 8 of 25
+press arrow UP on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0e8'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 1 and action 8
+Action 9 of 25
+random naughty keys on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'} with ('<img \\x39src=x onerror="javascript:alert(1)">',)
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 1 and action 9
+Action 10 of 25
+random naughty keys on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '139e1'} with ('then',)
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 1 and action 10
+Action 11 of 25
+press arrow DOWN on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 1 and action 11
+Action 12 of 25
+press arrow DOWN on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 1 and action 12
+Action 13 of 25
+click on Tag: input, ID: isAcm_widget_61, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 1 and action 13
+Action 14 of 25
+press arrow DOWN on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 1 and action 14
+Action 15 of 25
+click on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '139e1'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 1 and action 15
+Action 16 of 25
+press arrow UP on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '139e1'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 1 and action 16
+Action 17 of 25
+clear on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1391'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 1 and action 17
+Action 18 of 25
+press arrow DOWN on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 1 and action 18
+Action 19 of 25
+clear on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 1 and action 19
+Action 20 of 25
+press arrow DOWN on Tag: input, ID: isAcm_widget_61, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 1 and action 20
+Action 21 of 25
+click on Tag: input, ID: isAcm_widget_61, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 1 and action 21
+Action 22 of 25
+random number keys on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('32',)
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 1 and action 22
+Action 23 of 25
+press arrow DOWN on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '32'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 1 and action 23
+Action 24 of 25
+click on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount_div_315 was displayed at the same time as discount_div_242 in sequence 1 and action 24
+Action 25 of 25
+press arrow DOWN on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 202}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '31'}
+The oracle register_myql_oracle detected an error during testing:  discount_div_315 was displayed at the same time as discount_div_242 in sequence 1 and action 25
+Starting test sequence number 2 of 4
+Action 1 of 25
+press arrow DOWN on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 1
+Action 2 of 25
+press arrow DOWN on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 2
+Action 3 of 25
+press arrow DOWN on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 3
+Action 4 of 25
+random naughty keys on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-2'} with ('-0',)
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 4
+Action 5 of 25
+press arrow UP on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 5
+Action 6 of 25
+press arrow UP on Tag: input, ID: isAcm_widget_61, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 6
+Action 7 of 25
+click on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 7
+Action 8 of 25
+click on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 8
+Action 9 of 25
+random text keys on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('oaPPcbwjve',)
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 9
+Action 10 of 25
+click on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 10
+Action 11 of 25
+press arrow UP on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 11
+Action 12 of 25
+press arrow DOWN on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 12
+Action 13 of 25
+click on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 13
+Action 14 of 25
+press arrow UP on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 14
+Action 15 of 25
+random text keys on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'} with ('hxeUNTmqyx',)
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 15
+Action 16 of 25
+random number keys on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('34',)
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 16
+Action 17 of 25
+click on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1e34'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 17
+Action 18 of 25
+random naughty keys on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1e34'} with ('AUX',)
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 18
+Action 19 of 25
+random text keys on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1e34'} with ('VdvTdHlNzF',)
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 19
+Action 20 of 25
+random number keys on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1e34'} with ('87',)
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 20
+Action 21 of 25
+press arrow UP on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 21
+Action 22 of 25
+press arrow DOWN on Tag: input, ID: isAcm_widget_61, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 22
+Action 23 of 25
+press arrow DOWN on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 23
+Action 24 of 25
+press arrow DOWN on Tag: input, ID: isAcm_widget_61, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 24
+Action 25 of 25
+random text keys on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'} with ('vyZrgezFac',)
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 2 and action 25
+Starting test sequence number 3 of 4
+Action 1 of 25
+press arrow DOWN on Tag: input, ID: isAcm_widget_61, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 3 and action 1
+Action 2 of 25
+press arrow DOWN on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 3 and action 2
+Action 3 of 25
+random naughty keys on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'} with ('\u202a\u202a���\u1680\u1680\u1680\u1680\u1680\u1680\u1680\u1680\u1680\u1680\u1680\u1680\u1680\u1680\u1680\u1680\u1680���\u202a',)
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 3 and action 3
+Action 4 of 25
+press arrow DOWN on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 3 and action 4
+Action 5 of 25
+click on Tag: input, ID: isAcm_widget_61, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 3 and action 5
+Action 6 of 25
+click on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount_div_315 was displayed at the same time as discount_div_242 in sequence 3 and action 6
+Action 7 of 25
+press arrow DOWN on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 430}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount_div_315 was displayed at the same time as discount_div_242 in sequence 3 and action 7
+Action 8 of 25
+click on Tag: input, ID: isAcm_widget_61, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 327}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 3 and action 8
+Action 9 of 25
+press arrow DOWN on Tag: input, ID: isAcm_widget_61, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 3 and action 9
+Action 10 of 25
+clear on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 3 and action 10
+Action 11 of 25
+press arrow UP on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 3 and action 11
+Action 12 of 25
+press arrow DOWN on Tag: input, ID: isAcm_widget_61, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 3 and action 12
+Action 13 of 25
+press arrow DOWN on Tag: input, ID: isAcm_widget_61, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 3 and action 13
+Action 14 of 25
+click on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 3 and action 14
+Action 15 of 25
+click on Tag: input, ID: isAcm_widget_61, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 3 and action 15
+Action 16 of 25
+click on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount_div_315 was displayed at the same time as discount_div_242 in sequence 3 and action 16
+Action 17 of 25
+random text keys on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 202}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('IJylrBgkeV',)
+The oracle register_myql_oracle detected an error during testing:  discount_div_315 was displayed at the same time as discount_div_242 in sequence 3 and action 17
+Action 18 of 25
+click on Tag: input, ID: isAcm_widget_61, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 327}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 3 and action 18
+Action 19 of 25
+press arrow UP on Tag: input, ID: isAcm_widget_61, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 3 and action 19
+Action 20 of 25
+press arrow UP on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 3 and action 20
+Action 21 of 25
+click on Tag: input, ID: isAcm_widget_61, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount_div_315 was displayed at the same time as discount_div_242 in sequence 3 and action 21
+Action 22 of 25
+click on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 430}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 3 and action 22
+Action 23 of 25
+random number keys on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('56',)
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 3 and action 23
+Action 24 of 25
+clear on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 3 and action 24
+Action 25 of 25
+click on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount_div_315 was displayed at the same time as discount_div_242 in sequence 3 and action 25
+Starting test sequence number 4 of 4
+Action 1 of 25
+press arrow DOWN on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 4 and action 1
+Action 2 of 25
+press arrow DOWN on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 4 and action 2
+Action 3 of 25
+press arrow DOWN on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-2'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 4 and action 3
+Action 4 of 25
+random text keys on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-3'} with ('KkDZSiTwSl',)
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 4 and action 4
+Action 5 of 25
+press arrow UP on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 4 and action 5
+Action 6 of 25
+press arrow DOWN on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-3'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 4 and action 6
+Action 7 of 25
+random number keys on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-4'} with ('80',)
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 4 and action 7
+Action 8 of 25
+press arrow DOWN on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 4 and action 8
+Action 9 of 25
+press arrow DOWN on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-480'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 4 and action 9
+Action 10 of 25
+press arrow UP on Tag: input, ID: isAcm_widget_61, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 4 and action 10
+Action 11 of 25
+press arrow UP on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 4 and action 11
+Action 12 of 25
+press arrow UP on Tag: input, ID: isAcm_widget_61, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 4 and action 12
+Action 13 of 25
+press arrow DOWN on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 4 and action 13
+Action 14 of 25
+press arrow UP on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 4 and action 14
+Action 15 of 25
+random number keys on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-481'} with ('64',)
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 10 in sequence 4 and action 15
+Action 16 of 25
+click on Tag: input, ID: isAcm_widget_61, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 4 and action 16
+Action 17 of 25
+random naughty keys on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-48164'} with ('���������������',)
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 4 and action 17
+Action 18 of 25
+press arrow DOWN on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-48164'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 4 and action 18
+Action 19 of 25
+press arrow UP on Tag: input, ID: isAcm_widget_61, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 4 and action 19
+Action 20 of 25
+press arrow DOWN on Tag: input, ID: isAcm_widget_61, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 4 and action 20
+Action 21 of 25
+random number keys on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-48165'} with ('37',)
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 4 and action 21
+Action 22 of 25
+press arrow DOWN on Tag: input, ID: isStudent_widget_101, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 4 and action 22
+Action 23 of 25
+press arrow DOWN on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-4816537'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 4 and action 23
+Action 24 of 25
+random number keys on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-4816538'} with ('17',)
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 4 and action 24
+Action 25 of 25
+clear on Tag: input, ID: days_widget_26, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-481653817'}
+The oracle register_myql_oracle detected an error during testing:  discount was not the same as 20 in sequence 4 and action 25
+==============================
+TEST SUMMARY REPORT
+==============================
+Tested URL: file:///Users/tvdstorm/Documents/Drafts/Courses/testing-dsls-with-dsls/examples/register.html
+Number of Runs: 4
+Sequence Length per Run: 25
+==============================
+RESULT: 100 errors were found ����
+------------------------------
+ERROR DETAILS:
+------------------------------
+register_myql_oracle detected that  discount was not the same as 10 in sequence 1 and action 1
+register_myql_oracle detected that  discount was not the same as 20 in sequence 1 and action 2
+register_myql_oracle detected that  discount was not the same as 20 in sequence 1 and action 3
+register_myql_oracle detected that  discount was not the same as 20 in sequence 1 and action 4
+register_myql_oracle detected that  discount was not the same as 20 in sequence 1 and action 5
+register_myql_oracle detected that  discount was not the same as 20 in sequence 1 and action 6
+register_myql_oracle detected that  discount was not the same as 20 in sequence 1 and action 7
+register_myql_oracle detected that  discount was not the same as 20 in sequence 1 and action 8
+register_myql_oracle detected that  discount was not the same as 20 in sequence 1 and action 9
+register_myql_oracle detected that  discount was not the same as 20 in sequence 1 and action 10
+register_myql_oracle detected that  discount was not the same as 20 in sequence 1 and action 11
+register_myql_oracle detected that  discount was not the same as 20 in sequence 1 and action 12
+register_myql_oracle detected that  discount was not the same as 10 in sequence 1 and action 13
+register_myql_oracle detected that  discount was not the same as 10 in sequence 1 and action 14
+register_myql_oracle detected that  discount was not the same as 10 in sequence 1 and action 15
+register_myql_oracle detected that  discount was not the same as 10 in sequence 1 and action 16
+register_myql_oracle detected that  discount was not the same as 10 in sequence 1 and action 17
+register_myql_oracle detected that  discount was not the same as 10 in sequence 1 and action 18
+register_myql_oracle detected that  discount was not the same as 10 in sequence 1 and action 19
+register_myql_oracle detected that  discount was not the same as 10 in sequence 1 and action 20
+register_myql_oracle detected that  discount was not the same as 20 in sequence 1 and action 21
+register_myql_oracle detected that  discount was not the same as 20 in sequence 1 and action 22
+register_myql_oracle detected that  discount was not the same as 20 in sequence 1 and action 23
+register_myql_oracle detected that  discount_div_315 was displayed at the same time as discount_div_242 in sequence 1 and action 24
+register_myql_oracle detected that  discount_div_315 was displayed at the same time as discount_div_242 in sequence 1 and action 25
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 1
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 2
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 3
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 4
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 5
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 6
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 7
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 8
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 9
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 10
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 11
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 12
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 13
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 14
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 15
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 16
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 17
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 18
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 19
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 20
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 21
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 22
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 23
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 24
+register_myql_oracle detected that  discount was not the same as 10 in sequence 2 and action 25
+register_myql_oracle detected that  discount was not the same as 10 in sequence 3 and action 1
+register_myql_oracle detected that  discount was not the same as 10 in sequence 3 and action 2
+register_myql_oracle detected that  discount was not the same as 10 in sequence 3 and action 3
+register_myql_oracle detected that  discount was not the same as 10 in sequence 3 and action 4
+register_myql_oracle detected that  discount was not the same as 20 in sequence 3 and action 5
+register_myql_oracle detected that  discount_div_315 was displayed at the same time as discount_div_242 in sequence 3 and action 6
+register_myql_oracle detected that  discount_div_315 was displayed at the same time as discount_div_242 in sequence 3 and action 7
+register_myql_oracle detected that  discount was not the same as 10 in sequence 3 and action 8
+register_myql_oracle detected that  discount was not the same as 10 in sequence 3 and action 9
+register_myql_oracle detected that  discount was not the same as 10 in sequence 3 and action 10
+register_myql_oracle detected that  discount was not the same as 10 in sequence 3 and action 11
+register_myql_oracle detected that  discount was not the same as 10 in sequence 3 and action 12
+register_myql_oracle detected that  discount was not the same as 10 in sequence 3 and action 13
+register_myql_oracle detected that  discount was not the same as 10 in sequence 3 and action 14
+register_myql_oracle detected that  discount was not the same as 20 in sequence 3 and action 15
+register_myql_oracle detected that  discount_div_315 was displayed at the same time as discount_div_242 in sequence 3 and action 16
+register_myql_oracle detected that  discount_div_315 was displayed at the same time as discount_div_242 in sequence 3 and action 17
+register_myql_oracle detected that  discount was not the same as 10 in sequence 3 and action 18
+register_myql_oracle detected that  discount was not the same as 10 in sequence 3 and action 19
+register_myql_oracle detected that  discount was not the same as 10 in sequence 3 and action 20
+register_myql_oracle detected that  discount_div_315 was displayed at the same time as discount_div_242 in sequence 3 and action 21
+register_myql_oracle detected that  discount was not the same as 20 in sequence 3 and action 22
+register_myql_oracle detected that  discount was not the same as 20 in sequence 3 and action 23
+register_myql_oracle detected that  discount was not the same as 20 in sequence 3 and action 24
+register_myql_oracle detected that  discount_div_315 was displayed at the same time as discount_div_242 in sequence 3 and action 25
+register_myql_oracle detected that  discount was not the same as 10 in sequence 4 and action 1
+register_myql_oracle detected that  discount was not the same as 10 in sequence 4 and action 2
+register_myql_oracle detected that  discount was not the same as 10 in sequence 4 and action 3
+register_myql_oracle detected that  discount was not the same as 10 in sequence 4 and action 4
+register_myql_oracle detected that  discount was not the same as 10 in sequence 4 and action 5
+register_myql_oracle detected that  discount was not the same as 10 in sequence 4 and action 6
+register_myql_oracle detected that  discount was not the same as 10 in sequence 4 and action 7
+register_myql_oracle detected that  discount was not the same as 10 in sequence 4 and action 8
+register_myql_oracle detected that  discount was not the same as 10 in sequence 4 and action 9
+register_myql_oracle detected that  discount was not the same as 10 in sequence 4 and action 10
+register_myql_oracle detected that  discount was not the same as 10 in sequence 4 and action 11
+register_myql_oracle detected that  discount was not the same as 10 in sequence 4 and action 12
+register_myql_oracle detected that  discount was not the same as 10 in sequence 4 and action 13
+register_myql_oracle detected that  discount was not the same as 10 in sequence 4 and action 14
+register_myql_oracle detected that  discount was not the same as 10 in sequence 4 and action 15
+register_myql_oracle detected that  discount was not the same as 20 in sequence 4 and action 16
+register_myql_oracle detected that  discount was not the same as 20 in sequence 4 and action 17
+register_myql_oracle detected that  discount was not the same as 20 in sequence 4 and action 18
+register_myql_oracle detected that  discount was not the same as 20 in sequence 4 and action 19
+register_myql_oracle detected that  discount was not the same as 20 in sequence 4 and action 20
+register_myql_oracle detected that  discount was not the same as 20 in sequence 4 and action 21
+register_myql_oracle detected that  discount was not the same as 20 in sequence 4 and action 22
+register_myql_oracle detected that  discount was not the same as 20 in sequence 4 and action 23
+register_myql_oracle detected that  discount was not the same as 20 in sequence 4 and action 24
+register_myql_oracle detected that  discount was not the same as 20 in sequence 4 and action 25
+==============================

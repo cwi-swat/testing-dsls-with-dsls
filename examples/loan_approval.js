@@ -62,14 +62,14 @@ var $state = {
   
 }
 function $update(name, value) {
-   let change = false;
+   let change = '';
    let newVal = undefined;
    let div = undefined;
    if (name !== undefined) {
       $state[name] = value;
    }
    do {
-     change = false;
+     change = '';
      
      div = document.getElementById('fullName_div_25');
      div.style.display = true ? 'block' : 'none'; 
@@ -114,14 +114,20 @@ function $update(name, value) {
      div = document.getElementById('annualSavings_div_713');
      div.style.display = (((true && !((($state.age < 18)))) && (($state.age >= 18) && ($state.age <= 65))) && $state.employed) ? 'block' : 'none'; 
      
-     newVal = ((($state.monthlySalary - $state.monthlyExpenses)) * 12);
-     if (newVal !== $state.annualSavings) {
-       let elt = document.getElementById('annualSavings_widget_713');
-       $state.annualSavings = newVal;
-       
-       elt.value = newVal;
-       
-       change = true;
+     if ((((true && !((($state.age < 18)))) && (($state.age >= 18) && ($state.age <= 65))) && $state.employed)) {
+        if (change === 'annualSavings') {
+           console.log('ERROR: mutual exclusion bug on annualSavings');
+           break;
+        }
+        newVal = ((($state.monthlySalary - $state.monthlyExpenses)) * 12);
+        if (newVal !== $state.annualSavings) {
+          let elt = document.getElementById('annualSavings_widget_713');
+          $state.annualSavings = newVal;
+          
+          elt.value = newVal;
+          
+         change = 'annualSavings';
+       }
      }
      
      
@@ -148,28 +154,40 @@ function $update(name, value) {
      div = document.getElementById('netPension_div_1180');
      div.style.display = (((true && !((($state.age < 18)))) && !(((($state.age >= 18) && ($state.age <= 65))))) && $state.retired) ? 'block' : 'none'; 
      
-     newVal = ($state.annualPension - $state.healthcareExpenses);
-     if (newVal !== $state.netPension) {
-       let elt = document.getElementById('netPension_widget_1180');
-       $state.netPension = newVal;
-       
-       elt.value = newVal;
-       
-       change = true;
+     if ((((true && !((($state.age < 18)))) && !(((($state.age >= 18) && ($state.age <= 65))))) && $state.retired)) {
+        if (change === 'netPension') {
+           console.log('ERROR: mutual exclusion bug on netPension');
+           break;
+        }
+        newVal = ($state.annualPension - $state.healthcareExpenses);
+        if (newVal !== $state.netPension) {
+          let elt = document.getElementById('netPension_widget_1180');
+          $state.netPension = newVal;
+          
+          elt.value = newVal;
+          
+         change = 'netPension';
+       }
      }
      
      
      div = document.getElementById('seniorDiscount_div_1296');
      div.style.display = true ? 'block' : 'none'; 
      
-     newVal = (($state.age >= 65) && $state.retired);
-     if (newVal !== $state.seniorDiscount) {
-       let elt = document.getElementById('seniorDiscount_widget_1296');
-       $state.seniorDiscount = newVal;
-       
-       elt.checked = newVal;
-       
-       change = true;
+     if (true) {
+        if (change === 'seniorDiscount') {
+           console.log('ERROR: mutual exclusion bug on seniorDiscount');
+           break;
+        }
+        newVal = (($state.age >= 65) && $state.retired);
+        if (newVal !== $state.seniorDiscount) {
+          let elt = document.getElementById('seniorDiscount_widget_1296');
+          $state.seniorDiscount = newVal;
+          
+          elt.checked = newVal;
+          
+         change = 'seniorDiscount';
+       }
      }
      
      
@@ -200,86 +218,122 @@ function $update(name, value) {
      div = document.getElementById('totalInterest_div_1709');
      div.style.display = true ? 'block' : 'none'; 
      
-     newVal = (function () { const div = 100; return div !== 0 ? Math.ceil(((($state.loanAmount * $state.interestRate) * $state.loanTerm)) / div) : 0; })();
-     if (newVal !== $state.totalInterest) {
-       let elt = document.getElementById('totalInterest_widget_1709');
-       $state.totalInterest = newVal;
-       
-       elt.value = newVal;
-       
-       change = true;
+     if (true) {
+        if (change === 'totalInterest') {
+           console.log('ERROR: mutual exclusion bug on totalInterest');
+           break;
+        }
+        newVal = (function () { const div = 100; return div !== 0 ? Math.ceil(((($state.loanAmount * $state.interestRate) * $state.loanTerm)) / div) : 0; })();
+        if (newVal !== $state.totalInterest) {
+          let elt = document.getElementById('totalInterest_widget_1709');
+          $state.totalInterest = newVal;
+          
+          elt.value = newVal;
+          
+         change = 'totalInterest';
+       }
      }
      
      
      div = document.getElementById('totalRepayment_div_1809');
      div.style.display = true ? 'block' : 'none'; 
      
-     newVal = ($state.loanAmount + $state.totalInterest);
-     if (newVal !== $state.totalRepayment) {
-       let elt = document.getElementById('totalRepayment_widget_1809');
-       $state.totalRepayment = newVal;
-       
-       elt.value = newVal;
-       
-       change = true;
+     if (true) {
+        if (change === 'totalRepayment') {
+           console.log('ERROR: mutual exclusion bug on totalRepayment');
+           break;
+        }
+        newVal = ($state.loanAmount + $state.totalInterest);
+        if (newVal !== $state.totalRepayment) {
+          let elt = document.getElementById('totalRepayment_widget_1809');
+          $state.totalRepayment = newVal;
+          
+          elt.value = newVal;
+          
+         change = 'totalRepayment';
+       }
      }
      
      
      div = document.getElementById('monthlyPayment_div_1892');
      div.style.display = true ? 'block' : 'none'; 
      
-     newVal = (function () { const div = (($state.loanTerm * 12)); return div !== 0 ? Math.ceil($state.totalRepayment / div) : 0; })();
-     if (newVal !== $state.monthlyPayment) {
-       let elt = document.getElementById('monthlyPayment_widget_1892');
-       $state.monthlyPayment = newVal;
-       
-       elt.value = newVal;
-       
-       change = true;
+     if (true) {
+        if (change === 'monthlyPayment') {
+           console.log('ERROR: mutual exclusion bug on monthlyPayment');
+           break;
+        }
+        newVal = (function () { const div = (($state.loanTerm * 12)); return div !== 0 ? Math.ceil($state.totalRepayment / div) : 0; })();
+        if (newVal !== $state.monthlyPayment) {
+          let elt = document.getElementById('monthlyPayment_widget_1892');
+          $state.monthlyPayment = newVal;
+          
+          elt.value = newVal;
+          
+         change = 'monthlyPayment';
+       }
      }
      
      
      div = document.getElementById('loanApproved_div_1984');
      div.style.display = true ? 'block' : 'none'; 
      
-     newVal = (((($state.income > 50000) && ($state.monthlyDebts < 10000))) || $state.hasCoSigner);
-     if (newVal !== $state.loanApproved) {
-       let elt = document.getElementById('loanApproved_widget_1984');
-       $state.loanApproved = newVal;
-       
-       elt.checked = newVal;
-       
-       change = true;
+     if (true) {
+        if (change === 'loanApproved') {
+           console.log('ERROR: mutual exclusion bug on loanApproved');
+           break;
+        }
+        newVal = (((($state.income > 50000) && ($state.monthlyDebts < 10000))) || $state.hasCoSigner);
+        if (newVal !== $state.loanApproved) {
+          let elt = document.getElementById('loanApproved_widget_1984');
+          $state.loanApproved = newVal;
+          
+          elt.checked = newVal;
+          
+         change = 'loanApproved';
+       }
      }
      
      
      div = document.getElementById('approvalMessage_div_2114');
      div.style.display = (true && $state.loanApproved) ? 'block' : 'none'; 
      
-     newVal = "Approved";
-     if (newVal !== $state.approvalMessage) {
-       let elt = document.getElementById('approvalMessage_widget_2114');
-       $state.approvalMessage = newVal;
-       
-       elt.value = newVal;
-       
-       change = true;
+     if ((true && $state.loanApproved)) {
+        if (change === 'approvalMessage') {
+           console.log('ERROR: mutual exclusion bug on approvalMessage');
+           break;
+        }
+        newVal = "Approved";
+        if (newVal !== $state.approvalMessage) {
+          let elt = document.getElementById('approvalMessage_widget_2114');
+          $state.approvalMessage = newVal;
+          
+          elt.value = newVal;
+          
+         change = 'approvalMessage';
+       }
      }
      
      
      div = document.getElementById('not_approvalMessage_div_2214');
      div.style.display = (true && !(($state.loanApproved))) ? 'block' : 'none'; 
      
-     newVal = "Not Approved";
-     if (newVal !== $state.not_approvalMessage) {
-       let elt = document.getElementById('not_approvalMessage_widget_2214');
-       $state.not_approvalMessage = newVal;
-       
-       elt.value = newVal;
-       
-       change = true;
+     if ((true && !(($state.loanApproved)))) {
+        if (change === 'not_approvalMessage') {
+           console.log('ERROR: mutual exclusion bug on not_approvalMessage');
+           break;
+        }
+        newVal = "Not Approved";
+        if (newVal !== $state.not_approvalMessage) {
+          let elt = document.getElementById('not_approvalMessage_widget_2214');
+          $state.not_approvalMessage = newVal;
+          
+          elt.value = newVal;
+          
+         change = 'not_approvalMessage';
+       }
      }
      
      
-   } while (change);
+   } while (change !== '');
 }

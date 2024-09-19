@@ -1,0 +1,15 @@
+//  '   else {
+        //  '     let elt = null;
+        //  '     let div = null;
+        //  '   <for ((Question)`if (<Expr c>) <Question q>` <- form) {>
+        //  '     elt = document.getElementById(\'<widgetId(q)>\');
+        //  '     <if ((Type)`boolean` := q.\type) {>
+        //  '     elt.checked = $state.<q.name>;
+        //  '     <} else {>
+        //  '     elt.value = $state.<q.name>;
+        //  '     <}>
+        //  '     div = document.getElementById(\'<divId(q)>\');
+        //  '     div.style.display = <expr2js(c)> ? \'block\' : \'none\'; 
+        //  '   <}>
+        //  '     return;
+        //  '   }

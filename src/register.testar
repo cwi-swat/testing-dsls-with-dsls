@@ -1,0 +1,313 @@
+Starting test sequence number 1 of 4
+Action 1 of 25
+clear on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'}
+An unexpected error occurred: list index out of range
+Action 2 of 25
+click on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 3 of 25
+press arrow DOWN on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 4 of 25
+clear on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: list index out of range
+Action 5 of 25
+click on Tag: input, ID: student_widget_119, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 6 of 25
+random number keys on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 202}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('82',)
+An unexpected error occurred: list index out of range
+Action 7 of 25
+press arrow UP on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 327}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 8 of 25
+click on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 202}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '82'}
+An unexpected error occurred: list index out of range
+Action 9 of 25
+clear on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 202}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '82'}
+An unexpected error occurred: list index out of range
+Action 10 of 25
+random naughty keys on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 202}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('<plaintext>',)
+An unexpected error occurred: list index out of range
+Action 11 of 25
+press arrow UP on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 202}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: list index out of range
+Action 12 of 25
+press arrow UP on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 202}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'}
+An unexpected error occurred: list index out of range
+Action 13 of 25
+random naughty keys on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 202}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '2'} with ('< / script >< script >alert(123)< / script >',)
+An unexpected error occurred: list index out of range
+Action 14 of 25
+press arrow DOWN on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 202}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '2e123'}
+An unexpected error occurred: list index out of range
+Action 15 of 25
+press arrow UP on Tag: input, ID: student_widget_119, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 430}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 16 of 25
+press arrow DOWN on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 202}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '2e+123'}
+An unexpected error occurred: list index out of range
+Action 17 of 25
+press arrow UP on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 327}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 18 of 25
+press arrow UP on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 327}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 19 of 25
+press arrow DOWN on Tag: input, ID: student_widget_119, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 430}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 20 of 25
+press arrow UP on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 202}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '2e+123'}
+An unexpected error occurred: list index out of range
+Action 21 of 25
+press arrow DOWN on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 327}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 22 of 25
+press arrow UP on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 202}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '2e+123'}
+An unexpected error occurred: list index out of range
+Action 23 of 25
+random naughty keys on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 202}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '2e+123'} with ('"`\'><script>\\xE2\\x80\\x83javascript:alert(1)</script>',)
+An unexpected error occurred: list index out of range
+Action 24 of 25
+press arrow UP on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 327}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 25 of 25
+random number keys on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 202}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('47',)
+An unexpected error occurred: list index out of range
+Starting test sequence number 2 of 4
+Action 1 of 25
+click on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 2 of 25
+click on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'}
+An unexpected error occurred: list index out of range
+Action 3 of 25
+click on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 4 of 25
+clear on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'}
+An unexpected error occurred: list index out of range
+Action 5 of 25
+random naughty keys on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('$USER',)
+An unexpected error occurred: list index out of range
+Action 6 of 25
+press arrow UP on Tag: input, ID: student_widget_119, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 7 of 25
+press arrow DOWN on Tag: input, ID: student_widget_119, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 8 of 25
+random number keys on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('27',)
+An unexpected error occurred: list index out of range
+Action 9 of 25
+press arrow DOWN on Tag: input, ID: student_widget_119, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 10 of 25
+press arrow UP on Tag: input, ID: student_widget_119, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 11 of 25
+press arrow DOWN on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 12 of 25
+press arrow UP on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: list index out of range
+Action 13 of 25
+click on Tag: input, ID: student_widget_119, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 14 of 25
+random text keys on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'} with ('JPRvTizvYT',)
+An unexpected error occurred: list index out of range
+Action 15 of 25
+press arrow UP on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 16 of 25
+press arrow DOWN on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'}
+An unexpected error occurred: list index out of range
+Action 17 of 25
+random number keys on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'} with ('21',)
+An unexpected error occurred: list index out of range
+Action 18 of 25
+random number keys on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '021'} with ('96',)
+An unexpected error occurred: list index out of range
+Action 19 of 25
+press arrow UP on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 20 of 25
+press arrow UP on Tag: input, ID: student_widget_119, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 21 of 25
+click on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 22 of 25
+press arrow DOWN on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 327}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 23 of 25
+press arrow DOWN on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 327}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 24 of 25
+click on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 327}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 25 of 25
+press arrow DOWN on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Starting test sequence number 3 of 4
+Action 1 of 25
+press arrow UP on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'}
+An unexpected error occurred: list index out of range
+Action 2 of 25
+press arrow DOWN on Tag: input, ID: student_widget_119, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 3 of 25
+press arrow UP on Tag: input, ID: student_widget_119, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 4 of 25
+press arrow UP on Tag: input, ID: student_widget_119, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 5 of 25
+click on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'}
+An unexpected error occurred: list index out of range
+Action 6 of 25
+press arrow UP on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'}
+An unexpected error occurred: list index out of range
+Action 7 of 25
+press arrow DOWN on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '2'}
+An unexpected error occurred: list index out of range
+Action 8 of 25
+press arrow UP on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 9 of 25
+random number keys on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'} with ('5',)
+An unexpected error occurred: list index out of range
+Action 10 of 25
+click on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 11 of 25
+press arrow DOWN on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '15'}
+An unexpected error occurred: list index out of range
+Action 12 of 25
+click on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '14'}
+An unexpected error occurred: list index out of range
+Action 13 of 25
+press arrow UP on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 14 of 25
+press arrow DOWN on Tag: input, ID: student_widget_119, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 15 of 25
+random naughty keys on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '14'} with ('���������������������\u1680���������������������\u202a\u202a\u202a',)
+An unexpected error occurred: list index out of range
+Action 16 of 25
+press arrow UP on Tag: input, ID: student_widget_119, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 17 of 25
+press arrow DOWN on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '14'}
+An unexpected error occurred: list index out of range
+Action 18 of 25
+random text keys on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '13'} with ('BqAHZnlXjp',)
+An unexpected error occurred: list index out of range
+Action 19 of 25
+random number keys on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '13'} with ('19',)
+An unexpected error occurred: list index out of range
+Action 20 of 25
+click on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 21 of 25
+press arrow UP on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 22 of 25
+press arrow DOWN on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1319'}
+An unexpected error occurred: list index out of range
+Action 23 of 25
+random text keys on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1318'} with ('TgcsRfgAKK',)
+An unexpected error occurred: list index out of range
+Action 24 of 25
+press arrow DOWN on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1318'}
+An unexpected error occurred: list index out of range
+Action 25 of 25
+press arrow DOWN on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Starting test sequence number 4 of 4
+Action 1 of 25
+random text keys on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'} with ('xipVCTrRbn',)
+An unexpected error occurred: list index out of range
+Action 2 of 25
+press arrow DOWN on Tag: input, ID: student_widget_119, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 3 of 25
+random text keys on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'} with ('IUoFRMglKQ',)
+An unexpected error occurred: list index out of range
+Action 4 of 25
+click on Tag: input, ID: student_widget_119, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 5 of 25
+click on Tag: input, ID: student_widget_119, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 6 of 25
+press arrow DOWN on Tag: input, ID: student_widget_119, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 7 of 25
+press arrow DOWN on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'}
+An unexpected error occurred: list index out of range
+Action 8 of 25
+random number keys on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'} with ('8',)
+An unexpected error occurred: list index out of range
+Action 9 of 25
+press arrow DOWN on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 10 of 25
+click on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-18'}
+An unexpected error occurred: list index out of range
+Action 11 of 25
+click on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-18'}
+An unexpected error occurred: list index out of range
+Action 12 of 25
+random number keys on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-18'} with ('8',)
+An unexpected error occurred: list index out of range
+Action 13 of 25
+click on Tag: input, ID: student_widget_119, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 14 of 25
+press arrow DOWN on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-188'}
+An unexpected error occurred: list index out of range
+Action 15 of 25
+random naughty keys on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-189'} with ('Power������������������������������������ ��� ���h ��� ������',)
+An unexpected error occurred: list index out of range
+Action 16 of 25
+click on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 17 of 25
+random text keys on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 202}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('rjeONwXYwH',)
+An unexpected error occurred: list index out of range
+Action 18 of 25
+clear on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 202}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: list index out of range
+Action 19 of 25
+click on Tag: input, ID: student_widget_119, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 430}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 20 of 25
+click on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: list index out of range
+Action 21 of 25
+click on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 22 of 25
+press arrow DOWN on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: list index out of range
+Action 23 of 25
+click on Tag: input, ID: acm_widget_77, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 362}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+Action 24 of 25
+random number keys on Tag: input, ID: days_widget_27, Class: , Type: number, Text: , Location: {'x': 240, 'y': 220}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'} with ('17',)
+An unexpected error occurred: list index out of range
+Action 25 of 25
+press arrow DOWN on Tag: input, ID: student_widget_119, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 483}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: list index out of range
+==============================
+TEST SUMMARY REPORT
+==============================
+Tested URL: file:///Users/tvdstorm/Documents/Drafts/Courses/testing-dsls-with-dsls/src/register.html
+Number of Runs: 4
+Sequence Length per Run: 25
+==============================
+RESULT: All tests passed successfully! ����
+==============================

@@ -8,7 +8,7 @@
     <body>
         <h2>Registration</h2>
         <div id="days_div_26">
-            <label>How many days?</label><input onchange="$update('days', Number(event.target.value));" type="number" id="days_widget_26">
+            <label>How many days?</label><input onchange="$update('days', Math.floor(Number(event.target.value)));" type="number" id="days_widget_26">
         </div>
         <div id="isAcm_div_61">
             <label>Are you ACM member</label><input onclick="$update('isAcm', event.target.checked);" type="checkbox" id="isAcm_widget_61">

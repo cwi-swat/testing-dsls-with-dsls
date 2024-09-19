@@ -1,207 +1,307 @@
 Starting test sequence number 1 of 4
 Action 1 of 25
-clear on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {}
+clear on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 836}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 2 of 25
-random text keys on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('rdxDWytzuc',)
+random number keys on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 836}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('39',)
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 3 of 25
-random text keys on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('ibSnpUSPwl',)
+clear on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 552}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 4 of 25
-random naughty keys on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('-1',)
+press arrow UP on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 5 of 25
-press arrow DOWN on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {}
+random number keys on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'} with ('17',)
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 6 of 25
-click on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-1'}
+clear on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 836}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '39'}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 7 of 25
-press arrow DOWN on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {}
+press arrow DOWN on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 8 of 25
-clear on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-1'}
+press arrow UP on Tag: input, ID: hasCoSigner_widget_1501, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 631}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 9 of 25
-random number keys on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-1'} with ('34',)
+click on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 685}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 10 of 25
-random text keys on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('KmLriUOEqM',)
+random naughty keys on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('.',)
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 11 of 25
-random number keys on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 553}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('90',)
+press arrow DOWN on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 685}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 12 of 25
-press arrow UP on Tag: input, ID: hasLicense_widget_104, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 310}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+random naughty keys on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 552}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('<a href="\\x10javascript:javascript:alert(1)" id="fuzzelement1">test</a>',)
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 13 of 25
-click on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 685}, Size: {'height': 40, 'width': 226}, Attributes: {}
+random naughty keys on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 836}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('<a href="\\xE1\\x9A\\x80javascript:javascript:alert(1)" id="fuzzelement1">test</a>',)
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 14 of 25
-random text keys on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-1'} with ('SqdmAPJGDc',)
+random naughty keys on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 552}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('<img[a][b][c]src[d]=x[e]onerror=[f]"alert(1)">',)
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 15 of 25
-random naughty keys on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-1'} with ('1,000.00',)
+press arrow UP on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 552}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 16 of 25
-random number keys on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('43',)
+click on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '117'}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 17 of 25
-random text keys on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {'value': 'KmLriUOEqM'} with ('CVSYArKMoU',)
+press arrow UP on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 18 of 25
-press arrow UP on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 534}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-134'}
+random text keys on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 552}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'} with ('zMaGbnxhwj',)
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 19 of 25
-random number keys on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 609}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '90'} with ('25',)
+click on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 552}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 20 of 25
-random text keys on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {'value': 'KmLriUOEqMCVSYArKMoU'} with ('PSevwNzYoE',)
+press arrow UP on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 552}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 21 of 25
-click on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 534}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-133'}
+click on Tag: input, ID: retired_widget_910, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 367}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 22 of 25
-random naughty keys on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 741}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('"\'"\'"\'\'\'\'"',)
+random number keys on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '117'} with ('89',)
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 23 of 25
-random text keys on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '43'} with ('oQEyPVccwK',)
+click on Tag: input, ID: yearsRetired_widget_975, Class: , Type: number, Text: , Location: {'x': 240, 'y': 420}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 24 of 25
-random number keys on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-133'} with ('27',)
+clear on Tag: input, ID: annualPension_widget_1039, Class: , Type: number, Text: , Location: {'x': 240, 'y': 496}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 25 of 25
-click on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {'value': 'KmLriUOEqMCVSYArKMoUPSevwNzYoE'}
+clear on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '.'}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Starting test sequence number 2 of 4
 Action 1 of 25
-clear on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 2 of 25
-random naughty keys on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('1 000 000,00',)
-Action 3 of 25
-click on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 4 of 25
-press arrow UP on Tag: input, ID: hasLicense_widget_104, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 310}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 5 of 25
-random number keys on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('80',)
-Action 6 of 25
-clear on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '80'}
-Action 7 of 25
-click on Tag: input, ID: retired_widget_910, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 367}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 8 of 25
-random naughty keys on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 779}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('1 000 000,00',)
-Action 9 of 25
-random text keys on Tag: input, ID: healthcareExpenses_widget_1101, Class: , Type: number, Text: , Location: {'x': 240, 'y': 572}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('BOrlpTiMQl',)
-Action 10 of 25
-random naughty keys on Tag: input, ID: healthcareExpenses_widget_1101, Class: , Type: number, Text: , Location: {'x': 240, 'y': 572}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('<SCRIPT SRC=http://ha.ckers.org/xss.js?< B >',)
-Action 11 of 25
-clear on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 12 of 25
-press arrow DOWN on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 1063}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 13 of 25
-press arrow UP on Tag: input, ID: hasCoSigner_widget_1501, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 934}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 14 of 25
-press arrow DOWN on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 855}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 15 of 25
-press arrow DOWN on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 779}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '100000000'}
-Action 16 of 25
-click on Tag: input, ID: hasCoSigner_widget_1501, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 934}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 17 of 25
-click on Tag: input, ID: hasCoSigner_widget_1501, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 934}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 18 of 25
-random naughty keys on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 1063}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-1'} with ('<img src\\x11=x onerror="javascript:alert(1)">',)
-Action 19 of 25
-press arrow UP on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 1138}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 20 of 25
-press arrow DOWN on Tag: input, ID: annualPension_widget_1039, Class: , Type: number, Text: , Location: {'x': 240, 'y': 496}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 21 of 25
-random number keys on Tag: input, ID: yearsRetired_widget_975, Class: , Type: number, Text: , Location: {'x': 240, 'y': 420}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('84',)
-Action 22 of 25
-random text keys on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 1138}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '1'} with ('IUFIABbRnl',)
-Action 23 of 25
-click on Tag: input, ID: yearsRetired_widget_975, Class: , Type: number, Text: , Location: {'x': 240, 'y': 420}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '84'}
-Action 24 of 25
-press arrow DOWN on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 25 of 25
-random number keys on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 1063}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-111e1'} with ('70',)
-Starting test sequence number 3 of 4
-Action 1 of 25
-press arrow UP on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 2 of 25
-random number keys on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 553}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('79',)
-Action 3 of 25
-click on Tag: input, ID: hasLicense_widget_104, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 310}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 4 of 25
 click on Tag: input, ID: hasCoSigner_widget_1501, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 631}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 5 of 25
-random number keys on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('30',)
-Action 6 of 25
-press arrow DOWN on Tag: input, ID: employed_widget_360, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 367}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 7 of 25
-press arrow DOWN on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '30'}
-Action 8 of 25
-clear on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 534}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 9 of 25
-press arrow UP on Tag: input, ID: lookingForJob_widget_822, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 423}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 10 of 25
-click on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '29'}
-Action 11 of 25
-click on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 609}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '79'}
-Action 12 of 25
-click on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 13 of 25
-random number keys on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 534}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('29',)
-Action 14 of 25
-click on Tag: input, ID: employed_widget_360, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 367}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 15 of 25
-random naughty keys on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 1214}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('"`\'><script>\\x20javascript:alert(1)</script>',)
-Action 16 of 25
-press arrow UP on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 17 of 25
-press arrow DOWN on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 931}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '79'}
-Action 18 of 25
-random text keys on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 1138}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '1'} with ('sueJxmRykS',)
-Action 19 of 25
-press arrow DOWN on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 20 of 25
-press arrow UP on Tag: input, ID: yearsInJob_widget_496, Class: , Type: number, Text: , Location: {'x': 240, 'y': 496}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 21 of 25
-random naughty keys on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 1063}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('<a href=http://foo.bar/#x=`y></a><img alt="`><img src=x:x onerror=javascript:alert(1)></a>">',)
-Action 22 of 25
-press arrow DOWN on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '29'}
-Action 23 of 25
-click on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 1063}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 24 of 25
-clear on Tag: input, ID: yearsInJob_widget_496, Class: , Type: number, Text: , Location: {'x': 240, 'y': 496}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '1'}
-Action 25 of 25
-click on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 931}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '78'}
-Starting test sequence number 4 of 4
-Action 1 of 25
-press arrow UP on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 2 of 25
-random text keys on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('hRAPseiVqb',)
+random naughty keys on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('<script\\x0Atype="text/javascript">javascript:alert(1);</script>',)
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 3 of 25
-press arrow UP on Tag: input, ID: hasLicense_widget_104, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 310}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+random naughty keys on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('0',)
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 4 of 25
-click on Tag: input, ID: hasCoSigner_widget_1501, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 631}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+click on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '<script\\x0Atype="text/javascript">javascript:alert(1);</script>'}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 5 of 25
-click on Tag: input, ID: hasCoSigner_widget_1501, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 631}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+random number keys on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('86',)
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 6 of 25
-random naughty keys on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 836}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('<img src=x onerror=\\x10"javascript:alert(1)">',)
+press arrow DOWN on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 685}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 7 of 25
-click on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {}
+click on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '86'}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 8 of 25
-random text keys on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 685}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('rDjpAXLxYv',)
+random number keys on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 552}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('7',)
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 9 of 25
-random naughty keys on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('���������������������\u1680���������������������\u202a\u202a\u202a',)
+press arrow UP on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '86'}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 10 of 25
-random naughty keys on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('�����������������������������',)
+press arrow DOWN on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 11 of 25
-random number keys on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('82',)
+click on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 685}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 12 of 25
-random text keys on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('aPruwxzLeZ',)
+press arrow DOWN on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 552}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '7'}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 13 of 25
-random naughty keys on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 553}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('"`\'><script>\\x2Bjavascript:alert(1)</script>',)
+random naughty keys on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '87'} with ('`"\'><img src=xxx:x \\x0Donerror=javascript:alert(1)>',)
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 14 of 25
-random number keys on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('17',)
+random text keys on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'} with ('FuStiNHQwu',)
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 15 of 25
-press arrow DOWN on Tag: input, ID: hasCoSigner_widget_1501, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 631}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+click on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 685}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 16 of 25
-press arrow UP on Tag: input, ID: hasCoSigner_widget_1501, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 631}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+random text keys on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'} with ('eOYNGHiFMN',)
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 17 of 25
-clear on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '82'}
+clear on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '870e1'}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 18 of 25
-press arrow UP on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '17'}
+clear on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 552}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '6'}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 19 of 25
-press arrow DOWN on Tag: input, ID: inSchool_widget_183, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 367}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+press arrow DOWN on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 20 of 25
-click on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {}
+press arrow UP on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 21 of 25
-random text keys on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('qEHMVOzxMZ',)
+press arrow DOWN on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 685}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 22 of 25
-press arrow DOWN on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 226}, Attributes: {}
+click on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 552}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 23 of 25
 press arrow UP on Tag: input, ID: inSchool_widget_183, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 367}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 24 of 25
-random naughty keys on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 553}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '2e1'} with ('</textarea><script>alert(123)</script>',)
+press arrow UP on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 836}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
 Action 25 of 25
-press arrow UP on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 226}, Attributes: {'value': 'aPruwxzLeZ'}
+click on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Starting test sequence number 3 of 4
+Action 1 of 25
+random text keys on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('cleZUOomiK',)
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 2 of 25
+clear on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 3 of 25
+random naughty keys on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 836}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('None',)
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 4 of 25
+click on Tag: input, ID: inSchool_widget_183, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 367}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 5 of 25
+click on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 6 of 25
+click on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 7 of 25
+click on Tag: input, ID: grade_widget_258, Class: , Type: number, Text: , Location: {'x': 240, 'y': 420}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 8 of 25
+random naughty keys on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 552}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('Infinity',)
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 9 of 25
+click on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 628}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 10 of 25
+press arrow UP on Tag: input, ID: inSchool_widget_183, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 367}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 11 of 25
+random naughty keys on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('ABC<div style="x:\\x00expression(javascript:alert(1)">DEF',)
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 12 of 25
+click on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 13 of 25
+press arrow DOWN on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 628}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 14 of 25
+random naughty keys on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 911}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('""',)
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 15 of 25
+random number keys on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('17',)
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 16 of 25
+clear on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 17 of 25
+click on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 552}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 18 of 25
+random text keys on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('bQKrZiVjmD',)
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 19 of 25
+press arrow DOWN on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 911}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 20 of 25
+random text keys on Tag: input, ID: grade_widget_258, Class: , Type: number, Text: , Location: {'x': 240, 'y': 420}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('YMddKaaVPx',)
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 21 of 25
+click on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 911}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 22 of 25
+click on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 23 of 25
+random text keys on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 911}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'} with ('fvBSrBMOCu',)
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 24 of 25
+press arrow UP on Tag: input, ID: hasCoSigner_widget_1501, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 707}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 25 of 25
+clear on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 911}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Starting test sequence number 4 of 4
+Action 1 of 25
+clear on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 2 of 25
+random naughty keys on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 836}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('false',)
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 3 of 25
+random text keys on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 836}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('vwBbkJrwYC',)
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 4 of 25
+press arrow DOWN on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 5 of 25
+random text keys on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'} with ('mPEMIZfUBl',)
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 6 of 25
+clear on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 7 of 25
+click on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 8 of 25
+random naughty keys on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('<!--[if<img src=x onerror=javascript:alert(1)//]> -->',)
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 9 of 25
+random text keys on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('QVQRVMrNrS',)
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 10 of 25
+press arrow UP on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 836}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 11 of 25
+random naughty keys on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('<IMG onmouseover="alert(\'xxs\')">',)
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 12 of 25
+clear on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 836}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 13 of 25
+random number keys on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 685}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('83',)
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 14 of 25
+random number keys on Tag: input, ID: monthlyDebts_widget_1446, Class: , Type: number, Text: , Location: {'x': 240, 'y': 552}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('61',)
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 15 of 25
+random number keys on Tag: input, ID: fullName_widget_25, Class: , Type: text, Text: , Location: {'x': 240, 'y': 156}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '<IMG onmouseover="alert(\'xxs\')">'} with ('85',)
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 16 of 25
+clear on Tag: input, ID: interestRate_widget_1608, Class: , Type: number, Text: , Location: {'x': 240, 'y': 760}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 17 of 25
+random number keys on Tag: input, ID: age_widget_70, Class: , Type: number, Text: , Location: {'x': 240, 'y': 231}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('51',)
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 18 of 25
+press arrow UP on Tag: input, ID: income_widget_1398, Class: , Type: number, Text: , Location: {'x': 240, 'y': 477}, Size: {'height': 40, 'width': 219}, Attributes: {}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 19 of 25
+random naughty keys on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 685}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '83'} with ('1#SNAN',)
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 20 of 25
+press arrow DOWN on Tag: input, ID: inSchool_widget_183, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 367}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 21 of 25
+press arrow DOWN on Tag: input, ID: inSchool_widget_183, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 367}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 22 of 25
+press arrow DOWN on Tag: input, ID: loanAmount_widget_1564, Class: , Type: number, Text: , Location: {'x': 240, 'y': 685}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '831'}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 23 of 25
+random text keys on Tag: input, ID: loanTerm_widget_1666, Class: , Type: number, Text: , Location: {'x': 240, 'y': 836}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('NrUhUagnFM',)
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 24 of 25
+click on Tag: input, ID: hasCoSigner_widget_1501, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 631}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: can only concatenate str (not "int") to str
+Action 25 of 25
+press arrow UP on Tag: input, ID: hasLicense_widget_104, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 310}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+An unexpected error occurred: can only concatenate str (not "int") to str
 ==============================
 TEST SUMMARY REPORT
 ==============================
@@ -211,4 +311,3 @@ Sequence Length per Run: 25
 ==============================
 RESULT: All tests passed successfully! ����
 ==============================
-|file:///Users/tvdstorm/CWI/salix-core/|

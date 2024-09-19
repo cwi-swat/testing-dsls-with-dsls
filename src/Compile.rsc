@@ -82,7 +82,8 @@ HTMLElement type2widget(Question q, (Type)`boolean`, bool disabled)
 HTMLElement type2widget(Question q, (Type)`integer`, bool disabled)
   = disabled 
    ? input(\type="number", id=widgetId(q), disabled="true")
-   : input(\type="number", id=widgetId(q), onchange="$update(\'<q.name>\', Number(event.target.value));");
+   : input(\type="number", id=widgetId(q), 
+      onchange="$update(\'<q.name>\', Math.floor(Number(event.target.value)));");
 
 HTMLElement type2widget(Question q, (Type)`string`, bool disabled)
   = disabled 

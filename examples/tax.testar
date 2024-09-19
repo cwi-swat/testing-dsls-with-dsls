@@ -1,214 +1,52 @@
 Starting test sequence number 1 of 4
 Action 1 of 25
-press arrow UP on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 973}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+press arrow UP on Tag: input, ID: hasMaintLoan_widget_95, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 562}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
 Action 2 of 25
-press arrow DOWN on Tag: input, ID: hasBoughtHouse_widget_31, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 392}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+press arrow UP on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 792}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
 Action 3 of 25
-click on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 973}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+press arrow DOWN on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 792}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
 Action 4 of 25
-click on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 575}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+click on Tag: input, ID: hasBoughtHouse_widget_31, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 332}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
 Action 5 of 25
-press arrow UP on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 973}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+click on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 792}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
 Action 6 of 25
-press arrow UP on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 973}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+click on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 734}, Size: {'height': 40, 'width': 219}, Attributes: {}
 Action 7 of 25
-press arrow UP on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 973}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+clear on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 734}, Size: {'height': 40, 'width': 219}, Attributes: {}
 Action 8 of 25
-press arrow DOWN on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 973}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+press arrow UP on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 592}, Size: {'height': 40, 'width': 219}, Attributes: {}
 Action 9 of 25
-click on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 973}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+random text keys on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 734}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('VsAmoNjewA',)
 Action 10 of 25
-press arrow DOWN on Tag: input, ID: hasBoughtHouse_widget_31, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 260}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+random text keys on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 734}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('YtDnOoMTfr',)
 Action 11 of 25
-random text keys on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('YkQoomvIsR',)
+random naughty keys on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 734}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('<script\\x09type="text/javascript">javascript:alert(1);</script>',)
 Action 12 of 25
-press arrow UP on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {}
+press arrow UP on Tag: input, ID: hasMaintLoan_widget_95, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 349}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
 Action 13 of 25
-click on Tag: input, ID: hasBoughtHouse_widget_31, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 260}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+random naughty keys on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 592}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'} with ('true',)
 Action 14 of 25
-random naughty keys on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '1'} with ('"`\'><script>-javascript:alert(1)</script>',)
+click on Tag: input, ID: hasBoughtHouse_widget_31, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 225}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
 Action 15 of 25
-clear on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {}
+click on Tag: input, ID: hasBoughtHouse_widget_31, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 225}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
 Action 16 of 25
-press arrow UP on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {}
+click on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 734}, Size: {'height': 40, 'width': 219}, Attributes: {}
 Action 17 of 25
-random naughty keys on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('`touch /tmp/blns.fail`',)
+clear on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 734}, Size: {'height': 40, 'width': 219}, Attributes: {}
 Action 18 of 25
-press arrow UP on Tag: input, ID: hasMaintLoan_widget_95, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 417}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+press arrow UP on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 734}, Size: {'height': 40, 'width': 219}, Attributes: {}
 Action 19 of 25
-press arrow DOWN on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {}
+press arrow DOWN on Tag: input, ID: hasBoughtHouse_widget_31, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 225}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
 Action 20 of 25
-random naughty keys on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-1'} with ('-0',)
+click on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 472}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
 Action 21 of 25
-press arrow DOWN on Tag: input, ID: hasMaintLoan_widget_95, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 417}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+press arrow UP on Tag: input, ID: hasBoughtHouse_widget_31, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 332}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
 Action 22 of 25
-click on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 575}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+click on Tag: input, ID: hasMaintLoan_widget_95, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 562}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
 Action 23 of 25
-press arrow DOWN on Tag: input, ID: hasMaintLoan_widget_95, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 682}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+click on Tag: input, ID: hasBoughtHouse_widget_31, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 332}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
 Action 24 of 25
-press arrow DOWN on Tag: input, ID: hasBoughtHouse_widget_31, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 392}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+press arrow DOWN on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 792}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
 Action 25 of 25
-press arrow UP on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 973}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+press arrow UP on Tag: input, ID: hasMaintLoan_widget_95, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 562}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
 Starting test sequence number 2 of 4
-Action 1 of 25
-click on Tag: input, ID: hasBoughtHouse_widget_31, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 392}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 2 of 25
-press arrow UP on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 973}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 3 of 25
-click on Tag: input, ID: hasBoughtHouse_widget_31, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 392}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 4 of 25
-click on Tag: input, ID: hasMaintLoan_widget_95, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 682}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 5 of 25
-press arrow DOWN on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 973}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 6 of 25
-press arrow UP on Tag: input, ID: hasBoughtHouse_widget_31, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 392}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 7 of 25
-press arrow UP on Tag: input, ID: hasMaintLoan_widget_95, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 682}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 8 of 25
-press arrow UP on Tag: input, ID: hasMaintLoan_widget_95, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 682}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 9 of 25
-click on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 973}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 10 of 25
-click on Tag: input, ID: hasBoughtHouse_widget_31, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 260}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 11 of 25
-press arrow DOWN on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 12 of 25
-press arrow DOWN on Tag: input, ID: hasMaintLoan_widget_95, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 417}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 13 of 25
-press arrow DOWN on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-1'}
-Action 14 of 25
-click on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-2'}
-Action 15 of 25
-click on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-2'}
-Action 16 of 25
-random naughty keys on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('ABC<div style="x:\\xE2\\x80\\x83expression(javascript:alert(1)">DEF',)
-Action 17 of 25
-press arrow UP on Tag: input, ID: hasMaintLoan_widget_95, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 417}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 18 of 25
-random text keys on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('GOdhburuUH',)
-Action 19 of 25
-press arrow DOWN on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 575}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 20 of 25
-click on Tag: input, ID: hasMaintLoan_widget_95, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 417}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 21 of 25
-press arrow UP on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 22 of 25
-press arrow UP on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 575}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 23 of 25
-press arrow UP on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '1'}
-Action 24 of 25
-click on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '2'}
-Action 25 of 25
-press arrow DOWN on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 575}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Starting test sequence number 3 of 4
-Action 1 of 25
-click on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 973}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 2 of 25
-click on Tag: input, ID: hasMaintLoan_widget_95, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 417}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 3 of 25
-clear on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 4 of 25
-press arrow DOWN on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 575}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 5 of 25
-click on Tag: input, ID: hasBoughtHouse_widget_31, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 260}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 6 of 25
-clear on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 7 of 25
-press arrow UP on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 8 of 25
-random number keys on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('42',)
-Action 9 of 25
-press arrow UP on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '42'}
-Action 10 of 25
-press arrow DOWN on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 575}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 11 of 25
-press arrow UP on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '1'}
-Action 12 of 25
-random naughty keys on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '43'} with ('""',)
-Action 13 of 25
-click on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '2'}
-Action 14 of 25
-click on Tag: input, ID: hasMaintLoan_widget_95, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 417}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 15 of 25
-clear on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '2'}
-Action 16 of 25
-press arrow DOWN on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 575}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 17 of 25
-random number keys on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '43'} with ('57',)
-Action 18 of 25
-press arrow DOWN on Tag: input, ID: hasMaintLoan_widget_95, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 417}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 19 of 25
-click on Tag: input, ID: hasMaintLoan_widget_95, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 417}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 20 of 25
-random naughty keys on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('`"\'><img src=xxx:x \\x0Donerror=javascript:alert(1)>',)
-Action 21 of 25
-press arrow DOWN on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '4357'}
-Action 22 of 25
-click on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '0e1'}
-Action 23 of 25
-click on Tag: input, ID: hasBoughtHouse_widget_31, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 260}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 24 of 25
-click on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '4356'}
-Action 25 of 25
-press arrow DOWN on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 575}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Starting test sequence number 4 of 4
-Action 1 of 25
-press arrow UP on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 973}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 2 of 25
-click on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 973}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 3 of 25
-press arrow DOWN on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 575}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 4 of 25
-press arrow DOWN on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 5 of 25
-clear on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-1'}
-Action 6 of 25
-press arrow UP on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 575}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 7 of 25
-click on Tag: input, ID: hasBoughtHouse_widget_31, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 260}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 8 of 25
-press arrow UP on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 575}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 9 of 25
-press arrow UP on Tag: input, ID: hasMaintLoan_widget_95, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 417}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 10 of 25
-random naughty keys on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('<a href="\\xE2\\x80\\x88javascript:javascript:alert(1)" id="fuzzelement1">test</a>',)
-Action 11 of 25
-press arrow UP on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 12 of 25
-click on Tag: input, ID: hasBoughtHouse_widget_31, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 260}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 13 of 25
-random text keys on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '1'} with ('tzHfDfGsfO',)
-Action 14 of 25
-press arrow DOWN on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 575}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 15 of 25
-press arrow DOWN on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {}
-Action 16 of 25
-click on Tag: input, ID: hasBoughtHouse_widget_31, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 260}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 17 of 25
-random naughty keys on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '1'} with ('<a href="\\x16javascript:javascript:alert(1)" id="fuzzelement1">test</a>',)
-Action 18 of 25
-random number keys on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {} with ('44',)
-Action 19 of 25
-click on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 575}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 20 of 25
-press arrow DOWN on Tag: input, ID: hasBoughtHouse_widget_31, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 392}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 21 of 25
-press arrow DOWN on Tag: input, ID: hasMaintLoan_widget_95, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 682}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 22 of 25
-click on Tag: input, ID: hasSoldHouse_widget_152, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 973}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 23 of 25
-press arrow DOWN on Tag: input, ID: privateDebt_widget_306, Class: , Type: number, Text: , Location: {'x': 240, 'y': 906}, Size: {'height': 40, 'width': 226}, Attributes: {'value': '-1'}
-Action 24 of 25
-click on Tag: input, ID: hasMaintLoan_widget_95, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 417}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
-Action 25 of 25
-press arrow UP on Tag: input, ID: sellingPrice_widget_244, Class: , Type: number, Text: , Location: {'x': 240, 'y': 730}, Size: {'height': 40, 'width': 226}, Attributes: {}
-==============================
-TEST SUMMARY REPORT
-==============================
-Tested URL: file:///Users/tvdstorm/Documents/Drafts/Courses/testing-dsls-with-dsls/examples/tax.html
-Number of Runs: 4
-Sequence Length per Run: 25
-==============================
-RESULT: All tests passed successfully! ����
-==============================
-|file:///Users/tvdstorm/CWI/salix-core/|

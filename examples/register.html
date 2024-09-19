@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <script src="register.js"></script>
+        <script>document.addEventListener("DOMContentLoaded", function() { $update(); });</script>
+        <title>Registration</title>
+    </head>
+    <body>
+        <h2>Registration</h2>
+        <div id="days_div_26">
+            <label>How many days?</label><input onchange="$update('days', Number(event.target.value));" type="number" id="days_widget_26">
+        </div>
+        <div id="isAcm_div_61">
+            <label>Are you ACM member</label><input onclick="$update('isAcm', event.target.checked);" type="checkbox" id="isAcm_widget_61">
+        </div>
+        <div id="isStudent_div_101">
+            <label>Are you a student</label><input onclick="$update('isStudent', event.target.checked);" type="checkbox" id="isStudent_widget_101">
+        </div>
+        <div id="price_div_145">
+            <label>Day price:</label><input onchange="$update('price', Number(event.target.value));" type="number" id="price_widget_145" disabled="true">
+        </div>
+        <div id="discount_div_242">
+            <label>Discount</label><input onchange="$update('discount', Number(event.target.value));" type="number" id="discount_widget_242" disabled="true">
+        </div>
+        <div id="discount_div_315">
+            <label>Discount</label><input onchange="$update('discount', Number(event.target.value));" type="number" id="discount_widget_315" disabled="true">
+        </div>
+        <div id="discount_div_373">
+            <label>Discount</label><input onchange="$update('discount', Number(event.target.value));" type="number" id="discount_widget_373" disabled="true">
+        </div>
+        <div id="total_div_411">
+            <label>You have to pay</label><input onchange="$update('total', Number(event.target.value));" type="number" id="total_widget_411" disabled="true">
+        </div>
+    </body>
+</html>

@@ -44,7 +44,7 @@ str value2js(vbool(bool b)) = "<b>";
 HTMLElement questions2html(str name, list[Question] qs, str jsFile) 
   = html([
       lang::html::AST::head([
-        link(\rel="stylesheet", href="https://cdn.simplecss.org/simple.min.css"),
+        //link(\rel="stylesheet", href="https://cdn.simplecss.org/simple.min.css"),
         script([], src=jsFile),
         script([text("document.addEventListener(\"DOMContentLoaded\", function() {
                      '  $update();
@@ -101,16 +101,18 @@ str update2js(list[Question] form) {
          '     div = document.getElementById(\'<divId(q)>\');
          '     div.style.display = <expr2js(c)> ? \'block\' : \'none\'; 
          '     <if (q has expr) {>
-         '     newVal = <expr2js(q.expr)>;
-         '     if (newVal !== $state.<q.name>) {
-         '       let elt = document.getElementById(\'<widgetId(q)>\');
-         '       $state.<q.name> = newVal;
-         '       <if ((Type)`boolean` := q.\type) {>
-         '       elt.checked = newVal;
-         '       <} else {>
-         '       elt.value = newVal;
-         '       <}>
-         '       change = true;
+         '     if (<expr2js(c)>) {
+         '        newVal = <expr2js(q.expr)>;
+         '        if (newVal !== $state.<q.name>) {
+         '          let elt = document.getElementById(\'<widgetId(q)>\');
+         '          $state.<q.name> = newVal;
+         '          <if ((Type)`boolean` := q.\type) {>
+         '          elt.checked = newVal;
+         '          <} else {>
+         '          elt.value = newVal;
+         '          <}>
+         '         change = true;
+         '       }
          '     }
          '     <}>
          '     <}>

@@ -44,7 +44,7 @@ str value2js(vbool(bool b)) = "<b>";
 HTMLElement questions2html(str name, list[Question] qs, str jsFile) 
   = html([
       lang::html::AST::head([
-        //link(\rel="stylesheet", href="https://cdn.simplecss.org/simple.min.css"),
+        link(\rel="stylesheet", href="https://cdn.simplecss.org/simple.min.css"),
         script([], src=jsFile),
         script([text("document.addEventListener(\"DOMContentLoaded\", function() {
                      '  $update();
@@ -75,33 +75,55 @@ str widgetId(Question q) = "<q.name>_widget_<q.src.offset>";
 str divId(Question q) = "<q.name>_div_<q.src.offset>";
 
 HTMLElement type2widget(Question q, (Type)`boolean`, bool disabled)
-  = disabled ? w[disabled="true"] : w
-  when HTMLElement w := input(\type="checkbox", id=widgetId(q), onclick="$update(\'<q.name>\', event.target.checked);");
+  = disabled 
+  ? input(\type="checkbox", id=widgetId(q), disabled="true")
+  : input(\type="checkbox", id=widgetId(q), onclick="$update(\'<q.name>\', event.target.checked);");
 
 HTMLElement type2widget(Question q, (Type)`integer`, bool disabled)
-  = disabled ? w[disabled="true"] : w
-  when HTMLElement w := input(\type="number", id=widgetId(q), onchange="$update(\'<q.name>\', Number(event.target.value));");
+  = disabled 
+   ? input(\type="number", id=widgetId(q), disabled="true")
+   : input(\type="number", id=widgetId(q), onchange="$update(\'<q.name>\', Number(event.target.value));");
 
 HTMLElement type2widget(Question q, (Type)`string`, bool disabled)
-  = disabled ? w[disabled="true"] : w
-  when HTMLElement w := input(\type="text", id=widgetId(q), onchange="$update(\'<q.name>\', event.target.value);");
+  = disabled 
+  ? input(\type="text", id=widgetId(q), disabled="true")
+  : input(\type="text", id=widgetId(q), onchange="$update(\'<q.name>\', event.target.value);");
 
 
 str update2js(list[Question] form) {
   return "function $update(name, value) {
-         '   let change = false;
+         '   let change = \'\';
          '   let newVal = undefined;
          '   let div = undefined;
          '   if (name !== undefined) {
          '      $state[name] = value;
          '   }
+         '   else {
+         '     let elt = null;
+         '     let div = null;
+         '   <for ((Question)`if (<Expr c>) <Question q>` <- form) {>
+         '     elt = document.getElementById(\'<widgetId(q)>\');
+         '     <if ((Type)`boolean` := q.\type) {>
+         '     elt.checked = $state.<q.name>;
+         '     <} else {>
+         '     elt.value = $state.<q.name>;
+         '     <}>
+         '     div = document.getElementById(\'<divId(q)>\');
+         '     div.style.display = <expr2js(c)> ? \'block\' : \'none\'; 
+         '   <}>
+         '     return;
+         '   }
          '   do {
-         '     change = false;
+         '     change = \'\';
          '     <for ((Question)`if (<Expr c>) <Question q>` <- form) {>
          '     div = document.getElementById(\'<divId(q)>\');
          '     div.style.display = <expr2js(c)> ? \'block\' : \'none\'; 
          '     <if (q has expr) {>
          '     if (<expr2js(c)>) {
+         '        if (change === \'<q.name>\') {
+         '           console.log(\'ERROR: mutual exclusion bug on <q.name>\');
+         '           break;
+         '        }
          '        newVal = <expr2js(q.expr)>;
          '        if (newVal !== $state.<q.name>) {
          '          let elt = document.getElementById(\'<widgetId(q)>\');
@@ -111,12 +133,12 @@ str update2js(list[Question] form) {
          '          <} else {>
          '          elt.value = newVal;
          '          <}>
-         '         change = true;
+         '         change = \'<q.name>\';
          '       }
          '     }
          '     <}>
          '     <}>
-         '   } while (change);
+         '   } while (change !== \'\');
          '}";
 
 }

@@ -1,0 +1,213 @@
+Starting test sequence number 1 of 4
+Action 1 of 25
+press arrow UP on Tag: input, ID: theAgeToYoung_widget_1200, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 875}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 2 of 25
+press arrow DOWN on Tag: input, ID: ofAge2_widget_282, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 728}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 3 of 25
+random text keys on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'} with ('GWBXlqrMLk',)
+Action 4 of 25
+press arrow DOWN on Tag: input, ID: ofAge2_widget_282, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 728}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 5 of 25
+press arrow DOWN on Tag: input, ID: ofAge_widget_178, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 581}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 6 of 25
+press arrow DOWN on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'}
+Action 7 of 25
+press arrow DOWN on Tag: input, ID: ofAge_widget_178, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 581}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 8 of 25
+random naughty keys on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'} with ('0',)
+Action 9 of 25
+press arrow DOWN on Tag: input, ID: ofAge_widget_178, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 581}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 10 of 25
+clear on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'}
+Action 11 of 25
+press arrow UP on Tag: input, ID: theAgeToYoung_widget_1200, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 875}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 12 of 25
+press arrow UP on Tag: input, ID: theAgeToYoung_widget_1200, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 875}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 13 of 25
+random text keys on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-10'} with ('JRNbvHqiSl',)
+Action 14 of 25
+random naughty keys on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-10'} with ('$HOME',)
+Action 15 of 25
+random naughty keys on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('�������������������������h����e���������������� ��������������N����e����z����������p������������e��������r����������������d������������i������������a����������n���� ����������h����i����v�����������-����������m������i��������n��������� ������������������������f ����������������c�������������������a������������������s��.���� ��Z����������������a����������l����������g����������������o����.��',)
+Action 16 of 25
+random number keys on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('71',)
+Action 17 of 25
+press arrow DOWN on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {}
+Action 18 of 25
+random number keys on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '71'} with ('19',)
+Action 19 of 25
+click on Tag: input, ID: ofAge_widget_178, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 581}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 20 of 25
+random naughty keys on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'} with ('������',)
+Action 21 of 25
+random naughty keys on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'} with ('`ls -al /`',)
+Action 22 of 25
+press arrow DOWN on Tag: input, ID: ofAge2_widget_282, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 728}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 23 of 25
+click on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {}
+Action 24 of 25
+random text keys on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('bnpiPYVade',)
+Action 25 of 25
+click on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {}
+Starting test sequence number 2 of 4
+Action 1 of 25
+press arrow DOWN on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'}
+Action 2 of 25
+press arrow UP on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'}
+Action 3 of 25
+press arrow UP on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'}
+Action 4 of 25
+clear on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'}
+Action 5 of 25
+press arrow DOWN on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '2'}
+Action 6 of 25
+clear on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'}
+Action 7 of 25
+press arrow DOWN on Tag: input, ID: ofAge_widget_178, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 581}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 8 of 25
+clear on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {}
+Action 9 of 25
+click on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {}
+Action 10 of 25
+press arrow DOWN on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {}
+Action 11 of 25
+click on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {}
+Action 12 of 25
+press arrow DOWN on Tag: input, ID: ofAge2_widget_282, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 728}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 13 of 25
+press arrow UP on Tag: input, ID: ofAge2_widget_282, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 728}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 14 of 25
+click on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {}
+Action 15 of 25
+press arrow UP on Tag: input, ID: ofAge2_widget_282, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 728}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 16 of 25
+press arrow UP on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {}
+Action 17 of 25
+click on Tag: input, ID: ofAge_widget_178, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 581}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 18 of 25
+random naughty keys on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'} with ('Penistone Community Church',)
+Action 19 of 25
+random naughty keys on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('1/2',)
+Action 20 of 25
+press arrow UP on Tag: input, ID: theAgeToYoung_widget_1200, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 875}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 21 of 25
+press arrow DOWN on Tag: input, ID: ofAge_widget_178, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 581}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 22 of 25
+random text keys on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1e12'} with ('MuFflecqLy',)
+Action 23 of 25
+click on Tag: input, ID: ofAge2_widget_282, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 728}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 24 of 25
+random text keys on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1e12'} with ('wEkJlpDCzY',)
+Action 25 of 25
+click on Tag: input, ID: ofAge_widget_178, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 581}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Starting test sequence number 3 of 4
+Action 1 of 25
+press arrow DOWN on Tag: input, ID: ofAge2_widget_282, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 728}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 2 of 25
+clear on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'}
+Action 3 of 25
+click on Tag: input, ID: ofAge_widget_178, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 581}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 4 of 25
+press arrow UP on Tag: input, ID: theAgeToYoung_widget_1200, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 875}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 5 of 25
+clear on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'}
+Action 6 of 25
+click on Tag: input, ID: theAgeToYoung_widget_1200, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 875}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 7 of 25
+press arrow DOWN on Tag: input, ID: ofAge2_widget_282, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 728}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 8 of 25
+clear on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {}
+Action 9 of 25
+random naughty keys on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('< / script >< script >alert(123)< / script >',)
+Action 10 of 25
+press arrow DOWN on Tag: input, ID: ofAge_widget_178, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 581}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 11 of 25
+random text keys on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('AjfbykCcgM',)
+Action 12 of 25
+press arrow DOWN on Tag: input, ID: ofAge_widget_178, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 581}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 13 of 25
+press arrow DOWN on Tag: input, ID: ofAge2_widget_282, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 728}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 14 of 25
+clear on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {}
+Action 15 of 25
+press arrow DOWN on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {}
+Action 16 of 25
+press arrow UP on Tag: input, ID: theAgeToYoung_widget_1200, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 875}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 17 of 25
+press arrow UP on Tag: input, ID: theAgeToYoung_widget_1200, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 875}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 18 of 25
+random naughty keys on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('1E02',)
+Action 19 of 25
+click on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'}
+Action 20 of 25
+press arrow DOWN on Tag: input, ID: ofAge_widget_178, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 581}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 21 of 25
+random number keys on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1E02'} with ('94',)
+Action 22 of 25
+press arrow DOWN on Tag: input, ID: theAgeToYoung_widget_1200, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 875}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 23 of 25
+click on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'}
+Action 24 of 25
+press arrow UP on Tag: input, ID: theAgeToYoung_widget_1200, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 875}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 25 of 25
+click on Tag: input, ID: ofAge_widget_178, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 581}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Starting test sequence number 4 of 4
+Action 1 of 25
+click on Tag: input, ID: ofAge2_widget_282, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 728}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 2 of 25
+press arrow DOWN on Tag: input, ID: ofAge2_widget_282, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 728}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 3 of 25
+click on Tag: input, ID: ofAge2_widget_282, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 728}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 4 of 25
+press arrow DOWN on Tag: input, ID: ofAge2_widget_282, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 728}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 5 of 25
+press arrow UP on Tag: input, ID: theAgeToYoung_widget_1200, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 875}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 6 of 25
+random text keys on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'} with ('TEMJhvyDNk',)
+Action 7 of 25
+press arrow UP on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {}
+Action 8 of 25
+random naughty keys on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'} with ('INF',)
+Action 9 of 25
+press arrow DOWN on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'}
+Action 10 of 25
+press arrow DOWN on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'}
+Action 11 of 25
+random text keys on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'} with ('YmcoXoXPge',)
+Action 12 of 25
+press arrow UP on Tag: input, ID: ofAge2_widget_282, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 728}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 13 of 25
+press arrow UP on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {}
+Action 14 of 25
+press arrow DOWN on Tag: input, ID: ofAge_widget_178, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 581}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 15 of 25
+random number keys on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'} with ('27',)
+Action 16 of 25
+random naughty keys on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '127'} with ("' onfocus=JaVaSCript:alert(123) autofocus",)
+Action 17 of 25
+random number keys on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'} with ('67',)
+Action 18 of 25
+press arrow DOWN on Tag: input, ID: ofAge_widget_178, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 581}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 19 of 25
+click on Tag: input, ID: ofAge_widget_178, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 581}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 20 of 25
+press arrow UP on Tag: input, ID: ofAge2_widget_282, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 728}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 21 of 25
+press arrow UP on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '127e123'}
+Action 22 of 25
+click on Tag: input, ID: ofAge_widget_178, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 581}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 23 of 25
+random text keys on Tag: input, ID: theAge_widget_17, Class: , Type: number, Text: , Location: {'x': 240, 'y': 246}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1.27e+125'} with ('lOmsGDoZTL',)
+Action 24 of 25
+press arrow DOWN on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '067'}
+Action 25 of 25
+press arrow UP on Tag: input, ID: theAge2_widget_92, Class: , Type: number, Text: , Location: {'x': 240, 'y': 412}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '66'}
+==============================
+TEST SUMMARY REPORT
+==============================
+Tested URL: file:///Users/tvdstorm/Documents/Drafts/Courses/testing-dsls-with-dsls/examples/demo.html
+Number of Runs: 4
+Sequence Length per Run: 25
+==============================
+RESULT: All tests passed successfully! ����
+==============================

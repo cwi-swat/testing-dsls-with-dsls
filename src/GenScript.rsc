@@ -64,7 +64,7 @@ list[str] genAsserts(start[Form] form) {
         if (q has expr) {
             expr = replaceAll("<q.expr>", "\n", " ");
             message = ", \' <q.name> was not the same as <expr>, expected \' + <expr2py(q.expr)> + \', got \' + state[\'<q.name>\']";
-            append "assert state[\'<q.name>\'] == <expr2py(q.expr)> if <expr2py(cond)> else False" + message;
+            append "assert state[\'<q.name>\'] == <expr2py(q.expr)> if <expr2py(cond)> else True" + message;
         }
 
         list[Question] others = [ q2 | (Question)`if (<Expr cond>) <Question q2>` <- qs, 

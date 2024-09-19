@@ -10,7 +10,7 @@ def mutual_myql_oracle(driver):
         
 
     assert not (True and (state['num'] <= 0)) or driver.find_elements(By.ID, 'x_div_134')[0].is_displayed(), 'true && num <= 0 evaluated to true, however x_div_134 was not displayed'
-    assert state['x'] == True, ' x was not the same as true'
+    assert state['x'] == True if (True and (state['num'] <= 0)) else True, ' x was not the same as true, expected ' + True + ', got ' + state['x']
     if driver.find_elements(By.ID, 'x_div_134')[0].is_displayed():
         
         assert not driver.find_elements(By.ID, 'x_div_84')[0].is_displayed(), ' x_div_84 was displayed at the same time as x_div_134'

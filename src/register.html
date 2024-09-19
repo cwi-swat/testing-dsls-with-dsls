@@ -7,29 +7,32 @@
     </head>
     <body>
         <h2>Registration</h2>
-        <div id="days_div_27">
-            <label>How many days do you attend?</label><input onchange="$update('days', Number(event.target.value));" type="number" id="days_widget_27">
+        <div id="days_div_26">
+            <label>How many days do you attend?</label><input onchange="$update('days', Math.floor(Number(event.target.value)));" type="number" id="days_widget_26">
         </div>
-        <div id="acm_div_77">
-            <label>Are you an ACM member?</label><input onclick="$update('acm', event.target.checked);" type="checkbox" id="acm_widget_77">
+        <div id="acm_div_76">
+            <label>Are you an ACM member?</label><input onclick="$update('acm', event.target.checked);" type="checkbox" id="acm_widget_76">
         </div>
-        <div id="student_div_119">
-            <label>Are you a student?</label><input onclick="$update('student', event.target.checked);" type="checkbox" id="student_widget_119">
+        <div id="student_div_118">
+            <label>Are you a student?</label><input onclick="$update('student', event.target.checked);" type="checkbox" id="student_widget_118">
         </div>
-        <div id="price_div_162">
-            <label>Day price</label><input type="number" id="price_widget_162" disabled="true">
+        <div id="price_div_160">
+            <label>Day price</label><input type="number" id="price_widget_160" disabled="true">
         </div>
-        <div id="discount_div_252">
-            <label>Discount</label><input type="number" id="discount_widget_252" disabled="true">
+        <div id="discount_div_227">
+            <label>Discount</label><input type="number" id="discount_widget_227" disabled="true">
         </div>
-        <div id="discount_div_319">
-            <label>Discount</label><input type="number" id="discount_widget_319" disabled="true">
+        <div id="discount_div_287">
+            <label>Discount</label><input type="number" id="discount_widget_287" disabled="true">
         </div>
-        <div id="discount_div_376">
-            <label>Discount</label><input type="number" id="discount_widget_376" disabled="true">
+        <div id="discount_div_353">
+            <label>Discount</label><input type="number" id="discount_widget_353" disabled="true">
         </div>
-        <div id="pay_div_414">
-            <label>You have to pay:</label><input type="number" id="pay_widget_414" disabled="true">
+        <div id="discount_div_405">
+            <label>Discount</label><input type="number" id="discount_widget_405" disabled="true">
+        </div>
+        <div id="pay_div_444">
+            <label>You have to pay:</label><input type="number" id="pay_widget_444" disabled="true">
         </div>
     </body>
 </html>

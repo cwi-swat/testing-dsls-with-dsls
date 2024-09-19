@@ -1,0 +1,314 @@
+Starting test sequence number 1 of 4
+Action 1 of 25
+press arrow UP on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 571}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 1 and action 1
+Action 2 of 25
+clear on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 1 and action 2
+Action 3 of 25
+clear on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 1 and action 3
+Action 4 of 25
+press arrow UP on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {}
+Action 5 of 25
+click on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'}
+Action 6 of 25
+click on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 721}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 7 of 25
+random text keys on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'} with ('GcjAPafifQ',)
+Action 8 of 25
+random text keys on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'} with ('pdkTncJSNi',)
+Action 9 of 25
+random text keys on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'} with ('bwfJIcRTVS',)
+Action 10 of 25
+click on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'}
+Action 11 of 25
+click on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 721}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 12 of 25
+press arrow UP on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 721}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 13 of 25
+click on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 721}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 14 of 25
+click on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 721}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 15 of 25
+clear on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 1 and action 15
+Action 16 of 25
+press arrow UP on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {}
+Action 17 of 25
+press arrow DOWN on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 721}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 18 of 25
+press arrow DOWN on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 1 and action 18
+Action 19 of 25
+press arrow UP on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 571}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 1 and action 19
+Action 20 of 25
+press arrow DOWN on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 571}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 1 and action 20
+Action 21 of 25
+click on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 1 and action 21
+Action 22 of 25
+clear on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 1 and action 22
+Action 23 of 25
+press arrow DOWN on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {}
+Action 24 of 25
+clear on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 1 and action 24
+Action 25 of 25
+clear on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 1 and action 25
+Starting test sequence number 2 of 4
+Action 1 of 25
+random naughty keys on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'} with ('"`\'><script>\\xE1\\x9A\\x80javascript:alert(1)</script>',)
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 2 and action 1
+Action 2 of 25
+press arrow DOWN on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0E19801'}
+Action 3 of 25
+press arrow DOWN on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'}
+Action 4 of 25
+click on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-2'}
+Action 5 of 25
+random text keys on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-2'} with ('QRSRyyuPVa',)
+Action 6 of 25
+random naughty keys on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-2'} with ('True',)
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 2 and action 6
+Action 7 of 25
+click on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 2 and action 7
+Action 8 of 25
+clear on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 2 and action 8
+Action 9 of 25
+press arrow UP on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {}
+Action 10 of 25
+press arrow DOWN on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 721}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 11 of 25
+random number keys on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'} with ('85',)
+Action 12 of 25
+random naughty keys on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '185'} with ("' onfocus=JaVaSCript:alert(123) autofocus",)
+Action 13 of 25
+click on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 721}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 14 of 25
+click on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '185e123'}
+Action 15 of 25
+press arrow UP on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 721}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 16 of 25
+clear on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '185e123'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 2 and action 16
+Action 17 of 25
+press arrow UP on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {}
+Action 18 of 25
+random number keys on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'} with ('46',)
+Action 19 of 25
+press arrow UP on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 721}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 20 of 25
+press arrow UP on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '146'}
+Action 21 of 25
+press arrow DOWN on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '147'}
+Action 22 of 25
+random naughty keys on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '146'} with ('<a href="\\x08javascript:javascript:alert(1)" id="fuzzelement1">test</a>',)
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 2 and action 22
+Action 23 of 25
+click on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 2 and action 23
+Action 24 of 25
+clear on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 2 and action 24
+Action 25 of 25
+press arrow DOWN on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {}
+Starting test sequence number 3 of 4
+Action 1 of 25
+press arrow DOWN on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'}
+Action 2 of 25
+click on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'}
+Action 3 of 25
+clear on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 3 and action 3
+Action 4 of 25
+press arrow UP on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 571}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 3 and action 4
+Action 5 of 25
+press arrow UP on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 571}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 3 and action 5
+Action 6 of 25
+random number keys on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('88',)
+Action 7 of 25
+press arrow DOWN on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 721}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 8 of 25
+clear on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '88'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 3 and action 8
+Action 9 of 25
+random naughty keys on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('<img src\\x00=x onerror="javascript:alert(1)">',)
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 3 and action 9
+Action 10 of 25
+press arrow UP on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 571}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 3 and action 10
+Action 11 of 25
+press arrow UP on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 571}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 3 and action 11
+Action 12 of 25
+press arrow UP on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '00e1'}
+Action 13 of 25
+press arrow UP on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '1'}
+Action 14 of 25
+click on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 721}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 15 of 25
+clear on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '2'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 3 and action 15
+Action 16 of 25
+random number keys on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('98',)
+Action 17 of 25
+press arrow DOWN on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '98'}
+Action 18 of 25
+click on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '97'}
+Action 19 of 25
+press arrow DOWN on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '97'}
+Action 20 of 25
+press arrow UP on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '96'}
+Action 21 of 25
+press arrow DOWN on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '97'}
+Action 22 of 25
+click on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 721}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Action 23 of 25
+random text keys on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '96'} with ('FmJGEeuyem',)
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 3 and action 23
+Action 24 of 25
+press arrow UP on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {}
+Action 25 of 25
+press arrow DOWN on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 721}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+Starting test sequence number 4 of 4
+Action 1 of 25
+press arrow DOWN on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 571}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 1
+Action 2 of 25
+press arrow UP on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 571}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 2
+Action 3 of 25
+press arrow UP on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 571}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 3
+Action 4 of 25
+press arrow UP on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 571}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 4
+Action 5 of 25
+press arrow DOWN on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 571}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 5
+Action 6 of 25
+press arrow DOWN on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 571}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 6
+Action 7 of 25
+press arrow UP on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 571}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 7
+Action 8 of 25
+click on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 8
+Action 9 of 25
+press arrow UP on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 571}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 9
+Action 10 of 25
+random naughty keys on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'} with ('`���������������������������������',)
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 10
+Action 11 of 25
+clear on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 11
+Action 12 of 25
+random text keys on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('BAsRbesWxp',)
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 12
+Action 13 of 25
+click on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 13
+Action 14 of 25
+random number keys on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {} with ('21',)
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 14
+Action 15 of 25
+clear on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 15
+Action 16 of 25
+press arrow DOWN on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {}
+Action 17 of 25
+random text keys on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'} with ('mXnuZQdPbQ',)
+Action 18 of 25
+press arrow UP on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 399}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '-1'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 18
+Action 19 of 25
+press arrow UP on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 571}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 19
+Action 20 of 25
+press arrow UP on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 571}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 20
+Action 21 of 25
+press arrow UP on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 571}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 21
+Action 22 of 25
+random text keys on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'} with ('RyoADNRMVz',)
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 22
+Action 23 of 25
+random text keys on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'} with ('QjSSmRycOk',)
+The oracle mutual_myql_oracle detected an error during testing:  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 23
+Action 24 of 25
+press arrow UP on Tag: input, ID: num_widget_31, Class: , Type: number, Text: , Location: {'x': 240, 'y': 324}, Size: {'height': 40, 'width': 219}, Attributes: {'value': '0'}
+Action 25 of 25
+press arrow UP on Tag: input, ID: x_widget_84, Class: , Type: checkbox, Text: , Location: {'x': 244, 'y': 721}, Size: {'height': 18, 'width': 18}, Attributes: {'value': 'on'}
+==============================
+TEST SUMMARY REPORT
+==============================
+Tested URL: file:///Users/tvdstorm/Documents/Drafts/Courses/testing-dsls-with-dsls/examples/mutual.html
+Number of Runs: 4
+Sequence Length per Run: 25
+==============================
+RESULT: 49 errors were found ����
+------------------------------
+ERROR DETAILS:
+------------------------------
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 1 and action 1
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 1 and action 2
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 1 and action 3
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 1 and action 15
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 1 and action 18
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 1 and action 19
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 1 and action 20
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 1 and action 21
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 1 and action 22
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 1 and action 24
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 1 and action 25
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 2 and action 1
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 2 and action 6
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 2 and action 7
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 2 and action 8
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 2 and action 16
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 2 and action 22
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 2 and action 23
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 2 and action 24
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 3 and action 3
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 3 and action 4
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 3 and action 5
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 3 and action 8
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 3 and action 9
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 3 and action 10
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 3 and action 11
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 3 and action 15
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 3 and action 23
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 1
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 2
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 3
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 4
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 5
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 6
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 7
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 8
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 9
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 10
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 11
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 12
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 13
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 14
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 15
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 18
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 19
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 20
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 21
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 22
+mutual_myql_oracle detected that  x_div_134 was displayed at the same time as x_div_84 in sequence 4 and action 23
+==============================

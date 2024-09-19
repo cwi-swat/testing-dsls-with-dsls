@@ -4,21 +4,11 @@ import Syntax;
 import Eval;
 import IO;
 import ParseTree;
-import GenSen;
 
 
 import lang::html::AST; // modeling HTML docs
 import lang::html::IO; // reading/writing HTML
 
-void randomizedCompile() {
-   for (int i <- [0..20]) {
-      if (start[Form] f := genSen(#start[Form], 10)) {
-        println("Iteration <i>");
-        println(f);
-        compile2jsHtml(f, |file:///dummy|);
-      }
-   }
-}
 
 void compile(start[Form] form) {
   loc h = form.src[extension="html"];

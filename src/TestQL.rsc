@@ -266,11 +266,13 @@ set[Message] runTests(start[Tests] tests) {
 
     HTMLElement report = html([
       lang::html::AST::head([
-        meta(name="viewport",content="width=device-width, initial-scale=1.0"),
-        link(\rel="stylesheet", href="https://cdn.simplecss.org/simple.min.css"),
+        meta(name="viewport",content="width=device-width, initial-scale=1"),
+        meta(name="color-scheme",content="light dark"),
+    //    link(\rel="stylesheet", href="https://cdn.simplecss.org/simple.min.css"),
+        link(\rel="stylesheet", href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css"),
         title([text(tests.src.file)])
       ]),
-      body(divs)
+      body([main([section(divs)])])
     ]);
 
     writeHTMLFile(tests.src[extension="html"], report, charset="UTF-16", escapeMode=extendedMode());

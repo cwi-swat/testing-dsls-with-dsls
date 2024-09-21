@@ -63,7 +63,7 @@ list[str] genAsserts(start[Form] form) {
         //append "assert not <expr2py(cond)> or driver.find_elements(By.ID, \'<divId(q)>\')[0].is_enabled()";
         if (q has expr) {
             expr = replaceAll("<q.expr>", "\n", " ");
-            message = ", \' <q.name> was not the same as <expr>, expected \' + <expr2py(q.expr)> + \', got \' + state[\'<q.name>\']";
+            message = ", \' <q.name> was expected to be <expr> which equals \' + str(<expr2py(q.expr)>) + \', but  <q.name> was  \' + str(state[\'<q.name>\'])";
             append "assert state[\'<q.name>\'] == <expr2py(q.expr)> if <expr2py(cond)> else True" + message;
         }
 

@@ -1,19 +1,17 @@
 form "Registration" {
-    "How many days?" days: integer
-    "Are you ACM member" isAcm: boolean
-    "Are you a student" isStudent: boolean
+    "How many days do you attend?" days: integer 
+    "Are you an ACM member?" acm: boolean
+    "Are you a student?" student: boolean
+    "Day price" price: integer = 100
 
-    "Day price:" price: integer = 100
-
-    if (isAcm || isStudent) {
-        if (isAcm) 
-            "Discount" discount: integer = 10    
-        if (isStudent)
-            "Discount" discount: integer = 20
-    }
+    if (acm && student) 
+        "Discount" discount: integer = 5
+    else if (acm) 
+        "Discount" discount: integer = 10 
+    else if (student) 
+        "Discount" discount: integer = 20
     else 
         "Discount" discount: integer = 0
 
-    "You have to pay" total: integer = days * (price - discount)
-
+    "You have to pay:" pay: integer = days * (price - discount)
 }

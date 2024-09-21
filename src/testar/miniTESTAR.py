@@ -79,59 +79,67 @@ def derive_actionable_elements(driver, filter_elements):
 
 def derive_actions(driver, filter_elements):
     """
-    Derives all possible actions on a a set of actionable elements
+    Derives all possible actions on a randomly selected actionable element
     """
     visible_actionable_elements = derive_actionable_elements(driver, filter_elements)
     
+    #select a random element from visible_actionable_elements
+    #then we do not have to derive all actions for all elements, should make it faster
+    selected_element_id = int(random.randint(0, len(visible_actionable_elements)-1))
+    element = visible_actionable_elements[selected_element_id]
+    
+    #Make sure the element is in view to prevent ElementClickInterceptedException (on smaller screens)
+    #Unfortunately scrollIntoView in JS (below) does not seem to work.... (not sure if it is only a specific browser config)
+    #driver.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", element)
+    
+    #Can do it with Selenium action chains, but unfortunately makes it slower
+    #create action chain object
+    action = ActionChains(driver).scroll_to_element(element).perform()
+    
+    #List that will store all the derived actions for the selected element
     actions = []
-    
-    for element in visible_actionable_elements:
-    
-        # Basic click
-        actions.append(lambda el=element: (log("click", el), el.click()))
 
-        # Advanced clicks
-        #actions.append(lambda el=element: (log("double-click", el), ActionChains(driver).double_click(el).perform()))
-        #actions.append(lambda el=element: (log("right-click", el), ActionChains(driver).context_click(el).perform()))
-        #actions.append(lambda el=element: (log("click and hold", el), ActionChains(driver).click_and_hold(el).perform()))
+    # Basic click
+    actions.append(lambda el=element: (log("click", el), el.click()))
 
+    # Advanced clicks
+    #actions.append(lambda el=element, ac=action: (log("double-click", el), ac.double_click(el).perform()))
+    #actions.append(lambda el=element, ac=action: (log("right-click", el), ac.context_click(el).perform()))
+    #actions.append(lambda el=element, ac=action: (log("click and hold", el), ac.click_and_hold(el).perform()))
+
+    # Advanced keyboard inputs applicable to any element
+    #actions.append(lambda el=element: (log("press TAB", el), el.send_keys(Keys.TAB)))
+    #actions.append(lambda el=element: (log("press ENTER", el), el.send_keys(Keys.ENTER)))
+    #actions.append(lambda el=element: (log("press ESCAPE", el), el.send_keys(Keys.ESCAPE)))
+    actions.append(lambda el=element: (log("press arrow UP", el),  el.send_keys(Keys.ARROW_UP)))
+    actions.append(lambda el=element: (log("press arrow DOWN", el), el.send_keys(Keys.ARROW_DOWN)))
+
+    element_type = element.get_attribute("type").lower()
+    element_tag_name = element.tag_name.lower()
+    
+    if element_tag_name == "input" and element_type in ["text", "number", "email", "password"]:
+        # Send some random text, numbers, naughty
+        random_text = generate_random_text()
+        random_number = generate_random_number()
+        naughty_string = generate_naughty_string()
+
+        # keys
+        actions.append(lambda el=element: (log("random text keys", el, random_text), el.send_keys(random_text, Keys.RETURN)))
+        actions.append(lambda el=element: (log("random number keys", el, random_number), el.send_keys(random_number, Keys.RETURN)))
+        actions.append(lambda el=element: (log("random naughty keys", el, naughty_string), el.send_keys(naughty_string, Keys.RETURN)))
+        # clear
+        #actions.append(lambda el=element: (log("clear", el), el.clear()))
+    
         
-        # Advanced keyboard inputs applicable to any element
-        #actions.append(lambda el=element: (log("press TAB", el), el.send_keys(Keys.TAB)))
-        #actions.append(lambda el=element: (log("press ENTER", el), el.send_keys(Keys.ENTER)))
-        #actions.append(lambda el=element: (log("press ESCAPE", el), el.send_keys(Keys.ESCAPE)))
-        actions.append(lambda el=element: (log("press arrow UP", el), el.send_keys(Keys.ARROW_UP)))
-        actions.append(lambda el=element: (log("press arrow DOWN", el), el.send_keys(Keys.ARROW_DOWN)))
-    
-        element_type = element.get_attribute("type").lower()
-        element_tag_name = element.tag_name.lower()
-        
-        if element_tag_name == "input" and element_type in ["text", "number", "email", "password"]:
-            # Send some random text, numbers, naughty
-            random_text = generate_random_text()
-            random_number = generate_random_number()
-            naughty_string = generate_naughty_string()
+    elif element_tag_name == "select":
+        # For dropdowns, select different options
+        select = Select(element)
+        for option in select.options:
+            actions.append(lambda el=element, opt=option: (log("select dropdown option", el, opt.text), select.select_by_visible_text(opt.text)))
 
-            # keys
-            actions.append(lambda el=element: (log("random text keys", el, random_text), el.send_keys(random_text, Keys.RETURN)))
-            actions.append(lambda el=element: (log("random number keys", el, random_number), el.send_keys(random_number, Keys.RETURN)))
-            actions.append(lambda el=element: (log("random naughty keys", el, naughty_string), el.send_keys(naughty_string, Keys.RETURN)))
-            # clear
-            actions.append(lambda el=element: (log("clear", el), el.clear()))
-            # clear + keys
-            #actions.append(lambda el=element: (log("clear+text keys", el, random_text), el.clear(), el.send_keys(random_text, Keys.RETURN)))
-            #actions.append(lambda el=element: (log("clear+ number keys", el, random_number), el.clear(), el.send_keys(random_number, Keys.RETURN)))
-            #actions.append(lambda el=element: (log("clear+ naughty keys", el, naughty_string), el.clear(), el.send_keys(naughty_string, Keys.RETURN)))
-            
-        elif element_tag_name == "select":
-            # For dropdowns, select different options
-            select = Select(element)
-            for option in select.options:
-                actions.append(lambda el=element, opt=option: (log("select dropdown option", el, opt.text), select.select_by_visible_text(opt.text)))
-
-        elif "[onclick]" in element.get_attribute("outerHTML"):
-            # For elements with `onclick` attributes, simply test clicking
-            actions.append(lambda el=element: (log("click element with onclick", el), el.click()))
+    elif "[onclick]" in element.get_attribute("outerHTML"):
+        # For elements with `onclick` attributes, simply test clicking
+        actions.append(lambda el=element: (log("click element with onclick", el), el.click()))
 
     return actions
 
@@ -163,7 +171,9 @@ def check_oracles(driver, oracles, errors, seq, acc):
             print(f"The oracle {oracle.__name__} detected an error during testing: {str(e)} in sequence {seq} and action {acc}")
             errors.append(f"{oracle.__name__} detected that {str(e)} in sequence {seq} and action {acc}")
         except Exception as e:
-            print(f"An unexpected error occurred: {str(e)}")
+            print(f"An unexpected error occurred in oracle {oracle.__name__}: {str(e)}")
+            #Need to be inspected ;-)
+            stop = input("")
    
    
 def testar(url, num_runs, length_sequence, filter_elements, preparations, oracles):

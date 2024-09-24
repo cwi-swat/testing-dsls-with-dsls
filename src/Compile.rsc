@@ -96,10 +96,7 @@ str update2js(list[Question] form) {
          '   let change = \'\';
          '   let newVal = undefined;
          '   let div = undefined;
-         '   if (name !== undefined) {
-         '      $state[name] = value;
-         '   }
-         '   else {
+         '   if (name === undefined) {
          '     let elt = null;
          '     let div = null;
          '   <for ((Question)`if (<Expr c>) <Question q>` <- form) {>
@@ -114,6 +111,7 @@ str update2js(list[Question] form) {
          '   <}>
          '     return;
          '   }
+         '   $state[name] = value;
          '   do {
          '     change = \'\';
          '     <for ((Question)`if (<Expr c>) <Question q>` <- form) {>

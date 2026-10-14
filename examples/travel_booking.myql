@@ -1,0 +1,25 @@
+form "Travel booking" {
+  "Traveller name" travellerName: string
+  "Travelling abroad?" abroad: boolean
+  "Number of travellers" travellers: integer
+
+  if (abroad) {
+    "Destination country" country: string
+    "Need a visa?" needsVisa: boolean
+    if (needsVisa) {
+      "Visa reference" visaReference: string
+    }
+  } else {
+    "Destination city" city: string
+  }
+
+  "Book accommodation?" accommodation: boolean
+  if (accommodation) {
+    "Number of nights" nights: integer
+    "Room price per night" roomPrice: integer
+    "Accommodation total" accommodationTotal: integer = nights * roomPrice
+  }
+
+  "Ticket price per traveller" ticketPrice: integer
+  "Ticket total" ticketTotal: integer = travellers * ticketPrice
+}

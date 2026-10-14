@@ -1,0 +1,22 @@
+form "Age boundaries" {
+  "Name" personName: string
+  "Age" age: integer
+  "Invalid negative age" invalidAge: boolean = age < 0
+
+  if (age < 0) {
+    "Age warning" ageWarning: string = "Age cannot be negative"
+  } else if (age < 18) {
+    "Age group" ageGroup: string = "Under 18"
+    "Guardian name" guardianName: string
+  } else if (age < 65) {
+    "Age group" ageGroup: string = "Adult"
+    "Employed?" employed: boolean
+  } else {
+    "Age group" ageGroup: string = "Senior"
+    "Retired?" retired: boolean
+  }
+
+  "Exactly 18" exactlyEighteen: boolean = age == 18
+  "Exactly 65" exactlySixtyFive: boolean = age == 65
+  "Adult age" adultAge: boolean = age >= 18
+}

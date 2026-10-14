@@ -59,6 +59,9 @@ Value eval((Expr)`<Str s>`, VEnv venv) = vstr("<s>"[1..-1]);
 
 Value eval((Expr)`(<Expr e>)`, VEnv venv) = eval(e, venv);
 
+Value eval((Expr)`!<Expr e>`, VEnv venv) = vbool(!b)
+  when
+    vbool(bool b) := eval(e, venv);
 
 // note how the results of the recursive calls are unpacked using pattern matching.
 Value eval((Expr)`<Expr lhs> \< <Expr rhs>`, VEnv venv) = vbool(i < j)

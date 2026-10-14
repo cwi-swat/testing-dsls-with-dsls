@@ -1,0 +1,93 @@
+form "All QL language constructs" {
+  // Answerable questions: all three types.
+  "First number" first: integer
+  "Second number" second: integer
+  "First switch" firstSwitch: boolean
+  "Second switch" secondSwitch: boolean
+  "Your name" personName: string
+
+  // Literals and computed questions: all three types.
+  "Positive integer literal" positiveLiteral: integer = 5
+  "Negative integer literal" negativeLiteral: integer = -5
+  "Zero literal" zeroLiteral: integer = 0
+  "True literal" trueLiteral: boolean = true
+  "False literal" falseLiteral: boolean = false
+  "String literal" stringLiteral: string = "Hello"
+  "Empty string literal" emptyLiteral: string = ""
+
+  // Variable references, including references to computed questions.
+  "Copied name" copiedName: string = personName
+  "Copied switch" copiedSwitch: boolean = firstSwitch
+  "Copied number" copiedNumber: integer = first
+  "Computed dependency" dependency: integer = positiveLiteral + negativeLiteral
+
+  // Every arithmetic operator and explicit brackets.
+  "Addition" addition: integer = first + second
+  "Subtraction" subtraction: integer = first - second
+  "Multiplication" multiplication: integer = first * second
+  "Division" division: integer = first / second
+  "Bracketed expression" bracketed: integer = (first + second) * 2
+
+  // Fixed values expose precedence, associativity and division behavior.
+  "Multiplication before addition" precedence: integer = 2 + 3 * 4
+  "Brackets change precedence" bracketPrecedence: integer = (2 + 3) * 4
+  "Left-associative subtraction" leftSubtraction: integer = 10 - 3 - 2
+  "Left-associative division" leftDivision: integer = 20 / 2 / 2
+  "Non-exact division" nonExactDivision: integer = 7 / 2
+  "Negative dividend" negativeDividend: integer = -7 / 2
+  "Negative divisor" negativeDivisor: integer = 7 / -2
+  "Division by zero" divisionByZero: integer = 7 / 0
+
+  // Every comparison operator.
+  "Equal" equal: boolean = first == second
+  "Not equal" notEqual: boolean = first != second
+  "Less than" less: boolean = first < second
+  "Greater than" greater: boolean = first > second
+  "Less than or equal" lessOrEqual: boolean = first <= second
+  "Greater than or equal" greaterOrEqual: boolean = first >= second
+  "String equality" nameIsAda: boolean = personName == "Ada"
+  "String inequality" nameIsNotAda: boolean = personName != "Ada"
+  "Boolean equality" sameSwitches: boolean = firstSwitch == secondSwitch
+
+  // Boolean operators, nested negation and boolean precedence.
+  "Negation" negation: boolean = !firstSwitch
+  "Double negation" doubleNegation: boolean = !!firstSwitch
+  "Conjunction" conjunction: boolean = firstSwitch && secondSwitch
+  "Disjunction" disjunction: boolean = firstSwitch || secondSwitch
+  "Negated expression" negatedGroup: boolean = !(firstSwitch || secondSwitch)
+  "And before or" booleanPrecedence: boolean = true || false && false
+  "Bracketed boolean expression" booleanBrackets: boolean = (true || false) && false
+
+  // A plain block, including an empty block.
+  {
+    "Question inside a plain block" blockQuestion: string
+  }
+  {}
+
+  // if without else, directly followed by one question (no braces).
+  if (firstSwitch)
+    "Single conditional question" singleConditional: string
+
+  // if/else without braces.
+  if (secondSwitch)
+    "True branch" trueBranch: integer = 1
+  else
+    "False branch" falseBranch: integer = -1
+
+  // Blocks, nested conditions and an else-if chain.
+  if (firstSwitch) {
+    "Outer branch question" outerQuestion: string
+    if (secondSwitch) {
+      "Both switches on" bothOn: string = "Both"
+    } else {
+      "Only first switch on" firstOnly: string = "First only"
+    }
+  } else if (secondSwitch) {
+    "Only second switch on" secondOnly: string = "Second only"
+  } else {
+    "Both switches off" bothOff: string = "Neither"
+  }
+
+  // Empty branches are also valid question blocks.
+  if (false) {} else {}
+}

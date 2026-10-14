@@ -1,0 +1,28 @@
+form "Feature switches" {
+  "Enable contact details?" contactEnabled: boolean
+  "Enable billing details?" billingEnabled: boolean
+  "Use a company account?" companyAccount: boolean
+
+  if (contactEnabled) {
+    "Contact name" contactName: string
+    "Email address" emailAddress: string
+  }
+
+  if (billingEnabled) {
+    "Billing address" billingAddress: string
+    if (companyAccount) {
+      "Company name" companyName: string
+      "Tax reference" taxReference: string
+    } else {
+      "Personal billing name" billingName: string
+    }
+  }
+
+  "Both sections enabled" bothEnabled: boolean = contactEnabled && billingEnabled
+  "At least one section enabled" anyEnabled: boolean = contactEnabled || billingEnabled
+  "Neither section enabled" neitherEnabled: boolean = !contactEnabled && !billingEnabled
+
+  if (bothEnabled) {
+    "Additional instructions" instructions: string
+  }
+}

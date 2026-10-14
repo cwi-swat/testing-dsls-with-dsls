@@ -1,18 +1,17 @@
-from selenium.webdriver.common.by import By
-def mutual_myql_oracle(driver):
-    state = driver.execute_script('return $state;');
+def ql_mutual_myql_oracle(page):
+    state = page.evaluate('() => $state')
     
-    assert not True or driver.find_elements(By.ID, 'num_div_31')[0].is_displayed(), 'true evaluated to true, however num_div_31 was not displayed'
-    assert not (True and (state['num'] >= 0)) or driver.find_elements(By.ID, 'x_div_84')[0].is_displayed(), 'true && num >= 0 evaluated to true, however x_div_84 was not displayed'
-    if driver.find_elements(By.ID, 'x_div_84')[0].is_displayed():
+    assert not True or page.locator('#num_div_31').is_visible(), 'true evaluated to true, however num_div_31 was not displayed'
+    assert not (True and (state['num'] >= 0)) or page.locator('#x_div_84').is_visible(), 'true && num >= 0 evaluated to true, however x_div_84 was not displayed'
+    if page.locator('#x_div_84').is_visible():
         
-        assert not driver.find_elements(By.ID, 'x_div_134')[0].is_displayed(), ' x_div_134 was displayed at the same time as x_div_84'
+        assert not page.locator('#x_div_134').is_visible(), ' x_div_134 was displayed at the same time as x_div_84'
         
 
-    assert not (True and (state['num'] <= 0)) or driver.find_elements(By.ID, 'x_div_134')[0].is_displayed(), 'true && num <= 0 evaluated to true, however x_div_134 was not displayed'
-    assert state['x'] == True if (True and (state['num'] <= 0)) else True, ' x was not the same as true, expected ' + True + ', got ' + state['x']
-    if driver.find_elements(By.ID, 'x_div_134')[0].is_displayed():
+    assert not (True and (state['num'] <= 0)) or page.locator('#x_div_134').is_visible(), 'true && num <= 0 evaluated to true, however x_div_134 was not displayed'
+    assert state['x'] == True if (True and (state['num'] <= 0)) else True, ' x was expected to be true which equals ' + str(True) + ', but  x was  ' + str(state['x'])
+    if page.locator('#x_div_134').is_visible():
         
-        assert not driver.find_elements(By.ID, 'x_div_84')[0].is_displayed(), ' x_div_84 was displayed at the same time as x_div_134'
+        assert not page.locator('#x_div_84').is_visible(), ' x_div_84 was displayed at the same time as x_div_134'
         
 

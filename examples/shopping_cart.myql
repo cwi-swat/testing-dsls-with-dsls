@@ -1,0 +1,17 @@
+form "Shopping cart" {
+  "Customer name" customerName: string
+  "Number of items" quantity: integer
+  "Price per item" unitPrice: integer
+  "Subtotal" subtotal: integer = quantity * unitPrice
+  "Apply a discount?" hasDiscount: boolean
+
+  if (hasDiscount) {
+    "Discount amount" discount: integer
+    "Total with discount" discountedTotal: integer = subtotal - discount
+  } else {
+    "Total without discount" regularTotal: integer = subtotal
+  }
+
+  "Has items" hasItems: boolean = quantity > 0
+  "Order note" orderNote: string
+}

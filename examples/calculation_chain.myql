@@ -1,0 +1,24 @@
+form "Calculation chain" {
+  "First number" first: integer
+  "Second number" second: integer
+  "Sum" sum: integer = first + second
+  "Difference" difference: integer = first - second
+  "Product" product: integer = first * second
+  "Twice the sum" twiceSum: integer = sum * 2
+  "Combined result" combined: integer = twiceSum + product
+  "Numbers are equal" equalNumbers: boolean = first == second
+  "Positive combined result" positiveResult: boolean = combined > 0
+
+  if (positiveResult) {
+    "Comment on positive result" positiveComment: string
+  } else {
+    "Comment on non-positive result" otherComment: string
+  }
+
+  "Divisor" divisor: integer
+  if (divisor != 0) {
+    "Integer quotient" quotient: integer = combined / divisor
+  } else {
+    "Division warning" divisionWarning: string = "Choose a nonzero divisor"
+  }
+}

@@ -1,72 +1,115 @@
-from miniTESTAR import testar, start_SUT_and_get_driver
-from selenium.webdriver.common.by import By
-import os
+from pathlib import Path
+from uuid import uuid4
+from miniTESTAR import testar
 
+def test_cambio():
+    """Run the cambio app, without login or filters."""
+    from playwright_backend import PlaywrightBackend
 
-def test_lambda():
-    
-    testar('https://lambdatest.github.io/sample-todo-app/', 3, 100, [], [], [])
+    testar('https://cambio.softwaretesting.nl/', 4, 200,
+           [], [], [], backend=PlaywrightBackend(), measure_timings=True)
 
+def test_sudoku():
+    """Run the sudoku game, without login or filters."""
+    from playwright_backend import PlaywrightBackend
+
+    testar('https://sudoku.softwaretesting.nl/', 1, 400,
+           [], [], [], backend=PlaywrightBackend(), measure_timings=True)
+
+def test_random_generator():
+    """Run the random generator with Playwright, without login or filters."""
+    from playwright_backend import PlaywrightBackend
+
+    testar('https://random-generator.softwaretesting.nl/', 4, 200,
+           [], [], [], backend=PlaywrightBackend(), measure_timings=True)
 
 def test_saucer():
-  
-    def test_Sauce_login(driver):
-       
-        # Localizar username y escibir uno
-        driver.find_element(By.ID, "user-name").send_keys("standard_user")
-        
-        # Localizar password y escibir uno
-        driver.find_element(By.ID, "password").send_keys("secret_sauce")
-        
-        # Localizar el botón y hacer click
-        driver.find_element(By.ID, "login-button").click()
-        
-    def filter_burger(driver):
-        return driver.find_element(By.ID, "react-burger-menu-btn")
-    
-    def filter_external_links(driver):
-        all_links = driver.find_elements(By.TAG_NAME, "a")
-        
-        # Filter the links to Twitter, Facebook and LinkedIn
-        social_links = [ link for link in all_links if link.get_attribute("href") and any(social in link.get_attribute("href") for social in ["twitter.com", "facebook.com", "linkedin.com"])]
-        
-        return social_links
-    
-    testar("https://www.saucedemo.com/", 1, 100, [filter_burger, filter_external_links], [test_Sauce_login], [])
-     
-    
+    """Log in to SauceDemo, then test with Playwright and a visible-error oracle."""
+    from playwright_backend import PlaywrightBackend
+
+    def login(page):
+        page.locator('#user-name').fill('standard_user')
+        page.locator('#password').fill('secret_sauce')
+        page.locator('#login-button').click()
+        page.locator('.inventory_list').wait_for(state='visible')
+
+    def filter_burger(page):
+        return page.locator('#react-burger-menu-btn')
+
+    def filter_external_links(page):
+        return page.locator(
+            'a[href*="twitter.com"], a[href*="x.com"], '
+            'a[href*="facebook.com"], a[href*="linkedin.com"]'
+        )
+
+    def no_visible_error(page):
+        """Report visible SauceDemo error messages after each action.
+
+        This treats validation messages as findings too: random input can
+        legitimately produce an error, so a finding is not necessarily a bug.
+        """
+        # SauceDemo marks its error message with data-test="error".
+        # :visible ignores messages that exist in HTML but are hidden.
+        messages = page.locator('[data-test="error"]:visible').all_inner_texts()
+        # The core catches AssertionError and records this message in its report.
+        assert not messages, 'Visible error message: ' + ' | '.join(messages)
+
+    testar('https://www.saucedemo.com/', 3, 100,
+           [filter_burger, filter_external_links], [login], [no_visible_error],
+           backend=PlaywrightBackend(), measure_timings=True)
+
+def parabank_no_internal_error(page):
+    """Report a visible ParaBank internal error with its URL and a screenshot.
+
+    This detects the application's error message, not a browser crash.
+    The core adds sequence/attempt numbers to this oracle finding.
+    """
+    messages = page.get_by_text('An internal error has occurred', exact=False).and_(
+        page.locator(':visible')
+    ).all_inner_texts()
+    if messages:
+        # Save evidence only when a visible internal error is found.
+        url = page.url
+        folder = Path(__file__).resolve().parents[2] / 'test-output' / 'parabank'
+        screenshot = folder / f'internal-error-{uuid4().hex}.png'
+        try:
+            folder.mkdir(parents=True, exist_ok=True)
+            page.screenshot(path=str(screenshot), full_page=True, timeout=2000)
+            evidence = f'Screenshot: {screenshot}'
+        except Exception as error:
+            # A screenshot failure must not hide the original oracle finding.
+            evidence = f'Screenshot could not be saved: {error}'
+        raise AssertionError(f"ParaBank internal error at {url}: "
+                             + ' | '.join(messages) + f". {evidence}")
+
+
 def test_parabank():
-    
-    def filter_external_links(driver):
-        # Find all anchors
-        all_links = driver.find_elements(By.TAG_NAME, "a")
-        
-        # Filter the links to parasoft.com
-        unwanted = ["parasoft.com","?_wadl&_type=xml","?wsdl"]
-        external_links = [ link for link in all_links if link.get_attribute("href") and any(href in link.get_attribute("href") for href in unwanted)]
-        
-        return external_links
-    
-    def filter_zero_sized_elements(driver):
-        # Find all elements on the page
-        all_elements = driver.find_elements(By.XPATH, "//*")
-        
-        # Filter elements that have size {'height': 0, 'width': 0}
-        zero_sized_elements = [element for element in all_elements if element.size['height'] == 0 and element.size['width'] == 0]
-        
-        return zero_sized_elements
-        
-    def parabank_login(driver):
-       
-        # Localizar username y escibir uno
-        driver.find_element(By.NAME, "username").send_keys("john")
-        
-        # Localizar password y escibir uno
-        driver.find_element(By.NAME, "password").send_keys("demo")
-        
-        # Localizar el botón y hacer click
-        driver.find_element(By.XPATH, "//input[@type='submit' and @value='Log In']").click()
+    """Log in to ParaBank and explore with Playwright, excluding selected links."""
+    from playwright_backend import PlaywrightBackend
 
-    
-    testar("https://para.testar.org/", 1, 40, [filter_external_links, filter_zero_sized_elements], [parabank_login], [])
+    def filter_external_links(page):
+        return page.locator(
+            'a[href*="parasoft.com"], a[href*="?_wadl&_type=xml"], '
+            'a[href*="?wsdl"]'
+        )
 
+    def login(page):
+        page.locator('input[name="username"]').fill('john')
+        page.locator('input[name="password"]').fill('demo')
+        page.locator('input[type="submit"][value="Log In"]').click()
+        page.locator('#leftPanel').get_by_role('link', name='Log Out', exact=True).wait_for(
+            state='visible'
+        )
+
+    testar('https://para.testar.org/', 1, 40,
+           [filter_external_links], [login], [parabank_no_internal_error],
+           backend=PlaywrightBackend(), measure_timings=True)
+
+
+if __name__ == "__main__":
+    # Run the tests below in order. Comment out any calls you want to skip.
+    test_cambio()
+    #test_sudoku()
+    #test_random_generator()
+    #test_saucer()
+    #test_parabank()

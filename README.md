@@ -237,14 +237,14 @@ Look at all the tests in `myql.testql` for inspiration. The goal of this exercis
 
 ## Scriptless testing with domain-aware oracles for the generated webApps
 
-Scriptless testing tools like [Testar](www.testar.org) automatically generate test sequences at the GUI level of applications. These test sequences consist of (state, action)-pairs and are generated on-the-fly by starting up the System Under Test (SUT) in its initial state (`start_SUT_and_get_driver`) and continuously selecting an action to bring the SUT into another state that is checked by oracles for failures. The Testar loop consists of:
+Scriptless testing tools like [Testar](www.testar.org) automatically generate test sequences at the GUI level of applications. These test sequences consist of (state, action)-pairs and are generated on-the-fly by starting up the System Under Test (SUT) in its initial state (`start_SUT`) and continuously selecting an action to bring the SUT into another state that is checked by oracles for failures. The Testar loop consists of:
 
 - Deriving the set of actions that a potential user can execute in that specific state (`derive_actions`).
 - Selecting one of these actions (`select_action`).
 - Executing the action (`execute_action`).
 - Evaluating the new state using the oracles to find failures (`check_oracles`).
 
-You can find an implementation of a miniTestar in the file `src/testar/miniTESTAR.py`. This simplified version of Testar is capable of randomly testing the webApps that are compiled from QL programs and uses the Chrome WebDriver to get the state of the SUT.
+You can find an implementation of a miniTestar in the file `src/testar/miniTESTAR.py`. This simplified version of Testar is capable of randomly testing the webApps that are compiled from QL programs and uses Playwright to interact with the SUT.
 
 Scriptless testing tools usually rely on generic oracles like crashes, hangs or suspicious titles. SUT-specific oracles can be added manually, however, this takes effort and can be error-prone. Using the DSL, we can generate oracles that encode domain knowledge, making the scriptless tests more context-aware and effective to evaluate the quality of the generated applications.
 

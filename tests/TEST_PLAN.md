@@ -1,0 +1,33 @@
+# Explorer test plan
+
+Tests are organised around behaviour: normal use, relevant boundaries and error handling.
+A passing suite covers the cases below; it does not establish complete browser or application coverage.
+The Python test files use local HTML or fake browser sessions, without external websites.
+
+| Requirement | Normal case and test | Boundary and test | Error handling and test |
+|---|---|---|---|
+| Start and close sessions | [test_click_reaches_application_handler](test_playwright_backend.py#L54) | [test_each_sequence_uses_a_new_session](test_testar_backend.py#L17)<br>[test_new_session_does_not_inherit_cookies_or_storage](test_playwright_backend.py#L14) | [test_start_releases_resources_when_navigation_fails](test_playwright_backend.py#L63)<br>[test_start_stops_service_when_launch_fails](test_playwright_backend.py#L79)<br>[test_close_attempts_every_resource_even_when_cleanup_fails](test_playwright_backend.py#L88) |
+| Find actionable elements | [test_candidate_snapshot_matches_playwright_checks](test_playwright_backend.py#L350) | [test_no_candidates_returns_no_actions](test_playwright_backend.py#L35)<br>[test_nested_filters_can_exclude_every_candidate](test_playwright_backend.py#L41)<br>[test_excluded_candidates_do_not_need_additional_enabled_checks](test_playwright_backend.py#L117) | [test_navigation_retry_repeats_discovery_with_fresh_filters](test_playwright_backend.py#L204)<br>[test_discovery_retry_is_bounded_and_specific](test_playwright_backend.py#L225) |
+| Make action descriptions without acting | [test_action_descriptions_are_data_without_execution](test_playwright_backend.py#L371) | [test_empty_dropdown_offers_click_and_arrows](test_playwright_backend.py#L47)<br>[test_plain_description_builder_offers_exact_input_combinations](test_playwright_backend.py#L101)<br>[test_editability_batch_matches_playwright_and_is_read_again](test_playwright_backend.py#L327) | [test_description_read_failure_propagates_original_error](test_playwright_backend.py#L139)<br>[test_description_retries_are_bounded_and_do_not_hide_other_errors](test_playwright_backend.py#L187) |
+| Read current element data | [test_batch_descriptions_match_individual_route](test_playwright_backend.py#L276)<br>[test_description_snapshot_preserves_readers_and_editability](test_playwright_backend.py#L299) | [test_cleared_input_keeps_empty_current_value_in_info_and_descriptions](test_playwright_backend.py#L126) | [test_selectors_and_missing_or_ambiguous_targets](test_playwright_backend.py#L402) |
+| Execute selected actions | [test_click_reaches_application_handler](test_playwright_backend.py#L54)<br>[test_discovery_actions_and_replaced_element](test_playwright_backend.py#L466) | [test_reachability_with_sidebar_overlay_and_scrolling](test_playwright_backend.py#L428)<br>[test_target_disabled_after_discovery_is_skipped_before_action](test_playwright_backend.py#L245)<br>[test_target_disabled_during_reachability_is_skipped](test_playwright_backend.py#L261) | [test_execution_timeout_is_failed_but_configuration_error_propagates](test_playwright_backend.py#L150)<br>[test_selectors_and_missing_or_ambiguous_targets](test_playwright_backend.py#L402) |
+| Type replace/prepend/append | [test_input_modes_through_descriptions](test_playwright_input_modes.py#L101) | [test_number_modes_ignore_cursor_position](test_playwright_input_modes.py#L29)<br>[test_invalid_number_input_is_attempted](test_playwright_input_modes.py#L19) | [test_invalid_parameters_preserve_input](test_playwright_input_modes.py#L41) |
+| Generate input only at execution | [test_each_input_strategy_uses_its_own_generator](test_playwright_input_modes.py#L82) | [test_selected_strategy_generates_input_only_at_execution](test_playwright_input_modes.py#L57) | [test_invalid_parameters_preserve_input](test_playwright_input_modes.py#L41) |
+| Run sequences and count outcomes | [test_cycle_and_oracle_failures](test_testar_backend.py#L234) | [test_empty_action_list_stops_without_execution_or_oracles](test_testar_backend.py#L46)<br>[test_all_blocked_targets_stop_the_sequence](test_testar_backend.py#L101)<br>[test_blocked_targets_are_skipped_without_extra_oracle_checks](test_testar_backend.py#L79) | [test_consecutive_failures_are_bounded](test_testar_backend.py#L141)<br>[test_failed_action_is_not_replayed_and_observation_is_refreshed](test_testar_backend.py#L122)<br>[test_cleanup_on_preparation_discovery_execution_and_oracle_errors](test_testar_backend.py#L154) |
+| Load generated oracles | [test_valid_oracles_are_loaded_and_helpers_are_ignored](test_oracle_loading.py#L20)<br>[test_loaded_oracle_is_passed_to_explorer](test_oracle_loading.py#L53) | [test_missing_file_or_no_functions_returns_empty_list_with_message](test_oracle_loading.py#L32) | [test_syntax_and_import_errors_return_empty_list_with_reason](test_oracle_loading.py#L42) |
+| Check oracles | [test_oracles_count_calls_and_continue_after_findings](test_testar_backend.py#L62) | [test_oracles_count_calls_and_continue_after_findings](test_testar_backend.py#L62) | [test_execution_failures_are_not_oracle_findings](test_testar_backend.py#L177) |
+| Report results and counts | [test_summary_reports_actual_counts_and_separate_problem_categories](test_reporting.py#L14) | [test_summary_with_no_sequences_reports_zero_checks](test_reporting.py#L28)<br>[test_all_blocked_targets_stop_the_sequence](test_testar_backend.py#L101) | [test_action_outcomes_have_distinct_messages](test_reporting.py#L35)<br>[test_execution_failures_are_not_oracle_findings](test_testar_backend.py#L177) |
+| Record performance | [test_core_and_backend_operations_share_one_storage](test_performance.py#L43) | [test_disabled_measurements_run_code_without_clock_or_output](test_performance.py#L53)<br>[test_reset_one_phase_preserves_other_phases](test_performance.py#L15)<br>[test_reporting_does_not_start_a_timer](test_performance.py#L34) | [test_exception_still_records_elapsed_time](test_performance.py#L26) |
+
+The same test can cover more than one column. Test names link to their definitions.
+
+## Tested behaviour at boundaries
+
+- No actions, or all targets skipped: stop that sequence and report an early stop.
+- An empty dropdown offers click and arrow actions, but no option selection.
+- Disabled/readonly inputs do not get typing actions; reachability is checked again at execution.
+- A failed action may have partial effects. Derive fresh actions rather than replaying it automatically.
+- A supplied empty string is valid input, not a request for random generation.
+- Oracle checks count function calls, not assertions inside those functions.
+
+This plan documents the tested behaviours; it is not a complete inventory of requirements, limitations or untested cases.

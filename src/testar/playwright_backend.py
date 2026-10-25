@@ -12,7 +12,7 @@ from performance import PerformanceMeasurements
 from playwright.sync_api import Error as PlaywrightError, TimeoutError as PlaywrightTimeoutError, Locator, sync_playwright
 from input_data_generation import generate_random_text, generate_random_number, generate_naughty_string
 from reporting import log_info, print_performance_phase, print_derivation_retry
-from browser_backend import ActionNotReachable, ActionResult
+from actions import ActionNotReachable, ActionResult
 from playwright_dom import (
     _ELEMENT_INFO_JS,
     _CANDIDATE_SNAPSHOT_JS,
@@ -351,7 +351,7 @@ class PlaywrightSession:
         """
         return element.evaluate(_DESCRIPTION_DATA_JS)
 
-    def execute_action_description(self, description, value=None):
+    def execute_action(self, description, value=None):
         """Execute the action once and return its ActionResult.
 
         execution_succeeded means the browser calls completed.
@@ -390,7 +390,7 @@ class PlaywrightSession:
         If the element is disabled or covered, skip it.
         For type_text, generate text using input_strategy unless the caller
         supplies a value. An empty string is also a supplied value.
-        execute_action_description() turns errors into an ActionResult.
+        execute_action() turns errors into an ActionResult.
         """
         element = self.page.locator(description['selector'])
         # Missing or ambiguous match: the wrapper returns execution_failed, not execution_skipped.

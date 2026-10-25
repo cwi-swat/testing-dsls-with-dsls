@@ -1,115 +1,20 @@
 """Run the scriptless TESTAR cycle for one SUT (System Under Test).
 
-The core controls the test sequence; the browser session handles browser APIs.
-Playwright is the default, but callers can supply another BrowserBackend.
-The active loop describes actions for all actionable elements, chooses one
-description, and asks the session to execute it. The default browser backend is Playwright.
+The loop controls sequences, counters and stopping. TESTARSteps supplies each
+step and delegates browser work to a session. Callers can supply other steps
+or a browser backend; Playwright remains the default.
 """
-import random
-from performance import PerformanceMeasurements
+from time import perf_counter
 from browser_backend import BrowserBackend
+from TESTARsteps import TESTARSteps
 from reporting import (
-    print_test_summary, print_performance_summary, print_sequence_start,
-    print_sequence_stop, print_action_result, print_oracle_finding, print_oracle_error,
+    print_test_summary, print_performance_summary, print_sequence_start, print_sequence_summary,
+    print_sequence_stop, print_action_result,
 )
 
 
-def _resolve_backend(backend):
-    """Resolve the supplied backend, defaulting to a new Playwright backend.
-
-    Use None as the default to avoid sharing a backend instance across calls.
-    Import Playwright only when needed, so other backends can run without it.
-    """
-    if backend is None: 
-        from playwright_backend import PlaywrightBackend
-        return PlaywrightBackend()
-    return backend
-
-
-def start_SUT(website_url, preparations, *, backend: BrowserBackend = None):
-    """Start the SUT and return the session used throughout one sequence.
-
-    Each preparation receives session.page, the backend-specific browser
-    object (currently a Playwright Page). It can log in or wait for content.
-    Their implementation must match the selected backend. If a preparation
-    fails, close the newly created session before propagating the error.
-    """
-    # Choose the default only here; subsequent steps use the returned session.
-    backend = _resolve_backend(backend)
-    session = backend.start(website_url)
-    try:
-        for prepare in preparations:
-            prepare(session.page)
-    except BaseException:
-        session.close()
-        raise
-    return session
-
-
-def derive_actions(session, filter_elements):
-    """Return a list of action descriptions that can be chosen and executed.
-    """
-    return session.derive_actions(filter_elements)
-
-
-def select_action(possible_actions):
-    """Choose one action description randomly from the supplied list.
-
-    Selection does not execute the action. The loop checks that the list is
-    nonempty before calling this function.
-    """
-    selected_action_id = int(random.randint(0, len(possible_actions)-1))
-    return possible_actions[selected_action_id]
-
-
-def execute_action_description(session, description, value=None, *, run_cnt=None,
-                               attempt=None, action_number=None, length_sequence=None,
-                               execution_failures=None):
-    """Execute one description, report its outcome and return the ActionResult.
-
-    value=None uses the description's input strategy; an explicit string is
-    used unchanged. Optional context supplies sequence/attempt numbers for
-    messages. Execution failures are recorded separately from oracle findings.
-    Counters and remaining candidates are managed by the TESTAR loop.
-    """
-    result = session.execute_action_description(description, value=value)
-    message = print_action_result(
-        result, description, sequence=run_cnt, attempt=attempt,
-        action_number=action_number, length_sequence=length_sequence)
-    if result.status == 'execution_failed' and execution_failures is not None:
-        execution_failures.append(message)
-    return result
-
-
-def check_oracles(driver, oracles, oracle_findings, seq, acc):
-
-    """Run each oracle on the backend-specific browser object after an action.
-
-    driver is the historical parameter name for the browser object,
-    currently a Playwright Page.
-    AssertionError means an oracle found a violation: print it, record the
-    sequence/attempt numbers, and continue with the remaining oracles.
-    Other exceptions are not recorded as violations in this implementation:
-    print them and pause for terminal input before continuing.
-    Return the number of oracle calls, including calls that report a finding
-    or an error. With an empty oracle list, return zero.
-    """
-    checked = 0
-    for oracle in oracles:
-        checked += 1
-        try:
-            oracle(driver)
-        except AssertionError as e:
-            oracle_findings.append(print_oracle_finding(oracle.__name__, e, seq, acc))
-        except Exception as e:
-            print_oracle_error(oracle.__name__, e)
-            # Add an interactive pause for an unexpected error.
-            stop = input("")
-    return checked
-
-
 def testar(url, num_runs, length_sequence, filter_elements, preparations, oracles,
-           *, backend: BrowserBackend = None, measure_timings=False, max_failures=5):
+           *, backend: BrowserBackend = None, measure_timings=False, max_failures=5, steps=None):
     """Execute independent sequences of random GUI actions on one SUT.
 
     Parameters:
@@ -127,8 +32,12 @@ def testar(url, num_runs, length_sequence, filter_elements, preparations, oracle
         backend: Optional browser backend; None selects Playwright at startup.
             The * in the signature requires backend to be passed by name.
 
+        steps: Optional object providing the TESTARSteps methods and measurements.
+            When supplied, it owns its backend, filters, preparations and oracles;
+            the corresponding arguments above configure only the default steps.
+
         measure_timings: Print per-step durations and counts when True.
-            Startup and oracle time are not included.
+            Includes oracle time; sequence totals also include startup and cleanup.
         max_failures: Stop after this many consecutive failed attempts.
             Use a positive value. Successful actions reset the counter;
             skipped targets do not.
@@ -147,6 +56,23 @@ def testar(url, num_runs, length_sequence, filter_elements, preparations, oracle
     max_failures consecutive failures. Unexpected errors propagate, but the
     session is always closed. No findings does not prove correctness.
     """
+
+    if backend is None:
+        # Default is playwright
+        from playwright_backend import PlaywrightBackend
+        backend = PlaywrightBackend()
+
+    if steps is None:
+        # Default is TESTARSteps with the supplied backend, filters, preparations and oracles.
+        steps = TESTARSteps(backend=backend, 
+                            filters=filter_elements,
+                            preparations=preparations, 
+                            oracles=oracles)
+
+    # Vanaf hier meten we de totale looptijd van de test. 
+    # Include browser startup, preparations, oracle checks and closing every session.
+    started_at = perf_counter()
+    
     # Keep track of SUT oracle findings and other problems running the test.
     oracle_findings = []
     execution_failures = []
@@ -155,17 +81,16 @@ def testar(url, num_runs, length_sequence, filter_elements, preparations, oracle
 
     # OUTER_LOOP: Test num_runs test sequences of length length_sequence, each in a new browser session.
     for run_cnt in range(1, num_runs+1):
+        sequence_started = perf_counter()
+        sequence_phases = {}
+        findings_before_sequence = len(oracle_findings)
         # START_SUT: The session owns the browser resources for this sequence.
-        session = start_SUT(url, preparations, backend=backend)
+        steps.begin_sequence(url)
 
         try:
             print_sequence_start(run_cnt, num_runs)
             
-            # Share the performance measurements with the browser session.
-            timings = getattr(session, 'performance', None)
-            if timings is None:
-                timings = PerformanceMeasurements()
-                session.performance = timings
+            timings = steps.performance
             timings.enabled = measure_timings
             
             oracle_checks = 0 # Number of oracle calls in this sequence.
@@ -182,14 +107,19 @@ def testar(url, num_runs, length_sequence, filter_elements, preparations, oracle
                    and consecutive_execution_failures < max_failures 
                    and not sequence_stopped):
 
+                step_started = perf_counter()
+                completed_before = completed
+                attempts_before = attempts
+                findings_before = len(oracle_findings)
+                step_checks = 0
                 timings.reset()
                 
                 # DERIVE_ACTIONS: backend retries discovery + description together.
-                possible_actions = derive_actions(session, filter_elements)
+                possible_actions = steps.derive_actions()
 
                 remaining_actions = list(possible_actions) #make a copy to remove skipped actions
                 
-                #SELECT and EXECUTE ACTION              
+                #SELECT and EXECUTE ACTION (and measure time)              
                 with timings.measure('execution'):
                     result = None
                     # None: no action has been attempted yet. 
@@ -200,15 +130,17 @@ def testar(url, num_runs, length_sequence, filter_elements, preparations, oracle
                     #         so stop here and start new inner loop.
                     while remaining_actions and (result is None or result.status == 'execution_skipped'):
                         
-                        selected_action = select_action(remaining_actions)
+                        selected_action = steps.select_action(remaining_actions)
 
                         attempts += 1
 
-                        result = execute_action_description(
-                            session, selected_action, run_cnt=run_cnt, attempt=attempts,
-                            action_number=completed + 1, length_sequence=length_sequence,
-                            execution_failures=execution_failures)
-                        
+                        result = steps.execute_action(selected_action)
+                        message = print_action_result(
+                            result, selected_action, sequence=run_cnt, attempt=attempts,
+                            action_number=completed + 1, length_sequence=length_sequence)
+                        if result.status == 'execution_failed':
+                            execution_failures.append(message)
+
                         # Only a skipped target loses its actions; other outcomes
                         # keep the list intact and end this selection loop.
                         remaining_actions = [
@@ -233,25 +165,46 @@ def testar(url, num_runs, length_sequence, filter_elements, preparations, oracle
 
                 # CHECK ORACLES after execution_succeeded and execution_failed; effects may have occurred.
                 if not sequence_stopped:
-                    print_performance_summary(timings, f'run {run_cnt}, attempt {attempts}: '
-                                   f'{session.actionable_element_count} elements | {len(possible_actions)} actions')
-                    # Oracles read the current page. The next iteration discovers
-                    # fresh actions; never repeat a failed attempt automatically.
-                    oracle_checks += check_oracles(
-                        session.page, oracles, oracle_findings, run_cnt, attempts)
+                    # Read the current page after execution, including partial effects of a failed action.
+                    with timings.measure('oracles'):
+                        step_checks = steps.check_oracles(oracle_findings, run_cnt, attempts)
+                    oracle_checks += step_checks
+                
+                # Collect and print the performance summary for this step, including counts and timings.
+                for phase, item in timings.measurements.items():
+                    if '.' not in phase:
+                        sequence_phases[phase] = sequence_phases.get(phase, 0.0) + item['seconds']
+                # A skipped target can cause several attempts within this one derivation step.
+                element_count = steps.actionable_element_count
+                print_performance_summary(timings,
+                    f'run {run_cnt}, attempts {attempts_before + 1}-{attempts}'
+                    if attempts > attempts_before else f'run {run_cnt}, no execution attempt',
+                    counts={'elements': element_count if element_count is not None else 'unknown',
+                            'possible_actions': len(possible_actions),
+                            'completed': completed - completed_before, 'attempts': attempts - attempts_before,
+                            'oracle_checks': step_checks, 'oracle_findings': len(oracle_findings) - findings_before},
+                    total_seconds=perf_counter() - step_started)
+            
+            # Stop the sequence when no reachable candidate remains or after max_failures consecutive failed attempts.
             if consecutive_execution_failures >= max_failures:
-                reason = print_sequence_stop(
-                    run_cnt, f"{max_failures} consecutive failed attempts.")
+                reason = print_sequence_stop(run_cnt, f"{max_failures} consecutive failed attempts.")
                 sequence_stops.append(reason)
+            
+            # Record the results of this sequence, including counts and timings. 
             sequence_results.append({
                 'sequence': run_cnt, 'completed': completed, 'attempts': attempts,
                 'oracle_checks': oracle_checks,
+                'oracle_findings': len(oracle_findings) - findings_before_sequence,
+                'phases': sequence_phases,
             })
         finally:
             # Also runs for discovery, execution, oracle errors and Ctrl+C.
-            session.close()
+            steps.end_sequence()
+        sequence_results[-1]['total_seconds'] = perf_counter() - sequence_started
+        print_sequence_summary(sequence_results[-1], show_timings=measure_timings)
 
     # Report oracle findings and execution problems after all sequences.
     print_test_summary(url, num_runs, length_sequence, oracle_findings,
-                       execution_failures, sequence_stops, sequence_results=sequence_results)
+                       execution_failures, sequence_stops, sequence_results=sequence_results,
+                       total_seconds=perf_counter() - started_at)
 

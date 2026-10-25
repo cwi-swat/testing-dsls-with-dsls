@@ -63,7 +63,8 @@ def print_oracle_error(name, error):
 
 
 def print_test_summary(url, num_runs, length_sequence, oracle_findings,
-                       execution_failures=None, sequence_stops=None, *, sequence_results=None):
+                       execution_failures=None, sequence_stops=None, *, sequence_results=None,
+                       total_seconds=None):
     """Report SUT oracle findings separately from execution problems and stops.
 
     Counts describe recorded findings, not proof of correctness. With no
@@ -81,9 +82,21 @@ def print_test_summary(url, num_runs, length_sequence, oracle_findings,
     for result in sequence_results or []:
         print(f"Sequence {result['sequence']}: {result['completed']} completed actions, "
               f"{result['attempts']} execution attempts, "
-              f"{result.get('oracle_checks', 0)} oracle checks")
+              f"{result.get('oracle_checks', 0)} oracle checks, "
+              f"{result.get('oracle_findings', 0)} oracle findings")
     if sequence_results is not None:
         print(f"Oracle checks: {sum(result.get('oracle_checks', 0) for result in sequence_results)}")
+    phases = {}
+    for result in sequence_results or []:
+        for phase, seconds in result.get('phases', {}).items():
+            phases[phase] = phases.get(phase, 0.0) + seconds
+    if phases:
+        print(' | '.join(f"{phase}: {seconds:.3f}s" for phase, seconds in phases.items()))
+    if total_seconds is not None:
+        print(f"Total elapsed time (including browser startup, oracles and cleanup): {total_seconds:.3f}s")
+        completed = sum(result['completed'] for result in sequence_results or [])
+        if completed:
+            print(f"Average elapsed time per completed action: {total_seconds / completed:.3f}s")
     for title, messages in [
         ('Oracle findings', oracle_findings),
         ('Execution failures', execution_failures),
@@ -108,7 +121,7 @@ def print_performance_phase(performance, phase, description=''):
               f'({average_ms:.3f} ms/call)', flush=True)
 
 
-def print_performance_summary(performance, description=''):
+def print_performance_summary(performance, description='', *, counts=None, total_seconds=None):
     """Print stored phase totals and details without starting or stopping timers."""
     if not performance.enabled:
         return
@@ -122,4 +135,22 @@ def print_performance_summary(performance, description=''):
             for name, detail in performance.breakdown(phase).items())
         suffix = f' ({details})' if details else ''
         parts.append(f"{phase}: {item['seconds']:.3f}s{suffix}")
+    if counts is not None:
+        parts.insert(0, f"{counts['elements']} elements | {counts['possible_actions']} possible actions | "
+                     f"{counts['completed']} completed actions | {counts['attempts']} execution attempts | "
+                     f"{counts['oracle_checks']} oracle checks | {counts['oracle_findings']} oracle findings")
+    if total_seconds is not None:
+        parts.append(f"total elapsed: {total_seconds:.3f}s")
     print(f"TIMING {description}: " + ' | '.join(parts), flush=True)
+
+
+def print_sequence_summary(result, *, show_timings=False):
+    """Report sequence counts after closing its browser, so elapsed time includes cleanup."""
+    print(f"Sequence {result['sequence']}: {result['completed']} completed actions, "
+          f"{result['attempts']} execution attempts, {result['oracle_checks']} oracle checks, "
+          f"{result.get('oracle_findings', 0)} oracle findings")
+    if show_timings:
+        print(' | '.join(f"{phase}: {seconds:.3f}s" for phase, seconds in result['phases'].items()))
+    print(f"Total elapsed time: {result['total_seconds']:.3f}s")
+    if result['completed']:
+        print(f"Average elapsed time per completed action: {result['total_seconds'] / result['completed']:.3f}s")

@@ -33,7 +33,7 @@ def load_oracles(html):
 def testar_QL_webApp(full_path, *, measure_timings=False):
     html = Path(full_path).resolve()
     oracles = load_oracles(html)
-    testar(html.as_uri(), 1, 10, [], [], oracles,
+    testar(html.as_uri(), 3, 10, [], [], [],
            backend=PlaywrightBackend(), measure_timings=measure_timings)
 
 
@@ -46,14 +46,14 @@ def test_name(name, *, measure_timings=False):
 
 
 if __name__ == "__main__":
-    test_name("tax")
-    test_name("loan_approval")
-    test_name("shopping_cart")
-    test_name("travel_booking")
-    test_name("age_boundaries")
-    test_name("calculation_chain")
-    test_name("feature_switches")
-    test_name("language_constructs")
+    #test_name("tax")
+    #test_name("loan_approval")
+    #test_name("shopping_cart")
+    #test_name("travel_booking")
+    #test_name("age_boundaries")
+    #test_name("calculation_chain")
+    #test_name("feature_switches")
+    #test_name("language_constructs")
     #test_name("01_tax_office")
     #test_name("02_phq9_gad7")
     #test_name("03_huurtoeslag")
@@ -62,6 +62,6 @@ if __name__ == "__main__":
     #test_name("06_who_verbal_autopsy")
     #test_name("acs_household_1", measure_timings=True)
     #test_name("acs_household_5", measure_timings=True)
-    #test_name("acs_household_20", measure_timings=True)
-    #test_name("acs_household_100", measure_timings=True)
+    test_name("acs_household_20", measure_timings=True)
+    test_name("acs_household_100", measure_timings=True)
     #test_name("acs_household_500", measure_timings=True)

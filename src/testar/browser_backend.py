@@ -1,32 +1,11 @@
 """Synchronous browser backend and session interfaces for miniTESTAR.
 
 User-supplied functions receive the backend-specific browser object.
-The session derives action descriptions and executes the selected description.
+The session derives possible actions and executes the selected action.
 """
-from dataclasses import dataclass
-from typing import Any, Callable, Dict, List, Literal, Optional, Protocol
+from typing import Any, Callable, Dict, List, Protocol
 
-
-@dataclass(frozen=True)
-class ActionResult:
-    """Outcome of one attempt, not proof of the application's correctness.
-
-    execution_succeeded means browser calls completed, not proof of SUT correctness.
-    execution_skipped means the intended action did not begin (scrolling may have run).
-    execution_failed means effects may be partial; never automatically replay it.
-    Error details are plain strings so future traces can store them.
-    """
-    status: Literal['execution_succeeded', 'execution_skipped', 'execution_failed']
-    error: Optional[str] = None
-    error_type: Optional[str] = None
-
-
-class ActionNotReachable(Exception):
-    """The target is blocked or disabled; no action has been executed.
-
-    A reachability check may already have scrolled the page. The core skips
-    this target's remaining descriptions and tries another candidate.
-    """
+from actions import ActionResult
 
 
 class BrowserSession(Protocol):
@@ -43,14 +22,10 @@ class BrowserSession(Protocol):
     The annotations and ellipses below describe the interface only.
     """
     page: Any
-    actionable_element_count: int
 
     def close(self) -> None: ...
-    def derive_actionable_elements(self, filters: List[Callable]) -> List[Any]: ...
-    def get_element_info(self, element: Any) -> Dict[str, Any]: ...
     def derive_actions(self, filters: List[Callable]) -> List[Dict[str, Any]]: ...
-    def derive_action_descriptions(self, elements: List[Any]) -> List[Dict[str, Any]]: ...
-    def execute_action_description(self, description: Dict[str, Any], value=None) -> ActionResult: ...
+    def execute_action(self, action: Dict[str, Any], value=None) -> ActionResult: ...
 
 
 class BrowserBackend(Protocol):

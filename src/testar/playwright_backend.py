@@ -8,10 +8,9 @@ Page is one tab, stored in session.page.
 A Locator is a query used to find an element again, not a saved HTML node. 
 """
 import json
-from performance import PerformanceMeasurements
 from playwright.sync_api import Error as PlaywrightError, TimeoutError as PlaywrightTimeoutError, Locator, sync_playwright
 from input_data_generation import generate_random_text, generate_random_number, generate_naughty_string
-from reporting import log_info, print_performance_phase, print_derivation_retry
+from reporting import log_info, print_derivation_retry
 from actions import ActionNotReachable, ActionResult
 from playwright_dom import (
     _ELEMENT_INFO_JS,
@@ -23,7 +22,7 @@ from playwright_dom import (
 
 _OBSERVATION_ATTEMPTS = 3 # Maximum number of attempts, including the first, to derive actions.
 
-_DEFAULT_TIMEOUT_MS = 10000  # Maximum waiting time for Playwright calls, in milliseconds.
+_DEFAULT_TIMEOUT_MS = 10000  # Default timeout for waiting Playwright calls, in milliseconds.
 
 # Use the same input choices when making and executing actions.
 _INPUT_TYPES = ("text", "number", "email", "password")
@@ -86,7 +85,6 @@ class PlaywrightSession:
         self._browser = browser
         self._runtime = runtime
         self._description_targets = {}
-        self.performance = PerformanceMeasurements()
         self.actionable_element_count = 0
 
     def close(self):
@@ -94,7 +92,6 @@ class PlaywrightSession:
 
         Use finally so we still try the remaining cleanup if closing one part fails.
         """
-        # finally ensures remaining cleanup runs even if an earlier close fails.
         try:
             self._context.close()
         finally:
@@ -113,14 +110,10 @@ class PlaywrightSession:
         for attempt in range(_OBSERVATION_ATTEMPTS):
             reading_descriptions = False
             try:
-                with self.performance.measure('discovery'):
-                    elements = self.derive_actionable_elements(filters)
+                elements = self.derive_actionable_elements(filters)
                 self.actionable_element_count = len(elements)
-                print_performance_phase(self.performance, 'discovery', f'{len(elements)} elements')
                 reading_descriptions = True
-                with self.performance.measure('descriptions'):
-                    descriptions = self.derive_action_descriptions(elements)
-                print_performance_phase(self.performance, 'descriptions', f'{len(descriptions)} actions')
+                descriptions = self.derive_action_descriptions(elements)
                 return descriptions
             except PlaywrightError as error:
                 message = str(error)
@@ -145,11 +138,10 @@ class PlaywrightSession:
         derive_actions() handles retries if the page changes while deriving actions.
         """
         
-        self.performance.reset('discovery')
         self._description_targets = {}
         
         # Get the Locators excluded by the given filters.
-        excluded = self.performance.call('discovery', "filters", self._get_excluded_locators, filters)
+        excluded = self._get_excluded_locators(filters)
 
         combined_selector = ", ".join(_ACTIONABLE_SELECTORS)
 
@@ -157,10 +149,7 @@ class PlaywrightSession:
         # in one browser call instead of checking visibility element by element.
         candidate_query = ':is(' + combined_selector + '):visible'
         visible_candidates = self.page.locator(candidate_query)
-        snapshot = self.performance.call(
-            'discovery', 'candidate_snapshot',
-            self._snapshot_candidates, visible_candidates,
-        )
+        snapshot = self._snapshot_candidates(visible_candidates)
         # snapshot contains data read for each candidate, not HTML elements.
         # Build Locators for the candidates we keep, so action descriptions can
         # find those elements again.
@@ -169,21 +158,21 @@ class PlaywrightSession:
             # Skip disabled elements.
             if not info['enabled']:
                 continue
-            # If it has a unique ID use that to locate, if not use a list position (note that can change can change when the page changes.)
+            # Prefer a unique ID; a position-based Locator can shift after DOM changes.
             if info['unique_id']:
                 element = self.page.locator('[id=' + json.dumps(info['id']) + ']')
             else:
                 element = visible_candidates.nth(index)
             # Remove excluded/filtered candidates.
-            if self.performance.call('discovery', "exclusion", self._is_excluded, element, excluded):
+            if self._is_excluded(element, excluded):
                 continue
             if info['enabled_check']:
                 # For complex cases/ARIA, check whether the element is enabled according to Playwright's own rules.
-                if not self.performance.call('discovery', 'special_enabled', element.is_enabled):
+                if not element.is_enabled():
                     continue
             elements.append(element)
             if info['unique_id']:
-                # Remember these IDs so descriptions can be read together in one call to be faster.
+                # Remember unique IDs to read descriptions together in one browser call.
                 self._description_targets[element] = info['id']
         return elements
 
@@ -199,7 +188,7 @@ class PlaywrightSession:
     def _collect_filter_results(self, value, excluded):
         """Put the Locators returned by a filter into one list.
 
-        A filter may return a single Locator or nested lists of Locators.
+        A filter may return a single Locator or nested iterables of Locators.
         Keep each Locator as one item, even if it matches several elements.
         """
         if isinstance(value, Locator):
@@ -267,7 +256,6 @@ class PlaywrightSession:
         before offering typing actions, then use _build_action_descriptions().
         Store the input strategy here; generate the text only when executing.
         """
-        self.performance.reset('descriptions')
         descriptions = []
 
         # Read known unique-ID targets together; other Locators use individual calls.
@@ -275,20 +263,14 @@ class PlaywrightSession:
         data_by_element = {}
         if known:
             target_ids = [self._description_targets[el] for el in known]
-            snapshots = self.performance.call(
-                'descriptions', 'batch_snapshot',
-                self.page.evaluate, _DESCRIPTION_LIST_JS, target_ids,
-            )
+            snapshots = self.page.evaluate(_DESCRIPTION_LIST_JS, target_ids)
             data_by_element = dict(zip(known, snapshots))
 
         for element in elements:
             data = data_by_element.get(element)
             if data is None:
                 # Without a recorded unique ID, read this Locator individually.
-                data = self.performance.call(
-                    'descriptions', 'element_snapshot',
-                    self._read_description_data, element,
-                )
+                data = self._read_description_data(element)
             target = data['target']
             tag = target['tag_name']
             kind = target['type']
@@ -299,8 +281,7 @@ class PlaywrightSession:
             if tag == 'input' and kind in _INPUT_TYPES:
                 if data['editable_check']:
                     # Complex cases still use this Playwright version's exact rules.
-                    editable = self.performance.call(
-                        'descriptions', 'editable', element.is_editable)
+                    editable = element.is_editable()
                 else:
                     editable = data['editable']
             descriptions.extend(self._build_action_descriptions(data, editable))
@@ -356,7 +337,8 @@ class PlaywrightSession:
 
         execution_succeeded means the browser calls completed.
         execution_skipped means the element was disabled or covered.
-        execution_failed means a timeout or page change interrupted execution.
+        execution_failed means a timeout, changed page or missing/ambiguous target
+        prevented completion.
         Do not repeat a failed action: it may already have partly happened.
         Invalid descriptions, unexpected errors and a closed browser propagate.
         """
@@ -390,16 +372,16 @@ class PlaywrightSession:
         If the element is disabled or covered, skip it.
         For type_text, generate text using input_strategy unless the caller
         supplies a value. An empty string is also a supplied value.
-        execute_action() turns errors into an ActionResult.
+        execute_action() converts reachability and recognised browser errors into results.
+        Invalid descriptions and unexpected errors propagate.
         """
         element = self.page.locator(description['selector'])
-        # Missing or ambiguous match: the wrapper returns execution_failed, not execution_skipped.
+        # execute_action() converts a missing or ambiguous match to execution_failed.
         if element.count() != 1:
             raise PlaywrightTimeoutError('The action selector must match exactly one element')
         # Scroll only toward the chosen target, not toward every candidate.
         # A blocked or disabled target is skipped before generating input.
-        reachable = self.performance.call(
-            'execution', 'reachability', self._check_action_reachability, element)
+        reachable = self._check_action_reachability(element)
         if not reachable:
             raise ActionNotReachable(description['selector'])
         kind = description['kind']

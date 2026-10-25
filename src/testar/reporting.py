@@ -108,33 +108,13 @@ def print_test_summary(url, num_runs, length_sequence, oracle_findings,
     print("=" * 30)
 
 
-def print_performance_phase(performance, phase, description=''):
-    """Print a finished phase; names and description are supplied by the caller."""
-    if not performance.enabled:
-        return
-    seconds = performance.measurements[phase]['seconds']
-    print(f'{phase.upper()}: {description} in {seconds:.3f}s', flush=True)
-    for name, item in performance.breakdown(phase).items():
-        seconds, calls = item['seconds'], item['calls']
-        average_ms = seconds * 1000 / calls if calls else 0
-        print(f'  {phase}.{name}: {seconds:.3f}s / {calls} calls '
-              f'({average_ms:.3f} ms/call)', flush=True)
-
-
 def print_performance_summary(performance, description='', *, counts=None, total_seconds=None):
-    """Print stored phase totals and details without starting or stopping timers."""
+    """Print stored phase totals without starting or stopping timers."""
     if not performance.enabled:
         return
     parts = []
     for phase, item in performance.measurements.items():
-        # Dotted names describe operations inside a phase, not phase totals.
-        if '.' in phase:
-            continue
-        details = ', '.join(
-            f"{name}: {detail['seconds']:.3f}s / {detail['calls']} calls"
-            for name, detail in performance.breakdown(phase).items())
-        suffix = f' ({details})' if details else ''
-        parts.append(f"{phase}: {item['seconds']:.3f}s{suffix}")
+        parts.append(f"{phase}: {item['seconds']:.3f}s")
     if counts is not None:
         parts.insert(0, f"{counts['elements']} elements | {counts['possible_actions']} possible actions | "
                      f"{counts['completed']} completed actions | {counts['attempts']} execution attempts | "

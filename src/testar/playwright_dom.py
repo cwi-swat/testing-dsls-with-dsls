@@ -5,8 +5,6 @@ only the reachability expression scrolls. A snapshot describes one moment and
 cannot guarantee that the page will remain unchanged until execution.
 """
 
-# JavaScript runs in the browser, while this Python code runs the test.
-# These strings read data or check reachability; only _REACHABILITY_JS scrolls.
 _TARGET_SELECTOR_JS = '''el => {
             for (const attribute of ['id', 'name']) {
                 const value = el.getAttribute(attribute);
@@ -65,7 +63,8 @@ _CANDIDATE_SNAPSHOT_JS = '''elements => {
                 counts.set(el.id, (counts.get(el.id) || 0) + 1);
             }
             return elements.map(el => {
-                // Check ancestors, including crossing an open shadow root.
+                // Flag ARIA ancestors for a later Playwright enabled check,
+                // including ancestors across an open shadow root.
                 let ariaCheck = false;
                 for (let node = el; node;
                      node = node.parentElement || node.getRootNode().host) {
@@ -74,6 +73,7 @@ _CANDIDATE_SNAPSHOT_JS = '''elements => {
                 return {
                     id: el.id || '',
                     unique_id: el.getRootNode() === document && !!el.id && counts.get(el.id) === 1,
+                    // Defer fieldset rules (including legend exceptions) to Playwright.
                     enabled: !!el.closest('fieldset[disabled]') || !el.matches(':disabled'),
                     enabled_check: ariaCheck || !!el.closest('fieldset[disabled]')
                 };
@@ -127,7 +127,7 @@ _EDITABILITY_JS = """el => {
 }"""
 
 
-# Read one description in one call. These strings contain JavaScript code.
+# Read selector, element properties, editability and option labels in one call.
 _DESCRIPTION_DATA_JS = (
     "el => { const readInfo = (" + _ELEMENT_INFO_JS + "); "
     "const readSelector = (" + _TARGET_SELECTOR_JS + "); "

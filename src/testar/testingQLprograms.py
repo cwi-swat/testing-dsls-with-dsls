@@ -33,8 +33,16 @@ def load_oracles(html):
 def testar_QL_webApp(full_path, *, measure_timings=False):
     html = Path(full_path).resolve()
     oracles = load_oracles(html)
-    testar(html.as_uri(), 3, 10, [], [], [],
-           backend=PlaywrightBackend(), measure_timings=measure_timings)
+    testar(
+        url=html.as_uri(),
+        num_runs=3,
+        length_sequence=10,
+        filter_elements=[],
+        preparations=[],
+        oracles=[],
+        backend=PlaywrightBackend(),
+        measure_timings=measure_timings,
+    )
 
 
 def test_name(name, *, measure_timings=False):

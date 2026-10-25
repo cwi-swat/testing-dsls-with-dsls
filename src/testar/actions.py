@@ -7,7 +7,7 @@ from typing import Literal, Optional
 class ActionResult:
     """Outcome of one attempt, not proof of the application's correctness.
 
-    execution_succeeded means browser calls completed, not proof of SUT correctness.
+    execution_succeeded means the browser calls completed.
     execution_skipped means the intended action did not begin (scrolling may have run).
     execution_failed means effects may be partial; never automatically replay it.
     Error details are plain strings so future traces can store them.

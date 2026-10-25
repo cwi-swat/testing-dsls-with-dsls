@@ -6,22 +6,46 @@ def test_cambio():
     """Run the cambio app, without login or filters."""
     from playwright_backend import PlaywrightBackend
 
-    testar('https://cambio.softwaretesting.nl/', 4, 200,
-           [], [], [], backend=PlaywrightBackend(), measure_timings=True)
+    testar(
+        url='https://cambio.softwaretesting.nl/',
+        num_runs=4,
+        length_sequence=20,
+        filter_elements=[],
+        preparations=[],
+        oracles=[],
+        backend=PlaywrightBackend(),
+        measure_timings=True,
+    )
 
 def test_sudoku():
     """Run the sudoku game, without login or filters."""
     from playwright_backend import PlaywrightBackend
 
-    testar('https://sudoku.softwaretesting.nl/', 1, 400,
-           [], [], [], backend=PlaywrightBackend(), measure_timings=True)
+    testar(
+        url='https://sudoku.softwaretesting.nl/',
+        num_runs=2,
+        length_sequence=40,
+        filter_elements=[],
+        preparations=[],
+        oracles=[],
+        backend=PlaywrightBackend(),
+        measure_timings=True,
+    )
 
 def test_random_generator():
     """Run the random generator with Playwright, without login or filters."""
     from playwright_backend import PlaywrightBackend
 
-    testar('https://random-generator.softwaretesting.nl/', 4, 200,
-           [], [], [], backend=PlaywrightBackend(), measure_timings=True)
+    testar(
+        url='https://random-generator.softwaretesting.nl/',
+        num_runs=4,
+        length_sequence=30,
+        filter_elements=[],
+        preparations=[],
+        oracles=[],
+        backend=PlaywrightBackend(),
+        measure_timings=True,
+    )
 
 def test_saucer():
     """Log in to SauceDemo, then test with Playwright and a visible-error oracle."""
@@ -51,18 +75,25 @@ def test_saucer():
         # SauceDemo marks its error message with data-test="error".
         # :visible ignores messages that exist in HTML but are hidden.
         messages = page.locator('[data-test="error"]:visible').all_inner_texts()
-        # The core catches AssertionError and records this message in its report.
+        # TESTARSteps catches AssertionError and records this message as a finding.
         assert not messages, 'Visible error message: ' + ' | '.join(messages)
 
-    testar('https://www.saucedemo.com/', 3, 100,
-           [filter_burger, filter_external_links], [login], [no_visible_error],
-           backend=PlaywrightBackend(), measure_timings=True)
+    testar(
+        url='https://www.saucedemo.com/',
+        num_runs=3,
+        length_sequence=30,
+        filter_elements=[filter_burger, filter_external_links],
+        preparations=[login],
+        oracles=[no_visible_error],
+        backend=PlaywrightBackend(),
+        measure_timings=True,
+    )
 
 def parabank_no_internal_error(page):
     """Report a visible ParaBank internal error with its URL and a screenshot.
 
     This detects the application's error message, not a browser crash.
-    The core adds sequence/attempt numbers to this oracle finding.
+    TESTARSteps adds sequence/attempt numbers to this oracle finding.
     """
     messages = page.get_by_text('An internal error has occurred', exact=False).and_(
         page.locator(':visible')
@@ -101,15 +132,22 @@ def test_parabank():
             state='visible'
         )
 
-    testar('https://para.testar.org/', 3, 50,
-           [filter_external_links], [login], [parabank_no_internal_error],
-           backend=PlaywrightBackend(), measure_timings=True)
+    testar(
+        url='https://para.testar.org/',
+        num_runs=3,
+        length_sequence=50,
+        filter_elements=[filter_external_links],
+        preparations=[login],
+        oracles=[parabank_no_internal_error],
+        backend=PlaywrightBackend(),
+        measure_timings=True,
+    )
 
 
 if __name__ == "__main__":
     # Run the tests below in order. Comment out any calls you want to skip.
     #test_cambio()
     #test_sudoku()
-    #test_random_generator()
-    test_saucer()
-    test_parabank()
+    test_random_generator()
+    #test_saucer()
+    #test_parabank()

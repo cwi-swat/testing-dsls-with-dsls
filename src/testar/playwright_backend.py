@@ -8,7 +8,7 @@ Page is one tab, stored in session.page.
 A Locator is a query used to find an element again, not a saved HTML node. 
 """
 import json
-from playwright.sync_api import Error as PlaywrightError, TimeoutError as PlaywrightTimeoutError, Locator, sync_playwright
+from testar_evidence_playwright.sync_api import Error as PlaywrightError, TimeoutError as PlaywrightTimeoutError, Locator, sync_playwright
 from input_data_generation import generate_random_text, generate_random_number, generate_naughty_string
 from reporting import log_info, print_derivation_retry
 from actions import ActionNotReachable, ActionResult

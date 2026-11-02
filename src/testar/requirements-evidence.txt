@@ -1,0 +1,2 @@
+./packages/testar_evidence-0.3.0-py3-none-any.whl
+./packages/testar_evidence_playwright_adapter-0.3.0-py3-none-any.whl

@@ -124,6 +124,9 @@ def test_parabank():
             'a[href*="?wsdl"]'
         )
 
+    def filter_logout(page):
+        return page.locator('a[href="logout.htm"]')
+
     def login(page):
         page.locator('input[name="username"]').fill('john')
         page.locator('input[name="password"]').fill('demo')
@@ -136,7 +139,7 @@ def test_parabank():
         url='https://para.testar.org/',
         num_runs=3,
         length_sequence=50,
-        filter_elements=[filter_external_links],
+        filter_elements=[filter_external_links, filter_logout],
         preparations=[login],
         oracles=[parabank_no_internal_error],
         backend=PlaywrightBackend(),

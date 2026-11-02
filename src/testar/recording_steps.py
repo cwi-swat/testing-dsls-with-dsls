@@ -75,10 +75,13 @@ class RecordingTESTARSteps:
         # EVIDENCE - available actions: retain eligible choices, including unexecuted ones.
         # These passed selection filters; reachability is still checked before execution.
         recorder = evidence_for(self.steps.session.page)
+        # EVIDENCE - reuse the facade's result capture as the next action's source.
+        observation = recorder.buffered_observation
+        if observation is None:
+            observation = recorder.capture()
         recorder.record_available_actions(
-            [self._available_action(description) for description in descriptions], scope='eligible')
-        # Keep the tool's available-action list separate from automatically recorded browser operations.
-        recorder.capture()
+            [self._available_action(description) for description in descriptions], scope='eligible',
+            observation=observation)
         self._available_descriptions = list(descriptions)
 
     def _recording_oracle(self, oracle):
@@ -106,8 +109,11 @@ class RecordingTESTARSteps:
         recorder = evidence_for(self.steps.session.page)
         # EVIDENCE - oracle outcome: record this callback's result without running it again.
         # Generic callbacks target the observation, without claiming widget-property coverage.
-        recorder.capture()
+        # EVIDENCE - attach the result to the captured observation without capturing it again.
+        observation = recorder.buffered_observation
+        if observation is None:
+            observation = recorder.capture()
         identity = getattr(oracle, '__module__', '') + '.' + getattr(oracle, '__qualname__', type(oracle).__name__)
         recorder.checks.record_result(Oracle('minitestar:oracle:' + identity),
                                       getattr(oracle, '__name__', type(oracle).__name__), status,
-                                      None if error is None else str(error))
+                                      None if error is None else str(error), observation=observation)

@@ -14,6 +14,8 @@ from threading import Thread
 from unittest.mock import patch
 from uuid import uuid4
 
+from timing_breakdown import TimingBreakdown
+
 from playwright.sync_api import sync_playwright as native_playwright
 from testar_evidence import EvidenceReader
 from testar_evidence_playwright import CaptureOptions, sync_playwright as recording_playwright
@@ -24,6 +26,18 @@ from TESTAR_steps import TESTARSteps
 from performance_steps import PerformanceTESTARSteps
 from playwright_backend import PlaywrightSession
 from recording_steps import RecordingTESTARSteps
+
+
+@contextmanager
+def capture_transport(transport):
+    if transport == "json":
+        yield
+        return
+    from testar_evidence_playwright import capture
+    # Keep the previous transport available only as a benchmark comparison.
+    with patch.object(capture, "_capture_script", new=lambda: capture._resource("capture.js")):
+        with patch.object(capture, "loads", new=lambda value: value):
+            yield
 
 
 class BenchmarkBackend:
@@ -152,22 +166,23 @@ def run_sample(mode, directory, settings, url):
     steps = PerformanceTESTARSteps(steps, detailed=True)
     findings = []
     workload = []
-    with (directory / "steps.txt").open("w", encoding="utf-8") as output, redirect_stdout(output):
+    breakdown = TimingBreakdown(settings.breakdown)
+    with (directory / "steps.txt").open("w", encoding="utf-8") as output, redirect_stdout(output), capture_transport(settings.capture_transport), breakdown:
         steps.begin_test()
         try:
-            steps.begin_sequence(url)
+            breakdown.call("startup", steps.begin_sequence, url)
             for index in range(settings.actions):
-                descriptions = steps.derive_actions()
+                descriptions = breakdown.call("derive_actions", steps.derive_actions)
                 target, kind, parameters, value = planned_action(index)
                 selected_index = next(position for position, action in enumerate(descriptions)
                     if action["target"]["id"] == target and action["kind"] == kind
                     and all(action["parameters"].get(key) == item for key, item in parameters.items()))
                 # Keep the full available-action list; only replace the random choice.
                 with patch("TESTAR_steps.random.randint", return_value=selected_index):
-                    action = steps.select_action(descriptions)
+                    action = breakdown.call("selection", steps.select_action, descriptions)
                 workload.append({"available": [(item["target"]["id"], item["kind"], item["parameters"])
                                                for item in descriptions], "selected": selected_index, "value": value})
-                result = steps.execute_action(action, value=value)
+                result = breakdown.call("execution", steps.execute_action, action, value=value)
                 if result.status != "execution_succeeded":
                     raise AssertionError(f"Action {index + 1}: {result}")
                 if kind == "type_text":
@@ -179,23 +194,63 @@ def run_sample(mode, directory, settings, url):
                     expected["submissions"] += 1
                 elif target == "clear":
                     expected.update(value="", plan="Standard")
-                assert steps.check_oracles(findings, 1, index + 1) == 1
+                assert breakdown.call("oracles", steps.check_oracles, findings, 1, index + 1) == 1
                 if findings:
                     raise AssertionError(f"Oracle failed after action {index + 1}: {findings}")
         finally:
             try:
-                steps.end_sequence()
+                breakdown.call("cleanup", steps.end_sequence)
             finally:
                 steps.end_test()
     result = {"mode": mode, "browser_version": backend.browser_version,
               "seconds": steps.total_seconds, "phases": steps.sequence_measurements[0]["phases"],
               "workload_sha256": sha256(json.dumps(workload, sort_keys=True).encode()).hexdigest()}
+    if settings.breakdown:
+        result["breakdown"] = breakdown.summary()
+        result["dom_captures"] = breakdown.dom_captures
     # Reconstruct evidence and verify screenshots after stopping the benchmark timers.
     if mode == "recording":
         result["evidence"] = validate_trace(directory / "evidence", settings.actions)
     elif (directory / "evidence").exists():
         raise AssertionError("Default mode must use native Playwright without recording")
     return result
+
+
+def print_breakdown(samples):
+    for phase in ("execution", "derive_actions"):
+        print(f"\nBreakdown medians: {phase}. Total includes children; Self excludes children.")
+        print(f'{"Operation":36} {"Rec calls":>9} {"Rec total s":>11} {"Rec self s":>11} {"Default self s":>14} {"Rec avg ms":>11}')
+        names = {row["operation"] for sample in samples for row in sample["breakdown"] if row["phase"] == phase}
+        def statistic(mode, name, field):
+            return median(next((row[field] for row in sample["breakdown"]
+                if row["phase"] == phase and row["operation"] == name), 0)
+                for sample in samples if sample["mode"] == mode)
+        for name in sorted(names, key=lambda item: statistic("recording", item, "self_seconds"), reverse=True):
+            print(f'{name:36} {statistic("recording", name, "calls"):9.0f}'
+                  f' {statistic("recording", name, "total_seconds"):11.3f}'
+                  f' {statistic("recording", name, "self_seconds"):11.3f}'
+                  f' {statistic("default", name, "self_seconds"):14.3f}'
+                  f' {statistic("recording", name, "average_millis"):11.3f}')
+
+    print("\nDOM capture medians: execution (recording mode; browser timings overlap the main breakdown).")
+    captures = [sample["dom_captures"] for sample in samples if sample["mode"] == "recording"]
+    captures = [[capture for capture in rows if capture["phase"] == "execution"] for rows in captures]
+    captures = [rows for rows in captures if rows]
+    if not captures:
+        print("No execution captures recorded.")
+        return
+    for field in ("playwright_call_millis", "browser_millis", "property_read_millis",
+                  "traversal_and_result_millis", "json_encoding_millis", "size_measurement_millis",
+                  "outside_browser_capture_millis"):
+        total = median(sum(row[field] for row in rows) for rows in captures) / 1_000
+        average = median(sum(row[field] for row in rows) / len(rows) for rows in captures)
+        print(f"{field:38} {total:9.3f} s total {average:10.3f} ms/capture")
+    for stage in captures[0][0]["property_stages_millis"]:
+        total = median(sum(row["property_stages_millis"][stage] for row in rows) for rows in captures) / 1_000
+        print(f"{'  property/' + stage:38} {total:9.3f} s total")
+    for field in ("widget_count", "property_count", "json_bytes"):
+        average = median(sum(row[field] for row in rows) / len(rows) for rows in captures)
+        print(f"{field:38} {average:9.0f} per capture")
 
 
 def positive_integer(value):
@@ -214,6 +269,9 @@ def main():
     parser.add_argument("--extra-buttons", type=positive_integer, default=10)
     parser.add_argument("--channel", default="", help="Browser channel, e.g. chrome; omitted uses bundled Chromium")
     parser.add_argument("--no-screenshots", action="store_true")
+    parser.add_argument("--breakdown", action="store_true", help="Measure benchmark-only internal timings")
+    parser.add_argument("--capture-transport", choices=("json", "object"), default="json",
+                        help="Benchmark JSON text or the previous nested-object transport")
     settings = parser.parse_args()
     if settings.warmups < 0:
         parser.error("--warmups must be zero or greater")
@@ -247,6 +305,8 @@ def main():
         baseline, recording = summary["default"][phase], summary["recording"][phase]
         print(f"{phase:24} {baseline:9.3f} {recording:11.3f} {recording - baseline:11.3f}")
     print(f'\nRecording/default total: {summary["recording"]["total"] / summary["default"]["total"]:.2f}x')
+    if settings.breakdown:
+        print_breakdown(measured)
     print(f"Results and traces: {directory}")
 
 

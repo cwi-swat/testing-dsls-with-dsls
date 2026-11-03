@@ -86,6 +86,8 @@ class PlaywrightSession:
         self._runtime = runtime
         self._description_targets = {}
         self.actionable_element_count = 0
+        # An optional wrapper can record text-entry operations as one compound action.
+        self.compound_action_runner = None
 
     def close(self):
         """Close the context and browser, then stop Playwright.
@@ -409,7 +411,11 @@ class PlaywrightSession:
                 value = generators[strategy]()
             if not isinstance(value, str):
                 raise ValueError('type_text requires a string value')
-            self._type(element, 'type text keys', value, mode=parameters['mode'])
+            operation = lambda: self._type(element, 'type text keys', value, mode=parameters['mode'])
+            if self.compound_action_runner is None:
+                operation()
+            else:
+                self.compound_action_runner(description, value, operation)
         elif kind == 'select_option':
             label = parameters['label']
             self._log('select dropdown option', element, label)

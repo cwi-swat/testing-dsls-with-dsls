@@ -19,6 +19,11 @@ form, presses an arrow key, and clears the form. It repeats as needed. Both mode
 derive the full available-action list and execute the same selected descriptions.
 One custom oracle checks the form values and submission count after every action.
 
+Recording groups text entry into one compound execution while retaining its three
+native operations in a referenced JSON artifact. The benchmark validates these
+operation details as well as the recorded transitions. Native mode executes the
+same browser operations.
+
 The summary reports median timings per stage and for the complete execution.
 Results, per-execution logs, and recording traces are saved in a new directory
 under `target/benchmarks`. `results.json` includes every sample, browser/package

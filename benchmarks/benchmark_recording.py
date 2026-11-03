@@ -109,7 +109,7 @@ def validate_trace(directory, action_count):
     if len(traces) != 1:
         raise AssertionError("Recording must produce exactly one trace")
     trace = EvidenceReader.read(traces[0].parent)
-    expected_executions = 1 + sum(3 if index % 5 == 0 else 1 for index in range(action_count))
+    expected_executions = 1 + action_count
     assert len(trace.action_executions) == expected_executions
     assert len(trace.recorded_transitions) == expected_executions
     assert len(trace.observations) == expected_executions + 1
@@ -118,8 +118,22 @@ def validate_trace(directory, action_count):
     assert all(execution["status"] == "completed" for execution in trace.action_executions.values())
     assert sum(observation["available_action_scope"] == "eligible"
                for observation in trace.observations.values()) == action_count
-    return {"observations": len(trace.observations), "native_executions": expected_executions,
+    operation_reports = []
+    for observation in trace.observations.values():
+        for artifact in observation["artifacts"]:
+            if artifact["media_type"] == "application/json":
+                operation_reports.append(json.loads((traces[0].parent / artifact["path"]).read_text(encoding="utf-8")))
+    assert len(operation_reports) == sum(index % 5 == 0 for index in range(action_count))
+    for report in operation_reports:
+        assert report["format"] == "compound-action-operations" and report["version"] == 1
+        assert report["action_execution"] in trace.action_executions
+        assert [operation["method"] for operation in report["operations"]] == [
+            "Locator.fill", "Locator.press_sequentially", "Locator.press"]
+        assert all(operation["outcome"] == "returned" for operation in report["operations"])
+    return {"observations": len(trace.observations), "action_executions": expected_executions,
             "oracle_results": len(trace.oracle_results),
+            "compound_actions": len(operation_reports),
+            "atomic_operations": sum(len(report["operations"]) for report in operation_reports),
             "trace_bytes": sum(path.stat().st_size for path in traces[0].parent.rglob("*") if path.is_file())}
 
 

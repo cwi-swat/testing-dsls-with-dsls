@@ -45,7 +45,13 @@ class RecordingTESTARSteps:
         return self.steps.select_action(possible_actions)
 
     def execute_action(self, action, value=None):
-        result = self.steps.execute_action(action, value=value)
+        session = self.session
+        previous_runner = session.compound_action_runner
+        session.compound_action_runner = self._perform_compound_action
+        try:
+            result = self.steps.execute_action(action, value=value)
+        finally:
+            session.compound_action_runner = previous_runner
         if result.status == 'execution_skipped' and self._available_descriptions is not None:
             # EVIDENCE - available actions: retain the loop's reduced list after a skipped target.
             self.record_available_actions([
@@ -53,6 +59,15 @@ class RecordingTESTARSteps:
                 if description['selector'] != action['selector']
             ])
         return result
+
+    def _perform_compound_action(self, description, value, operation):
+        # EVIDENCE - keep text entry as one transition, retaining its ordered native operations.
+        # The backend calls this after reachability checks and input generation.
+        action = self._available_action(description)
+        recorder = evidence_for(self.session.page)
+        return recorder.perform(action.action_type, action.name, action.locator,
+            {**description['parameters'], 'value': value}, operation, available_action=action,
+            source_observation=recorder.buffered_observation, record_operations=True)
 
     def check_oracles(self, findings, sequence, attempt):
         original_oracles = self.steps.oracles

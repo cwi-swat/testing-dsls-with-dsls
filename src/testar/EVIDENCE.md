@@ -12,9 +12,11 @@ The wrapper saves the choices at their discovery observation, including unselect
 
 ## 2. Browser operations: what was executed
 
-The backend uses its original direct Playwright calls. The facade automatically records each supported operation and its outcome. For example, clearing a field, typing a value, and pressing Enter produce separate executions in the same evidence trace. Password values are redacted by the adapter.
+The facade automatically records ordinary Playwright operations and their outcomes. Preparation calls, such as entering a username, entering a password, and clicking Sign in, remain separate actions.
 
-Compound-action grouping and explicit links between miniTESTAR's selected available actions and the browser executions belong to the advanced integration.
+For miniTESTAR text-entry actions, the backend offers an optional `compound_action_runner` hook after reachability checks and input generation. `RecordingTESTARSteps` uses `perform(..., record_operations=True)` to record clearing or positioning the cursor, typing, and pressing Enter as one compound execution linked to the selected available action. The original native calls, input modes, and exception handling remain in the backend.
+
+The source and result are captured once. An `application/json` artifact on the result observation retains the ordered native methods, supplied parameters, and outcomes, including operations completed before a failure. The adapter redacts password arguments. Intermediate GUI captures are omitted. The runner is restored after execution; skipped targets do not create compound executions.
 
 ## 3. Custom oracle results
 

@@ -1,6 +1,6 @@
 # Install miniTESTAR's evidence packages
 
-This folder contains the Python evidence library version `0.3.0` and Playwright adapter version `0.3.0`. These wheels install the library code; the adapter includes its automatic-recording facade and browser capture scripts.
+This folder contains the Python evidence library and Playwright adapter packages listed in `../requirements-evidence.txt`. These wheels install the library code; the adapter includes its automatic-recording facade and browser capture scripts.
 
 Use Python 3.11 or later. From the repository root, run these commands with the Python environment you will use for miniTESTAR:
 

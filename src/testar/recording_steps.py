@@ -45,7 +45,13 @@ class RecordingTESTARSteps:
         return self.steps.select_action(possible_actions)
 
     def execute_action(self, action, value=None):
-        result = self.steps.execute_action(action, value=value)
+        session = self.session
+        previous_runner = session.compound_action_runner
+        session.compound_action_runner = self._perform_compound_action
+        try:
+            result = self.steps.execute_action(action, value=value)
+        finally:
+            session.compound_action_runner = previous_runner
         if result.status == 'execution_skipped' and self._available_descriptions is not None:
             # EVIDENCE - available actions: retain the loop's reduced list after a skipped target.
             self.record_available_actions([
@@ -53,6 +59,15 @@ class RecordingTESTARSteps:
                 if description['selector'] != action['selector']
             ])
         return result
+
+    def _perform_compound_action(self, description, value, operation):
+        # EVIDENCE - keep text entry as one transition, retaining its ordered native operations.
+        # The backend calls this after reachability checks and input generation.
+        action = self._available_action(description)
+        recorder = evidence_for(self.session.page)
+        return recorder.perform(action.action_type, action.name, action.locator,
+            {**description['parameters'], 'value': value}, operation, available_action=action,
+            source_observation=recorder.buffered_observation, record_operations=True)
 
     def check_oracles(self, findings, sequence, attempt):
         original_oracles = self.steps.oracles
@@ -75,10 +90,13 @@ class RecordingTESTARSteps:
         # EVIDENCE - available actions: retain eligible choices, including unexecuted ones.
         # These passed selection filters; reachability is still checked before execution.
         recorder = evidence_for(self.steps.session.page)
+        # EVIDENCE - reuse the facade's result capture as the next action's source.
+        observation = recorder.buffered_observation
+        if observation is None:
+            observation = recorder.capture()
         recorder.record_available_actions(
-            [self._available_action(description) for description in descriptions], scope='eligible')
-        # Keep the tool's available-action list separate from automatically recorded browser operations.
-        recorder.capture()
+            [self._available_action(description) for description in descriptions], scope='eligible',
+            observation=observation)
         self._available_descriptions = list(descriptions)
 
     def _recording_oracle(self, oracle):
@@ -106,8 +124,11 @@ class RecordingTESTARSteps:
         recorder = evidence_for(self.steps.session.page)
         # EVIDENCE - oracle outcome: record this callback's result without running it again.
         # Generic callbacks target the observation, without claiming widget-property coverage.
-        recorder.capture()
+        # EVIDENCE - attach the result to the captured observation without capturing it again.
+        observation = recorder.buffered_observation
+        if observation is None:
+            observation = recorder.capture()
         identity = getattr(oracle, '__module__', '') + '.' + getattr(oracle, '__qualname__', type(oracle).__name__)
         recorder.checks.record_result(Oracle('minitestar:oracle:' + identity),
                                       getattr(oracle, '__name__', type(oracle).__name__), status,
-                                      None if error is None else str(error))
+                                      None if error is None else str(error), observation=observation)

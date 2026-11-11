@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Recording benchmark</title></head>
+<body>
+<h1>Local form</h1>
+<form id="form">
+<label>Amount <input id="amount" name="amount" type="text"></label>
+<label>Plan <select id="plan"><option>Standard</option><option>Premium</option></select></label>
+<button id="apply" type="submit">Apply</button>
+<button id="clear" type="button">Clear</button>
+</form>
+<section aria-label="Alternative actions">{{buttons}}</section>
+<section aria-label="Additional captured widgets">{{widgets}}</section>
+<script>
+window.submissions = 0;
+document.getElementById('form').addEventListener('submit', event => {
+    event.preventDefault();
+    window.submissions += 1;
+});
+document.getElementById('clear').addEventListener('click', () => {
+    document.getElementById('amount').value = '';
+    document.getElementById('plan').value = 'Standard';
+});
+</script>
+</body>
+</html>
